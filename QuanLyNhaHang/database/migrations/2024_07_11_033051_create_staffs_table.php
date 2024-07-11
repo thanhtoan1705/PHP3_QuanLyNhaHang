@@ -4,26 +4,24 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersTable extends Migration
+class CreateStaffsTable extends Migration
 {
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('staffs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name', 255);
-            $table->string('email', 255)->unique();
-            $table->string('password', 255);
+            $table->string('image', 255)->nullable();
             $table->string('phone', 20)->nullable();
             $table->string('address', 255)->nullable();
-            $table->enum('role', ['admin', 'customer'])->default('customer');
-            $table->string('google_id', 255)->nullable();
-            $table->string('facebook_id', 255)->nullable();
+            $table->string('position', 255);
+            $table->bigInteger('salary');
             $table->timestamps();
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('staffs');
     }
-};
+}
