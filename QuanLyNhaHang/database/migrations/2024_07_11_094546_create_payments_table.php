@@ -18,8 +18,8 @@ class CreatePaymentsTable extends Migration
             $table->bigInteger('total_amount');
             $table->timestamps();
 
-            // $table->foreign('order_id')->references('id')->on('orders');
-            // $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('order_id')->references('id')->on('orders');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

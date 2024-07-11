@@ -16,8 +16,8 @@ class CreateCartTable extends Migration
             $table->bigInteger('total_price');
             $table->timestamps();
 
-            // $table->foreign('user_id')->references('id')->on('users');
-            // $table->foreign('dish_id')->references('id')->on('dishes');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('dish_id')->references('id')->on('dishes');
         });
     }
 
