@@ -1,16 +1,19 @@
 <?php
 
+
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BlogDetailController;
 use App\Http\Controllers\Client\DishController;
 use App\Http\Controllers\Client\HomeController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Client\CartController;
-use App\Http\Controllers\Client\CheckoutController;
-use App\Http\Controllers\Client\AboutController;
+use App\Http\Controllers\Client\Cart\CartController;
+use App\Http\Controllers\Client\Checkout\CheckoutController;
+use App\Http\Controllers\Client\About\AboutController;
+use App\Http\Controllers\Client\Dish\DishController;
 use App\Http\Controllers\Client\ErrorController;
 use App\Http\Controllers\Client\RegisterController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\Client\Auth\RegisterController;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('dish_detail', [DishController::class, 'dishDetail']);
