@@ -1,13 +1,13 @@
 <?php
 
-use App\Http\Controllers\DishController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Client\DishController;
+use App\Http\Controllers\Client\HomeController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CartController;
-use App\Http\Controllers\CheckoutController;
-use App\Http\Controllers\AboutController;
-use App\Http\Controllers\ErrorController;
-use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\Client\CartController;
+use App\Http\Controllers\Client\CheckoutController;
+use App\Http\Controllers\Client\AboutController;
+use App\Http\Controllers\Client\ErrorController;
+use App\Http\Controllers\Client\RegisterController;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('dish_detail', [DishController::class, 'dishDetail']);
