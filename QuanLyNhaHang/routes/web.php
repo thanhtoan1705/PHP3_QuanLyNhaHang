@@ -10,6 +10,8 @@ use App\Http\Controllers\ErrorController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\BlogDetailController;
+
 
 
 Route::get('/', [HomeController::class, 'index']);
@@ -22,3 +24,4 @@ Route::get('404', [ErrorController::class, 'index']);
 Route::get('register', [RegisterController::class, 'index']);
 Route::get('login', [LoginController::class, 'index']);
 Route::get('blog', [BlogController::class, 'index']);
+Route::get('blogDetail', [BlogDetailController::class, 'index']);
