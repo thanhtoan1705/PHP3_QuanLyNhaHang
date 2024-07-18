@@ -16,26 +16,26 @@
             <div class="row justify-content-center align-items-center">
                 <div class="col-md-12 col-lg-6 col-xl-6">
                     <div class="banner-content">
-                        <h1>enjoy our delicious <span>food</span></h1>
+                        <h1>THƯỞNG THỨC <span>MÓN ĂN NGON </span> CỦA CHÚNG TÔI</h1>
                         <!-- buyone-shape -->
                         <div class="buyone-shape">
                             <div class="banner-tag">
-                                <h5>buy one. get one</h5>
+                                <h5>Mua 1 tặng 1</h5>
                             </div>
-                            <span class="banner-badge">free</span>
+                            <span class="banner-badge">miễn phí</span>
                         </div>
                         <!-- pricing -->
-                        <div class="price">price : <span>$10.50</span></div>
+                        <div class="price">Giá : <span>150.000VNĐ</span></div>
 
                         <!-- order-box -->
                         <div class="order-box">
                             <span class="order-img"><img src="{{ asset('admin/assets/images/icons/1.png') }}"
                                     alt="" /></span>
                             <div class="order-content">
-                                <p>delivery order num.</p>
+                                <p>Số giao hàng.</p>
                                 <span>123-59794069</span>
                             </div>
-                            <a href="#" class="btn">try it now</a>
+                            <a href="#" class="btn">thử ngay bây giờ</a>
                         </div>
                     </div>
                 </div>
@@ -87,10 +87,10 @@
                         <div class="form-wraper padding-bottom-40">
                             <form action="#">
                                 <select class="form-item2">
-                                    <option value="">4 people</option>
-                                    <option value="">3 people</option>
-                                    <option value="">2 people</option>
-                                    <option value="">1 people</option>
+                                    <option value="">4 người</option>
+                                    <option value="">3 người</option>
+                                    <option value="">2 người</option>
+                                    <option value="">1 người</option>
                                 </select>
                                 <input class="form-item2" type="date" />
                                 <select class="form-item2">
@@ -99,7 +99,7 @@
                                     <option value="">07:24 pm</option>
                                     <option value="">07:24 pm</option>
                                 </select>
-                                <button type="submit">find table</button>
+                                <button type="submit">tìm bàn</button>
                             </form>
                         </div>
                     </div>
@@ -168,12 +168,12 @@
                                     alt="" /></span>
                         </div>
                         <h2>
-                            Fresh taste at a great price, only for
-                            <span>hungry people.</span>
+                            Hương vị tươi ngon với mức giá tuyệt vời, chỉ dành cho
+                            <span>người đói.</span>
                         </h2>
                         <p>
-                            Food is a restaurant, bar and coffee roastery located on a busy
-                            corner site in Farringdon's Exmouth Market. With glazed.
+                            Food là nhà hàng, quán bar và quán cà phê rang xay nằm trên con đường sầm uất
+ địa điểm góc trong Chợ Exmouth của Farringdon. Với kính.
                         </p>
                         <div class="garlic-burger-card">
                             <div class="garlic-burger-img">
@@ -182,10 +182,10 @@
                                 <img src="{{ asset('admin/assets/images/icons/2.png') }}" alt="" />
                             </div>
                             <div class="garlic-burger-content">
-                                <h5>garlic burger parties</h5>
+                                <h5>bữa tiệc burger tỏi</h5>
                                 <p>
-                                    It is a long established fact that a reader BBQ food
-                                    Chicken.
+                                    Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+                                    Thịt gà.
                                 </p>
                             </div>
                         </div>
@@ -199,8 +199,8 @@
     <section class="menu-area padding-bottom-120">
         <div class="container">
             <div class="common-title-area text-center padding-50 wow fadeInUp">
-                <h3>food items</h3>
-                <h2>popular <span>menu</span></h2>
+                <h3>Mặt hàng thực phẩm</h3>
+                <h2>Phổ biến <span>menu</span></h2>
             </div>
             <!-- menu-nav-wrapper -->
             <div class="menu-nav-wrapper">
@@ -352,8 +352,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Margherita</a></h5>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>con tôm. mực, dứa</p>
+                                        <span>giá :$15.00</span>
                                     </div>
                                 </div>
                             </div>
@@ -364,9 +364,9 @@
                                             alt="" />
                                     </div>
                                     <div class="menu-content">
-                                        <h5><a href="single-dish.html">Tomato</a></h5>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <h5><a href="single-dish.html">Cà chua</a></h5>
+                                        <p>con tôm. mực, dứa</p>
+                                        <span>giá :150.000 VNĐ</span>
                                     </div>
                                 </div>
                             </div>
@@ -378,9 +378,9 @@
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Marinara</a></h5>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
-                                        <span class="del"><del>price :$15.00</del></span>
+                                        <p>con tôm. mực, dứa</p>
+                                        <span>giá : 150.000 VNĐ</span>
+                                        <span class="del"><del>giá : 120.000 VNĐ</del></span>
                                     </div>
                                 </div>
                             </div>
@@ -396,8 +396,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Frutti Di Mare</a></h5>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>giá : 150.000 VNĐ</p>
+                                        <span>giá : 150.000 VNĐ</span>
                                     </div>
                                 </div>
                             </div>
@@ -409,8 +409,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Americana</a></h5>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>giá : 150.000 VNĐ</p>
+                                        <span>giá : 150.000 VNĐ</span>
                                     </div>
                                 </div>
                             </div>
@@ -422,9 +422,9 @@
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Pizza Al Pesto</a></h5>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
-                                        <span class="del"><del>price :$15.00</del></span>
+                                        <p>giá : 150.000 VNĐ</p>
+                                        <span>giá : 150.000 VNĐ</span>
+                                        <span class="del"><del>giá : 150.000 VNĐ</del></span>
                                     </div>
                                 </div>
                             </div>
@@ -432,7 +432,7 @@
                         </div>
 
                         <div class="menu-btn text-center">
-                            <a href="shopping-cart.html" class="btn">order now</a>
+                            <a href="shopping-cart.html" class="btn">Đặt hàng ngay bây giờ</a>
                         </div>
                     </div>
                 </div>
@@ -461,8 +461,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Garlic Burger</a></h5>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>giá : 150.000 VNĐ</p>
+                                        <span>giá : 150.000 VNĐ</span>
                                     </div>
                                 </div>
                             </div>
@@ -473,8 +473,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">naga burger</a></h5>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>giá : 150.000 VNĐ</p>
+                                        <span>giá : 150.000 VNĐ</span>
                                     </div>
                                 </div>
                             </div>
@@ -485,9 +485,9 @@
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Beef Burger</a></h5>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
-                                        <span class="del"><del>price :$15.00</del></span>
+                                        <p>giá : 150.000 VNĐ</p>
+                                        <span>giá : 150.000 VNĐ</span>
+                                        <span class="del"><del>giá : 150.000 VNĐ</del></span>
                                     </div>
                                 </div>
                             </div>
@@ -502,8 +502,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">BBQ Burger</a></h5>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>giá : 150.000 VNĐ</p>
+                                        <span>giá : 150.000 VNĐ</span>
                                     </div>
                                 </div>
                             </div>
@@ -514,8 +514,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Crispy Burger</a></h5>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>giá : 150.000 VNĐ</p>
+                                        <span>giá : 150.000 VNĐ</span>
                                     </div>
                                 </div>
                             </div>
@@ -526,9 +526,9 @@
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Chicken Grill</a></h5>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
-                                        <span class="del"><del>price :$15.00</del></span>
+                                        <p>giá : 150.000 VNĐ</p>
+                                        <span>giá : 150.000 VNĐ</span>
+                                        <span class="del"><del>giá : 150.000 VNĐ</del></span>
                                     </div>
                                 </div>
                             </div>
@@ -536,7 +536,7 @@
                         </div>
 
                         <div class="menu-btn text-center">
-                            <a href="shopping-cart.html" class="btn">order now</a>
+                            <a href="shopping-cart.html" class="btn">Đặt hàng ngay bây giờ</a>
                         </div>
                     </div>
                 </div>
@@ -564,8 +564,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Fried Chicken</a></h5>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>giá : 150.000 VNĐ</p>
+                                        <span>giá : 150.000 VNĐ</span>
                                     </div>
                                 </div>
                             </div>
@@ -577,8 +577,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Thai Chicken</a></h5>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>giá : 150.000 VNĐ</p>
+                                        <span>giá : 150.000 VNĐ</span>
                                     </div>
                                 </div>
                             </div>
@@ -590,9 +590,9 @@
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Bbq Chicken</a></h5>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
-                                        <span class="del"><del>price :$15.00</del></span>
+                                        <p>giá : 150.000 VNĐ</p>
+                                        <span>giá : 150.000 VNĐ</span>
+                                        <span class="del"><del>giá : 150.000 VNĐ</del></span>
                                     </div>
                                 </div>
                             </div>
@@ -608,8 +608,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">naga</a></h5>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>giá : 150.000 VNĐ</p>
+                                        <span>giá : 150.000 VNĐ</span>
                                     </div>
                                 </div>
                             </div>
@@ -621,8 +621,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Thai Chicken</a></h5>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>giá : 150.000 VNĐ</p>
+                                        <span>giá : 150.000 VNĐ</span>
                                     </div>
                                 </div>
                             </div>
@@ -634,9 +634,9 @@
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Bbq Chicken</a></h5>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
-                                        <span class="del"><del>price :$15.00</del></span>
+                                        <p>giá : 150.000 VNĐ</p>
+                                        <span>giá : 150.000 VNĐ</span>
+                                        <span class="del"><del>giá : 150.000 VNĐ</del></span>
                                     </div>
                                 </div>
                             </div>
@@ -644,7 +644,7 @@
                         </div>
 
                         <div class="menu-btn text-center">
-                            <a href="shopping-cart.html" class="btn">order now</a>
+                            <a href="shopping-cart.html" class="btn">Đặt hàng ngay bây giờ</a>
                         </div>
                     </div>
                 </div>
@@ -679,8 +679,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html"> Grapefruit</a></h5>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>giá : 150.000 VNĐ</p>
+                                        <span>giá : 150.000 VNĐ</span>
                                     </div>
                                 </div>
                             </div>
@@ -698,8 +698,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Blueberry</a></h5>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>giá : 150.000 VNĐ</p>
+                                        <span>giá : 150.000 VNĐ</span>
                                     </div>
                                 </div>
                             </div>
@@ -717,9 +717,9 @@
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Cranberry</a></h5>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
-                                        <span class="del"><del>price :$15.00</del></span>
+                                        <p>giá : 150.000 VNĐ</p>
+                                        <span>giá : 150.000 VNĐ</span>
+                                        <span class="del"><del>giá : 150.000 VNĐ</del></span>
                                     </div>
                                 </div>
                             </div>
@@ -741,8 +741,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Orange Juice</a></h5>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>giá : 150.000 VNĐ</p>
+                                        <span>giá : 150.000 VNĐ</span>
                                     </div>
                                 </div>
                             </div>
@@ -760,8 +760,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Beet Juice</a></h5>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>giá : 150.000 VNĐ</p>
+                                        <span>giá : 150.000 VNĐ</span>
                                     </div>
                                 </div>
                             </div>
@@ -779,9 +779,9 @@
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Pomegranate</a></h5>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
-                                        <span class="del"><del>price :$15.00</del></span>
+                                        <p>giá : 150.000 VNĐ</p>
+                                        <span>giá : 150.000 VNĐ</span>
+                                        <span class="del"><del>giá : 150.000 VNĐ</del></span>
                                     </div>
                                 </div>
                             </div>
@@ -789,7 +789,7 @@
                         </div>
 
                         <div class="menu-btn text-center">
-                            <a href="shopping-cart.html" class="btn">order now</a>
+                            <a href="shopping-cart.html" class="btn">Đặt hàng ngay bây giờ</a>
                         </div>
                     </div>
                 </div>
@@ -824,8 +824,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Guava juice</a></h5>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>giá : 150.000 VNĐ</p>
+                                        <span>giá : 150.000 VNĐ</span>
                                     </div>
                                 </div>
                             </div>
@@ -843,8 +843,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Lemonade</a></h5>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>giá : 150.000 VNĐ</p>
+                                        <span>giá : 150.000 VNĐ</span>
                                     </div>
                                 </div>
                             </div>
@@ -855,9 +855,9 @@
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Lingonberry</a></h5>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
-                                        <span class="del"><del>price :$15.00</del></span>
+                                        <p>giá : 150.000 VNĐ</p>
+                                        <span>giá : 150.000 VNĐ</span>
+                                        <span class="del"><del>giá : 150.000 VNĐ</del></span>
                                     </div>
                                 </div>
                             </div>
@@ -879,8 +879,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Prune juice</a></h5>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>giá : 150.000 VNĐ</p>
+                                        <span>giá : 150.000 VNĐ</span>
                                     </div>
                                 </div>
                             </div>
@@ -898,8 +898,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Sugarcane</a></h5>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>giá : 150.000 VNĐ</p>
+                                        <span>giá : 150.000 VNĐ</span>
                                     </div>
                                 </div>
                             </div>
@@ -917,9 +917,9 @@
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Vegetable</a></h5>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
-                                        <span class="del"><del>price :$15.00</del></span>
+                                        <p>giá : 150.000 VNĐ</p>
+                                        <span>giá : 150.000 VNĐ</span>
+                                        <span class="del"><del>giá : 150.000 VNĐ</del></span>
                                     </div>
                                 </div>
                             </div>
@@ -927,7 +927,7 @@
                         </div>
 
                         <div class="menu-btn text-center">
-                            <a href="shopping-cart.html" class="btn">order now</a>
+                            <a href="shopping-cart.html" class="btn">Đặt hàng ngay bây giờ</a>
                         </div>
                     </div>
                 </div>
@@ -963,8 +963,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Garlic Burger</a></h5>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>giá : 150.000 VNĐ</p>
+                                        <span>giá : 150.000 VNĐ</span>
                                     </div>
                                 </div>
                             </div>
@@ -983,8 +983,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Thai Chicken</a></h5>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>giá : 150.000 VNĐ</p>
+                                        <span>giá : 150.000 VNĐ</span>
                                     </div>
                                 </div>
                             </div>
@@ -1003,9 +1003,9 @@
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Bbq Chicken</a></h5>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
-                                        <span class="del"><del>price :$15.00</del></span>
+                                        <p>giá : 150.000 VNĐ</p>
+                                        <span>giá : 150.000 VNĐ</span>
+                                        <span class="del"><del>giá : 150.000 VNĐ</del></span>
                                     </div>
                                 </div>
                             </div>
@@ -1028,8 +1028,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Mutton</a></h5>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>giá : 150.000 VNĐ</p>
+                                        <span>giá : 150.000 VNĐ</span>
                                     </div>
                                 </div>
                             </div>
@@ -1048,8 +1048,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Thai Chicken</a></h5>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>giá : 150.000 VNĐ</p>
+                                        <span>giá : 150.000 VNĐ</span>
                                     </div>
                                 </div>
                             </div>
@@ -1068,9 +1068,9 @@
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Bbq Chicken</a></h5>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
-                                        <span class="del"><del>price :$15.00</del></span>
+                                        <p>giá : 150.000 VNĐ</p>
+                                        <span>giá : 150.000 VNĐ</span>
+                                        <span class="del"><del>giá : 150.000 VNĐ</del></span>
                                     </div>
                                 </div>
                             </div>
@@ -1078,7 +1078,7 @@
                         </div>
 
                         <div class="menu-btn text-center">
-                            <a href="shopping-cart.html" class="btn">order now</a>
+                            <a href="shopping-cart.html" class="btn">Đặt hàng ngay bây giờ</a>
                         </div>
                     </div>
                 </div>
@@ -1156,10 +1156,10 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Garlic Burger </a></h5>
                                     <p>
-                                        It is a long established fact that a reader BBQ food
-                                        Chicken.
+                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+ Thịt gà.
                                     </p>
-                                    <span class="price">price :$15.00</span>
+                                    <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
                                 <span class="badge">hot</span>
                                 <div class="cart-opt">
@@ -1181,10 +1181,10 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Vegetable Pizza </a></h5>
                                     <p>
-                                        It is a long established fact that a reader BBQ food
-                                        Chicken.
+                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+ Thịt gà.
                                     </p>
-                                    <span class="price">price :$15.00</span>
+                                    <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
                                 <span class="badge"></span>
                                 <div class="cart-opt">
@@ -1206,10 +1206,10 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Chicken Fry </a></h5>
                                     <p>
-                                        It is a long established fact that a reader BBQ food
-                                        Chicken.
+                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+ Thịt gà.
                                     </p>
-                                    <span class="price badge-color">price :$15.00</span>
+                                    <span class="price badge-color">giá : 150.000 VNĐ</span>
                                     <span class="rating">
                                         <i class="fas fa-star"></i> 5star</span>
                                 </div>
@@ -1233,10 +1233,10 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Chickpea Soup </a></h5>
                                     <p>
-                                        It is a long established fact that a reader BBQ food
-                                        Chicken.
+                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+ Thịt gà.
                                     </p>
-                                    <span class="price">price :$15.00</span>
+                                    <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
                                 <span class="badge">sale</span>
                                 <div class="cart-opt">
@@ -1258,10 +1258,10 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Garlic Burger </a></h5>
                                     <p>
-                                        It is a long established fact that a reader BBQ food
-                                        Chicken.
+                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+ Thịt gà.
                                     </p>
-                                    <span class="price">price :$15.00</span>
+                                    <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
                                 <span class="badge">hot</span>
                                 <div class="cart-opt">
@@ -1283,10 +1283,10 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Vegetable Pizza </a></h5>
                                     <p>
-                                        It is a long established fact that a reader BBQ food
-                                        Chicken.
+                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+ Thịt gà.
                                     </p>
-                                    <span class="price">price :$15.00</span>
+                                    <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
                                 <span class="badge"></span>
                                 <div class="cart-opt">
@@ -1308,10 +1308,10 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Chicken Fry </a></h5>
                                     <p>
-                                        It is a long established fact that a reader BBQ food
-                                        Chicken.
+                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+ Thịt gà.
                                     </p>
-                                    <span class="badge-color price">price :$15.00</span>
+                                    <span class="badge-color price">giá : 150.000 VNĐ</span>
                                     <span class="rating">
                                         <i class="fas fa-star"></i> 5star</span>
                                 </div>
@@ -1335,10 +1335,10 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Chickpea Soup </a></h5>
                                     <p>
-                                        It is a long established fact that a reader BBQ food
-                                        Chicken.
+                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+ Thịt gà.
                                     </p>
-                                    <span class="price">price :$15.00</span>
+                                    <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
                                 <span class="badge">sale</span>
                                 <div class="cart-opt">
@@ -1367,10 +1367,10 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Margherita </a></h5>
                                     <p>
-                                        It is a long established fact that a reader BBQ food
-                                        Chicken.
+                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+ Thịt gà.
                                     </p>
-                                    <span class="price">price :$15.00</span>
+                                    <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
                                 <span class="badge">hot</span>
                                 <div class="cart-opt">
@@ -1392,10 +1392,10 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Vegetable Pizza </a></h5>
                                     <p>
-                                        It is a long established fact that a reader BBQ food
-                                        Chicken.
+                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+ Thịt gà.
                                     </p>
-                                    <span class="price">price :$15.00</span>
+                                    <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
                                 <span class="badge"></span>
                                 <div class="cart-opt">
@@ -1417,10 +1417,10 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Marinara </a></h5>
                                     <p>
-                                        It is a long established fact that a reader BBQ food
-                                        Chicken.
+                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+ Thịt gà.
                                     </p>
-                                    <span class="price badge-color">price :$15.00</span>
+                                    <span class="price badge-color">giá : 150.000 VNĐ</span>
                                     <span class="rating">
                                         <i class="fas fa-star"></i> 5star</span>
                                 </div>
@@ -1444,10 +1444,10 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Frutti Di Mare </a></h5>
                                     <p>
-                                        It is a long established fact that a reader BBQ food
-                                        Chicken.
+                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+ Thịt gà.
                                     </p>
-                                    <span class="price">price :$15.00</span>
+                                    <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
                                 <span class="badge">sale</span>
                                 <div class="cart-opt">
@@ -1469,10 +1469,10 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Americana </a></h5>
                                     <p>
-                                        It is a long established fact that a reader BBQ food
-                                        Chicken.
+                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+ Thịt gà.
                                     </p>
-                                    <span class="price">price :$15.00</span>
+                                    <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
                                 <span class="badge">hot</span>
                                 <div class="cart-opt">
@@ -1494,10 +1494,10 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Vegetable Pizza </a></h5>
                                     <p>
-                                        It is a long established fact that a reader BBQ food
-                                        Chicken.
+                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+ Thịt gà.
                                     </p>
-                                    <span class="price">price :$15.00</span>
+                                    <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
                                 <span class="badge"></span>
                                 <div class="cart-opt">
@@ -1519,10 +1519,10 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Pizza Al Pesto </a></h5>
                                     <p>
-                                        It is a long established fact that a reader BBQ food
-                                        Chicken.
+                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+ Thịt gà.
                                     </p>
-                                    <span class="badge-color price">price :$15.00</span>
+                                    <span class="badge-color price">giá : 150.000 VNĐ</span>
                                     <span class="rating">
                                         <i class="fas fa-star"></i> 5star</span>
                                 </div>
@@ -1546,10 +1546,10 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Americana </a></h5>
                                     <p>
-                                        It is a long established fact that a reader BBQ food
-                                        Chicken.
+                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+ Thịt gà.
                                     </p>
-                                    <span class="price">price :$15.00</span>
+                                    <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
                                 <span class="badge">sale</span>
                                 <div class="cart-opt">
@@ -1578,10 +1578,10 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Garlic Burger </a></h5>
                                     <p>
-                                        It is a long established fact that a reader BBQ food
-                                        Chicken.
+                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+ Thịt gà.
                                     </p>
-                                    <span class="price">price :$15.00</span>
+                                    <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
                                 <span class="badge">hot</span>
                                 <div class="cart-opt">
@@ -1603,10 +1603,10 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Vegetable Pizza </a></h5>
                                     <p>
-                                        It is a long established fact that a reader BBQ food
-                                        Chicken.
+                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+ Thịt gà.
                                     </p>
-                                    <span class="price">price :$15.00</span>
+                                    <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
                                 <span class="badge"></span>
                                 <div class="cart-opt">
@@ -1628,10 +1628,10 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Chicken Fry </a></h5>
                                     <p>
-                                        It is a long established fact that a reader BBQ food
-                                        Chicken.
+                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+ Thịt gà.
                                     </p>
-                                    <span class="price badge-color">price :$15.00</span>
+                                    <span class="price badge-color">giá : 150.000 VNĐ</span>
                                     <span class="rating">
                                         <i class="fas fa-star"></i> 5star</span>
                                 </div>
@@ -1655,10 +1655,10 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Chickpea Soup </a></h5>
                                     <p>
-                                        It is a long established fact that a reader BBQ food
-                                        Chicken.
+                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+ Thịt gà.
                                     </p>
-                                    <span class="price">price :$15.00</span>
+                                    <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
                                 <span class="badge">sale</span>
                                 <div class="cart-opt">
@@ -1680,10 +1680,10 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Garlic Burger </a></h5>
                                     <p>
-                                        It is a long established fact that a reader BBQ food
-                                        Chicken.
+                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+ Thịt gà.
                                     </p>
-                                    <span class="price">price :$15.00</span>
+                                    <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
                                 <span class="badge">hot</span>
                                 <div class="cart-opt">
@@ -1705,10 +1705,10 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Vegetable Pizza </a></h5>
                                     <p>
-                                        It is a long established fact that a reader BBQ food
-                                        Chicken.
+                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+ Thịt gà.
                                     </p>
-                                    <span class="price">price :$15.00</span>
+                                    <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
                                 <span class="badge"></span>
                                 <div class="cart-opt">
@@ -1730,10 +1730,10 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Chicken Fry </a></h5>
                                     <p>
-                                        It is a long established fact that a reader BBQ food
-                                        Chicken.
+                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+ Thịt gà.
                                     </p>
-                                    <span class="badge-color price">price :$15.00</span>
+                                    <span class="badge-color price">giá : 150.000 VNĐ</span>
                                     <span class="rating">
                                         <i class="fas fa-star"></i> 5star</span>
                                 </div>
@@ -1757,10 +1757,10 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Chickpea Soup </a></h5>
                                     <p>
-                                        It is a long established fact that a reader BBQ food
-                                        Chicken.
+                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+ Thịt gà.
                                     </p>
-                                    <span class="price">price :$15.00</span>
+                                    <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
                                 <span class="badge">sale</span>
                                 <div class="cart-opt">
@@ -1789,10 +1789,10 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Garlic Burger </a></h5>
                                     <p>
-                                        It is a long established fact that a reader BBQ food
-                                        Chicken.
+                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+ Thịt gà.
                                     </p>
-                                    <span class="price">price :$15.00</span>
+                                    <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
                                 <span class="badge">hot</span>
                                 <div class="cart-opt">
@@ -1814,10 +1814,10 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Vegetable Pizza </a></h5>
                                     <p>
-                                        It is a long established fact that a reader BBQ food
-                                        Chicken.
+                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+ Thịt gà.
                                     </p>
-                                    <span class="price">price :$15.00</span>
+                                    <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
                                 <span class="badge"></span>
                                 <div class="cart-opt">
@@ -1839,10 +1839,10 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Chicken Fry </a></h5>
                                     <p>
-                                        It is a long established fact that a reader BBQ food
-                                        Chicken.
+                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+ Thịt gà.
                                     </p>
-                                    <span class="price badge-color">price :$15.00</span>
+                                    <span class="price badge-color">giá : 150.000 VNĐ</span>
                                     <span class="rating">
                                         <i class="fas fa-star"></i> 5star</span>
                                 </div>
@@ -1866,10 +1866,10 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Chickpea Soup </a></h5>
                                     <p>
-                                        It is a long established fact that a reader BBQ food
-                                        Chicken.
+                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+ Thịt gà.
                                     </p>
-                                    <span class="price">price :$15.00</span>
+                                    <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
                                 <span class="badge">sale</span>
                                 <div class="cart-opt">
@@ -1891,10 +1891,10 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Garlic Burger </a></h5>
                                     <p>
-                                        It is a long established fact that a reader BBQ food
-                                        Chicken.
+                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+ Thịt gà.
                                     </p>
-                                    <span class="price">price :$15.00</span>
+                                    <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
                                 <span class="badge">hot</span>
                                 <div class="cart-opt">
@@ -1916,10 +1916,10 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Vegetable Pizza </a></h5>
                                     <p>
-                                        It is a long established fact that a reader BBQ food
-                                        Chicken.
+                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+ Thịt gà.
                                     </p>
-                                    <span class="price">price :$15.00</span>
+                                    <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
                                 <span class="badge"></span>
                                 <div class="cart-opt">
@@ -1941,10 +1941,10 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Chicken Fry </a></h5>
                                     <p>
-                                        It is a long established fact that a reader BBQ food
-                                        Chicken.
+                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+ Thịt gà.
                                     </p>
-                                    <span class="badge-color price">price :$15.00</span>
+                                    <span class="badge-color price">giá : 150.000 VNĐ</span>
                                     <span class="rating">
                                         <i class="fas fa-star"></i> 5star</span>
                                 </div>
@@ -1968,10 +1968,10 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Chickpea Soup </a></h5>
                                     <p>
-                                        It is a long established fact that a reader BBQ food
-                                        Chicken.
+                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+ Thịt gà.
                                     </p>
-                                    <span class="price">price :$15.00</span>
+                                    <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
                                 <span class="badge">sale</span>
                                 <div class="cart-opt">
@@ -2000,10 +2000,10 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Garlic Burger </a></h5>
                                     <p>
-                                        It is a long established fact that a reader BBQ food
-                                        Chicken.
+                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+ Thịt gà.
                                     </p>
-                                    <span class="price">price :$15.00</span>
+                                    <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
                                 <span class="badge">hot</span>
                                 <div class="cart-opt">
@@ -2025,10 +2025,10 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Vegetable Pizza </a></h5>
                                     <p>
-                                        It is a long established fact that a reader BBQ food
-                                        Chicken.
+                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+ Thịt gà.
                                     </p>
-                                    <span class="price">price :$15.00</span>
+                                    <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
                                 <span class="badge"></span>
                                 <div class="cart-opt">
@@ -2050,10 +2050,10 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Chicken Fry </a></h5>
                                     <p>
-                                        It is a long established fact that a reader BBQ food
-                                        Chicken.
+                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+ Thịt gà.
                                     </p>
-                                    <span class="price badge-color">price :$15.00</span>
+                                    <span class="price badge-color">giá : 150.000 VNĐ</span>
                                     <span class="rating">
                                         <i class="fas fa-star"></i> 5star</span>
                                 </div>
@@ -2077,10 +2077,10 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Chickpea Soup </a></h5>
                                     <p>
-                                        It is a long established fact that a reader BBQ food
-                                        Chicken.
+                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+ Thịt gà.
                                     </p>
-                                    <span class="price">price :$15.00</span>
+                                    <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
                                 <span class="badge">sale</span>
                                 <div class="cart-opt">
@@ -2102,10 +2102,10 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Garlic Burger </a></h5>
                                     <p>
-                                        It is a long established fact that a reader BBQ food
-                                        Chicken.
+                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+ Thịt gà.
                                     </p>
-                                    <span class="price">price :$15.00</span>
+                                    <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
                                 <span class="badge">hot</span>
                                 <div class="cart-opt">
@@ -2127,10 +2127,10 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Vegetable Pizza </a></h5>
                                     <p>
-                                        It is a long established fact that a reader BBQ food
-                                        Chicken.
+                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+ Thịt gà.
                                     </p>
-                                    <span class="price">price :$15.00</span>
+                                    <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
                                 <span class="badge"></span>
                                 <div class="cart-opt">
@@ -2152,10 +2152,10 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Chicken Fry </a></h5>
                                     <p>
-                                        It is a long established fact that a reader BBQ food
-                                        Chicken.
+                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+ Thịt gà.
                                     </p>
-                                    <span class="badge-color price">price :$15.00</span>
+                                    <span class="badge-color price">giá : 150.000 VNĐ</span>
                                     <span class="rating">
                                         <i class="fas fa-star"></i> 5star</span>
                                 </div>
@@ -2179,10 +2179,10 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Chickpea Soup </a></h5>
                                     <p>
-                                        It is a long established fact that a reader BBQ food
-                                        Chicken.
+                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+ Thịt gà.
                                     </p>
-                                    <span class="price">price :$15.00</span>
+                                    <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
                                 <span class="badge">sale</span>
                                 <div class="cart-opt">
@@ -2210,8 +2210,8 @@
                         <div class="col-lg-8 col-md-8">
                             <div class="gallery-img-1">
                                 <h3>Buzzed Burger</h3>
-                                <p>Sale off 50% only this week</p>
-                                <a href="shopping-cart.html" class="btn">order now</a>
+                                <p>Sale off 50% chỉ trong tuần này</p>
+                                <a href="shopping-cart.html" class="btn">Đặt hàng ngay</a>
                                 <img src="{{ asset('admin/assets/images/gallery/24.png') }}" alt="" />
                             </div>
                         </div>
@@ -2229,7 +2229,7 @@
                                 <span class="gprice-1">$15</span>
                                 <div class="gimg-content">
                                     <h5>Super Delicious Pizza</h5>
-                                    <a href="shopping-cart.html">order now</a>
+                                    <a href="shopping-cart.html">Đặt hàng ngay bây giờ</a>
                                 </div>
                             </div>
                         </div>
@@ -2238,7 +2238,7 @@
                         <div class="col-lg-4 col-md-4">
                             <div class="gallery-img-3">
                                 <h5>Super Combo Burger</h5>
-                                <a href="shopping-cart.html">order now</a>
+                                <a href="shopping-cart.html">Đặt hàng ngay bây giờ</a>
                                 <img src="{{ asset('admin/assets/images/gallery/23.png') }}" alt="" />
                                 <img src="{{ asset('admin/assets/images/shapes/layer2.png') }}" alt=""
                                     class="s12" />
@@ -2261,14 +2261,14 @@
                                 <span class="gprice-1">$15</span>
                                 <div class="gimg-content">
                                     <h5>Super Delicious Pizza</h5>
-                                    <a href="shopping-cart.html">order now</a>
+                                    <a href="shopping-cart.html">Đặt hàng ngay bây giờ</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4">
                             <div class="gallery-img-3">
                                 <h5>Super Combo Burger</h5>
-                                <a href="shopping-cart.html">order now</a>
+                                <a href="shopping-cart.html">Đặt hàng ngay bây giờ</a>
                                 <img src="{{ asset('admin/assets/images/gallery/23.png') }}" alt="" />
                                 <img src="{{ asset('admin/assets/images/shapes/layer2.png') }}" alt=""
                                     class="s12" />
@@ -2282,7 +2282,7 @@
                 <div class="col-lg-3 col-md-12">
                     <div class="gallery-img-4">
                         <h5>Super Combo Burger</h5>
-                        <a href="shopping-cart.html" class="btn">order now</a>
+                        <a href="shopping-cart.html" class="btn">Đặt hàng ngay bây giờ</a>
                         <img src="{{ asset('admin/assets/images/gallery/22.png') }}" alt="" />
                         <img src="{{ asset('admin/assets/images/shapes/leaves.png') }}" alt=""
                             class="s14" />
@@ -2363,7 +2363,7 @@
                                 <p class="seconds_ref">seconds</p>
                             </div>
                         </div>
-                        <a href="shopping-cart.html" class="btn">order now</a>
+                        <a href="shopping-cart.html" class="btn">Đặt hàng ngay bây giờ</a>
                     </div>
                 </div>
             </div>
@@ -2410,10 +2410,10 @@
                         </div>
                     </div>
                     <p>
-                        Food Khan is a gret Restaurant from the University of Texas at
-                        Austin has been researching the benefits of frequent testing and
-                        the feedback leads to. He explains that in the history of the
-                        study.
+                        Food Khan là một nhà hàng gret của Đại học Texas tại
+ Austin đã nghiên cứu lợi ích của việc kiểm tra thường xuyên và
+ phản hồi dẫn tới. Ông giải thích rằng trong lịch sử của
+ học.
                     </p>
                 </div>
                 <div class="single-testimonial">
@@ -2438,10 +2438,10 @@
                         </div>
                     </div>
                     <p>
-                        Food Khan is a gret Restaurant from the University of Texas at
-                        Austin has been researching the benefits of frequent testing and
-                        the feedback leads to. He explains that in the history of the
-                        study.
+                        Food Khan là một nhà hàng gret của Đại học Texas tại
+ Austin đã nghiên cứu lợi ích của việc kiểm tra thường xuyên và
+ phản hồi dẫn tới. Ông giải thích rằng trong lịch sử của
+ học.
                     </p>
                 </div>
                 <div class="single-testimonial">
@@ -2466,10 +2466,10 @@
                         </div>
                     </div>
                     <p>
-                        Food Khan is a gret Restaurant from the University of Texas at
-                        Austin has been researching the benefits of frequent testing and
-                        the feedback leads to. He explains that in the history of the
-                        study.
+                        Food Khan là một nhà hàng gret của Đại học Texas tại
+ Austin đã nghiên cứu lợi ích của việc kiểm tra thường xuyên và
+ phản hồi dẫn tới. Ông giải thích rằng trong lịch sử của
+ học.
                     </p>
                 </div>
                 <div class="single-testimonial">
@@ -2494,10 +2494,10 @@
                         </div>
                     </div>
                     <p>
-                        Food Khan is a gret Restaurant from the University of Texas at
-                        Austin has been researching the benefits of frequent testing and
-                        the feedback leads to. He explains that in the history of the
-                        study.
+                        Food Khan là một nhà hàng gret của Đại học Texas tại
+ Austin đã nghiên cứu lợi ích của việc kiểm tra thường xuyên và
+ phản hồi dẫn tới. Ông giải thích rằng trong lịch sử của
+ học.
                     </p>
                 </div>
                 <div class="single-testimonial">
@@ -2522,10 +2522,10 @@
                         </div>
                     </div>
                     <p>
-                        Food Khan is a gret Restaurant from the University of Texas at
-                        Austin has been researching the benefits of frequent testing and
-                        the feedback leads to. He explains that in the history of the
-                        study.
+                        Food Khan là một nhà hàng gret của Đại học Texas tại
+ Austin đã nghiên cứu lợi ích của việc kiểm tra thường xuyên và
+ phản hồi dẫn tới. Ông giải thích rằng trong lịch sử của
+ học.
                     </p>
                 </div>
                 <div class="single-testimonial">
@@ -2550,10 +2550,10 @@
                         </div>
                     </div>
                     <p>
-                        Food Khan is a gret Restaurant from the University of Texas at
-                        Austin has been researching the benefits of frequent testing and
-                        the feedback leads to. He explains that in the history of the
-                        study.
+                        Food Khan là một nhà hàng gret của Đại học Texas tại
+ Austin đã nghiên cứu lợi ích của việc kiểm tra thường xuyên và
+ phản hồi dẫn tới. Ông giải thích rằng trong lịch sử của
+ học.
                     </p>
                 </div>
             </div>
@@ -2622,15 +2622,15 @@
                 <div class="col-lg-6 col-md-12 wow fadeInRight">
                     <div class="delivery-right">
                         <div class="common-title-area padding-bottom-40">
-                            <h3>delivery</h3>
+                            <h3>Vận chuyển</h3>
                             <h2>
-                                A Moments of Delivered <span> On Right Time & Place </span>
+                                A Moments of Delivered <span> Đúng Thời Gian Và Địa Điểm </span>
                             </h2>
                             <p>
-                                Food Khan is a restaurant, bar and coffee roastery located on
-                                a busy corner site in Farringdon's Exmouth Market. With glazed
-                                frontage on two sides of the building, overlooking the market
-                                and a bustling London inteon.
+                                Food Khan là một nhà hàng, quán bar và quán cà phê rang xay nằm trên
+ một địa điểm sầm uất ở Chợ Exmouth của Farringdon. Với kính
+ mặt tiền 2 mặt của tòa nhà, nhìn ra chợ
+ và một inteon London nhộn nhịp.
                             </p>
                             <div class="order-box d-flex align-items-end">
                                 <span class="order-img"><img src="{{ asset('admin/assets/images/icons/1.png') }}"
@@ -2639,7 +2639,7 @@
                                     <p>delivery order num.</p>
                                     <span>123-59794069</span>
                                 </div>
-                                <a href="shopping-cart.html" class="btn">order now</a>
+                                <a href="shopping-cart.html" class="btn">Đặt hàng ngay bây giờ</a>
                             </div>
                         </div>
                     </div>
@@ -2656,7 +2656,7 @@
         <div class="container">
             <div class="common-title-area text-center padding-bottom-60 wow fadeInUp">
                 <h3>food khan</h3>
-                <h2>blog & <span> news </span></h2>
+                <h2>Tin tức & <span> bài viết </span></h2>
             </div>
             <div class="blog-slider-active">
                 <div class="single-blog">
@@ -2669,11 +2669,11 @@
                         </div>
                     </div>
                     <div class="blog-meta d-flex justify-content-between">
-                        <span><a href="#"><i class="fas fa-tags"></i> chicken burger</a></span>
+                        <span><a href="#"><i class="fas fa-tags"></i> burger gà</a></span>
                         <span><a href="#"><i class="fas fa-user-circle"></i> milone hridoy</a></span>
                     </div>
                     <h4>
-                        <a href="blog-single.html">Game day Burger with Homemade</a>
+                        <a href="blog-single.html">Burger ngày thi đấu với món tự làm</a>
                     </h4>
                 </div>
                 <div class="single-blog">
@@ -2690,7 +2690,7 @@
                         <span><a href="#"><i class="fas fa-user-circle"></i> milone hridoy</a></span>
                     </div>
                     <h4>
-                        <a href="blog-single.html">Delicious pizza with on a wooden</a>
+                        <a href="blog-single.html">Bánh pizza thơm ngon trên đế gỗ</a>
                     </h4>
                 </div>
                 <div class="single-blog">
@@ -2707,7 +2707,7 @@
                         <span><a href="#"><i class="fas fa-user-circle"></i> milone hridoy</a></span>
                     </div>
                     <h4>
-                        <a href="blog-single.html">Game day Burger with Homemade</a>
+                        <a href="blog-single.html">Bánh pizza thơm ngon trên đế gỗ</a>
                     </h4>
                 </div>
                 <div class="single-blog">
@@ -2724,7 +2724,7 @@
                         <span><a href="#"><i class="fas fa-user-circle"></i> milone hridoy</a></span>
                     </div>
                     <h4>
-                        <a href="blog-single.html">Game day Burger with Homemade</a>
+                        <a href="blog-single.html">Bánh pizza thơm ngon trên đế gỗ</a>
                     </h4>
                 </div>
                 <div class="single-blog">
@@ -2741,7 +2741,7 @@
                         <span><a href="#"><i class="fas fa-user-circle"></i> milone hridoy</a></span>
                     </div>
                     <h4>
-                        <a href="blog-single.html">Delicious pizza with on a wooden</a>
+                        <a href="blog-single.html">Bánh pizza thơm ngon trên đế gỗ</a>
                     </h4>
                 </div>
                 <div class="single-blog">
@@ -2758,7 +2758,7 @@
                         <span><a href="#"><i class="fas fa-user-circle"></i> milone hridoy</a></span>
                     </div>
                     <h4>
-                        <a href="blog-single.html">Game day Burger with Homemade</a>
+                        <a href="blog-single.html">Bánh pizza thơm ngon trên đế gỗ</a>
                     </h4>
                 </div>
             </div>

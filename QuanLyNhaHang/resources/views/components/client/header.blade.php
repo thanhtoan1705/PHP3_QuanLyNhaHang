@@ -1,3 +1,4 @@
+<div>
   <!-- header -->
   <header>
     <!-- header-top -->
@@ -42,47 +43,14 @@
             <nav id="mobile-menu">
               <ul class="main-menu">
                 <li>
-                  <a href="#">home <span><i class="fas fa-angle-down"></i></span></a>
-                  <ul class="submenu">
-                    <li><a href="index.html">home-1</a></li>
-                    <li><a href="homepage2.html">home-2</a></li>
-                    <li><a href="homepage3.html">home-3</a></li>
-                    <li><a href="homepage4.html">home-4</a></li>
-                  </ul>
+                  <a href="#">Trang chủ <span><i class="fas fa-angle-down"></i></span></a>
                 </li>
-                <li><a href="about.html">about us</a></li>
-                <li><a href="menu.html">menu</a></li>
+                <li><a href="about.html">Giới thiệu</a></li>
+                <li><a href="menu.html">Menu</a></li>
                 <li>
-                  <a href="#">blog <span><i class="fas fa-angle-down"></i></span></a>
-                  <ul class="submenu">
-                    <li><a href="blog.html">blog</a></li>
-                    <li><a href="blog-single.html">single blog</a></li>
-                  </ul>
+                  <a href="#">Bài Viết <span><i class="fas fa-angle-down"></i></span></a>
                 </li>
-                <li>
-                  <a href="#">pages <span><i class="fas fa-angle-down"></i></span></a>
-                  <ul class="submenu">
-                    <li><a href="checkout.html">checkout page</a></li>
-                    <li><a href="single-dish.html">single dish page</a></li>
-                    <li><a href="food-page.html">food page</a></li>
-                    <li><a href="food-page2.html">food page 2</a></li>
-                    <li>
-                      <a href="shopping-cart.html">shopping cart page</a>
-                    </li>
-                    <li>
-                      <a href="wishlist.html">wishlist page</a>
-                    </li>
-                    <li>
-                      <a href="profile.html">profile page</a>
-                    </li>
-                    <li><a href="single-food.html">single food page</a></li>
-                    <li><a href="gallery.html">gallery page</a></li>
-                    <li><a href="login.html">login page</a></li>
-                    <li><a href="signup.html">signup page</a></li>
-                    <li><a href="404.html">404 page</a></li>
-                  </ul>
-                </li>
-                <li><a href="contact.html">contact us</a></li>
+                <li><a href="contact.html">Liên hệ</a></li>
               </ul>
             </nav>
           </div>
@@ -97,7 +65,7 @@
               <span>
                 <a href="shopping-cart.html"><i class="fas fa-shopping-basket"></i></a>
               </span>
-              <a href="#" class="btn">login</a>
+              <a href="#" class="btn">Đăng Nhập</a>
             </div>
           </div>
         </div>
@@ -106,3 +74,4 @@
       </div>
     </div>
   </header>
+</div>

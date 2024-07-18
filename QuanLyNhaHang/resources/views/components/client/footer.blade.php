@@ -25,11 +25,11 @@
           </div>
           <div class="col-lg-6 col-md-6">
             <div class="f-title">
-              <h4>Feel Hunger! Order Your<span> Like Food.</span></h4>
+              <h4>Cảm thấy đói! Đặt hàng của bạn<span> Thích đồ ăn.</span></h4>
             </div>
           </div>
           <div class="col-lg-2 col-md-3">
-            <a href="shopping-cart.html" class="btn">order now</a>
+            <a href="shopping-cart.html" class="btn">đặt hàng ngay</a>
           </div>
         </div>
         <hr />
@@ -40,31 +40,31 @@
         <div class="row">
           <div class="col-lg-3 col-md-6 col-12 margin-bottom-20">
             <div class="widget">
-              <h6>address</h6>
+              <h6>địa chỉ</h6>
               <p>570 8th Ave,New York, NY 10018 United States</p>
-              <a href="#" class="f-link">view google map</a>
+              <a href="#" class="f-link">xem google map</a>
             </div>
           </div>
           <div class="col-lg-3 col-md-6 col-12 margin-bottom-20">
             <div class="widget">
-              <h6>book a table</h6>
-              <p>Dogfood och Sliders foodtruck. Under Om oss kan ni läsa</p>
+              <h6>đặt bàn</h6>
+              <p>Dogfood và xe bán đồ ăn Sliders. Dưới Om oss kan ni läsa</p>
               <a href="#" class="f-link">make a call</a>
             </div>
           </div>
           <div class="col-lg-3 col-md-6 col-12 margin-bottom-20">
             <div class="widget">
-              <h6>opening hours</h6>
+              <h6>Mở cửa</h6>
               <p>
-                <span>monday-friday: 8am - 4pm</span> <br /><span>saturday: 9am - 5pm</span>
+                <span>thứ 2-thứ 6: 8am - 4pm</span> <br /><span>chủ nhật: 9am - 5pm</span>
               </p>
 
-              <a href="#" class="f-link">make a call</a>
+              <a href="#" class="f-link">thực hiện cuộc gọi</a>
             </div>
           </div>
           <div class="col-lg-3 col-md-6 col-12 margin-bottom-20">
             <div class="widget">
-              <h6>newsletter</h6>
+              <h6>bản tin</h6>
               <div class="newsletter d-flex">
                 <form action="#">
                   <input type="email" placeholder="enter your email" />
@@ -73,7 +73,7 @@
                   </button>
                 </form>
               </div>
-              <a href="#" class="f-link">subscribe now</a>
+              <a href="#" class="f-link">Đăng ký ngay</a>
             </div>
           </div>
         </div>
