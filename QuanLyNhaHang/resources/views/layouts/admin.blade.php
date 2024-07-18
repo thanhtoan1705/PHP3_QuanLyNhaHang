@@ -39,7 +39,7 @@
 
 <body>
 
-    <div id="preloader">
+    {{-- <div id="preloader">
         <div class="loader-wrapper">
             <div class="loader-box">
                 <div class="icon">
@@ -47,7 +47,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <div id="main-wrapper">
         <x-admin.header></x-admin.header>
