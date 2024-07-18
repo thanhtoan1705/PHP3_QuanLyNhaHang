@@ -1,6 +1,6 @@
 <?php
 
-
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Client\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Client\Cart\CartController;
@@ -13,6 +13,8 @@ use App\Http\Controllers\Client\Auth\RegisterController;
 use App\Http\Controllers\Client\Blog\BlogController;
 use App\Http\Controllers\Client\Blog\BlogDetailController;
 
+
+
 Route::get('/', [HomeController::class, 'index']);
 Route::get('dish_detail', [DishController::class, 'dishDetail']);
 Route::get('menu', [DishController::class, 'menu']);
@@ -24,3 +26,8 @@ Route::get('register', [RegisterController::class, 'index']);
 Route::get('login', [LoginController::class, 'index']);
 Route::get('blog', [BlogController::class, 'index']);
 Route::get('blogDetail', [BlogDetailController::class, 'index']);
+
+
+
+Route::get('dashboard', [DashboardController::class, 'index']);
+

@@ -173,7 +173,7 @@
                         </h2>
                         <p>
                             Food là nhà hàng, quán bar và quán cà phê rang xay nằm trên con đường sầm uất
- địa điểm góc trong Chợ Exmouth của Farringdon. Với kính.
+                            địa điểm góc trong Chợ Exmouth của Farringdon. Với kính.
                         </p>
                         <div class="garlic-burger-card">
                             <div class="garlic-burger-img">
@@ -1156,8 +1156,8 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Garlic Burger </a></h5>
                                     <p>
-                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
- Thịt gà.
+                                        Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+                                        Thịt gà.
                                     </p>
                                     <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
@@ -1181,8 +1181,8 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Vegetable Pizza </a></h5>
                                     <p>
-                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
- Thịt gà.
+                                        Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+                                        Thịt gà.
                                     </p>
                                     <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
@@ -1206,8 +1206,8 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Chicken Fry </a></h5>
                                     <p>
-                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
- Thịt gà.
+                                        Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+                                        Thịt gà.
                                     </p>
                                     <span class="price badge-color">giá : 150.000 VNĐ</span>
                                     <span class="rating">
@@ -1233,8 +1233,8 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Chickpea Soup </a></h5>
                                     <p>
-                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
- Thịt gà.
+                                        Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+                                        Thịt gà.
                                     </p>
                                     <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
@@ -1258,8 +1258,8 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Garlic Burger </a></h5>
                                     <p>
-                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
- Thịt gà.
+                                        Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+                                        Thịt gà.
                                     </p>
                                     <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
@@ -1283,8 +1283,8 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Vegetable Pizza </a></h5>
                                     <p>
-                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
- Thịt gà.
+                                        Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+                                        Thịt gà.
                                     </p>
                                     <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
@@ -1308,8 +1308,8 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Chicken Fry </a></h5>
                                     <p>
-                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
- Thịt gà.
+                                        Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+                                        Thịt gà.
                                     </p>
                                     <span class="badge-color price">giá : 150.000 VNĐ</span>
                                     <span class="rating">
@@ -1335,8 +1335,8 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Chickpea Soup </a></h5>
                                     <p>
-                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
- Thịt gà.
+                                        Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+                                        Thịt gà.
                                     </p>
                                     <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
@@ -1367,8 +1367,8 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Margherita </a></h5>
                                     <p>
-                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
- Thịt gà.
+                                        Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+                                        Thịt gà.
                                     </p>
                                     <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
@@ -1392,8 +1392,8 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Vegetable Pizza </a></h5>
                                     <p>
-                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
- Thịt gà.
+                                        Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+                                        Thịt gà.
                                     </p>
                                     <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
@@ -1417,8 +1417,8 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Marinara </a></h5>
                                     <p>
-                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
- Thịt gà.
+                                        Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+                                        Thịt gà.
                                     </p>
                                     <span class="price badge-color">giá : 150.000 VNĐ</span>
                                     <span class="rating">
@@ -1444,8 +1444,8 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Frutti Di Mare </a></h5>
                                     <p>
-                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
- Thịt gà.
+                                        Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+                                        Thịt gà.
                                     </p>
                                     <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
@@ -1469,8 +1469,8 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Americana </a></h5>
                                     <p>
-                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
- Thịt gà.
+                                        Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+                                        Thịt gà.
                                     </p>
                                     <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
@@ -1494,8 +1494,8 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Vegetable Pizza </a></h5>
                                     <p>
-                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
- Thịt gà.
+                                        Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+                                        Thịt gà.
                                     </p>
                                     <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
@@ -1519,8 +1519,8 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Pizza Al Pesto </a></h5>
                                     <p>
-                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
- Thịt gà.
+                                        Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+                                        Thịt gà.
                                     </p>
                                     <span class="badge-color price">giá : 150.000 VNĐ</span>
                                     <span class="rating">
@@ -1546,8 +1546,8 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Americana </a></h5>
                                     <p>
-                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
- Thịt gà.
+                                        Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+                                        Thịt gà.
                                     </p>
                                     <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
@@ -1578,8 +1578,8 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Garlic Burger </a></h5>
                                     <p>
-                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
- Thịt gà.
+                                        Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+                                        Thịt gà.
                                     </p>
                                     <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
@@ -1603,8 +1603,8 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Vegetable Pizza </a></h5>
                                     <p>
-                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
- Thịt gà.
+                                        Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+                                        Thịt gà.
                                     </p>
                                     <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
@@ -1628,8 +1628,8 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Chicken Fry </a></h5>
                                     <p>
-                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
- Thịt gà.
+                                        Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+                                        Thịt gà.
                                     </p>
                                     <span class="price badge-color">giá : 150.000 VNĐ</span>
                                     <span class="rating">
@@ -1655,8 +1655,8 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Chickpea Soup </a></h5>
                                     <p>
-                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
- Thịt gà.
+                                        Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+                                        Thịt gà.
                                     </p>
                                     <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
@@ -1680,8 +1680,8 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Garlic Burger </a></h5>
                                     <p>
-                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
- Thịt gà.
+                                        Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+                                        Thịt gà.
                                     </p>
                                     <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
@@ -1705,8 +1705,8 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Vegetable Pizza </a></h5>
                                     <p>
-                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
- Thịt gà.
+                                        Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+                                        Thịt gà.
                                     </p>
                                     <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
@@ -1730,8 +1730,8 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Chicken Fry </a></h5>
                                     <p>
-                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
- Thịt gà.
+                                        Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+                                        Thịt gà.
                                     </p>
                                     <span class="badge-color price">giá : 150.000 VNĐ</span>
                                     <span class="rating">
@@ -1757,8 +1757,8 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Chickpea Soup </a></h5>
                                     <p>
-                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
- Thịt gà.
+                                        Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+                                        Thịt gà.
                                     </p>
                                     <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
@@ -1789,8 +1789,8 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Garlic Burger </a></h5>
                                     <p>
-                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
- Thịt gà.
+                                        Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+                                        Thịt gà.
                                     </p>
                                     <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
@@ -1814,8 +1814,8 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Vegetable Pizza </a></h5>
                                     <p>
-                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
- Thịt gà.
+                                        Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+                                        Thịt gà.
                                     </p>
                                     <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
@@ -1839,8 +1839,8 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Chicken Fry </a></h5>
                                     <p>
-                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
- Thịt gà.
+                                        Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+                                        Thịt gà.
                                     </p>
                                     <span class="price badge-color">giá : 150.000 VNĐ</span>
                                     <span class="rating">
@@ -1866,8 +1866,8 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Chickpea Soup </a></h5>
                                     <p>
-                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
- Thịt gà.
+                                        Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+                                        Thịt gà.
                                     </p>
                                     <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
@@ -1891,8 +1891,8 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Garlic Burger </a></h5>
                                     <p>
-                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
- Thịt gà.
+                                        Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+                                        Thịt gà.
                                     </p>
                                     <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
@@ -1916,8 +1916,8 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Vegetable Pizza </a></h5>
                                     <p>
-                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
- Thịt gà.
+                                        Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+                                        Thịt gà.
                                     </p>
                                     <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
@@ -1941,8 +1941,8 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Chicken Fry </a></h5>
                                     <p>
-                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
- Thịt gà.
+                                        Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+                                        Thịt gà.
                                     </p>
                                     <span class="badge-color price">giá : 150.000 VNĐ</span>
                                     <span class="rating">
@@ -1968,8 +1968,8 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Chickpea Soup </a></h5>
                                     <p>
-                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
- Thịt gà.
+                                        Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+                                        Thịt gà.
                                     </p>
                                     <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
@@ -2000,8 +2000,8 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Garlic Burger </a></h5>
                                     <p>
-                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
- Thịt gà.
+                                        Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+                                        Thịt gà.
                                     </p>
                                     <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
@@ -2025,8 +2025,8 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Vegetable Pizza </a></h5>
                                     <p>
-                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
- Thịt gà.
+                                        Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+                                        Thịt gà.
                                     </p>
                                     <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
@@ -2050,8 +2050,8 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Chicken Fry </a></h5>
                                     <p>
-                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
- Thịt gà.
+                                        Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+                                        Thịt gà.
                                     </p>
                                     <span class="price badge-color">giá : 150.000 VNĐ</span>
                                     <span class="rating">
@@ -2077,8 +2077,8 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Chickpea Soup </a></h5>
                                     <p>
-                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
- Thịt gà.
+                                        Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+                                        Thịt gà.
                                     </p>
                                     <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
@@ -2102,8 +2102,8 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Garlic Burger </a></h5>
                                     <p>
-                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
- Thịt gà.
+                                        Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+                                        Thịt gà.
                                     </p>
                                     <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
@@ -2127,8 +2127,8 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Vegetable Pizza </a></h5>
                                     <p>
-                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
- Thịt gà.
+                                        Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+                                        Thịt gà.
                                     </p>
                                     <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
@@ -2152,8 +2152,8 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Chicken Fry </a></h5>
                                     <p>
-                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
- Thịt gà.
+                                        Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+                                        Thịt gà.
                                     </p>
                                     <span class="badge-color price">giá : 150.000 VNĐ</span>
                                     <span class="rating">
@@ -2179,8 +2179,8 @@
                                 <div class="dish-content">
                                     <h5><a href="single-dish.html">Chickpea Soup </a></h5>
                                     <p>
-                                       Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
- Thịt gà.
+                                        Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
+                                        Thịt gà.
                                     </p>
                                     <span class="price">giá : 150.000 VNĐ</span>
                                 </div>
@@ -2411,9 +2411,9 @@
                     </div>
                     <p>
                         Food Khan là một nhà hàng gret của Đại học Texas tại
- Austin đã nghiên cứu lợi ích của việc kiểm tra thường xuyên và
- phản hồi dẫn tới. Ông giải thích rằng trong lịch sử của
- học.
+                        Austin đã nghiên cứu lợi ích của việc kiểm tra thường xuyên và
+                        phản hồi dẫn tới. Ông giải thích rằng trong lịch sử của
+                        học.
                     </p>
                 </div>
                 <div class="single-testimonial">
@@ -2439,9 +2439,9 @@
                     </div>
                     <p>
                         Food Khan là một nhà hàng gret của Đại học Texas tại
- Austin đã nghiên cứu lợi ích của việc kiểm tra thường xuyên và
- phản hồi dẫn tới. Ông giải thích rằng trong lịch sử của
- học.
+                        Austin đã nghiên cứu lợi ích của việc kiểm tra thường xuyên và
+                        phản hồi dẫn tới. Ông giải thích rằng trong lịch sử của
+                        học.
                     </p>
                 </div>
                 <div class="single-testimonial">
@@ -2467,9 +2467,9 @@
                     </div>
                     <p>
                         Food Khan là một nhà hàng gret của Đại học Texas tại
- Austin đã nghiên cứu lợi ích của việc kiểm tra thường xuyên và
- phản hồi dẫn tới. Ông giải thích rằng trong lịch sử của
- học.
+                        Austin đã nghiên cứu lợi ích của việc kiểm tra thường xuyên và
+                        phản hồi dẫn tới. Ông giải thích rằng trong lịch sử của
+                        học.
                     </p>
                 </div>
                 <div class="single-testimonial">
@@ -2495,9 +2495,9 @@
                     </div>
                     <p>
                         Food Khan là một nhà hàng gret của Đại học Texas tại
- Austin đã nghiên cứu lợi ích của việc kiểm tra thường xuyên và
- phản hồi dẫn tới. Ông giải thích rằng trong lịch sử của
- học.
+                        Austin đã nghiên cứu lợi ích của việc kiểm tra thường xuyên và
+                        phản hồi dẫn tới. Ông giải thích rằng trong lịch sử của
+                        học.
                     </p>
                 </div>
                 <div class="single-testimonial">
@@ -2523,9 +2523,9 @@
                     </div>
                     <p>
                         Food Khan là một nhà hàng gret của Đại học Texas tại
- Austin đã nghiên cứu lợi ích của việc kiểm tra thường xuyên và
- phản hồi dẫn tới. Ông giải thích rằng trong lịch sử của
- học.
+                        Austin đã nghiên cứu lợi ích của việc kiểm tra thường xuyên và
+                        phản hồi dẫn tới. Ông giải thích rằng trong lịch sử của
+                        học.
                     </p>
                 </div>
                 <div class="single-testimonial">
@@ -2551,9 +2551,9 @@
                     </div>
                     <p>
                         Food Khan là một nhà hàng gret của Đại học Texas tại
- Austin đã nghiên cứu lợi ích của việc kiểm tra thường xuyên và
- phản hồi dẫn tới. Ông giải thích rằng trong lịch sử của
- học.
+                        Austin đã nghiên cứu lợi ích của việc kiểm tra thường xuyên và
+                        phản hồi dẫn tới. Ông giải thích rằng trong lịch sử của
+                        học.
                     </p>
                 </div>
             </div>
@@ -2628,9 +2628,9 @@
                             </h2>
                             <p>
                                 Food Khan là một nhà hàng, quán bar và quán cà phê rang xay nằm trên
- một địa điểm sầm uất ở Chợ Exmouth của Farringdon. Với kính
- mặt tiền 2 mặt của tòa nhà, nhìn ra chợ
- và một inteon London nhộn nhịp.
+                                một địa điểm sầm uất ở Chợ Exmouth của Farringdon. Với kính
+                                mặt tiền 2 mặt của tòa nhà, nhìn ra chợ
+                                và một inteon London nhộn nhịp.
                             </p>
                             <div class="order-box d-flex align-items-end">
                                 <span class="order-img"><img src="{{ asset('admin/assets/images/icons/1.png') }}"

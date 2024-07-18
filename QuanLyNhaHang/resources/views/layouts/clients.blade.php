@@ -14,14 +14,14 @@
     <!-- Favicon Icon -->
     <link rel="shortcut icon" href="favicon.png" />
     <!-- CSS Files -->
-    <link rel="stylesheet" href="{{ asset('admin/assets/css/animate.css') }}" />
-    <link rel="stylesheet" href="{{ asset('admin/assets/css/meanmenu.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('admin/assets/css/bootstrap.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('admin/assets/css/fontawesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin/assets/css/all.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin/assets/css/slick.css') }}" />
-    <link rel="stylesheet" href="{{ asset('admin/assets/css/jquery-ui.css') }}" />
-    <link rel="stylesheet" href="{{ asset('admin/assets/css/style.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/client/css/animate.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/client/css/meanmenu.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/client/css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/client/css/fontawesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/client/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/client/css/slick.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/client/css/jquery-ui.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/client/css/style.css') }}" />
 </head>
 
 <body>
@@ -50,19 +50,19 @@
     <button class="scrollup"><i class="fas fa-angle-up"></i></button>
 
     <!-- Javascript Files -->
-    <script src="{{ asset('admin/assets/js/vendor/jquery-2.2.4.min.js') }}"></script>
-    <script src="{{ asset('admin/assets/js/vendor/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('admin/assets/js/vendor/jquery.meanmenu.min.js') }}"></script>
-    <script src="{{ asset('admin/assets/js/vendor/jquery.magnific-popup.min.js') }}"></script>
-    <script src="{{ asset('admin/assets/js/vendor/slick.min.js') }}"></script>
-    <script src="{{ asset('admin/assets/js/vendor/counterup.min.js') }}"></script>
-    <script src="{{ asset('admin/assets/js/vendor/countdown.js') }}"></script>
-    <script src="{{ asset('admin/assets/js/vendor/waypoints.min.js') }}"></script>
-    <script src="{{ asset('admin/assets/js/vendor/jquery-ui.js') }}"></script>
-    <script src="{{ asset('admin/assets/js/vendor/isotope.pkgd.min.js') }}"></script>
-    <script src="{{ asset('admin/assets/js/vendor/easing.min.js') }}"></script>
-    <script src="{{ asset('admin/assets/js/vendor/wow.min.js') }}"></script>
-    <script src="{{ asset('admin/assets/js/main.js') }}"></script>
+    <script src="{{ asset('assets/client/js/vendor/jquery-2.2.4.min.js') }}"></script>
+    <script src="{{ asset('assets/client/js/vendor/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/client/js/vendor/jquery.meanmenu.min.js') }}"></script>
+    <script src="{{ asset('assets/client/js/vendor/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('assets/client/js/vendor/slick.min.js') }}"></script>
+    <script src="{{ asset('assets/client/js/vendor/counterup.min.js') }}"></script>
+    <script src="{{ asset('assets/client/js/vendor/countdown.js') }}"></script>
+    <script src="{{ asset('assets/client/js/vendor/waypoints.min.js') }}"></script>
+    <script src="{{ asset('assets/client/js/vendor/jquery-ui.js') }}"></script>
+    <script src="{{ asset('assets/client/js/vendor/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ asset('assets/client/js/vendor/easing.min.js') }}"></script>
+    <script src="{{ asset('assets/client/js/vendor/wow.min.js') }}"></script>
+    <script src="{{ asset('assets/client/js/main.js') }}"></script>
 </body>
 
 
