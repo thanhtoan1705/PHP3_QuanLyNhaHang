@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Client\Cart\CartController;
 use App\Http\Controllers\Client\Checkout\CheckoutController;
 use App\Http\Controllers\Client\About\AboutController;
+use App\Http\Controllers\Client\Auth\AccountController;
 use App\Http\Controllers\Client\Dish\DishController;
 use App\Http\Controllers\Client\ErrorController;
 use App\Http\Controllers\LoginController;
@@ -17,17 +18,19 @@ use App\Http\Controllers\Client\Blog\BlogDetailController;
 
 
 
-Route::get('/', [HomeController::class, 'index']);
-Route::get('dish_detail', [DishController::class, 'dishDetail']);
-Route::get('menu', [DishController::class, 'menu']);
-Route::get('cart', [CartController::class, 'index']);
-Route::get('checkout', [CheckoutController::class, 'index']);
-Route::get('about', [AboutController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('chi-tiet-mon-an', [DishController::class, 'dishDetail'])->name('dishDetail');
+Route::get('menu', [DishController::class, 'menu'])->name('menu');
+Route::get('gio-hang', [CartController::class, 'index'])->name('cart');
+Route::get('thanh-toan', [CheckoutController::class, 'index'])->name('checkout');
+Route::get('gioi-thieu', [AboutController::class, 'index'])->name('about');
 Route::get('404', [ErrorController::class, 'index']);
-Route::get('register', [RegisterController::class, 'index']);
-Route::get('login', [LoginController::class, 'index']);
-Route::get('blog', [BlogController::class, 'index']);
-Route::get('blogDetail', [BlogDetailController::class, 'index']);
+Route::get('dang-ky', [RegisterController::class, 'index'])->name('regiter');
+Route::get('dang-nhap', [LoginController::class, 'index'])->name('login');
+Route::get('bai-viet', [BlogController::class, 'index'])->name('blog');
+Route::get('bai-viet-chi-tiet', [BlogDetailController::class, 'index'])->name('blogDetail');
+Route::get('tai-khoan', [AccountController::class, 'index'])->name('account');
+
 
 
 
