@@ -81,7 +81,7 @@
                 <div class="col-lg-6 wow fadeInRight">
                     <div class="recipe-right">
                         <h2>Công thức chiên gà</h2>
-                        <form action="#">
+                        <form action="{{ route('cart') }}">
                             <div class="chickens-inforbar d-flex justify-content-around align-items-center">
                                 <span class="cp">100.000 VNĐ <del>200.000 VNĐ</del></span>
                                 <span class="rate"> 5<i class="fas fa-star"></i></span>

@@ -1,4 +1,7 @@
 @extends('layouts.admin')
+
+@section('title', 'Add Dish')
+
 @section('content')
     <div class="content-body">
         <div class="container">
