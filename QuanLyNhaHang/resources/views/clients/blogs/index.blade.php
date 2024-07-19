@@ -2,12 +2,12 @@
 @section('content')
 <div class="banner-area breadcrumb-area padding-top-120 padding-bottom-90">
         <div class="bread-shapes">
-            <span class="b-shape-1 item-bounce"><img src="{{ asset('admin/assets/images/img/5.png')}}" alt=""></span>
-            <span class="b-shape-2"><img src="{{ asset('admin/assets/images/img/6.png')}}" alt=""></span>
-            <span class="b-shape-3"><img src="{{ asset('admin/assets/images/img/7.png')}}" alt=""></span>
-            <span class="b-shape-4"><img src="{{ asset('admin/assets/images/img/9.png')}}" alt=""></span>
-            <span class="b-shape-5"><img src="{{ asset('admin/assets/images/shapes/18.png')}}" alt=""></span>
-            <span class="b-shape-6 item-animateOne"><img src="{{ asset('admin/assets/images/img/7.png')}}" alt=""></span>
+            <span class="b-shape-1 item-bounce"><img src="{{ asset('assets/client/images/img/5.png')}}" alt=""></span>
+            <span class="b-shape-2"><img src="{{ asset('assets/client/images/img/6.png')}}" alt=""></span>
+            <span class="b-shape-3"><img src="{{ asset('assets/client/images/img/7.png')}}" alt=""></span>
+            <span class="b-shape-4"><img src="{{ asset('assets/client/images/img/9.png')}}" alt=""></span>
+            <span class="b-shape-5"><img src="{{ asset('assets/client/images/shapes/18.png')}}" alt=""></span>
+            <span class="b-shape-6 item-animateOne"><img src="{{ asset('assets/client/images/img/7.png')}}" alt=""></span>
         </div>
         <div class="container padding-top-120">
             <div class="row justify-content-center">
@@ -25,13 +25,13 @@
     <!-- Blog Content Section -->
     <section class="blog-content-section padding-top-110 padding-bottom-120">
         <div class="blog-shapes">
-            <span class="bbs-1"><img src="{{ asset('admin/assets/images/shapes/13.png')}}" alt=""></span>
-            <span class="bbs-2 item-bounce"><img src="{{ asset('admin/assets/images/shapes/12.png')}}" alt=""></span>
-            <span class="bbs-3"><img src="{{ asset('admin/assets/images/shapes/7.png')}}" alt=""></span>
-            <span class="bbs-4 item-bounce"><img src="{{ asset('admin/assets/images/shapes/26.png')}}" alt=""></span>
-            <span class="bbs-5 item-animateTwo"><img src="{{ asset('admin/assets/images/shapes/26.png')}}" alt=""></span>
-            <span class="bbs-6"><img src="{{ asset('admin/assets/images/shapes/16.png')}}" alt=""></span>
-            <span class="bbs-7"><img src="{{ asset('admin/assets/images/img/32.png')}}" alt=""></span>
+            <span class="bbs-1"><img src="{{ asset('assets/client/images/shapes/13.png')}}" alt=""></span>
+            <span class="bbs-2 item-bounce"><img src="{{ asset('assets/client/images/shapes/12.png')}}" alt=""></span>
+            <span class="bbs-3"><img src="{{ asset('assets/client/images/shapes/7.png')}}" alt=""></span>
+            <span class="bbs-4 item-bounce"><img src="{{ asset('assets/client/images/shapes/26.png')}}" alt=""></span>
+            <span class="bbs-5 item-animateTwo"><img src="{{ asset('assets/client/images/shapes/26.png')}}" alt=""></span>
+            <span class="bbs-6"><img src="{{ asset('assets/client/images/shapes/16.png')}}" alt=""></span>
+            <span class="bbs-7"><img src="{{ asset('assets/client/images/img/32.png')}}" alt=""></span>
         </div>
         <div class="container">
             <div class="row">
@@ -39,7 +39,7 @@
                     <div class="blog-posts">
                         <div class="blog-single-post wow fadeInUp">
                             <div class="blog-thumbnail">
-                                <a href="blog-single.html"><img src="{{ asset('admin/assets/images/blog/blog1.jpg')}}" alt="thumbnail"></a>
+                                <a href="blog-single.html"><img src="{{ asset('assets/client/images/blog/blog1.jpg')}}" alt="thumbnail"></a>
                                 <div class="meta-date">
                                     <span class="bold">02</span>
                                     <span>dec</span>
@@ -73,7 +73,7 @@
                         <div class="blog-single-post wow fadeInUp">
                             <div class="blog-thumbnail-slider">
                                 <div class="thumbnail-single-slide">
-                                    <a href="blog-single.html"><img src="{{ asset('admin/assets/images/blog/blog2.jpg')}}"
+                                    <a href="blog-single.html"><img src="{{ asset('assets/client/images/blog/blog2.jpg')}}"
                                             alt="thumbnail"></a>
                                     <div class="meta-date">
                                         <span class="bold">02</span>
@@ -81,7 +81,7 @@
                                     </div>
                                 </div>
                                 <div class="thumbnail-single-slide">
-                                    <a href="blog-single.html"><img src="{{ asset('admin/assets/images/blog/blog2.jpg')}}"
+                                    <a href="blog-single.html"><img src="{{ asset('assets/client/images/blog/blog2.jpg')}}"
                                             alt="thumbnail"></a>
                                     <div class="meta-date">
                                         <span class="bold">02</span>
@@ -89,7 +89,7 @@
                                     </div>
                                 </div>
                                 <div class="thumbnail-single-slide">
-                                    <a href="blog-single.html"><img src="{{ asset('admin/assets/images/blog/blog2.jpg')}}"
+                                    <a href="blog-single.html"><img src="{{ asset('assets/client/images/blog/blog2.jpg')}}"
                                             alt="thumbnail"></a>
                                     <div class="meta-date">
                                         <span class="bold">02</span>
@@ -128,7 +128,7 @@
                                     <span class="bold">02</span>
                                     <span>dec</span>
                                 </div>
-                                <a href="blog-single.html"><img src="{{ asset('admin/assets/images/blog/blog3.jpg')}}" alt="thumbnail"></a>
+                                <a href="blog-single.html"><img src="{{ asset('assets/client/images/blog/blog3.jpg')}}" alt="thumbnail"></a>
                                 <div class="video-play-button">
                                     <a href="https://www.youtube.com/watch?v=8AGgbIQyqR8" class="button-video">
                                         <i class="fa fa-play item-ripple"></i>
@@ -204,7 +204,7 @@
                 <div class="col-lg-3">
                     <div class="blog-sidebar margin-top-10">
                         <div class="single-widget wow fadeInUp author-widget">
-                            <img src="{{ asset('admin/assets/images/blog/user.jpg')}}" alt="image">
+                            <img src="{{ asset('assets/client/images/blog/user.jpg')}}" alt="image">
                             <div class="author-name margin-top-20">
                                 <h5>Miyako Prince</h5>
                             </div>
@@ -233,7 +233,7 @@
                             <h6 class="margin-bottom-10">Hot Sale Products</h6>
                             <div class="single-product d-flex align-items-center">
                                 <div class="dish-img">
-                                    <a href="single-dish.html"><img src="{{ asset('admin/assets/images/menu-item/pd6.png')}}" alt=""></a>
+                                    <a href="single-dish.html"><img src="{{ asset('assets/client/images/menu-item/pd6.png')}}" alt=""></a>
                                 </div>
                                 <div class="dish-content">
                                     <h6> <a href="single-dish.html">Chicken Fry
@@ -248,7 +248,7 @@
                             </div>
                             <div class="single-product d-flex align-items-center  wow fadeInUp ">
                                 <div class="dish-img">
-                                    <a href="single-dish.html"> <img src="{{ asset('admin/assets/images/menu-item/pd4.png')}}" alt=""></a>
+                                    <a href="single-dish.html"> <img src="{{ asset('assets/client/images/menu-item/pd4.png')}}" alt=""></a>
                                 </div>
                                 <div class="dish-content">
                                     <h6> <a href="single-dish.html">Chicken Soup
@@ -263,7 +263,7 @@
                             </div>
                             <div class="single-product d-flex align-items-center  wow fadeInUp ">
                                 <div class="dish-img">
-                                    <a href="single-dish.html"><img src="{{ asset('admin/assets/images/menu-item/pd7.png')}}" alt=""></a>
+                                    <a href="single-dish.html"><img src="{{ asset('assets/client/images/menu-item/pd7.png')}}" alt=""></a>
                                 </div>
                                 <div class="dish-content">
                                     <h6> <a href="single-dish.html">The Best Black
@@ -278,7 +278,7 @@
                             </div>
                             <div class="single-product d-flex align-items-center  wow fadeInUp">
                                 <div class="dish-img">
-                                    <a href="single-dish.html"> <img src="{{ asset('admin/assets/images/menu-item/pd8.png')}}" alt=""></a>
+                                    <a href="single-dish.html"> <img src="{{ asset('assets/client/images/menu-item/pd8.png')}}" alt=""></a>
                                 </div>
                                 <div class="dish-content">
                                     <h6> <a href="single-dish.html">The Best Black
@@ -313,7 +313,7 @@
                             <h6><a href="#">filter by menu</a></h6>
                             <div class="filter-menu d-flex align-items-center">
                                 <div class="dish-img">
-                                    <a href="single-dish.html"> <img src="{{ asset('admin/assets/images/menu-item/fm1.png')}}" alt=""></a>
+                                    <a href="single-dish.html"> <img src="{{ asset('assets/client/images/menu-item/fm1.png')}}" alt=""></a>
                                 </div>
                                 <div class="dish-content d-flex justify-content-between">
                                     <h6> <a href="single-dish.html">burger food
@@ -323,7 +323,7 @@
                             </div>
                             <div class="filter-menu d-flex align-items-center">
                                 <div class="dish-img">
-                                    <a href="single-dish.html"> <img src="{{ asset('admin/assets/images/menu-item/fm2.png')}}" alt=""></a>
+                                    <a href="single-dish.html"> <img src="{{ asset('assets/client/images/menu-item/fm2.png')}}" alt=""></a>
                                 </div>
                                 <div class="dish-content d-flex justify-content-between">
                                     <h6> <a href="single-dish.html">Chicken Fry
@@ -333,7 +333,7 @@
                             </div>
                             <div class="filter-menu d-flex align-items-center">
                                 <div class="dish-img">
-                                    <a href="single-dish.html"><img src="{{ asset('admin/assets/images/menu-item/fm3.png')}}" alt=""></a>
+                                    <a href="single-dish.html"><img src="{{ asset('assets/client/images/menu-item/fm3.png')}}" alt=""></a>
                                 </div>
                                 <div class="dish-content d-flex justify-content-between">
                                     <h6> <a href="single-dish.html">Pizza
@@ -343,7 +343,7 @@
                             </div>
                             <div class="filter-menu d-flex align-items-center">
                                 <div class="dish-img">
-                                    <a href="single-dish.html"> <img src="{{ asset('admin/assets/images/menu-item/fm4.png')}}" alt=""></a>
+                                    <a href="single-dish.html"> <img src="{{ asset('assets/client/images/menu-item/fm4.png')}}" alt=""></a>
                                 </div>
                                 <div class="dish-content d-flex">
 
@@ -359,9 +359,9 @@
                                 <h5>Super Combo
                                     Burger</h5>
                                 <a href="shopping-cart.html" class="btn">order now</a>
-                                <img src="{{ asset('admin/assets/images/gallery/22.png')}}" alt="">
-                                <span class="gprice-4"><img src="{{ asset('admin/assets/images/gallery/25.png')}}" alt=""></span>
-                                <span class="gshape-1"><img src="{{ asset('admin/assets/images/shapes/35.png')}}" alt=""></span>
+                                <img src="{{ asset('assets/client/images/gallery/22.png')}}" alt="">
+                                <span class="gprice-4"><img src="{{ asset('assets/client/images/gallery/25.png')}}" alt=""></span>
+                                <span class="gshape-1"><img src="{{ asset('assets/client/images/shapes/35.png')}}" alt=""></span>
                             </div>
 
                         </div>

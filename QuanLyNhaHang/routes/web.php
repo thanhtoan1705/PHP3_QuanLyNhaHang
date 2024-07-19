@@ -1,6 +1,10 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\Category\CategoryController;
+use App\Http\Controllers\Admin\Comment\CommentController;
+
+
 use App\Http\Controllers\Client\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Client\Cart\CartController;
@@ -30,4 +34,12 @@ Route::get('blogDetail', [BlogDetailController::class, 'index']);
 
 
 Route::get('dashboard', [DashboardController::class, 'index']);
+
+Route::get('category', [CategoryController::class, 'list']);
+Route::get('category/add', [CategoryController::class, 'add']);
+Route::get('category/update', [CategoryController::class, 'update']);
+
+
+Route::get('comment', [CommentController::class, 'index']);
+
 

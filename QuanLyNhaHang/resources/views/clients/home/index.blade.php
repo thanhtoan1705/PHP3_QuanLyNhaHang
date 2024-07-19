@@ -3,14 +3,14 @@
     <!-- banner-area -->
     <section class="banner-area padding-top-100 padding-bottom-150">
         <div class="banner-shapes">
-            <span class="b-shape-1 item-animateOne"><img src="{{ asset('admin/assets/images/img/5.png') }}"
+            <span class="b-shape-1 item-animateOne"><img src="{{ asset('assets/client/images/img/5.png') }}"
                     alt="" /></span>
-            <span class="b-shape-2 item-animateTwo"><img src="{{ asset('admin/assets/images/img/6.png') }}"
+            <span class="b-shape-2 item-animateTwo"><img src="{{ asset('assets/client/images/img/6.png') }}"
                     alt="" /></span>
-            <span class="b-shape-3 item-bounce"><img src="{{ asset('admin/assets/images/img/7.png') }}"
+            <span class="b-shape-3 item-bounce"><img src="{{ asset('assets/client/images/img/7.png') }}"
                     alt="" /></span>
-            <span class="b-shape-4"><img src="{{ asset('admin/assets/images/img/9.png') }}" alt="" /></span>
-            <span class="b-shape-5"><img src="{{ asset('admin/assets/images/shapes/18.png') }}" alt="" /></span>
+            <span class="b-shape-4"><img src="{{ asset('assets/client/images/img/9.png') }}" alt="" /></span>
+            <span class="b-shape-5"><img src="{{ asset('assets/client/images/shapes/18.png') }}" alt="" /></span>
         </div>
         <div class="container padding-top-145">
             <div class="row justify-content-center align-items-center">
@@ -29,7 +29,7 @@
 
                         <!-- order-box -->
                         <div class="order-box">
-                            <span class="order-img"><img src="{{ asset('admin/assets/images/icons/1.png') }}"
+                            <span class="order-img"><img src="{{ asset('assets/client/images/icons/1.png') }}"
                                     alt="" /></span>
                             <div class="order-content">
                                 <p>Số giao hàng.</p>
@@ -42,16 +42,16 @@
                 <div class="d-none d-lg-block col-lg-6 col-xl-6">
                     <div class="banner-img">
                         <div class="pizza-shapes">
-                            <span class="p-shape-1"><img src="{{ asset('admin/assets/images/img/2.png') }}"
+                            <span class="p-shape-1"><img src="{{ asset('assets/client/images/img/2.png') }}"
                                     alt="" /></span>
-                            <span class="p-shape-2"><img src="{{ asset('admin/assets/images/img/3.png') }}"
+                            <span class="p-shape-2"><img src="{{ asset('assets/client/images/img/3.png') }}"
                                     alt="" /></span>
-                            <span class="p-shape-3"><img src="{{ asset('admin/assets/images/img/4.png') }}"
+                            <span class="p-shape-3"><img src="{{ asset('assets/client/images/img/4.png') }}"
                                     alt="" /></span>
-                            <span class="p-shape-4"><img src="{{ asset('admin/assets/images/img/8.png') }}"
+                            <span class="p-shape-4"><img src="{{ asset('assets/client/images/img/8.png') }}"
                                     alt="" /></span>
                         </div>
-                        <img src="{{ asset('admin/assets/images/img/1.png') }}" alt="" />
+                        <img src="{{ asset('assets/client/images/img/1.png') }}" alt="" />
                     </div>
                 </div>
             </div>
@@ -63,19 +63,19 @@
         <div class="container">
             <div class="form-box padding-top-110 padding-bottom-80">
                 <div class="form-shapes">
-                    <span class="fs-1"><img src="{{ asset('admin/assets/images/shapes/f-shape-1.png') }}"
+                    <span class="fs-1"><img src="{{ asset('assets/client/images/shapes/f-shape-1.png') }}"
                             alt="" /></span>
-                    <span class="fs-2"><img src="{{ asset('admin/assets/images/shapes/f-shape-2.png') }}"
+                    <span class="fs-2"><img src="{{ asset('assets/client/images/shapes/f-shape-2.png') }}"
                             alt="" /></span>
-                    <span class="fs-3 item-animateOne"><img src="{{ asset('admin/assets/images/shapes/f-shape-7.png') }}"
+                    <span class="fs-3 item-animateOne"><img src="{{ asset('assets/client/images/shapes/f-shape-7.png') }}"
                             alt="" /></span>
-                    <span class="fs-5"><img src="{{ asset('admin/assets/images/shapes/4.png') }}"
+                    <span class="fs-5"><img src="{{ asset('assets/client/images/shapes/4.png') }}"
                             alt="" /></span>
-                    <span class="fs-6"><img src="{{ asset('admin/assets/images/shapes/5.png') }}"
+                    <span class="fs-6"><img src="{{ asset('assets/client/images/shapes/5.png') }}"
                             alt="" /></span>
-                    <span class="fs-7 item-animateTwo"><img src="{{ asset('admin/assets/images/shapes/7.png') }}"
+                    <span class="fs-7 item-animateTwo"><img src="{{ asset('assets/client/images/shapes/7.png') }}"
                             alt="" /></span>
-                    <span class="fs-8 item-animateOne"><img src="{{ asset('admin/assets/images/shapes/9.png') }}"
+                    <span class="fs-8 item-animateOne"><img src="{{ asset('assets/client/images/shapes/9.png') }}"
                             alt="" /></span>
                 </div>
                 <div class="common-title-area text-center padding-bottom-50 wow fadeInUp">
@@ -115,7 +115,7 @@
                 <div class="col-lg-5 col-md-12 wow fadeInLeft">
                     <div class="about-left">
                         <div class="about-l-shapes">
-                            <span class="als-1"><img src="{{ asset('admin/assets/images/shapes/2.png') }}"
+                            <span class="als-1"><img src="{{ asset('assets/client/images/shapes/2.png') }}"
                                     alt="" /></span>
                         </div>
                         <div class="row">
@@ -128,17 +128,17 @@
                     margin-bottom-20
                   ">
                                 <div class="about-gallery-1">
-                                    <img src="{{ asset('admin/assets/images/gallery/1.jpg') }}" alt="" />
+                                    <img src="{{ asset('assets/client/images/gallery/1.jpg') }}" alt="" />
                                 </div>
                             </div>
                             <div class="col-lg-8 col-md-8 col-sm-8 col-8 margin-bottom-20">
                                 <div class="about-gallery-2">
-                                    <img src="{{ asset('admin/assets/images/gallery/2.jpg') }}" alt="" />
+                                    <img src="{{ asset('assets/client/images/gallery/2.jpg') }}" alt="" />
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-6">
                                 <div class="about-gallery-3">
-                                    <img src="{{ asset('admin/assets/images/gallery/3.jpg') }}" alt="" />
+                                    <img src="{{ asset('assets/client/images/gallery/3.jpg') }}" alt="" />
                                 </div>
                             </div>
                             <div
@@ -148,13 +148,13 @@
                     align-items-start
                   ">
                                 <div class="about-gallery-4 text-center">
-                                    <img class="mp" src="{{ asset('admin/assets/images/icons/3.png') }}"
+                                    <img class="mp" src="{{ asset('assets/client/images/icons/3.png') }}"
                                         alt="" />
                                     <div class="items counter">2000</div>
                                     <p>food item</p>
-                                    <span class="g-s-4"><img src="{{ asset('admin/assets/images/shapes/10.png') }}"
+                                    <span class="g-s-4"><img src="{{ asset('assets/client/images/shapes/10.png') }}"
                                             alt="" /></span>
-                                    <span class="g-s-5"><img src="{{ asset('admin/assets/images/shapes/14.png') }}"
+                                    <span class="g-s-5"><img src="{{ asset('assets/client/images/shapes/14.png') }}"
                                             alt="" /></span>
                                 </div>
                             </div>
@@ -164,7 +164,7 @@
                 <div class="col-lg-6 col-md-12 offset-lg-1 wow fadeInRight">
                     <div class="about-right">
                         <div class="about-r-shapes">
-                            <span class="as-1 item-bounce"><img src="{{ asset('admin/assets/images/shapes/1.png') }}"
+                            <span class="as-1 item-bounce"><img src="{{ asset('assets/client/images/shapes/1.png') }}"
                                     alt="" /></span>
                         </div>
                         <h2>
@@ -177,9 +177,9 @@
                         </p>
                         <div class="garlic-burger-card">
                             <div class="garlic-burger-img">
-                                <img class="price-badge" src="{{ asset('admin/assets/images/icons/4.png') }}"
+                                <img class="price-badge" src="{{ asset('assets/client/images/icons/4.png') }}"
                                     alt="" />
-                                <img src="{{ asset('admin/assets/images/icons/2.png') }}" alt="" />
+                                <img src="{{ asset('assets/client/images/icons/2.png') }}" alt="" />
                             </div>
                             <div class="garlic-burger-content">
                                 <h5>bữa tiệc burger tỏi</h5>
@@ -214,13 +214,13 @@
                                     aria-selected="true">
                                     <div class="single-menu-nav text-center">
                                         <div class="menu-img margin-bottom-10">
-                                            <img src="{{ asset('admin/assets/images/menu-item/pizza.png') }}"
+                                            <img src="{{ asset('assets/client/images/menu-item/pizza.png') }}"
                                                 alt="" />
                                         </div>
                                         <h6>pizza</h6>
-                                        <span class="g-s-4"><img src="{{ asset('admin/assets/images/shapes/10.png') }}"
+                                        <span class="g-s-4"><img src="{{ asset('assets/client/images/shapes/10.png') }}"
                                                 alt="" /></span>
-                                        <span class="g-s-5"><img src="{{ asset('admin/assets/images/shapes/14.png') }}"
+                                        <span class="g-s-5"><img src="{{ asset('assets/client/images/shapes/14.png') }}"
                                                 alt="" /></span>
                                     </div>
                                 </div>
@@ -233,13 +233,13 @@
                                     aria-selected="false">
                                     <div class="single-menu-nav text-center">
                                         <div class="menu-img margin-bottom-10">
-                                            <img src="{{ asset('admin/assets/images/menu-item/burger.png') }}"
+                                            <img src="{{ asset('assets/client/images/menu-item/burger.png') }}"
                                                 alt="" />
                                         </div>
                                         <h6>burger</h6>
-                                        <span class="g-s-4"><img src="{{ asset('admin/assets/images/shapes/10.png') }}"
+                                        <span class="g-s-4"><img src="{{ asset('assets/client/images/shapes/10.png') }}"
                                                 alt="" /></span>
-                                        <span class="g-s-5"><img src="{{ asset('admin/assets/images/shapes/14.png') }}"
+                                        <span class="g-s-5"><img src="{{ asset('assets/client/images/shapes/14.png') }}"
                                                 alt="" /></span>
                                     </div>
                                 </div>
@@ -252,13 +252,13 @@
                                     aria-selected="false">
                                     <div class="single-menu-nav text-center">
                                         <div class="menu-img margin-bottom-10">
-                                            <img src="{{ asset('admin/assets/images/menu-item/chicken.png') }}"
+                                            <img src="{{ asset('assets/client/images/menu-item/chicken.png') }}"
                                                 alt="" />
                                         </div>
                                         <h6>chicken</h6>
-                                        <span class="g-s-4"><img src="{{ asset('admin/assets/images/shapes/10.png') }}"
+                                        <span class="g-s-4"><img src="{{ asset('assets/client/images/shapes/10.png') }}"
                                                 alt="" /></span>
-                                        <span class="g-s-5"><img src="{{ asset('admin/assets/images/shapes/14.png') }}"
+                                        <span class="g-s-5"><img src="{{ asset('assets/client/images/shapes/14.png') }}"
                                                 alt="" /></span>
                                     </div>
                                 </div>
@@ -271,13 +271,13 @@
                                     aria-selected="false">
                                     <div class="single-menu-nav text-center">
                                         <div class="menu-img margin-bottom-10">
-                                            <img src="{{ asset('admin/assets/images/menu-item/drinks.png') }}"
+                                            <img src="{{ asset('assets/client/images/menu-item/drinks.png') }}"
                                                 alt="" />
                                         </div>
                                         <h6>drinks</h6>
-                                        <span class="g-s-4"><img src="{{ asset('admin/assets/images/shapes/10.png') }}"
+                                        <span class="g-s-4"><img src="{{ asset('assets/client/images/shapes/10.png') }}"
                                                 alt="" /></span>
-                                        <span class="g-s-5"><img src="{{ asset('admin/assets/images/shapes/14.png') }}"
+                                        <span class="g-s-5"><img src="{{ asset('assets/client/images/shapes/14.png') }}"
                                                 alt="" /></span>
                                     </div>
                                 </div>
@@ -290,13 +290,13 @@
                                     aria-selected="false">
                                     <div class="single-menu-nav text-center">
                                         <div class="menu-img margin-bottom-10">
-                                            <img src="{{ asset('admin/assets/images/menu-item/drinks2.png') }}"
+                                            <img src="{{ asset('assets/client/images/menu-item/drinks2.png') }}"
                                                 alt="" />
                                         </div>
                                         <h6>drinks</h6>
-                                        <span class="g-s-4"><img src="{{ asset('admin/assets/images/shapes/10.png') }}"
+                                        <span class="g-s-4"><img src="{{ asset('assets/client/images/shapes/10.png') }}"
                                                 alt="" /></span>
-                                        <span class="g-s-5"><img src="{{ asset('admin/assets/images/shapes/14.png') }}"
+                                        <span class="g-s-5"><img src="{{ asset('assets/client/images/shapes/14.png') }}"
                                                 alt="" /></span>
                                     </div>
                                 </div>
@@ -309,13 +309,13 @@
                                     aria-selected="false">
                                     <div class="single-menu-nav text-center">
                                         <div class="menu-img margin-bottom-10">
-                                            <img src="{{ asset('admin/assets/images/menu-item/combo.png') }}"
+                                            <img src="{{ asset('assets/client/images/menu-item/combo.png') }}"
                                                 alt="" />
                                         </div>
                                         <h6>combo menu</h6>
-                                        <span class="g-s-4"><img src="{{ asset('admin/assets/images/shapes/10.png') }}"
+                                        <span class="g-s-4"><img src="{{ asset('assets/client/images/shapes/10.png') }}"
                                                 alt="" /></span>
-                                        <span class="g-s-5"><img src="{{ asset('admin/assets/images/shapes/14.png') }}"
+                                        <span class="g-s-5"><img src="{{ asset('assets/client/images/shapes/14.png') }}"
                                                 alt="" /></span>
                                     </div>
                                 </div>
@@ -333,13 +333,13 @@
                     tabindex="0">
                     <div class="menu-items-wrapper menu-custom-padding margin-top-50">
                         <div class="menu-i-shapes">
-                            <span class="mis-1"><img src="{{ asset('admin/assets/images/shapes/28.png') }}"
+                            <span class="mis-1"><img src="{{ asset('assets/client/images/shapes/28.png') }}"
                                     alt="" /></span>
-                            <span class="mis-2"><img src="{{ asset('admin/assets/images/shapes/12.png') }}"
+                            <span class="mis-2"><img src="{{ asset('assets/client/images/shapes/12.png') }}"
                                     alt="" /></span>
-                            <span class="mis-3"><img src="{{ asset('admin/assets/images/shapes/7.png') }}"
+                            <span class="mis-3"><img src="{{ asset('assets/client/images/shapes/7.png') }}"
                                     alt="" /></span>
-                            <span class="mis-4"><img src="{{ asset('admin/assets/images/shapes/17.png') }}"
+                            <span class="mis-4"><img src="{{ asset('assets/client/images/shapes/17.png') }}"
                                     alt="" /></span>
                         </div>
                         <!-- first-row -->
@@ -347,7 +347,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between align-items-center h-100">
                                     <div class="menu-img">
-                                        <img src="{{ asset('admin/assets/images/menu-item/piz1.png') }}"
+                                        <img src="{{ asset('assets/client/images/menu-item/piz1.png') }}"
                                             alt="" />
                                     </div>
                                     <div class="menu-content">
@@ -360,7 +360,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between align-items-center h-100">
                                     <div class="menu-img">
-                                        <img src="{{ asset('admin/assets/images/menu-item/piz2.png') }}"
+                                        <img src="{{ asset('assets/client/images/menu-item/piz2.png') }}"
                                             alt="" />
                                     </div>
                                     <div class="menu-content">
@@ -373,7 +373,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between align-items-center h-100">
                                     <div class="menu-img">
-                                        <img src="{{ asset('admin/assets/images/menu-item/piz3.png') }}"
+                                        <img src="{{ asset('assets/client/images/menu-item/piz3.png') }}"
                                             alt="" />
                                     </div>
                                     <div class="menu-content">
@@ -391,7 +391,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between align-items-center h-100">
                                     <div class="menu-img">
-                                        <img src="{{ asset('admin/assets/images/menu-item/piz4.png') }}"
+                                        <img src="{{ asset('assets/client/images/menu-item/piz4.png') }}"
                                             alt="" />
                                     </div>
                                     <div class="menu-content">
@@ -404,7 +404,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between align-items-center h-100">
                                     <div class="menu-img">
-                                        <img src="{{ asset('admin/assets/images/menu-item/piz5.png') }}"
+                                        <img src="{{ asset('assets/client/images/menu-item/piz5.png') }}"
                                             alt="" />
                                     </div>
                                     <div class="menu-content">
@@ -417,7 +417,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between align-items-center h-100">
                                     <div class="menu-img">
-                                        <img src="{{ asset('admin/assets/images/menu-item/piz6.png') }}"
+                                        <img src="{{ asset('assets/client/images/menu-item/piz6.png') }}"
                                             alt="" />
                                     </div>
                                     <div class="menu-content">
@@ -442,13 +442,13 @@
                     tabindex="0">
                     <div class="menu-items-wrapper menu-custom-padding margin-top-50">
                         <div class="menu-i-shapes">
-                            <span class="mis-1"><img src="{{ asset('admin/assets/images/shapes/28.png') }}"
+                            <span class="mis-1"><img src="{{ asset('assets/client/images/shapes/28.png') }}"
                                     alt="" /></span>
-                            <span class="mis-2"><img src="{{ asset('admin/assets/images/shapes/12.png') }}"
+                            <span class="mis-2"><img src="{{ asset('assets/client/images/shapes/12.png') }}"
                                     alt="" /></span>
-                            <span class="mis-3"><img src="{{ asset('admin/assets/images/shapes/7.png') }}"
+                            <span class="mis-3"><img src="{{ asset('assets/client/images/shapes/7.png') }}"
                                     alt="" /></span>
-                            <span class="mis-4"><img src="{{ asset('admin/assets/images/shapes/17.png') }}"
+                            <span class="mis-4"><img src="{{ asset('assets/client/images/shapes/17.png') }}"
                                     alt="" /></span>
                         </div>
                         <!-- first-row -->
@@ -456,7 +456,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between align-items-center h-100">
                                     <div class="menu-img">
-                                        <img src="{{ asset('admin/assets/images/menu-item/mi-1.png') }}"
+                                        <img src="{{ asset('assets/client/images/menu-item/mi-1.png') }}"
                                             alt="" />
                                     </div>
                                     <div class="menu-content">
@@ -469,7 +469,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between align-items-center h-100">
                                     <div class="menu-img">
-                                        <img src="{{ asset('admin/assets/images/menu-item/br1.png') }}" alt="" />
+                                        <img src="{{ asset('assets/client/images/menu-item/br1.png') }}" alt="" />
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">naga burger</a></h5>
@@ -481,7 +481,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between align-items-center h-100">
                                     <div class="menu-img">
-                                        <img src="{{ asset('admin/assets/images/menu-item/br2.png') }}" alt="" />
+                                        <img src="{{ asset('assets/client/images/menu-item/br2.png') }}" alt="" />
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Beef Burger</a></h5>
@@ -498,7 +498,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between align-items-center h-100">
                                     <div class="menu-img">
-                                        <img src="{{ asset('admin/assets/images/menu-item/br3.png') }}" alt="" />
+                                        <img src="{{ asset('assets/client/images/menu-item/br3.png') }}" alt="" />
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">BBQ Burger</a></h5>
@@ -510,7 +510,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between align-items-center h-100">
                                     <div class="menu-img">
-                                        <img src="{{ asset('admin/assets/images/menu-item/br5.png') }}" alt="" />
+                                        <img src="{{ asset('assets/client/images/menu-item/br5.png') }}" alt="" />
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Crispy Burger</a></h5>
@@ -522,7 +522,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between align-items-center h-100">
                                     <div class="menu-img">
-                                        <img src="{{ asset('admin/assets/images/menu-item/br6.png') }}" alt="" />
+                                        <img src="{{ asset('assets/client/images/menu-item/br6.png') }}" alt="" />
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Chicken Grill</a></h5>
@@ -546,13 +546,13 @@
                     tabindex="0">
                     <div class="menu-items-wrapper menu-custom-padding margin-top-50">
                         <div class="menu-i-shapes">
-                            <span class="mis-1"><img src="{{ asset('admin/assets/images/shapes/28.png') }}"
+                            <span class="mis-1"><img src="{{ asset('assets/client/images/shapes/28.png') }}"
                                     alt="" /></span>
-                            <span class="mis-2"><img src="{{ asset('admin/assets/images/shapes/12.png') }}"
+                            <span class="mis-2"><img src="{{ asset('assets/client/images/shapes/12.png') }}"
                                     alt="" /></span>
-                            <span class="mis-3"><img src="{{ asset('admin/assets/images/shapes/7.png') }}"
+                            <span class="mis-3"><img src="{{ asset('assets/client/images/shapes/7.png') }}"
                                     alt="" /></span>
-                            <span class="mis-4"><img src="{{ asset('admin/assets/images/shapes/17.png') }}"
+                            <span class="mis-4"><img src="{{ asset('assets/client/images/shapes/17.png') }}"
                                     alt="" /></span>
                         </div>
                         <!-- first-row -->
@@ -560,7 +560,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between">
                                     <div class="menu-img">
-                                        <img src="{{ asset('admin/assets/images/menu-item/tc6.png') }}" alt="" />
+                                        <img src="{{ asset('assets/client/images/menu-item/tc6.png') }}" alt="" />
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Fried Chicken</a></h5>
@@ -572,7 +572,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between align-items-center h-100">
                                     <div class="menu-img">
-                                        <img src="{{ asset('admin/assets/images/menu-item/mi-2.png') }}"
+                                        <img src="{{ asset('assets/client/images/menu-item/mi-2.png') }}"
                                             alt="" />
                                     </div>
                                     <div class="menu-content">
@@ -585,7 +585,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between align-items-center h-100">
                                     <div class="menu-img">
-                                        <img src="{{ asset('admin/assets/images/menu-item/mi-3.png') }}"
+                                        <img src="{{ asset('assets/client/images/menu-item/mi-3.png') }}"
                                             alt="" />
                                     </div>
                                     <div class="menu-content">
@@ -603,7 +603,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between align-items-center h-100">
                                     <div class="menu-img">
-                                        <img src="{{ asset('admin/assets/images/menu-item/mi-1.png') }}"
+                                        <img src="{{ asset('assets/client/images/menu-item/mi-1.png') }}"
                                             alt="" />
                                     </div>
                                     <div class="menu-content">
@@ -616,7 +616,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between align-items-center h-100">
                                     <div class="menu-img">
-                                        <img src="{{ asset('admin/assets/images/menu-item/mi-5.png') }}"
+                                        <img src="{{ asset('assets/client/images/menu-item/mi-5.png') }}"
                                             alt="" />
                                     </div>
                                     <div class="menu-content">
@@ -629,7 +629,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between align-items-center h-100">
                                     <div class="menu-img">
-                                        <img src="{{ asset('admin/assets/images/menu-item/mi-6.png') }}"
+                                        <img src="{{ asset('assets/client/images/menu-item/mi-6.png') }}"
                                             alt="" />
                                     </div>
                                     <div class="menu-content">
@@ -654,13 +654,13 @@
                     tabindex="0">
                     <div class="menu-items-wrapper menu-custom-padding margin-top-50">
                         <div class="menu-i-shapes">
-                            <span class="mis-1"><img src="{{ asset('admin/assets/images/shapes/28.png') }}"
+                            <span class="mis-1"><img src="{{ asset('assets/client/images/shapes/28.png') }}"
                                     alt="" /></span>
-                            <span class="mis-2"><img src="{{ asset('admin/assets/images/shapes/12.png') }}"
+                            <span class="mis-2"><img src="{{ asset('assets/client/images/shapes/12.png') }}"
                                     alt="" /></span>
-                            <span class="mis-3"><img src="{{ asset('admin/assets/images/shapes/7.png') }}"
+                            <span class="mis-3"><img src="{{ asset('assets/client/images/shapes/7.png') }}"
                                     alt="" /></span>
-                            <span class="mis-4"><img src="{{ asset('admin/assets/images/shapes/17.png') }}"
+                            <span class="mis-4"><img src="{{ asset('assets/client/images/shapes/17.png') }}"
                                     alt="" /></span>
                         </div>
                         <!-- first-row -->
@@ -675,7 +675,7 @@
                                 h-100
                               ">
                                     <div class="menu-img">
-                                        <img src="{{ asset('admin/assets/images/img/dr1.jpg') }}" alt="" />
+                                        <img src="{{ asset('assets/client/images/img/dr1.jpg') }}" alt="" />
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html"> Grapefruit</a></h5>
@@ -694,7 +694,7 @@
                                 h-100
                               ">
                                     <div class="menu-img">
-                                        <img src="{{ asset('admin/assets/images/img/dr2.jpg') }}" alt="" />
+                                        <img src="{{ asset('assets/client/images/img/dr2.jpg') }}" alt="" />
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Blueberry</a></h5>
@@ -713,7 +713,7 @@
                                 h-100
                               ">
                                     <div class="menu-img">
-                                        <img src="{{ asset('admin/assets/images/img/dr3.jpg') }}" alt="" />
+                                        <img src="{{ asset('assets/client/images/img/dr3.jpg') }}" alt="" />
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Cranberry</a></h5>
@@ -737,7 +737,7 @@
                                 h-100
                               ">
                                     <div class="menu-img">
-                                        <img src="{{ asset('admin/assets/images/img/dr4.jpg') }}" alt="" />
+                                        <img src="{{ asset('assets/client/images/img/dr4.jpg') }}" alt="" />
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Orange Juice</a></h5>
@@ -756,7 +756,7 @@
                                 h-100
                               ">
                                     <div class="menu-img">
-                                        <img src="{{ asset('admin/assets/images/img/dr5.jpg') }}" alt="" />
+                                        <img src="{{ asset('assets/client/images/img/dr5.jpg') }}" alt="" />
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Beet Juice</a></h5>
@@ -775,7 +775,7 @@
                                 h-100
                               ">
                                     <div class="menu-img">
-                                        <img src="{{ asset('admin/assets/images/img/dr6.jpg') }}" alt="" />
+                                        <img src="{{ asset('assets/client/images/img/dr6.jpg') }}" alt="" />
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Pomegranate</a></h5>
@@ -799,13 +799,13 @@
                     tabindex="0">
                     <div class="menu-items-wrapper menu-custom-padding margin-top-50">
                         <div class="menu-i-shapes">
-                            <span class="mis-1"><img src="{{ asset('admin/assets/images/shapes/28.png') }}"
+                            <span class="mis-1"><img src="{{ asset('assets/client/images/shapes/28.png') }}"
                                     alt="" /></span>
-                            <span class="mis-2"><img src="{{ asset('admin/assets/images/shapes/12.png') }}"
+                            <span class="mis-2"><img src="{{ asset('assets/client/images/shapes/12.png') }}"
                                     alt="" /></span>
-                            <span class="mis-3"><img src="{{ asset('admin/assets/images/shapes/7.png') }}"
+                            <span class="mis-3"><img src="{{ asset('assets/client/images/shapes/7.png') }}"
                                     alt="" /></span>
-                            <span class="mis-4"><img src="{{ asset('admin/assets/images/shapes/17.png') }}"
+                            <span class="mis-4"><img src="{{ asset('assets/client/images/shapes/17.png') }}"
                                     alt="" /></span>
                         </div>
                         <!-- first-row -->
@@ -820,7 +820,7 @@
                                 h-100
                               ">
                                     <div class="menu-img">
-                                        <img src="{{ asset('admin/assets/images/img/dr2.jpg') }}" alt="" />
+                                        <img src="{{ asset('assets/client/images/img/dr2.jpg') }}" alt="" />
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Guava juice</a></h5>
@@ -839,7 +839,7 @@
                                 h-100
                               ">
                                     <div class="menu-img">
-                                        <img src="{{ asset('admin/assets/images/img/dr5.jpg') }}" alt="" />
+                                        <img src="{{ asset('assets/client/images/img/dr5.jpg') }}" alt="" />
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Lemonade</a></h5>
@@ -851,7 +851,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between align-items-center h-100">
                                     <div class="menu-img">
-                                        <img src="{{ asset('admin/assets/images/img/dr1.jpg') }}" alt="" />
+                                        <img src="{{ asset('assets/client/images/img/dr1.jpg') }}" alt="" />
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Lingonberry</a></h5>
@@ -875,7 +875,7 @@
                                 h-100
                               ">
                                     <div class="menu-img">
-                                        <img src="{{ asset('admin/assets/images/img/dr6.jpg') }}" alt="" />
+                                        <img src="{{ asset('assets/client/images/img/dr6.jpg') }}" alt="" />
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Prune juice</a></h5>
@@ -894,7 +894,7 @@
                                 h-100
                               ">
                                     <div class="menu-img">
-                                        <img src="{{ asset('admin/assets/images/img/dr4.jpg') }}" alt="" />
+                                        <img src="{{ asset('assets/client/images/img/dr4.jpg') }}" alt="" />
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Sugarcane</a></h5>
@@ -913,7 +913,7 @@
                                 h-100
                               ">
                                     <div class="menu-img">
-                                        <img src="{{ asset('admin/assets/images/img/dr5.jpg') }}" alt="" />
+                                        <img src="{{ asset('assets/client/images/img/dr5.jpg') }}" alt="" />
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="single-dish.html">Vegetable</a></h5>
@@ -937,13 +937,13 @@
                     tabindex="0">
                     <div class="menu-items-wrapper menu-custom-padding margin-top-50">
                         <div class="menu-i-shapes">
-                            <span class="mis-1"><img src="{{ asset('admin/assets/images/shapes/28.png') }}"
+                            <span class="mis-1"><img src="{{ asset('assets/client/images/shapes/28.png') }}"
                                     alt="" /></span>
-                            <span class="mis-2"><img src="{{ asset('admin/assets/images/shapes/12.png') }}"
+                            <span class="mis-2"><img src="{{ asset('assets/client/images/shapes/12.png') }}"
                                     alt="" /></span>
-                            <span class="mis-3"><img src="{{ asset('admin/assets/images/shapes/7.png') }}"
+                            <span class="mis-3"><img src="{{ asset('assets/client/images/shapes/7.png') }}"
                                     alt="" /></span>
-                            <span class="mis-4"><img src="{{ asset('admin/assets/images/shapes/17.png') }}"
+                            <span class="mis-4"><img src="{{ asset('assets/client/images/shapes/17.png') }}"
                                     alt="" /></span>
                         </div>
                         <!-- first-row -->
@@ -958,7 +958,7 @@
                                 h-100
                               ">
                                     <div class="menu-img">
-                                        <img src="{{ asset('admin/assets/images/menu-item/mi-1.png') }}"
+                                        <img src="{{ asset('assets/client/images/menu-item/mi-1.png') }}"
                                             alt="" />
                                     </div>
                                     <div class="menu-content">
@@ -978,7 +978,7 @@
                                 h-100
                               ">
                                     <div class="menu-img">
-                                        <img src="{{ asset('admin/assets/images/menu-item/mi-2.png') }}"
+                                        <img src="{{ asset('assets/client/images/menu-item/mi-2.png') }}"
                                             alt="" />
                                     </div>
                                     <div class="menu-content">
@@ -998,7 +998,7 @@
                                 h-100
                               ">
                                     <div class="menu-img">
-                                        <img src="{{ asset('admin/assets/images/menu-item/mi-3.png') }}"
+                                        <img src="{{ asset('assets/client/images/menu-item/mi-3.png') }}"
                                             alt="" />
                                     </div>
                                     <div class="menu-content">
@@ -1023,7 +1023,7 @@
                                 h-100
                               ">
                                     <div class="menu-img">
-                                        <img src="{{ asset('admin/assets/images/menu-item/mi-4.png') }}"
+                                        <img src="{{ asset('assets/client/images/menu-item/mi-4.png') }}"
                                             alt="" />
                                     </div>
                                     <div class="menu-content">
@@ -1043,7 +1043,7 @@
                                 h-100
                               ">
                                     <div class="menu-img">
-                                        <img src="{{ asset('admin/assets/images/menu-item/mi-5.png') }}"
+                                        <img src="{{ asset('assets/client/images/menu-item/mi-5.png') }}"
                                             alt="" />
                                     </div>
                                     <div class="menu-content">
@@ -1063,7 +1063,7 @@
                                 h-100
                               ">
                                     <div class="menu-img">
-                                        <img src="{{ asset('admin/assets/images/menu-item/mi-6.png') }}"
+                                        <img src="{{ asset('assets/client/images/menu-item/mi-6.png') }}"
                                             alt="" />
                                     </div>
                                     <div class="menu-content">
@@ -1089,16 +1089,16 @@
     <!-- popular-dishes -->
     <section class="popular-dishes-area padding-top-110">
         <div class="pshapes">
-            <span class="ps-1 item-animateTwo"><img src="{{ asset('admin/assets/images/shapes/11.png') }}"
+            <span class="ps-1 item-animateTwo"><img src="{{ asset('assets/client/images/shapes/11.png') }}"
                     alt="" /></span>
-            <span class="ps-2 item-animateTwo"><img src="{{ asset('admin/assets/images/shapes/12.png') }}"
+            <span class="ps-2 item-animateTwo"><img src="{{ asset('assets/client/images/shapes/12.png') }}"
                     alt="" /></span>
-            <span class="ps-3 item-bounce"><img src="{{ asset('admin/assets/images/shapes/13.png') }}"
+            <span class="ps-3 item-bounce"><img src="{{ asset('assets/client/images/shapes/13.png') }}"
                     alt="" /></span>
-            <span class="ps-4 item-bounce"><img src="{{ asset('admin/assets/images/shapes/14.png') }}"
+            <span class="ps-4 item-bounce"><img src="{{ asset('assets/client/images/shapes/14.png') }}"
                     alt="" /></span>
-            <span class="ps-5"><img src="{{ asset('admin/assets/images/shapes/15.png') }}" alt="" /></span>
-            <span class="ps-6"><img src="{{ asset('admin/assets/images/shapes/16.png') }}" alt="" /></span>
+            <span class="ps-5"><img src="{{ asset('assets/client/images/shapes/15.png') }}" alt="" /></span>
+            <span class="ps-6"><img src="{{ asset('assets/client/images/shapes/16.png') }}" alt="" /></span>
         </div>
         <div class="container">
             <nav
@@ -1150,7 +1150,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-dishes">
                                 <div class="dish-img">
-                                    <img src="{{ asset('admin/assets/images/menu-item/pd1.png') }}"
+                                    <img src="{{ asset('assets/client/images/menu-item/pd1.png') }}"
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
@@ -1175,7 +1175,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-dishes">
                                 <div class="dish-img">
-                                    <img src="{{ asset('admin/assets/images/menu-item/pd2.png') }}"
+                                    <img src="{{ asset('assets/client/images/menu-item/pd2.png') }}"
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
@@ -1200,7 +1200,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-dishes">
                                 <div class="dish-img">
-                                    <img src="{{ asset('admin/assets/images/menu-item/pd3.png') }}"
+                                    <img src="{{ asset('assets/client/images/menu-item/pd3.png') }}"
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
@@ -1227,7 +1227,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-dishes">
                                 <div class="dish-img">
-                                    <img src="{{ asset('admin/assets/images/menu-item/pd4.png') }}"
+                                    <img src="{{ asset('assets/client/images/menu-item/pd4.png') }}"
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
@@ -1252,7 +1252,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-dishes">
                                 <div class="dish-img">
-                                    <img src="{{ asset('admin/assets/images/menu-item/pd5.png') }}"
+                                    <img src="{{ asset('assets/client/images/menu-item/pd5.png') }}"
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
@@ -1277,7 +1277,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-dishes">
                                 <div class="dish-img">
-                                    <img src="{{ asset('admin/assets/images/menu-item/pd6.png') }}"
+                                    <img src="{{ asset('assets/client/images/menu-item/pd6.png') }}"
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
@@ -1302,7 +1302,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-dishes">
                                 <div class="dish-img">
-                                    <img src="{{ asset('admin/assets/images/menu-item/pd7.png') }}"
+                                    <img src="{{ asset('assets/client/images/menu-item/pd7.png') }}"
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
@@ -1329,7 +1329,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-dishes">
                                 <div class="dish-img">
-                                    <img src="{{ asset('admin/assets/images/menu-item/pd8.png') }}"
+                                    <img src="{{ asset('assets/client/images/menu-item/pd8.png') }}"
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
@@ -1361,7 +1361,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-dishes">
                                 <div class="dish-img">
-                                    <img src="{{ asset('admin/assets/images/menu-item/pd5.png') }}"
+                                    <img src="{{ asset('assets/client/images/menu-item/pd5.png') }}"
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
@@ -1386,7 +1386,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-dishes">
                                 <div class="dish-img">
-                                    <img src="{{ asset('admin/assets/images/menu-item/pd5.png') }}"
+                                    <img src="{{ asset('assets/client/images/menu-item/pd5.png') }}"
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
@@ -1411,7 +1411,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-dishes">
                                 <div class="dish-img">
-                                    <img src="{{ asset('admin/assets/images/menu-item/pd5.png') }}"
+                                    <img src="{{ asset('assets/client/images/menu-item/pd5.png') }}"
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
@@ -1438,7 +1438,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-dishes">
                                 <div class="dish-img">
-                                    <img src="{{ asset('admin/assets/images/menu-item/pd5.png') }}"
+                                    <img src="{{ asset('assets/client/images/menu-item/pd5.png') }}"
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
@@ -1463,7 +1463,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-dishes">
                                 <div class="dish-img">
-                                    <img src="{{ asset('admin/assets/images/menu-item/pd5.png') }}"
+                                    <img src="{{ asset('assets/client/images/menu-item/pd5.png') }}"
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
@@ -1488,7 +1488,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-dishes">
                                 <div class="dish-img">
-                                    <img src="{{ asset('admin/assets/images/menu-item/pd5.png') }}"
+                                    <img src="{{ asset('assets/client/images/menu-item/pd5.png') }}"
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
@@ -1513,7 +1513,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-dishes">
                                 <div class="dish-img">
-                                    <img src="{{ asset('admin/assets/images/menu-item/pd5.png') }}"
+                                    <img src="{{ asset('assets/client/images/menu-item/pd5.png') }}"
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
@@ -1540,7 +1540,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-dishes">
                                 <div class="dish-img">
-                                    <img src="{{ asset('admin/assets/images/menu-item/pd5.png') }}"
+                                    <img src="{{ asset('assets/client/images/menu-item/pd5.png') }}"
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
@@ -1572,7 +1572,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-dishes">
                                 <div class="dish-img">
-                                    <img src="{{ asset('admin/assets/images/menu-item/pd1.png') }}"
+                                    <img src="{{ asset('assets/client/images/menu-item/pd1.png') }}"
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
@@ -1597,7 +1597,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-dishes">
                                 <div class="dish-img">
-                                    <img src="{{ asset('admin/assets/images/menu-item/pd1.png') }}"
+                                    <img src="{{ asset('assets/client/images/menu-item/pd1.png') }}"
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
@@ -1622,7 +1622,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-dishes">
                                 <div class="dish-img">
-                                    <img src="{{ asset('admin/assets/images/menu-item/pd1.png') }}"
+                                    <img src="{{ asset('assets/client/images/menu-item/pd1.png') }}"
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
@@ -1649,7 +1649,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-dishes">
                                 <div class="dish-img">
-                                    <img src="{{ asset('admin/assets/images/menu-item/pd1.png') }}"
+                                    <img src="{{ asset('assets/client/images/menu-item/pd1.png') }}"
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
@@ -1674,7 +1674,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-dishes">
                                 <div class="dish-img">
-                                    <img src="{{ asset('admin/assets/images/menu-item/pd1.png') }}"
+                                    <img src="{{ asset('assets/client/images/menu-item/pd1.png') }}"
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
@@ -1699,7 +1699,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-dishes">
                                 <div class="dish-img">
-                                    <img src="{{ asset('admin/assets/images/menu-item/pd1.png') }}"
+                                    <img src="{{ asset('assets/client/images/menu-item/pd1.png') }}"
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
@@ -1724,7 +1724,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-dishes">
                                 <div class="dish-img">
-                                    <img src="{{ asset('admin/assets/images/menu-item/pd1.png') }}"
+                                    <img src="{{ asset('assets/client/images/menu-item/pd1.png') }}"
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
@@ -1751,7 +1751,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-dishes">
                                 <div class="dish-img">
-                                    <img src="{{ asset('admin/assets/images/menu-item/pd1.png') }}"
+                                    <img src="{{ asset('assets/client/images/menu-item/pd1.png') }}"
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
@@ -1783,7 +1783,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-dishes">
                                 <div class="dish-img">
-                                    <img src="{{ asset('admin/assets/images/menu-item/pd8.png') }}"
+                                    <img src="{{ asset('assets/client/images/menu-item/pd8.png') }}"
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
@@ -1808,7 +1808,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-dishes">
                                 <div class="dish-img">
-                                    <img src="{{ asset('admin/assets/images/menu-item/pd8.png') }}"
+                                    <img src="{{ asset('assets/client/images/menu-item/pd8.png') }}"
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
@@ -1833,7 +1833,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-dishes">
                                 <div class="dish-img">
-                                    <img src="{{ asset('admin/assets/images/menu-item/pd8.png') }}"
+                                    <img src="{{ asset('assets/client/images/menu-item/pd8.png') }}"
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
@@ -1860,7 +1860,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-dishes">
                                 <div class="dish-img">
-                                    <img src="{{ asset('admin/assets/images/menu-item/pd8.png') }}"
+                                    <img src="{{ asset('assets/client/images/menu-item/pd8.png') }}"
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
@@ -1885,7 +1885,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-dishes">
                                 <div class="dish-img">
-                                    <img src="{{ asset('admin/assets/images/menu-item/pd8.png') }}"
+                                    <img src="{{ asset('assets/client/images/menu-item/pd8.png') }}"
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
@@ -1910,7 +1910,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-dishes">
                                 <div class="dish-img">
-                                    <img src="{{ asset('admin/assets/images/menu-item/pd8.png') }}"
+                                    <img src="{{ asset('assets/client/images/menu-item/pd8.png') }}"
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
@@ -1935,7 +1935,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-dishes">
                                 <div class="dish-img">
-                                    <img src="{{ asset('admin/assets/images/menu-item/pd8.png') }}"
+                                    <img src="{{ asset('assets/client/images/menu-item/pd8.png') }}"
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
@@ -1962,7 +1962,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-dishes">
                                 <div class="dish-img">
-                                    <img src="{{ asset('admin/assets/images/menu-item/pd8.png') }}"
+                                    <img src="{{ asset('assets/client/images/menu-item/pd8.png') }}"
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
@@ -1994,7 +1994,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-dishes">
                                 <div class="dish-img">
-                                    <img src="{{ asset('admin/assets/images/menu-item/pd2.png') }}"
+                                    <img src="{{ asset('assets/client/images/menu-item/pd2.png') }}"
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
@@ -2019,7 +2019,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-dishes">
                                 <div class="dish-img">
-                                    <img src="{{ asset('admin/assets/images/menu-item/pd2.png') }}"
+                                    <img src="{{ asset('assets/client/images/menu-item/pd2.png') }}"
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
@@ -2044,7 +2044,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-dishes">
                                 <div class="dish-img">
-                                    <img src="{{ asset('admin/assets/images/menu-item/pd2.png') }}"
+                                    <img src="{{ asset('assets/client/images/menu-item/pd2.png') }}"
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
@@ -2071,7 +2071,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-dishes">
                                 <div class="dish-img">
-                                    <img src="{{ asset('admin/assets/images/menu-item/pd2.png') }}"
+                                    <img src="{{ asset('assets/client/images/menu-item/pd2.png') }}"
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
@@ -2096,7 +2096,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-dishes">
                                 <div class="dish-img">
-                                    <img src="{{ asset('admin/assets/images/menu-item/pd2.png') }}"
+                                    <img src="{{ asset('assets/client/images/menu-item/pd2.png') }}"
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
@@ -2121,7 +2121,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-dishes">
                                 <div class="dish-img">
-                                    <img src="{{ asset('admin/assets/images/menu-item/pd2.png') }}"
+                                    <img src="{{ asset('assets/client/images/menu-item/pd2.png') }}"
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
@@ -2146,7 +2146,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-dishes">
                                 <div class="dish-img">
-                                    <img src="{{ asset('admin/assets/images/menu-item/pd2.png') }}"
+                                    <img src="{{ asset('assets/client/images/menu-item/pd2.png') }}"
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
@@ -2173,7 +2173,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-dishes">
                                 <div class="dish-img">
-                                    <img src="{{ asset('admin/assets/images/menu-item/pd2.png') }}"
+                                    <img src="{{ asset('assets/client/images/menu-item/pd2.png') }}"
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
@@ -2212,7 +2212,7 @@
                                 <h3>Buzzed Burger</h3>
                                 <p>Sale off 50% chỉ trong tuần này</p>
                                 <a href="shopping-cart.html" class="btn">Đặt hàng ngay</a>
-                                <img src="{{ asset('admin/assets/images/gallery/24.png') }}" alt="" />
+                                <img src="{{ asset('assets/client/images/gallery/24.png') }}" alt="" />
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4">
@@ -2223,8 +2223,8 @@
                     align-items-end
                     justify-content-end
                   ">
-                                <img src="{{ asset('admin/assets/images/gallery/26.png') }}" alt="" />
-                                <img src="{{ asset('admin/assets/images/shapes/38.png') }}" alt=""
+                                <img src="{{ asset('assets/client/images/gallery/26.png') }}" alt="" />
+                                <img src="{{ asset('assets/client/images/shapes/38.png') }}" alt=""
                                     class="s11" />
                                 <span class="gprice-1">$15</span>
                                 <div class="gimg-content">
@@ -2239,10 +2239,10 @@
                             <div class="gallery-img-3">
                                 <h5>Super Combo Burger</h5>
                                 <a href="shopping-cart.html">Đặt hàng ngay bây giờ</a>
-                                <img src="{{ asset('admin/assets/images/gallery/23.png') }}" alt="" />
-                                <img src="{{ asset('admin/assets/images/shapes/layer2.png') }}" alt=""
+                                <img src="{{ asset('assets/client/images/gallery/23.png') }}" alt="" />
+                                <img src="{{ asset('assets/client/images/shapes/layer2.png') }}" alt=""
                                     class="s12" />
-                                <img src="{{ asset('admin/assets/images/shapes/113.png') }}" alt=""
+                                <img src="{{ asset('assets/client/images/shapes/113.png') }}" alt=""
                                     class="s13" />
                                 <span class="gprice-2">$15</span>
                             </div>
@@ -2255,8 +2255,8 @@
                     align-items-end
                     justify-content-end
                   ">
-                                <img src="{{ asset('admin/assets/images/gallery/26.png') }}" alt="" />
-                                <img src="{{ asset('admin/assets/images/shapes/38.png') }}" alt=""
+                                <img src="{{ asset('assets/client/images/gallery/26.png') }}" alt="" />
+                                <img src="{{ asset('assets/client/images/shapes/38.png') }}" alt=""
                                     class="s11" />
                                 <span class="gprice-1">$15</span>
                                 <div class="gimg-content">
@@ -2269,10 +2269,10 @@
                             <div class="gallery-img-3">
                                 <h5>Super Combo Burger</h5>
                                 <a href="shopping-cart.html">Đặt hàng ngay bây giờ</a>
-                                <img src="{{ asset('admin/assets/images/gallery/23.png') }}" alt="" />
-                                <img src="{{ asset('admin/assets/images/shapes/layer2.png') }}" alt=""
+                                <img src="{{ asset('assets/client/images/gallery/23.png') }}" alt="" />
+                                <img src="{{ asset('assets/client/images/shapes/layer2.png') }}" alt=""
                                     class="s12" />
-                                <img src="{{ asset('admin/assets/images/shapes/113.png') }}" alt=""
+                                <img src="{{ asset('assets/client/images/shapes/113.png') }}" alt=""
                                     class="s13" />
                                 <span class="gprice-2">$15</span>
                             </div>
@@ -2283,12 +2283,12 @@
                     <div class="gallery-img-4">
                         <h5>Super Combo Burger</h5>
                         <a href="shopping-cart.html" class="btn">Đặt hàng ngay bây giờ</a>
-                        <img src="{{ asset('admin/assets/images/gallery/22.png') }}" alt="" />
-                        <img src="{{ asset('admin/assets/images/shapes/leaves.png') }}" alt=""
+                        <img src="{{ asset('assets/client/images/gallery/22.png') }}" alt="" />
+                        <img src="{{ asset('assets/client/images/shapes/leaves.png') }}" alt=""
                             class="s14" />
-                        <img src="{{ asset('admin/assets/images/shapes/transparent2.png') }}" alt=""
+                        <img src="{{ asset('assets/client/images/shapes/transparent2.png') }}" alt=""
                             class="s15" />
-                        <span class="gprice-4"><img src="{{ asset('admin/assets/images/gallery/25.png') }}"
+                        <span class="gprice-4"><img src="{{ asset('assets/client/images/gallery/25.png') }}"
                                 alt="" /></span>
                     </div>
                 </div>
@@ -2300,39 +2300,39 @@
     <section class="countdown-area padding-top-120 padding-bottom-120">
         <div class="container">
             <div class="countdown-shapes">
-                <span class="cs-1 item-bounce"><img src="{{ asset('admin/assets/images/shapes/24.png') }}"
+                <span class="cs-1 item-bounce"><img src="{{ asset('assets/client/images/shapes/24.png') }}"
                         alt="" /></span>
-                <span class="cs-3 item-bounce"><img src="{{ asset('admin/assets/images/shapes/26.png') }}"
+                <span class="cs-3 item-bounce"><img src="{{ asset('assets/client/images/shapes/26.png') }}"
                         alt="" /></span>
-                <span class="cs-4 item-animateOne"><img src="{{ asset('admin/assets/images/shapes/27.png') }}"
+                <span class="cs-4 item-animateOne"><img src="{{ asset('assets/client/images/shapes/27.png') }}"
                         alt="" /></span>
-                <span class="cs-5"><img src="{{ asset('admin/assets/images/shapes/18.png') }}"
+                <span class="cs-5"><img src="{{ asset('assets/client/images/shapes/18.png') }}"
                         alt="" /></span>
-                <span class="cs-6"><img src="{{ asset('admin/assets/images/shapes/22.png') }}"
+                <span class="cs-6"><img src="{{ asset('assets/client/images/shapes/22.png') }}"
                         alt="" /></span>
-                <span class="cs-7"><img src="{{ asset('admin/assets/images/shapes/30.png') }}"
+                <span class="cs-7"><img src="{{ asset('assets/client/images/shapes/30.png') }}"
                         alt="" /></span>
             </div>
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-12 col-sm-12 col-12 margin-bottom-20">
                     <div class="countdown-left">
-                        <span class="cs-1"><img src="{{ asset('admin/assets/images/shapes/25.png') }}"
+                        <span class="cs-1"><img src="{{ asset('assets/client/images/shapes/25.png') }}"
                                 alt="" /></span>
-                        <span class="cs-2"><img src="{{ asset('admin/assets/images/shapes/Leaf.png') }}"
+                        <span class="cs-2"><img src="{{ asset('assets/client/images/shapes/Leaf.png') }}"
                                 alt="" /></span>
-                        <span class="cs-3"><img src="{{ asset('admin/assets/images/shapes/Leaf4.png') }}"
+                        <span class="cs-3"><img src="{{ asset('assets/client/images/shapes/Leaf4.png') }}"
                                 alt="" /></span>
-                        <span class="cs-4"><img src="{{ asset('admin/assets/images/img/3.png') }}"
+                        <span class="cs-4"><img src="{{ asset('assets/client/images/img/3.png') }}"
                                 alt="" /></span>
-                        <span class="cs-5"><img src="{{ asset('admin/assets/images/shapes/tomato.png') }}"
+                        <span class="cs-5"><img src="{{ asset('assets/client/images/shapes/tomato.png') }}"
                                 alt="" /></span>
-                        <span class="cs-6"><img src="{{ asset('admin/assets/images/shapes/onions.png') }}"
+                        <span class="cs-6"><img src="{{ asset('assets/client/images/shapes/onions.png') }}"
                                 alt="" /></span>
-                        <span class="cs-7"><img src="{{ asset('admin/assets/images/shapes/Leaf2.png') }}"
+                        <span class="cs-7"><img src="{{ asset('assets/client/images/shapes/Leaf2.png') }}"
                                 alt="" /></span>
-                        <span class="cs-8"><img src="{{ asset('admin/assets/images/shapes/Leaf3.png') }}"
+                        <span class="cs-8"><img src="{{ asset('assets/client/images/shapes/Leaf3.png') }}"
                                 alt="" /></span>
-                        <img src="{{ asset('admin/assets/images/img/21.png') }}" alt="" />
+                        <img src="{{ asset('assets/client/images/img/21.png') }}" alt="" />
                     </div>
                 </div>
                 <div class="col-lg-5 offset-lg-1 col-md-12 col-sm-12 col-12">
@@ -2374,13 +2374,13 @@
     <section class="testimonial padding-bottom-120 padding-top-110">
         <div class="container">
             <div class="testi-shapes">
-                <span class="ts-1"><img src="{{ asset('admin/assets/images/img/31.png') }}"
+                <span class="ts-1"><img src="{{ asset('assets/client/images/img/31.png') }}"
                         alt="" /></span>
-                <span class="ts-2"><img src="{{ asset('admin/assets/images/img/32.png') }}"
+                <span class="ts-2"><img src="{{ asset('assets/client/images/img/32.png') }}"
                         alt="" /></span>
-                <span class="ts-3 item-animateTwo"><img src="{{ asset('admin/assets/images/shapes/7.png') }}"
+                <span class="ts-3 item-animateTwo"><img src="{{ asset('assets/client/images/shapes/7.png') }}"
                         alt="" /></span>
-                <span class="ts-4"><img src="{{ asset('admin/assets/images/shapes/26.png') }}"
+                <span class="ts-4"><img src="{{ asset('assets/client/images/shapes/26.png') }}"
                         alt="" /></span>
             </div>
             <div class="common-title-area text-center padding-bottom-50 wow fadeInUp">
@@ -2391,11 +2391,11 @@
                 <div class="single-testimonial">
                     <div class="testi-top">
                         <div class="tin-shapes">
-                            <span class="tsin-1"><img src="{{ asset('admin/assets/images/shapes/33.png') }}"
+                            <span class="tsin-1"><img src="{{ asset('assets/client/images/shapes/33.png') }}"
                                     alt="" /></span>
                         </div>
                         <div class="testi-img">
-                            <img src="{{ asset('admin/assets/images/testimonial/testi-1.png') }}" alt="" />
+                            <img src="{{ asset('assets/client/images/testimonial/testi-1.png') }}" alt="" />
                         </div>
                         <div class="testi-meta">
                             <h6>Christ Deo</h6>
@@ -2419,11 +2419,11 @@
                 <div class="single-testimonial">
                     <div class="testi-top">
                         <div class="tin-shapes">
-                            <span class="tsin-1"><img src="{{ asset('admin/assets/images/shapes/33.png') }}"
+                            <span class="tsin-1"><img src="{{ asset('assets/client/images/shapes/33.png') }}"
                                     alt="" /></span>
                         </div>
                         <div class="testi-img">
-                            <img src="{{ asset('admin/assets/images/testimonial/testi-2.png') }}" alt="" />
+                            <img src="{{ asset('assets/client/images/testimonial/testi-2.png') }}" alt="" />
                         </div>
                         <div class="testi-meta">
                             <h6>Lipayka Maya</h6>
@@ -2447,11 +2447,11 @@
                 <div class="single-testimonial">
                     <div class="testi-top">
                         <div class="tin-shapes">
-                            <span class="tsin-1"><img src="{{ asset('admin/assets/images/shapes/33.png') }}"
+                            <span class="tsin-1"><img src="{{ asset('assets/client/images/shapes/33.png') }}"
                                     alt="" /></span>
                         </div>
                         <div class="testi-img">
-                            <img src="{{ asset('admin/assets/images/testimonial/testi-1.png') }}" alt="" />
+                            <img src="{{ asset('assets/client/images/testimonial/testi-1.png') }}" alt="" />
                         </div>
                         <div class="testi-meta">
                             <h6>Christ Deo</h6>
@@ -2475,11 +2475,11 @@
                 <div class="single-testimonial">
                     <div class="testi-top">
                         <div class="tin-shapes">
-                            <span class="tsin-1"><img src="{{ asset('admin/assets/images/shapes/33.png') }}"
+                            <span class="tsin-1"><img src="{{ asset('assets/client/images/shapes/33.png') }}"
                                     alt="" /></span>
                         </div>
                         <div class="testi-img">
-                            <img src="{{ asset('admin/assets/images/testimonial/testi-2.png') }}" alt="" />
+                            <img src="{{ asset('assets/client/images/testimonial/testi-2.png') }}" alt="" />
                         </div>
                         <div class="testi-meta">
                             <h6>Lipayka Maya</h6>
@@ -2503,11 +2503,11 @@
                 <div class="single-testimonial">
                     <div class="testi-top">
                         <div class="tin-shapes">
-                            <span class="tsin-1"><img src="{{ asset('admin/assets/images/shapes/33.png') }}"
+                            <span class="tsin-1"><img src="{{ asset('assets/client/images/shapes/33.png') }}"
                                     alt="" /></span>
                         </div>
                         <div class="testi-img">
-                            <img src="{{ asset('admin/assets/images/testimonial/testi-1.png') }}" alt="" />
+                            <img src="{{ asset('assets/client/images/testimonial/testi-1.png') }}" alt="" />
                         </div>
                         <div class="testi-meta">
                             <h6>Christ Deo</h6>
@@ -2531,11 +2531,11 @@
                 <div class="single-testimonial">
                     <div class="testi-top">
                         <div class="tin-shapes">
-                            <span class="tsin-1"><img src="{{ asset('admin/assets/images/shapes/33.png') }}"
+                            <span class="tsin-1"><img src="{{ asset('assets/client/images/shapes/33.png') }}"
                                     alt="" /></span>
                         </div>
                         <div class="testi-img">
-                            <img src="{{ asset('admin/assets/images/testimonial/testi-2.png') }}" alt="" />
+                            <img src="{{ asset('assets/client/images/testimonial/testi-2.png') }}" alt="" />
                         </div>
                         <div class="testi-meta">
                             <h6>Lipayka Maya</h6>
@@ -2565,27 +2565,27 @@
         <div class="container-fluid">
             <div class="slider-gallery-active">
                 <div class="single-gallery-img">
-                    <img src="{{ asset('admin/assets/images/gallery/gm1.jpg') }}" alt="" />
+                    <img src="{{ asset('assets/client/images/gallery/gm1.jpg') }}" alt="" />
                     <a href="gallery.html"><span><i class="fas fa-image"></i></span></a>
                 </div>
                 <div class="single-gallery-img">
-                    <img src="{{ asset('admin/assets/images/gallery/gm2.jpg') }}" alt="" />
+                    <img src="{{ asset('assets/client/images/gallery/gm2.jpg') }}" alt="" />
                     <a href="gallery.html"><span><i class="fas fa-image"></i></span></a>
                 </div>
                 <div class="single-gallery-img">
-                    <img src="{{ asset('admin/assets/images/gallery/gm3.jpg') }}" alt="" />
+                    <img src="{{ asset('assets/client/images/gallery/gm3.jpg') }}" alt="" />
                     <a href="gallery.html"><span><i class="fas fa-image"></i></span></a>
                 </div>
                 <div class="single-gallery-img">
-                    <img src="{{ asset('admin/assets/images/gallery/gm4.jpg') }}" alt="" />
+                    <img src="{{ asset('assets/client/images/gallery/gm4.jpg') }}" alt="" />
                     <a href="gallery.html"><span><i class="fas fa-image"></i></span></a>
                 </div>
                 <div class="single-gallery-img">
-                    <img src="{{ asset('admin/assets/images/gallery/gm5.jpg') }}" alt="" />
+                    <img src="{{ asset('assets/client/images/gallery/gm5.jpg') }}" alt="" />
                     <a href="gallery.html"><span><i class="fas fa-image"></i></span></a>
                 </div>
                 <div class="single-gallery-img">
-                    <img src="{{ asset('admin/assets/images/gallery/gm6.jpg') }}" alt="" />
+                    <img src="{{ asset('assets/client/images/gallery/gm6.jpg') }}" alt="" />
                     <a href="gallery.html"><span><i class="fas fa-image"></i></span></a>
                 </div>
             </div>
@@ -2595,13 +2595,13 @@
     <!-- delivery-area -->
     <section class="delivery-area padding-top-115 padding-bottom-90">
         <div class="del-shapes">
-            <span class="ds-1 item-bounce"><img src="{{ asset('admin/assets/images/shapes/35.png') }}"
+            <span class="ds-1 item-bounce"><img src="{{ asset('assets/client/images/shapes/35.png') }}"
                     alt="" /></span>
-            <span class="ds-2"><img src="{{ asset('admin/assets/images/shapes/34.png') }}"
+            <span class="ds-2"><img src="{{ asset('assets/client/images/shapes/34.png') }}"
                     alt="" /></span>
-            <span class="ds-3 item-bounce"><img src="{{ asset('admin/assets/images/shapes/17.png') }}"
+            <span class="ds-3 item-bounce"><img src="{{ asset('assets/client/images/shapes/17.png') }}"
                     alt="" /></span>
-            <span class="ds-4 item-animateOne"><img src="{{ asset('admin/assets/images/shapes/6.png') }}"
+            <span class="ds-4 item-animateOne"><img src="{{ asset('assets/client/images/shapes/6.png') }}"
                     alt="" /></span>
         </div>
         <div class="container">
@@ -2616,7 +2616,7 @@
               fadeInLeft
             ">
                     <div class="delivery-left">
-                        <img src="{{ asset('admin/assets/images/bg/delivery-img.png') }}" alt="" />
+                        <img src="{{ asset('assets/client/images/bg/delivery-img.png') }}" alt="" />
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12 wow fadeInRight">
@@ -2633,7 +2633,7 @@
                                 và một inteon London nhộn nhịp.
                             </p>
                             <div class="order-box d-flex align-items-end">
-                                <span class="order-img"><img src="{{ asset('admin/assets/images/icons/1.png') }}"
+                                <span class="order-img"><img src="{{ asset('assets/client/images/icons/1.png') }}"
                                         alt="" /></span>
                                 <div class="order-content">
                                     <p>delivery order num.</p>
@@ -2651,7 +2651,7 @@
     <!-- blog-area -->
     <section class="blog-area padding-top-110 padding-bottom-120">
         <div class="blog-shapes">
-            <span class="bs-1"><img src="{{ asset('admin/assets/images/img/37.png') }}" alt="" /></span>
+            <span class="bs-1"><img src="{{ asset('assets/client/images/img/37.png') }}" alt="" /></span>
         </div>
         <div class="container">
             <div class="common-title-area text-center padding-bottom-60 wow fadeInUp">
@@ -2662,7 +2662,7 @@
                 <div class="single-blog">
                     <div class="blog-img">
                         <a href="blog-single.html">
-                            <img src="{{ asset('admin/assets/images/blog/b-1.jpg') }}" alt="" /></a>
+                            <img src="{{ asset('assets/client/images/blog/b-1.jpg') }}" alt="" /></a>
                         <div class="b-badge">
                             <span class="date"><a href="#">02</a></span><br />
                             <span class="month"><a href="#">dec</a></span>
@@ -2679,7 +2679,7 @@
                 <div class="single-blog">
                     <div class="blog-img">
                         <a href="blog-single.html">
-                            <img src="{{ asset('admin/assets/images/blog/b-2.jpg') }}" alt="" /></a>
+                            <img src="{{ asset('assets/client/images/blog/b-2.jpg') }}" alt="" /></a>
                         <div class="b-badge">
                             <span class="date"><a href="#">02</a></span><br />
                             <span class="month"><a href="#">dec</a></span>
@@ -2696,7 +2696,7 @@
                 <div class="single-blog">
                     <div class="blog-img">
                         <a href="blog-single.html">
-                            <img src="{{ asset('admin/assets/images/blog/b-3.jpg') }}" alt="" /></a>
+                            <img src="{{ asset('assets/client/images/blog/b-3.jpg') }}" alt="" /></a>
                         <div class="b-badge">
                             <span class="date"><a href="#">02</a></span><br />
                             <span class="month"><a href="#">dec</a></span>
@@ -2713,7 +2713,7 @@
                 <div class="single-blog">
                     <div class="blog-img">
                         <a href="blog-single.html">
-                            <img src="{{ asset('admin/assets/images/blog/b-1.jpg') }}" alt="" /></a>
+                            <img src="{{ asset('assets/client/images/blog/b-1.jpg') }}" alt="" /></a>
                         <div class="b-badge">
                             <span class="date"><a href="#">02</a></span><br />
                             <span class="month"><a href="#">dec</a></span>
@@ -2730,7 +2730,7 @@
                 <div class="single-blog">
                     <div class="blog-img">
                         <a href="blog-single.html">
-                            <img src="{{ asset('admin/assets/images/blog/b-2.jpg') }}" alt="" /></a>
+                            <img src="{{ asset('assets/client/images/blog/b-2.jpg') }}" alt="" /></a>
                         <div class="b-badge">
                             <span class="date"><a href="#">02</a></span><br />
                             <span class="month"><a href="#">dec</a></span>
@@ -2747,7 +2747,7 @@
                 <div class="single-blog">
                     <div class="blog-img">
                         <a href="blog-single.html">
-                            <img src="{{ asset('admin/assets/images/blog/b-3.jpg') }}" alt="" /></a>
+                            <img src="{{ asset('assets/client/images/blog/b-3.jpg') }}" alt="" /></a>
                         <div class="b-badge">
                             <span class="date"><a href="#">02</a></span><br />
                             <span class="month"><a href="#">dec</a></span>

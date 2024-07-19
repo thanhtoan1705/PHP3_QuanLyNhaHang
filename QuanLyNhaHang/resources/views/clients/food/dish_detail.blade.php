@@ -3,12 +3,12 @@
     <!-- breadcrumb-area -->
     <div class="banner-area breadcrumb-area padding-top-120 padding-bottom-90">
         <div class="bread-shapes">
-            <span class="b-shape-1 item-bounce"><img src="{{ asset('admin/assets/images/img/5.png')}}" alt=""></span>
-            <span class="b-shape-2"><img src="{{ asset('admin/assets/images/img/6.png')}}" alt=""></span>
-            <span class="b-shape-3"><img src="{{ asset('admin/assets/images/img/7.png')}}" alt=""></span>
-            <span class="b-shape-4"><img src="{{ asset('admin/assets/images/img/9.png')}}" alt=""></span>
-            <span class="b-shape-5"><img src="{{ asset('admin/assets/images/shapes/18.png')}}" alt=""></span>
-            <span class="b-shape-6 item-animateOne"><img src="{{ asset('admin/assets/images/img/7.png')}}" alt=""></span>
+            <span class="b-shape-1 item-bounce"><img src="{{ asset('assets/client/images/img/5.png')}}" alt=""></span>
+            <span class="b-shape-2"><img src="{{ asset('assets/client/images/img/6.png')}}" alt=""></span>
+            <span class="b-shape-3"><img src="{{ asset('assets/client/images/img/7.png')}}" alt=""></span>
+            <span class="b-shape-4"><img src="{{ asset('assets/client/images/img/9.png')}}" alt=""></span>
+            <span class="b-shape-5"><img src="{{ asset('assets/client/images/shapes/18.png')}}" alt=""></span>
+            <span class="b-shape-6 item-animateOne"><img src="{{ asset('assets/client/images/img/7.png')}}" alt=""></span>
         </div>
         <div class="container padding-top-120">
             <div class="row justify-content-center">
@@ -27,9 +27,9 @@
     <!-- chicken-recipe-area -->
     <section class="chicken-recipe-area padding-top-115 padding-bottom-80">
         <div class="recipe-shapes">
-            <span class="rs1"><img src="{{ asset('admin/assets/images/shapes/12.png')}}" alt=""></span>
-            <span class="rs2"><img src="{{ asset('admin/assets/images/shapes/13.png')}}" alt=""></span>
-            <span class="rs3"><img src="{{ asset('admin/assets/images/shapes/26.png')}}" alt=""></span>
+            <span class="rs1"><img src="{{ asset('assets/client/images/shapes/12.png')}}" alt=""></span>
+            <span class="rs2"><img src="{{ asset('assets/client/images/shapes/13.png')}}" alt=""></span>
+            <span class="rs3"><img src="{{ asset('assets/client/images/shapes/26.png')}}" alt=""></span>
         </div>
         <div class="container">
             <div class="row align-items-center">
@@ -38,20 +38,20 @@
                         <div class="slider-for">
                             <div class="single-slide">
                                 <div class="product-content">
-                                    <img class="mp" src="{{ asset('admin/assets/images/img/br1.png')}}" alt="">
-                                    <img class="pbadge" src="{{ asset('admin/assets/images/icons/pbadge.png')}}" alt="">
+                                    <img class="mp" src="{{ asset('assets/client/images/img/br1.png')}}" alt="">
+                                    <img class="pbadge" src="{{ asset('assets/client/images/icons/pbadge.png')}}" alt="">
                                 </div>
                             </div>
                             <div class="single-slide">
                                 <div class="product-content">
-                                    <img class="mp" src="{{ asset('admin/assets/images/img/br1.png')}}" alt="">
-                                    <img class="pbadge" src="{{ asset('admin/assets/images/icons/pbadge.png')}}" alt="">
+                                    <img class="mp" src="{{ asset('assets/client/images/img/br1.png')}}" alt="">
+                                    <img class="pbadge" src="{{ asset('assets/client/images/icons/pbadge.png')}}" alt="">
                                 </div>
                             </div>
                             <div class="single-slide">
                                 <div class="product-content">
-                                    <img class="mp" src="{{ asset('admin/assets/images/img/br1.png')}}" alt="">
-                                    <img class="pbadge" src="{{ asset('admin/assets/images/icons/pbadge.png')}}" alt="">
+                                    <img class="mp" src="{{ asset('assets/client/images/img/br1.png')}}" alt="">
+                                    <img class="pbadge" src="{{ asset('assets/client/images/icons/pbadge.png')}}" alt="">
                                 </div>
                             </div>
                         </div>
@@ -59,17 +59,17 @@
                         <div class="slider-nav margin-top-30">
                             <div class="div">
                                 <div class="pnav">
-                                    <img src="{{ asset('admin/assets/images/img/br3.png')}}" alt="">
+                                    <img src="{{ asset('assets/client/images/img/br3.png')}}" alt="">
                                 </div>
                             </div>
                             <div class="div">
                                 <div class="pnav">
-                                    <img src="{{ asset('admin/assets/images/img/br2.png')}}" alt="">
+                                    <img src="{{ asset('assets/client/images/img/br2.png')}}" alt="">
                                 </div>
                             </div>
                             <div class="div">
                                 <div class="pnav">
-                                    <img src="{{ asset('admin/assets/images/img/br3.png')}}" alt="">
+                                    <img src="{{ asset('assets/client/images/img/br3.png')}}" alt="">
                                 </div>
                             </div>
                         </div>
@@ -120,8 +120,8 @@
     <!-- product-description -->
     <section class="product-des-area">
         <div class="pdes-shapes">
-            <span class="pds1"><img src="{{ asset('admin/assets/images/img/32.png')}}" alt=""></span>
-            <span class="pds2"><img src="{{ asset('admin/assets/images/shapes/7.png')}}" alt=""></span>
+            <span class="pds1"><img src="{{ asset('assets/client/images/img/32.png')}}" alt=""></span>
+            <span class="pds2"><img src="{{ asset('assets/client/images/shapes/7.png')}}" alt=""></span>
 
         </div>
         <div class="container">
@@ -147,9 +147,9 @@
                     <div class="tab-pane fade show active" id="des" role="tabpanel" aria-labelledby="info-tab">
                         <div class="pd-inner-content">
                             <div class="pd-shapes">
-                                <span class="pds1"><img src="{{ asset('admin/assets/images/shapes/17.png')}}" alt=""></span>
-                                <span class="pds2"><img src="{{ asset('admin/assets/images/shapes/7.png')}}" alt=""></span>
-                                <span class="pds3"><img src="{{ asset('admin/assets/images/shapes/28.png')}}" alt=""></span>
+                                <span class="pds1"><img src="{{ asset('assets/client/images/shapes/17.png')}}" alt=""></span>
+                                <span class="pds2"><img src="{{ asset('assets/client/images/shapes/7.png')}}" alt=""></span>
+                                <span class="pds3"><img src="{{ asset('assets/client/images/shapes/28.png')}}" alt=""></span>
                             </div>
 
                             <p>A hamburger (also burger for short) is a sandwich consisting of one or more cooked
@@ -322,7 +322,7 @@
     <!-- related-product -->
     <div class="related-product padding-top-115 padding-bottom-100">
         <div class="related-shapes">
-            <span class="rs1"><img src="{{ asset('admin/assets/images/shapes/16.png')}}" alt=""></span>
+            <span class="rs1"><img src="{{ asset('assets/client/images/shapes/16.png')}}" alt=""></span>
         </div>
         <div class="container wow fadeInUp">
             <h3>relates <span>product</span></h3>
@@ -331,7 +331,7 @@
                     <div class="col-xl-3 col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                         <div class="single-dishes">
                             <div class="dish-img">
-                                <img src="{{ asset('admin/assets/images/menu-item/pd1.png')}}" style="width: inherit;" alt="">
+                                <img src="{{ asset('assets/client/images/menu-item/pd1.png')}}" style="width: inherit;" alt="">
                             </div>
                             <div class="dish-content">
                                 <h5><a href="single-food.html">Garlic Burger
@@ -354,7 +354,7 @@
                     <div class="col-xl-3 col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".4s">
                         <div class="single-dishes">
                             <div class="dish-img">
-                                <img src="{{ asset('admin/assets/images/menu-item/pd2.png')}}" style="width: inherit;" alt="">
+                                <img src="{{ asset('assets/client/images/menu-item/pd2.png')}}" style="width: inherit;" alt="">
                             </div>
                             <div class="dish-content">
                                 <h5> <a href="single-food.html">Vegetable Pizza
@@ -377,7 +377,7 @@
                     <div class="col-xl-3 col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".6s">
                         <div class="single-dishes">
                             <div class="dish-img">
-                                <img src="{{ asset('admin/assets/images/menu-item/pd3.png')}}" style="width: inherit;" alt="">
+                                <img src="{{ asset('assets/client/images/menu-item/pd3.png')}}" style="width: inherit;" alt="">
                             </div>
                             <div class="dish-content">
                                 <h5> <a href="single-food.html">Chicken fry
@@ -400,7 +400,7 @@
                     <div class="col-xl-3 col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".8s">
                         <div class="single-dishes">
                             <div class="dish-img">
-                                <img src="{{ asset('admin/assets/images/menu-item/pd4.png')}}" style="width: inherit;" alt="">
+                                <img src="{{ asset('assets/client/images/menu-item/pd4.png')}}" style="width: inherit;" alt="">
                             </div>
                             <div class="dish-content">
                                 <h5><a href="single-food.html">Chickpea Soup

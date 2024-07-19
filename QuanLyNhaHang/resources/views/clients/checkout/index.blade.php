@@ -3,12 +3,12 @@
     <!-- breadcrumb-area -->
     <div class="banner-area breadcrumb-area padding-top-120 padding-bottom-90">
         <div class="bread-shapes">
-            <span class="b-shape-1 item-bounce"><img src="{{ asset('admin/assets/images/img/5.png') }}" alt=""></span>
-            <span class="b-shape-2"><img src="{{ asset('admin/assets/images/img/6.png') }}" alt=""></span>
-            <span class="b-shape-3"><img src="{{ asset('admin/assets/images/img/7.png') }}" alt=""></span>
-            <span class="b-shape-4"><img src="{{ asset('admin/assets/images/img/9.png') }}" alt=""></span>
-            <span class="b-shape-5"><img src="{{ asset('admin/assets/images/shapes/18.png') }}" alt=""></span>
-            <span class="b-shape-6 item-animateOne"><img src="{{ asset('admin/assets/images/img/7.png') }}"
+            <span class="b-shape-1 item-bounce"><img src="{{ asset('assets/client/images/img/5.png') }}" alt=""></span>
+            <span class="b-shape-2"><img src="{{ asset('assets/client/images/img/6.png') }}" alt=""></span>
+            <span class="b-shape-3"><img src="{{ asset('assets/client/images/img/7.png') }}" alt=""></span>
+            <span class="b-shape-4"><img src="{{ asset('assets/client/images/img/9.png') }}" alt=""></span>
+            <span class="b-shape-5"><img src="{{ asset('assets/client/images/shapes/18.png') }}" alt=""></span>
+            <span class="b-shape-6 item-animateOne"><img src="{{ asset('assets/client/images/img/7.png') }}"
                     alt=""></span>
         </div>
         <div class="container padding-top-120">
@@ -29,13 +29,13 @@
     <!-- checkout-area -->
     <div class="checkout-area padding-top-120 padding-bottom-120">
         <div class="cshapes">
-            <span class="cs-1"><img src="{{ asset('admin/assets/images/img/6.png') }}" alt=""></span>
-            <span class="cs-2 item-bounce"><img src="{{ asset('admin/assets/images/shapes/12.png') }}"
+            <span class="cs-1"><img src="{{ asset('assets/client/images/img/6.png') }}" alt=""></span>
+            <span class="cs-2 item-bounce"><img src="{{ asset('assets/client/images/shapes/12.png') }}"
                     alt=""></span>
-            <span class="cs-3"><img src="{{ asset('admin/assets/images/shapes/13.png') }}" alt=""></span>
-            <span class="cs-4"><img src="{{ asset('admin/assets/images/shapes/14.png') }}" alt=""></span>
-            <span class="cs-5"><img src="{{ asset('admin/assets/images/img/32.png') }}" alt=""></span>
-            <span class="cs-6"><img src="{{ asset('admin/assets/images/shapes/16.png') }}" alt=""></span>
+            <span class="cs-3"><img src="{{ asset('assets/client/images/shapes/13.png') }}" alt=""></span>
+            <span class="cs-4"><img src="{{ asset('assets/client/images/shapes/14.png') }}" alt=""></span>
+            <span class="cs-5"><img src="{{ asset('assets/client/images/img/32.png') }}" alt=""></span>
+            <span class="cs-6"><img src="{{ asset('assets/client/images/shapes/16.png') }}" alt=""></span>
         </div>
         <div class="container">
             <form action="#">
@@ -103,7 +103,7 @@
                             <label for="check">CHECK PAYMENTS</label>
                             <br>
                             <div class="payment-img">
-                                <a href="#"><img src="{{ asset('admin/assets/images/img/payment.png') }}"
+                                <a href="#"><img src="{{ asset('assets/client/images/img/payment.png') }}"
                                         alt=""></a>
                             </div>
                             <input type="radio" id="cash">
