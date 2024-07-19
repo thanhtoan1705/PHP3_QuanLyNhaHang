@@ -47,7 +47,7 @@
                 </li>
                 <li><a href="{{ route('about') }}">Giới thiệu</a></li>
                 <li><a href="{{ route('menu') }}">Menu</a></li>
-                <li>
+
                   <a href="{{ route('blog') }}">Bài Viết <span></span></a>
                 </li>
                 <li><a href="#">Liên hệ</a></li>

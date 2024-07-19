@@ -3,6 +3,9 @@
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DishController as AdminDishController;
 use App\Http\Controllers\Admin\TableController;
+use App\Http\Controllers\Admin\StaffController;
+use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\Admin\PaymentController;
 use App\Http\Controllers\Client\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Client\Cart\CartController;
@@ -15,6 +18,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Client\Auth\RegisterController;
 use App\Http\Controllers\Client\Blog\BlogController;
 use App\Http\Controllers\Client\Blog\BlogDetailController;
+
 
 
 
@@ -47,5 +51,17 @@ Route::get('table', [TableController::class, 'list'])->name('table.list');
 Route::get('table/add', [TableController::class, 'add'])->name('table.add');
 Route::get('table/edit', [TableController::class, 'edit'])->name('table.edit');
 
+
+// Staff
+Route::get('staff/list', [StaffController::class, 'list'])->name('staff.list');
+Route::get('staff/add', [StaffController::class, 'add'])->name('staff.add');
+Route::get('staff/update', [StaffController::class, 'update'])->name('staff.update');
+
+
+
+// Order
+Route::get('order', [OrderController::class, 'index'])->name('order.list');
+Route::get('order/detail', [OrderController::class, 'detail'])->name('order.detail');
+Route::get('payment', [PaymentController::class, 'index'])->name('payment.list');
 
 
