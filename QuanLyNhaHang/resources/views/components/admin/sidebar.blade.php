@@ -42,12 +42,8 @@
                     <span class="nav-text">Thực đơn</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="chart-flot.html">Flot</a></li>
-                    <li><a href="chart-morris.html">Morris</a></li>
-                    <li><a href="chart-chartjs.html">Chartjs</a></li>
-                    <li><a href="chart-chartist.html">Chartist</a></li>
-                    <li><a href="chart-sparkline.html">Sparkline</a></li>
-                    <li><a href="chart-peity.html">Peity</a></li>
+                    <li><a href="{{ route('dish.list') }}">Danh sách</a></li>
+                    <li><a href="{{ route('dish.add') }}">Thêm món ăn</a></li>
                 </ul>
             </li>
             <li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
@@ -62,13 +58,8 @@
                     <span class="nav-text">Đặt bàn</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="uc-select2.html">Select 2</a></li>
-                    <li><a href="uc-nestable.html">Nestable</a></li>
-                    <li><a href="uc-noui-slider.html">Noui Slider</a></li>
-                    <li><a href="uc-sweetalert.html">Sweet Alert</a></li>
-                    <li><a href="uc-toastr.html">Toastr</a></li>
-                    <li><a href="map-jqvmap.html">Jqv Map</a></li>
-                    <li><a href="uc-lightgallery.html">Light Gallery</a></li>
+                    <li><a href="{{ route('table.list') }}">Danh sách bàn</a></li>
+                    <li><a href="{{ route('table.add') }}">Thêm bàn</a></li>
                 </ul>
             </li>
             <li><a href="widget-basic.html" class="" aria-expanded="false">
