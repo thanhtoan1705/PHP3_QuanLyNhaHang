@@ -50,7 +50,7 @@
 
                 <li><a href="{{ route('blog') }}">Bài Viết</a></li>
                 </li>
-                <li><a href="#">Liên hệ</a></li>
+                <li><a href="{{ route('contact') }}">Liên hệ</a></li>
               </ul>
             </nav>
           </div>

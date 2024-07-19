@@ -7,7 +7,6 @@ use App\Http\Controllers\Admin\StaffController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\PaymentController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\Auth\UserController as AuthUserController;
 use App\Http\Controllers\Admin\Customer\CustomerController;
 use App\Http\Controllers\Admin\User\UserController;
@@ -38,6 +37,8 @@ Route::get('dang-nhap', [LoginController::class, 'index'])->name('login');
 Route::get('bai-viet', [BlogController::class, 'index'])->name('blog');
 Route::get('bai-viet-chi-tiet', [BlogDetailController::class, 'index'])->name('blogDetail');
 Route::get('tai-khoan', [AccountController::class, 'index'])->name('account');
+Route::get('lien-he', [ContactController::class, 'index'])->name('contact');
+
 
 
 
