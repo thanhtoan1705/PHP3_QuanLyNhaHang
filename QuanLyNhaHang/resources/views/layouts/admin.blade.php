@@ -20,15 +20,17 @@
     <title>Salero Restaurant Admin Bootstrap 5 Template</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="images/favicon.png">
-
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <link href="{{ asset('assets/admin/vendor/bootstrap-select/dist/css/bootstrap-select.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/admin/vendor/swiper/css/swiper-bundle.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/admin/vendor/datatables/css/jquery.dataTables.min.css') }}" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ asset('assets/admin/vendor/swiper/css/swiper-bundle.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/admin/vendor/dotted-map/css/contrib/jquery.smallipop-0.3.0.min.css') }}" type="text/css"
+    <link rel="stylesheet"
+        href="{{ asset('assets/admin/vendor/dotted-map/css/contrib/jquery.smallipop-0.3.0.min.css') }}" type="text/css"
         media="all" />
-    <link href="{{ asset('assets/admin/vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/admin/vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css') }}"
+        rel="stylesheet">
 
     <!-- tagify-css -->
 
