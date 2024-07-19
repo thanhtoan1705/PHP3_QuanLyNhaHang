@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\DishController as AdminDishController;
+use App\Http\Controllers\Admin\TableController;
 use App\Http\Controllers\Client\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Client\Cart\CartController;
@@ -30,4 +32,17 @@ Route::get('blogDetail', [BlogDetailController::class, 'index']);
 
 
 Route::get('dashboard', [DashboardController::class, 'index']);
+
+
+Route::get('dish', [AdminDishController::class, 'list'])->name('dish.list');
+Route::get('dish/add', [AdminDishController::class, 'add'])->name('dish.add');
+Route::get('dish/edit', [AdminDishController::class, 'edit'])->name('dish.edit');
+
+
+
+Route::get('table', [TableController::class, 'list'])->name('table.list');
+Route::get('table/add', [TableController::class, 'add'])->name('table.add');
+Route::get('table/edit', [TableController::class, 'edit'])->name('table.edit');
+
+
 
