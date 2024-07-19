@@ -6,20 +6,24 @@ use App\Http\Controllers\Admin\TableController;
 use App\Http\Controllers\Admin\StaffController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\PaymentController;
-use App\Http\Controllers\Client\HomeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\Auth\UserController as AuthUserController;
+use App\Http\Controllers\Admin\Customer\CustomerController;
+use App\Http\Controllers\Admin\User\UserController;
+use App\Http\Controllers\Client\HomeController;
+use App\Http\Controllers\Client\ErrorController;
 use App\Http\Controllers\Client\Cart\CartController;
 use App\Http\Controllers\Client\Checkout\CheckoutController;
 use App\Http\Controllers\Client\About\AboutController;
 use App\Http\Controllers\Client\Auth\AccountController;
 use App\Http\Controllers\Client\Dish\DishController;
-use App\Http\Controllers\Client\ErrorController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Client\Auth\RegisterController;
 use App\Http\Controllers\Client\Blog\BlogController;
 use App\Http\Controllers\Client\Blog\BlogDetailController;
-
-
+use App\Http\Controllers\Client\Contact\ContactController;
+use App\Http\Controllers\Client\Gallery\GalleryController;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -37,8 +41,8 @@ Route::get('tai-khoan', [AccountController::class, 'index'])->name('account');
 
 
 
-
 Route::get('dashboard', [DashboardController::class, 'index']);
+
 
 
 Route::get('dish', [AdminDishController::class, 'list'])->name('dish.list');
@@ -64,4 +68,10 @@ Route::get('order', [OrderController::class, 'index'])->name('order.list');
 Route::get('order/detail', [OrderController::class, 'detail'])->name('order.detail');
 Route::get('payment', [PaymentController::class, 'index'])->name('payment.list');
 
+
+
+Route::get('user/list', [UserController::class, 'index'])->name('user.list');
+Route::get('user/create', [UserController::class, 'create'])->name('user.create');
+Route::get('user/edit', [UserController::class, 'edit'])->name('user.edit');
+Route::get('admin/login', [AuthUserController::class, 'login'])->name('admin.login');
 
