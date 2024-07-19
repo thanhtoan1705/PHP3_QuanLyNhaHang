@@ -1,4 +1,5 @@
 @extends('layouts.admin')
+@section('title','list staff')
 @section('content')
 		
 		<!--**********************************

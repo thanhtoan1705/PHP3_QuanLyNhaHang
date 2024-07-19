@@ -1,14 +1,15 @@
 @extends('layouts.clients')
+@section('title','404')
 @section('content')
 <!-- breadcrumb-area -->
 <div class="banner-area breadcrumb-area padding-top-120 padding-bottom-90">
     <div class="bread-shapes">
-        <span class="b-shape-1 item-bounce"><img src="{{ asset('admin/assets/images/img/5.png') }}" alt=""></span>
-        <span class="b-shape-2"><img src="{{ asset('admin/assets/images/img/6.png') }}" alt=""></span>
-        <span class="b-shape-3"><img src="{{ asset('admin/assets/images/img/7.png') }}" alt=""></span>
-        <span class="b-shape-4"><img src="{{ asset('admin/assets/images/img/9.png') }}" alt=""></span>
-        <span class="b-shape-5"><img src="{{ asset('admin/assets/images/shapes/18.png') }}" alt=""></span>
-        <span class="b-shape-6 item-animateOne"><img src="{{ asset('admin/assets/images/img/7.png') }}"
+        <span class="b-shape-1 item-bounce"><img src="{{ asset('assets/client/images/img/5.png') }}" alt=""></span>
+        <span class="b-shape-2"><img src="{{ asset('assets/client/images/img/6.png') }}" alt=""></span>
+        <span class="b-shape-3"><img src="{{ asset('assets/client/images/img/7.png') }}" alt=""></span>
+        <span class="b-shape-4"><img src="{{ asset('assets/client/images/img/9.png') }}" alt=""></span>
+        <span class="b-shape-5"><img src="{{ asset('assets/client/images/shapes/18.png') }}" alt=""></span>
+        <span class="b-shape-6 item-animateOne"><img src="{{ asset('assets/client/images/img/7.png') }}"
                 alt=""></span>
     </div>
     <div class="container padding-top-120">
@@ -27,13 +28,13 @@
 <!-- 404 area -->
 <div class="error-area padding-top-120 padding-bottom-120">
     <div class="error-shapes">
-        <span class="e-s-1"><img src="{{ asset('admin/assets/images/shapes/16.png') }}" alt=""></span>
-        <span class="e-s-2"><img src="{{ asset('admin/assets/images/img/32.png') }}" alt=""></span>
+        <span class="e-s-1"><img src="{{ asset('assets/client/images/shapes/16.png') }}" alt=""></span>
+        <span class="e-s-2"><img src="{{ asset('assets/client/images/img/32.png') }}" alt=""></span>
     </div>
     <div class="container d-flex align-items-center justify-content-center">
         <div class="error-wrapper text-center">
-            <img class="item-bounce" src="{{ asset('admin/assets/images/img/404.png') }}" alt="">
-            <a href="index.html" class="btn margin-top-40">go to home</a>
+            <img class="item-bounce" src="{{ asset('assets/client/images/img/404.png') }}" alt="">
+            <a href="index.html" class="btn margin-top-40">về trang chủ</a>
         </div>
     </div>
 </div>

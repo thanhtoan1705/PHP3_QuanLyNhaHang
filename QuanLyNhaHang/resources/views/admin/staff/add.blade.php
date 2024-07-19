@@ -1,4 +1,5 @@
 @extends('layouts.admin')
+@section('title','add staff')
 @section('content')	
         <!--**********************************
             Content body start
@@ -8,10 +9,10 @@
 				
                 <!-- row -->
                 <div class="row">
-					<div class="col-xl-6 col-lg-12">
+					<div class="col-xl-12 col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Cập nhật thông tin nhân viên</h4>
+                                <h4 class="card-title">Thêm nhân viên</h4>
                             </div>
                             <div class="card-body">
                                 <div class="basic-form">
@@ -72,7 +73,7 @@
                                         </div>
                                         <div class="mb-3 row">
                                             <div class="col-sm-10">
-                                                <button type="submit" class="btn btn-primary">Cập nhật</button>
+                                                <button type="submit" class="btn btn-primary">Thêm</button>
                                             </div>
                                         </div>
                                     </form>

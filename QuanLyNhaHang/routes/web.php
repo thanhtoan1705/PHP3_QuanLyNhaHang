@@ -23,9 +23,9 @@ Route::get('dish_detail', [DishController::class, 'dishDetail']);
 Route::get('menu', [DishController::class, 'menu']);
 Route::get('cart', [CartController::class, 'index']);
 Route::get('checkout', [CheckoutController::class, 'index']);
-Route::get('about', [AboutController::class, 'index']);
-Route::get('404', [ErrorController::class, 'index']);
-Route::get('register', [RegisterController::class, 'index']);
+Route::get('about', [AboutController::class, 'index'])->name('about');
+Route::get('404', [ErrorController::class, 'index'])->name('error');
+Route::get('register', [RegisterController::class, 'index'])->name('register');
 Route::get('login', [LoginController::class, 'index']);
 Route::get('blog', [BlogController::class, 'index']);
 Route::get('blogDetail', [BlogDetailController::class, 'index']);
@@ -33,10 +33,19 @@ Route::get('blogDetail', [BlogDetailController::class, 'index']);
 
 
 Route::get('dashboard', [DashboardController::class, 'index']);
-Route::get('staff/list', [StaffController::class, 'list']);
-Route::get('staff/add', [StaffController::class, 'add']);
-Route::get('staff/update', [StaffController::class, 'update']);
-Route::get('order', [OrderController::class, 'index']);
-Route::get('order/detail', [OrderController::class, 'detail']);
-Route::get('payment', [PaymentController::class, 'index']);
+
+
+
+// Staff
+Route::get('staff/list', [StaffController::class, 'list'])->name('staff.list');
+Route::get('staff/add', [StaffController::class, 'add'])->name('staff.add');
+Route::get('staff/update', [StaffController::class, 'update'])->name('staff.update');
+
+
+
+// Order
+Route::get('order', [OrderController::class, 'index'])->name('order.list');
+Route::get('order/detail', [OrderController::class, 'detail'])->name('order.detail');
+Route::get('payment', [PaymentController::class, 'index'])->name('payment.list');
+
 

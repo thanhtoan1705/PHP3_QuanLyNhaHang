@@ -36,7 +36,7 @@
           <div class="col-lg-2 col-md-2 col-sm-2 col-3">
             <div class="logo">
               <a href="index.html">
-                <img src="{{ asset('admin/assets/images/logo/logo.png')}}" alt="logo" /></a>
+                <img src="{{ asset('assets/client/images/logo/logo.png')}}" alt="logo" /></a>
             </div>
           </div>
           <div class="col-lg-6 d-none d-lg-block">
@@ -45,7 +45,7 @@
                 <li>
                   <a href="#">Trang chủ <span><i class="fas fa-angle-down"></i></span></a>
                 </li>
-                <li><a href="about.html">Giới thiệu</a></li>
+                <li><a href="{{ route('about') }}">Giới thiệu</a></li>
                 <li><a href="menu.html">Menu</a></li>
                 <li>
                   <a href="#">Bài Viết <span><i class="fas fa-angle-down"></i></span></a>

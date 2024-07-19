@@ -1,4 +1,5 @@
 @extends('layouts.admin')
+@section('title','list order')
 @section('content')
     <!--**********************************
             Content body start
@@ -17,7 +18,7 @@
 							<button class="nav-link" id="delivered-tab" data-bs-toggle="tab" data-bs-target="#delivered-tab-pane" type="button" role="tab" aria-controls="delivered-tab-pane" aria-selected="false">Đã giao hàng</button>
 						</li>
 						<li class="nav-item" role="presentation">
-							<button class="nav-link" id="canceled-tab" data-bs-toggle="tab" data-bs-target="#canceled-tab-pane" type="button" role="tab" aria-controls="canceled-tab-pane" aria-selected="false">Canceled</button>
+							<button class="nav-link" id="canceled-tab" data-bs-toggle="tab" data-bs-target="#canceled-tab-pane" type="button" role="tab" aria-controls="canceled-tab-pane" aria-selected="false">Đã hủy</button>
 						</li>
 					</ul>
 					<div>
@@ -47,12 +48,11 @@
 															</div>
 														</th>
 														<th>Mã đơn hàng</th>
-														<th>Ngày</th>
 														<th>Khách hàng</th>
-														<th>Vị trí</th>
-														<th>Số lượng</th>
+														<th>Món ăn</th>
+														<th>Số bàn</th>
+														<th>Tổng tiền</th>
 														<th>Trạng thái</th>
-														<th>Hoạt động</th>
 														<th></th>
 													</tr>
 												</thead>
