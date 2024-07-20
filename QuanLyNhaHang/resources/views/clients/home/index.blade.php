@@ -1,4 +1,7 @@
 @extends('layouts.clients')
+
+@section('title', 'Trang chủ')
+
 @section('content')
     <!-- banner-area -->
     <section class="banner-area padding-top-100 padding-bottom-150">
@@ -79,8 +82,8 @@
                             alt="" /></span>
                 </div>
                 <div class="common-title-area text-center padding-bottom-50 wow fadeInUp">
-                    <h3>Online Booking</h3>
-                    <h2>Table <span>Booking</span></h2>
+                    <h3>Đặt bàn trực tuyến</h3>
+                    <h2>Đặt bàn <span>trực tuyến</span></h2>
                 </div>
                 <div class="row">
                     <div class="col-lg-10 offset-lg-1 col-md-12">
@@ -351,7 +354,7 @@
                                             alt="" />
                                     </div>
                                     <div class="menu-content">
-                                        <h5><a href="single-dish.html">Margherita</a></h5>
+                                        <h5><a href="{{ route('dishDetail') }}">Margherita</a></h5>
                                         <p>con tôm. mực, dứa</p>
                                         <span>giá :$15.00</span>
                                     </div>
@@ -364,7 +367,7 @@
                                             alt="" />
                                     </div>
                                     <div class="menu-content">
-                                        <h5><a href="single-dish.html">Cà chua</a></h5>
+                                        <h5><a href="{{ route('dishDetail') }}">Cà chua</a></h5>
                                         <p>con tôm. mực, dứa</p>
                                         <span>giá :150.000 VNĐ</span>
                                     </div>
@@ -377,7 +380,7 @@
                                             alt="" />
                                     </div>
                                     <div class="menu-content">
-                                        <h5><a href="single-dish.html">Marinara</a></h5>
+                                        <h5><a href="{{ route('dishDetail') }}">Marinara</a></h5>
                                         <p>con tôm. mực, dứa</p>
                                         <span>giá : 150.000 VNĐ</span>
                                         <span class="del"><del>giá : 120.000 VNĐ</del></span>
@@ -395,7 +398,7 @@
                                             alt="" />
                                     </div>
                                     <div class="menu-content">
-                                        <h5><a href="single-dish.html">Frutti Di Mare</a></h5>
+                                        <h5><a href="{{ route('dishDetail') }}">Frutti Di Mare</a></h5>
                                         <p>giá : 150.000 VNĐ</p>
                                         <span>giá : 150.000 VNĐ</span>
                                     </div>
@@ -408,7 +411,7 @@
                                             alt="" />
                                     </div>
                                     <div class="menu-content">
-                                        <h5><a href="single-dish.html">Americana</a></h5>
+                                        <h5><a href="{{ route('dishDetail') }}">Americana</a></h5>
                                         <p>giá : 150.000 VNĐ</p>
                                         <span>giá : 150.000 VNĐ</span>
                                     </div>
@@ -421,7 +424,7 @@
                                             alt="" />
                                     </div>
                                     <div class="menu-content">
-                                        <h5><a href="single-dish.html">Pizza Al Pesto</a></h5>
+                                        <h5><a href="{{ route('dishDetail') }}">Pizza Al Pesto</a></h5>
                                         <p>giá : 150.000 VNĐ</p>
                                         <span>giá : 150.000 VNĐ</span>
                                         <span class="del"><del>giá : 150.000 VNĐ</del></span>
@@ -432,7 +435,7 @@
                         </div>
 
                         <div class="menu-btn text-center">
-                            <a href="shopping-cart.html" class="btn">Đặt hàng ngay bây giờ</a>
+                            <a href="{{ route('dishDetail') }}" class="btn">Đặt hàng ngay bây giờ</a>
                         </div>
                     </div>
                 </div>
@@ -460,7 +463,7 @@
                                             alt="" />
                                     </div>
                                     <div class="menu-content">
-                                        <h5><a href="single-dish.html">Garlic Burger</a></h5>
+                                        <h5><a href="{{ route('dishDetail') }}">Garlic Burger</a></h5>
                                         <p>giá : 150.000 VNĐ</p>
                                         <span>giá : 150.000 VNĐ</span>
                                     </div>
@@ -472,7 +475,7 @@
                                         <img src="{{ asset('assets/client/images/menu-item/br1.png') }}" alt="" />
                                     </div>
                                     <div class="menu-content">
-                                        <h5><a href="single-dish.html">naga burger</a></h5>
+                                        <h5><a href="{{ route('dishDetail') }}">naga burger</a></h5>
                                         <p>giá : 150.000 VNĐ</p>
                                         <span>giá : 150.000 VNĐ</span>
                                     </div>
@@ -484,7 +487,7 @@
                                         <img src="{{ asset('assets/client/images/menu-item/br2.png') }}" alt="" />
                                     </div>
                                     <div class="menu-content">
-                                        <h5><a href="single-dish.html">Beef Burger</a></h5>
+                                        <h5><a href="{{ route('dishDetail') }}">Beef Burger</a></h5>
                                         <p>giá : 150.000 VNĐ</p>
                                         <span>giá : 150.000 VNĐ</span>
                                         <span class="del"><del>giá : 150.000 VNĐ</del></span>
@@ -501,7 +504,7 @@
                                         <img src="{{ asset('assets/client/images/menu-item/br3.png') }}" alt="" />
                                     </div>
                                     <div class="menu-content">
-                                        <h5><a href="single-dish.html">BBQ Burger</a></h5>
+                                        <h5><a href="{{ route('dishDetail') }}">BBQ Burger</a></h5>
                                         <p>giá : 150.000 VNĐ</p>
                                         <span>giá : 150.000 VNĐ</span>
                                     </div>
@@ -513,7 +516,7 @@
                                         <img src="{{ asset('assets/client/images/menu-item/br5.png') }}" alt="" />
                                     </div>
                                     <div class="menu-content">
-                                        <h5><a href="single-dish.html">Crispy Burger</a></h5>
+                                        <h5><a href="{{ route('dishDetail') }}">Crispy Burger</a></h5>
                                         <p>giá : 150.000 VNĐ</p>
                                         <span>giá : 150.000 VNĐ</span>
                                     </div>
@@ -525,7 +528,7 @@
                                         <img src="{{ asset('assets/client/images/menu-item/br6.png') }}" alt="" />
                                     </div>
                                     <div class="menu-content">
-                                        <h5><a href="single-dish.html">Chicken Grill</a></h5>
+                                        <h5><a href="{{ route('dishDetail') }}">Chicken Grill</a></h5>
                                         <p>giá : 150.000 VNĐ</p>
                                         <span>giá : 150.000 VNĐ</span>
                                         <span class="del"><del>giá : 150.000 VNĐ</del></span>
@@ -563,7 +566,7 @@
                                         <img src="{{ asset('assets/client/images/menu-item/tc6.png') }}" alt="" />
                                     </div>
                                     <div class="menu-content">
-                                        <h5><a href="single-dish.html">Fried Chicken</a></h5>
+                                        <h5><a href="{{ route('dishDetail') }}">Fried Chicken</a></h5>
                                         <p>giá : 150.000 VNĐ</p>
                                         <span>giá : 150.000 VNĐ</span>
                                     </div>
@@ -576,7 +579,7 @@
                                             alt="" />
                                     </div>
                                     <div class="menu-content">
-                                        <h5><a href="single-dish.html">Thai Chicken</a></h5>
+                                        <h5><a href="{{ route('dishDetail') }}">Thai Chicken</a></h5>
                                         <p>giá : 150.000 VNĐ</p>
                                         <span>giá : 150.000 VNĐ</span>
                                     </div>
@@ -589,7 +592,7 @@
                                             alt="" />
                                     </div>
                                     <div class="menu-content">
-                                        <h5><a href="single-dish.html">Bbq Chicken</a></h5>
+                                        <h5><a href="{{ route('dishDetail') }}">Bbq Chicken</a></h5>
                                         <p>giá : 150.000 VNĐ</p>
                                         <span>giá : 150.000 VNĐ</span>
                                         <span class="del"><del>giá : 150.000 VNĐ</del></span>
@@ -607,7 +610,7 @@
                                             alt="" />
                                     </div>
                                     <div class="menu-content">
-                                        <h5><a href="single-dish.html">naga</a></h5>
+                                        <h5><a href="{{ route('dishDetail') }}">naga</a></h5>
                                         <p>giá : 150.000 VNĐ</p>
                                         <span>giá : 150.000 VNĐ</span>
                                     </div>
@@ -620,7 +623,7 @@
                                             alt="" />
                                     </div>
                                     <div class="menu-content">
-                                        <h5><a href="single-dish.html">Thai Chicken</a></h5>
+                                        <h5><a href="{{ route('dishDetail') }}">Thai Chicken</a></h5>
                                         <p>giá : 150.000 VNĐ</p>
                                         <span>giá : 150.000 VNĐ</span>
                                     </div>
@@ -633,7 +636,7 @@
                                             alt="" />
                                     </div>
                                     <div class="menu-content">
-                                        <h5><a href="single-dish.html">Bbq Chicken</a></h5>
+                                        <h5><a href="{{ route('dishDetail') }}">Bbq Chicken</a></h5>
                                         <p>giá : 150.000 VNĐ</p>
                                         <span>giá : 150.000 VNĐ</span>
                                         <span class="del"><del>giá : 150.000 VNĐ</del></span>
@@ -678,7 +681,7 @@
                                         <img src="{{ asset('assets/client/images/img/dr1.jpg') }}" alt="" />
                                     </div>
                                     <div class="menu-content">
-                                        <h5><a href="single-dish.html"> Grapefruit</a></h5>
+                                        <h5><a href="{{ route('dishDetail') }}"> Grapefruit</a></h5>
                                         <p>giá : 150.000 VNĐ</p>
                                         <span>giá : 150.000 VNĐ</span>
                                     </div>
@@ -697,7 +700,7 @@
                                         <img src="{{ asset('assets/client/images/img/dr2.jpg') }}" alt="" />
                                     </div>
                                     <div class="menu-content">
-                                        <h5><a href="single-dish.html">Blueberry</a></h5>
+                                        <h5><a href="{{ route('dishDetail') }}">Blueberry</a></h5>
                                         <p>giá : 150.000 VNĐ</p>
                                         <span>giá : 150.000 VNĐ</span>
                                     </div>
@@ -716,7 +719,7 @@
                                         <img src="{{ asset('assets/client/images/img/dr3.jpg') }}" alt="" />
                                     </div>
                                     <div class="menu-content">
-                                        <h5><a href="single-dish.html">Cranberry</a></h5>
+                                        <h5><a href="{{ route('dishDetail') }}">Cranberry</a></h5>
                                         <p>giá : 150.000 VNĐ</p>
                                         <span>giá : 150.000 VNĐ</span>
                                         <span class="del"><del>giá : 150.000 VNĐ</del></span>
@@ -740,7 +743,7 @@
                                         <img src="{{ asset('assets/client/images/img/dr4.jpg') }}" alt="" />
                                     </div>
                                     <div class="menu-content">
-                                        <h5><a href="single-dish.html">Orange Juice</a></h5>
+                                        <h5><a href="{{ route('dishDetail') }}">Orange Juice</a></h5>
                                         <p>giá : 150.000 VNĐ</p>
                                         <span>giá : 150.000 VNĐ</span>
                                     </div>
@@ -759,7 +762,7 @@
                                         <img src="{{ asset('assets/client/images/img/dr5.jpg') }}" alt="" />
                                     </div>
                                     <div class="menu-content">
-                                        <h5><a href="single-dish.html">Beet Juice</a></h5>
+                                        <h5><a href="{{ route('dishDetail') }}">Beet Juice</a></h5>
                                         <p>giá : 150.000 VNĐ</p>
                                         <span>giá : 150.000 VNĐ</span>
                                     </div>
@@ -778,7 +781,7 @@
                                         <img src="{{ asset('assets/client/images/img/dr6.jpg') }}" alt="" />
                                     </div>
                                     <div class="menu-content">
-                                        <h5><a href="single-dish.html">Pomegranate</a></h5>
+                                        <h5><a href="{{ route('dishDetail') }}">Pomegranate</a></h5>
                                         <p>giá : 150.000 VNĐ</p>
                                         <span>giá : 150.000 VNĐ</span>
                                         <span class="del"><del>giá : 150.000 VNĐ</del></span>
@@ -823,7 +826,7 @@
                                         <img src="{{ asset('assets/client/images/img/dr2.jpg') }}" alt="" />
                                     </div>
                                     <div class="menu-content">
-                                        <h5><a href="single-dish.html">Guava juice</a></h5>
+                                        <h5><a href="{{ route('dishDetail') }}">Guava juice</a></h5>
                                         <p>giá : 150.000 VNĐ</p>
                                         <span>giá : 150.000 VNĐ</span>
                                     </div>
@@ -842,7 +845,7 @@
                                         <img src="{{ asset('assets/client/images/img/dr5.jpg') }}" alt="" />
                                     </div>
                                     <div class="menu-content">
-                                        <h5><a href="single-dish.html">Lemonade</a></h5>
+                                        <h5><a href="{{ route('dishDetail') }}">Lemonade</a></h5>
                                         <p>giá : 150.000 VNĐ</p>
                                         <span>giá : 150.000 VNĐ</span>
                                     </div>
@@ -854,7 +857,7 @@
                                         <img src="{{ asset('assets/client/images/img/dr1.jpg') }}" alt="" />
                                     </div>
                                     <div class="menu-content">
-                                        <h5><a href="single-dish.html">Lingonberry</a></h5>
+                                        <h5><a href="{{ route('dishDetail') }}">Lingonberry</a></h5>
                                         <p>giá : 150.000 VNĐ</p>
                                         <span>giá : 150.000 VNĐ</span>
                                         <span class="del"><del>giá : 150.000 VNĐ</del></span>
@@ -878,7 +881,7 @@
                                         <img src="{{ asset('assets/client/images/img/dr6.jpg') }}" alt="" />
                                     </div>
                                     <div class="menu-content">
-                                        <h5><a href="single-dish.html">Prune juice</a></h5>
+                                        <h5><a href="{{ route('dishDetail') }}">Prune juice</a></h5>
                                         <p>giá : 150.000 VNĐ</p>
                                         <span>giá : 150.000 VNĐ</span>
                                     </div>
@@ -897,7 +900,7 @@
                                         <img src="{{ asset('assets/client/images/img/dr4.jpg') }}" alt="" />
                                     </div>
                                     <div class="menu-content">
-                                        <h5><a href="single-dish.html">Sugarcane</a></h5>
+                                        <h5><a href="{{ route('dishDetail') }}">Sugarcane</a></h5>
                                         <p>giá : 150.000 VNĐ</p>
                                         <span>giá : 150.000 VNĐ</span>
                                     </div>
@@ -916,7 +919,7 @@
                                         <img src="{{ asset('assets/client/images/img/dr5.jpg') }}" alt="" />
                                     </div>
                                     <div class="menu-content">
-                                        <h5><a href="single-dish.html">Vegetable</a></h5>
+                                        <h5><a href="{{ route('dishDetail') }}">Vegetable</a></h5>
                                         <p>giá : 150.000 VNĐ</p>
                                         <span>giá : 150.000 VNĐ</span>
                                         <span class="del"><del>giá : 150.000 VNĐ</del></span>
@@ -962,7 +965,7 @@
                                             alt="" />
                                     </div>
                                     <div class="menu-content">
-                                        <h5><a href="single-dish.html">Garlic Burger</a></h5>
+                                        <h5><a href="{{ route('dishDetail') }}">Garlic Burger</a></h5>
                                         <p>giá : 150.000 VNĐ</p>
                                         <span>giá : 150.000 VNĐ</span>
                                     </div>
@@ -982,7 +985,7 @@
                                             alt="" />
                                     </div>
                                     <div class="menu-content">
-                                        <h5><a href="single-dish.html">Thai Chicken</a></h5>
+                                        <h5><a href="{{ route('dishDetail') }}">Thai Chicken</a></h5>
                                         <p>giá : 150.000 VNĐ</p>
                                         <span>giá : 150.000 VNĐ</span>
                                     </div>
@@ -1002,7 +1005,7 @@
                                             alt="" />
                                     </div>
                                     <div class="menu-content">
-                                        <h5><a href="single-dish.html">Bbq Chicken</a></h5>
+                                        <h5><a href="{{ route('dishDetail') }}">Bbq Chicken</a></h5>
                                         <p>giá : 150.000 VNĐ</p>
                                         <span>giá : 150.000 VNĐ</span>
                                         <span class="del"><del>giá : 150.000 VNĐ</del></span>
@@ -1027,7 +1030,7 @@
                                             alt="" />
                                     </div>
                                     <div class="menu-content">
-                                        <h5><a href="single-dish.html">Mutton</a></h5>
+                                        <h5><a href="{{ route('dishDetail') }}">Mutton</a></h5>
                                         <p>giá : 150.000 VNĐ</p>
                                         <span>giá : 150.000 VNĐ</span>
                                     </div>
@@ -1047,7 +1050,7 @@
                                             alt="" />
                                     </div>
                                     <div class="menu-content">
-                                        <h5><a href="single-dish.html">Thai Chicken</a></h5>
+                                        <h5><a href="{{ route('dishDetail') }}">Thai Chicken</a></h5>
                                         <p>giá : 150.000 VNĐ</p>
                                         <span>giá : 150.000 VNĐ</span>
                                     </div>
@@ -1067,7 +1070,7 @@
                                             alt="" />
                                     </div>
                                     <div class="menu-content">
-                                        <h5><a href="single-dish.html">Bbq Chicken</a></h5>
+                                        <h5><a href="{{ route('dishDetail') }}">Bbq Chicken</a></h5>
                                         <p>giá : 150.000 VNĐ</p>
                                         <span>giá : 150.000 VNĐ</span>
                                         <span class="del"><del>giá : 150.000 VNĐ</del></span>
@@ -1110,8 +1113,8 @@
             align-items-center
           ">
                 <div class="common-title-area padding-bottom-30 wow fadeInLeft">
-                    <h3>food items</h3>
-                    <h2>popular <span>dishes</span></h2>
+                    <h3>Đồ ăn</h3>
+                    <h2>Món ăn <span>phổ biến</span></h2>
                 </div>
 
                 <ul class="nav padding-bottom-30" id="popularDishesTab" role="tablist">
@@ -1119,7 +1122,7 @@
                         <div class="nav-link menu-text active" id="all-items-tab" data-bs-toggle="tab"
                             data-bs-target="#all-items-tab-pane" role="tab" aria-controls="all-items-tab-pane"
                             aria-selected="true">
-                            all items</div>
+                            Tất cả món ăn</div>
                     </li>
                     <li class="nav-item menu-text" role="presentation">
                         <div class="nav-link" id="pizza-tab" data-bs-toggle="tab" data-bs-target="#pizza-tab-pane"
@@ -1131,11 +1134,11 @@
                     </li>
                     <li class="nav-item menu-text" role="presentation">
                         <div class="nav-link" id="chicken-tab" data-bs-toggle="tab" data-bs-target="#chicken-tab-pane"
-                            role="tab" aria-controls="chicken-tab-pane" aria-selected="false">chicken</div>
+                            role="tab" aria-controls="chicken-tab-pane" aria-selected="false">gà</div>
                     </li>
                     <li class="nav-item menu-text" role="presentation">
                         <div class="nav-link" id="drinks-tab" data-bs-toggle="tab" data-bs-target="#drinks-tab-pane"
-                            role="tab" aria-controls="drinks-tab-pane" aria-selected="false">drinks</div>
+                            role="tab" aria-controls="drinks-tab-pane" aria-selected="false">nước</div>
                     </li>
                 </ul>
 
@@ -1154,7 +1157,7 @@
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
-                                    <h5><a href="single-dish.html">Garlic Burger </a></h5>
+                                    <h5><a href="{{ route('dishDetail') }}">Garlic Burger </a></h5>
                                     <p>
                                         Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
                                         Thịt gà.
@@ -1179,7 +1182,7 @@
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
-                                    <h5><a href="single-dish.html">Vegetable Pizza </a></h5>
+                                    <h5><a href="{{ route('dishDetail') }}">Vegetable Pizza </a></h5>
                                     <p>
                                         Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
                                         Thịt gà.
@@ -1204,7 +1207,7 @@
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
-                                    <h5><a href="single-dish.html">Chicken Fry </a></h5>
+                                    <h5><a href="{{ route('dishDetail') }}">Chicken Fry </a></h5>
                                     <p>
                                         Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
                                         Thịt gà.
@@ -1231,7 +1234,7 @@
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
-                                    <h5><a href="single-dish.html">Chickpea Soup </a></h5>
+                                    <h5><a href="{{ route('dishDetail') }}">Chickpea Soup </a></h5>
                                     <p>
                                         Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
                                         Thịt gà.
@@ -1256,7 +1259,7 @@
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
-                                    <h5><a href="single-dish.html">Garlic Burger </a></h5>
+                                    <h5><a href="{{ route('dishDetail') }}">Garlic Burger </a></h5>
                                     <p>
                                         Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
                                         Thịt gà.
@@ -1281,7 +1284,7 @@
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
-                                    <h5><a href="single-dish.html">Vegetable Pizza </a></h5>
+                                    <h5><a href="{{ route('dishDetail') }}">Vegetable Pizza </a></h5>
                                     <p>
                                         Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
                                         Thịt gà.
@@ -1306,7 +1309,7 @@
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
-                                    <h5><a href="single-dish.html">Chicken Fry </a></h5>
+                                    <h5><a href="{{ route('dishDetail') }}">Chicken Fry </a></h5>
                                     <p>
                                         Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
                                         Thịt gà.
@@ -1333,7 +1336,7 @@
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
-                                    <h5><a href="single-dish.html">Chickpea Soup </a></h5>
+                                    <h5><a href="{{ route('dishDetail') }}">Chickpea Soup </a></h5>
                                     <p>
                                         Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
                                         Thịt gà.
@@ -1365,7 +1368,7 @@
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
-                                    <h5><a href="single-dish.html">Margherita </a></h5>
+                                    <h5><a href="{{ route('dishDetail') }}">Margherita </a></h5>
                                     <p>
                                         Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
                                         Thịt gà.
@@ -1390,7 +1393,7 @@
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
-                                    <h5><a href="single-dish.html">Vegetable Pizza </a></h5>
+                                    <h5><a href="{{ route('dishDetail') }}">Vegetable Pizza </a></h5>
                                     <p>
                                         Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
                                         Thịt gà.
@@ -1415,7 +1418,7 @@
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
-                                    <h5><a href="single-dish.html">Marinara </a></h5>
+                                    <h5><a href="{{ route('dishDetail') }}">Marinara </a></h5>
                                     <p>
                                         Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
                                         Thịt gà.
@@ -1442,7 +1445,7 @@
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
-                                    <h5><a href="single-dish.html">Frutti Di Mare </a></h5>
+                                    <h5><a href="{{ route('dishDetail') }}">Frutti Di Mare </a></h5>
                                     <p>
                                         Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
                                         Thịt gà.
@@ -1467,7 +1470,7 @@
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
-                                    <h5><a href="single-dish.html">Americana </a></h5>
+                                    <h5><a href="{{ route('dishDetail') }}">Americana </a></h5>
                                     <p>
                                         Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
                                         Thịt gà.
@@ -1492,7 +1495,7 @@
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
-                                    <h5><a href="single-dish.html">Vegetable Pizza </a></h5>
+                                    <h5><a href="{{ route('dishDetail') }}">Vegetable Pizza </a></h5>
                                     <p>
                                         Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
                                         Thịt gà.
@@ -1517,7 +1520,7 @@
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
-                                    <h5><a href="single-dish.html">Pizza Al Pesto </a></h5>
+                                    <h5><a href="{{ route('dishDetail') }}">Pizza Al Pesto </a></h5>
                                     <p>
                                         Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
                                         Thịt gà.
@@ -1544,7 +1547,7 @@
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
-                                    <h5><a href="single-dish.html">Americana </a></h5>
+                                    <h5><a href="{{ route('dishDetail') }}">Americana </a></h5>
                                     <p>
                                         Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
                                         Thịt gà.
@@ -1576,7 +1579,7 @@
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
-                                    <h5><a href="single-dish.html">Garlic Burger </a></h5>
+                                    <h5><a href="{{ route('dishDetail') }}">Garlic Burger </a></h5>
                                     <p>
                                         Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
                                         Thịt gà.
@@ -1601,7 +1604,7 @@
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
-                                    <h5><a href="single-dish.html">Vegetable Pizza </a></h5>
+                                    <h5><a href="{{ route('dishDetail') }}">Vegetable Pizza </a></h5>
                                     <p>
                                         Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
                                         Thịt gà.
@@ -1626,7 +1629,7 @@
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
-                                    <h5><a href="single-dish.html">Chicken Fry </a></h5>
+                                    <h5><a href="{{ route('dishDetail') }}">Chicken Fry </a></h5>
                                     <p>
                                         Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
                                         Thịt gà.
@@ -1653,7 +1656,7 @@
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
-                                    <h5><a href="single-dish.html">Chickpea Soup </a></h5>
+                                    <h5><a href="{{ route('dishDetail') }}">Chickpea Soup </a></h5>
                                     <p>
                                         Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
                                         Thịt gà.
@@ -1678,7 +1681,7 @@
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
-                                    <h5><a href="single-dish.html">Garlic Burger </a></h5>
+                                    <h5><a href="{{ route('dishDetail') }}">Garlic Burger </a></h5>
                                     <p>
                                         Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
                                         Thịt gà.
@@ -1703,7 +1706,7 @@
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
-                                    <h5><a href="single-dish.html">Vegetable Pizza </a></h5>
+                                    <h5><a href="{{ route('dishDetail') }}">Vegetable Pizza </a></h5>
                                     <p>
                                         Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
                                         Thịt gà.
@@ -1728,7 +1731,7 @@
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
-                                    <h5><a href="single-dish.html">Chicken Fry </a></h5>
+                                    <h5><a href="{{ route('dishDetail') }}">Chicken Fry </a></h5>
                                     <p>
                                         Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
                                         Thịt gà.
@@ -1755,7 +1758,7 @@
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
-                                    <h5><a href="single-dish.html">Chickpea Soup </a></h5>
+                                    <h5><a href="{{ route('dishDetail') }}">Chickpea Soup </a></h5>
                                     <p>
                                         Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
                                         Thịt gà.
@@ -1787,7 +1790,7 @@
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
-                                    <h5><a href="single-dish.html">Garlic Burger </a></h5>
+                                    <h5><a href="{{ route('dishDetail') }}">Garlic Burger </a></h5>
                                     <p>
                                         Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
                                         Thịt gà.
@@ -1812,7 +1815,7 @@
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
-                                    <h5><a href="single-dish.html">Vegetable Pizza </a></h5>
+                                    <h5><a href="{{ route('dishDetail') }}">Vegetable Pizza </a></h5>
                                     <p>
                                         Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
                                         Thịt gà.
@@ -1837,7 +1840,7 @@
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
-                                    <h5><a href="single-dish.html">Chicken Fry </a></h5>
+                                    <h5><a href="{{ route('dishDetail') }}">Chicken Fry </a></h5>
                                     <p>
                                         Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
                                         Thịt gà.
@@ -1864,7 +1867,7 @@
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
-                                    <h5><a href="single-dish.html">Chickpea Soup </a></h5>
+                                    <h5><a href="{{ route('dishDetail') }}">Chickpea Soup </a></h5>
                                     <p>
                                         Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
                                         Thịt gà.
@@ -1889,7 +1892,7 @@
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
-                                    <h5><a href="single-dish.html">Garlic Burger </a></h5>
+                                    <h5><a href="{{ route('dishDetail') }}">Garlic Burger </a></h5>
                                     <p>
                                         Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
                                         Thịt gà.
@@ -1914,7 +1917,7 @@
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
-                                    <h5><a href="single-dish.html">Vegetable Pizza </a></h5>
+                                    <h5><a href="{{ route('dishDetail') }}">Vegetable Pizza </a></h5>
                                     <p>
                                         Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
                                         Thịt gà.
@@ -1939,7 +1942,7 @@
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
-                                    <h5><a href="single-dish.html">Chicken Fry </a></h5>
+                                    <h5><a href="{{ route('dishDetail') }}">Chicken Fry </a></h5>
                                     <p>
                                         Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
                                         Thịt gà.
@@ -1966,7 +1969,7 @@
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
-                                    <h5><a href="single-dish.html">Chickpea Soup </a></h5>
+                                    <h5><a href="{{ route('dishDetail') }}">Chickpea Soup </a></h5>
                                     <p>
                                         Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
                                         Thịt gà.
@@ -1998,7 +2001,7 @@
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
-                                    <h5><a href="single-dish.html">Garlic Burger </a></h5>
+                                    <h5><a href="{{ route('dishDetail') }}">Garlic Burger </a></h5>
                                     <p>
                                         Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
                                         Thịt gà.
@@ -2023,7 +2026,7 @@
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
-                                    <h5><a href="single-dish.html">Vegetable Pizza </a></h5>
+                                    <h5><a href="{{ route('dishDetail') }}">Vegetable Pizza </a></h5>
                                     <p>
                                         Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
                                         Thịt gà.
@@ -2048,7 +2051,7 @@
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
-                                    <h5><a href="single-dish.html">Chicken Fry </a></h5>
+                                    <h5><a href="{{ route('dishDetail') }}">Chicken Fry </a></h5>
                                     <p>
                                         Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
                                         Thịt gà.
@@ -2075,7 +2078,7 @@
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
-                                    <h5><a href="single-dish.html">Chickpea Soup </a></h5>
+                                    <h5><a href="{{ route('dishDetail') }}">Chickpea Soup </a></h5>
                                     <p>
                                         Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
                                         Thịt gà.
@@ -2100,7 +2103,7 @@
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
-                                    <h5><a href="single-dish.html">Garlic Burger </a></h5>
+                                    <h5><a href="{{ route('dishDetail') }}">Garlic Burger </a></h5>
                                     <p>
                                         Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
                                         Thịt gà.
@@ -2125,7 +2128,7 @@
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
-                                    <h5><a href="single-dish.html">Vegetable Pizza </a></h5>
+                                    <h5><a href="{{ route('dishDetail') }}">Vegetable Pizza </a></h5>
                                     <p>
                                         Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
                                         Thịt gà.
@@ -2150,7 +2153,7 @@
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
-                                    <h5><a href="single-dish.html">Chicken Fry </a></h5>
+                                    <h5><a href="{{ route('dishDetail') }}">Chicken Fry </a></h5>
                                     <p>
                                         Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
                                         Thịt gà.
@@ -2177,7 +2180,7 @@
                                         style="width: inherit" alt="" />
                                 </div>
                                 <div class="dish-content">
-                                    <h5><a href="single-dish.html">Chickpea Soup </a></h5>
+                                    <h5><a href="{{ route('dishDetail') }}">Chickpea Soup </a></h5>
                                     <p>
                                         Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ
                                         Thịt gà.
@@ -2624,7 +2627,7 @@
                         <div class="common-title-area padding-bottom-40">
                             <h3>Vận chuyển</h3>
                             <h2>
-                                A Moments of Delivered <span> Đúng Thời Gian Và Địa Điểm </span>
+                                Một khoảnh khắc được giao <span> Đúng Thời Gian Và Địa Điểm </span>
                             </h2>
                             <p>
                                 Food Khan là một nhà hàng, quán bar và quán cà phê rang xay nằm trên
@@ -2636,7 +2639,7 @@
                                 <span class="order-img"><img src="{{ asset('assets/client/images/icons/1.png') }}"
                                         alt="" /></span>
                                 <div class="order-content">
-                                    <p>delivery order num.</p>
+                                    <p>Số giao hàng.</p>
                                     <span>123-59794069</span>
                                 </div>
                                 <a href="shopping-cart.html" class="btn">Đặt hàng ngay bây giờ</a>

@@ -1,4 +1,5 @@
 @extends('layouts.clients')
+@section('title','404')
 @section('content')
 <!-- breadcrumb-area -->
 <div class="banner-area breadcrumb-area padding-top-120 padding-bottom-90">
@@ -33,7 +34,8 @@
     <div class="container d-flex align-items-center justify-content-center">
         <div class="error-wrapper text-center">
             <img class="item-bounce" src="{{ asset('assets/client/images/img/404.png') }}" alt="">
-            <a href="index.html" class="btn margin-top-40">go to home</a>
+            <a href="index.html" class="btn margin-top-40">về trang chủ</a>
+
         </div>
     </div>
 </div>

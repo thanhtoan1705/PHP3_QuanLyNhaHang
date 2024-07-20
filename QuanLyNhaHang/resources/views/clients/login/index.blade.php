@@ -82,8 +82,8 @@
                             </div>
                         </div>
                         <div class="login-btn">
-                            <button type="submit" class="btn">đăng nhập tài khoản</button>
-                            <span>Không có tài khoản? <a href="signup.html">Đăng ký tại đây </a></span>
+                            <button type="submit" class="btn">login account</button>
+                            <span>Don't have an account? <a href="{{ route('register') }}">Signup here </a></span>
                         </div>
                     </form>
                 </div>

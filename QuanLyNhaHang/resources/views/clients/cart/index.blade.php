@@ -1,4 +1,6 @@
 @extends('layouts.clients')
+@section('title', 'Giỏ hàng')
+
 @section('content')
     <!-- breadcrumb-area -->
     <div class="banner-area breadcrumb-area padding-top-120 padding-bottom-90">
@@ -14,10 +16,9 @@
         <div class="container padding-top-120">
             <div class="row justify-content-center">
                 <nav aria-label="breadcrumb text-center">
-                    <h2 class="page-title">Shopping Cart</h2>
+                    <h2 class="page-title">Giỏ hàng</h2>
                     <ol class="breadcrumb text-center">
-                        <li class="breadcrumb-item"><a href="index.html">Home </a>/<a href="index.html"> shop</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Shopping Cart</li>
+                        <li class="breadcrumb-item"><a href="/">Trang chủ </a>/<a href="/cart"> Giỏ hàng</a></li>
                     </ol>
                 </nav>
             </div>
@@ -42,14 +43,14 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-12 margin-bottom-30">
                             <div class="upper-t-left d-flex justify-content-between">
-                                <input type="text" placeholder="enter coupon">
-                                <span><a class="btn" href="#"> apply now</a></span>
+                                <input type="text" placeholder="Nhập mã giảm giá">
+                                <span><a class="btn" href="#"> áp dụng ngay bây giờ</a></span>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-12">
                             <div class="upper-t-right d-flex justify-content-between">
-                                <a class="btn" href="#">clear all</a>
-                                <a class="btn" href="#">update cart</a>
+                                <a class="btn" href="#">Làm sạch</a>
+                                <a class="btn" href="#">Cập nhật giỏ hàng</a>
                             </div>
                         </div>
                     </div>
@@ -59,10 +60,10 @@
                     <table class="table-one">
                         <thead class="table-one-head">
                             <tr class="table-one-tr">
-                                <th class="table-one-th" style="width:50%">Product name</th>
-                                <th class="table-one-th" style="width:10%">Price</th>
-                                <th class="table-one-th" style="width:8%">Quantity</th>
-                                <th class="table-one-th text-center" style="width:22%">Subtotal</th>
+                                <th class="table-one-th" style="width:50%">Tên sản phẩm</th>
+                                <th class="table-one-th" style="width:10%">Giá</th>
+                                <th class="table-one-th" style="width:8%">Số lượng</th>
+                                <th class="table-one-th text-center" style="width:22%">Tổng phụ</th>
                                 <th class="table-one-th" style="width:10%"></th>
                             </tr>
                         </thead>
@@ -81,17 +82,17 @@
                                             </div>
                                         </div>
                                         <div class="col-12 col-sm-12 col-md-8">
-                                            <h5>burger patties</h5>
+                                            <h5>bánh burger</h5>
                                         </div>
                                     </div>
                                 </td>
-                                <td>$1.99</td>
+                                <td>10.000vnđ</td>
                                 <!--data-th="Price"-->
                                 <td>
                                     <!-- data-th="Quantity"-->
                                     <input type="number" class="form-control text-center" value="1">
                                 </td>
-                                <td class="text-center">1.99</td>
+                                <td class="text-center">10.000</td>
                                 <!--data-th="Subtotal" -->
                                 <td>
                                     <!--class="actions" data-th=""-->
@@ -110,17 +111,17 @@
                                             </div>
                                         </div>
                                         <div class="col-sm-12 col-md-12">
-                                            <h5>Best Pizza Dough </h5>
+                                            <h5>Bánh Pizza ngon nhất </h5>
                                         </div>
                                     </div>
                                 </td>
-                                <td>$1.99</td>
+                                <td>10.000vnđ</td>
 
                                 <td>
 
                                     <input type="number" class="form-control text-center" value="1">
                                 </td>
-                                <td class="text-center">1.99</td>
+                                <td class="text-center">10.000</td>
 
                                 <td>
 
@@ -138,17 +139,17 @@
                                             </div>
                                         </div>
                                         <div class="col-sm-12 col-md-8">
-                                            <h5>Burger Patties</h5>
+                                            <h5>bánh mì kẹp thịt</h5>
                                         </div>
                                     </div>
                                 </td>
-                                <td>$1.99</td>
+                                <td>10.000vnđ</td>
                                 <!--data-th="Price"-->
                                 <td>
                                     <!-- data-th="Quantity"-->
                                     <input type="number" class="form-control text-center" value="1">
                                 </td>
-                                <td class="text-center">1.99</td>
+                                <td class="text-center">10.000</td>
                                 <!--data-th="Subtotal" -->
                                 <td>
                                     <!--class="actions" data-th=""-->
@@ -164,18 +165,18 @@
                 <div class="row margin-top-60">
                     <div class="col-lg-5">
                         <div class="lower-table">
-                            <h6>Proceed to Checkout</h6>
+                            <h6>Tiến hành thanh toán</h6>
                             <div class="lower-table-info">
                                 <ul class="d-flex justify-content-between">
-                                    <li class="sub">SUBTOTAL</li>
-                                    <li>$40</li>
+                                    <li class="sub">TỔNG PHỤ</li>
+                                    <li>30.000</li>
                                 </ul>
                                 <hr>
                                 <ul class="d-flex justify-content-between">
-                                    <li>Grand Total</li>
-                                    <li>$20</li>
+                                    <li>Tổng cộng</li>
+                                    <li>30.000</li>
                                 </ul>
-                                <button class="btn" type="submit">Proceed to checkout</button>
+                                <button class="btn" type="submit">Tiến hành thanh toán</button>
                             </div>
                         </div>
 

@@ -1,4 +1,5 @@
 @extends('layouts.clients')
+@section('title','gioithieu')
 @section('content')
  <!-- breadcrumb-area -->
  <div class="banner-area breadcrumb-area padding-top-120 padding-bottom-90">
@@ -14,10 +15,10 @@
     <div class="container padding-top-120">
         <div class="row justify-content-center">
             <nav aria-label="breadcrumb">
-                <h2 class="page-title">about us</h2>
+                <h2 class="page-title">Giới thiệu</h2>
                 <ol class="breadcrumb text-center">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">about us</li>
+                    <li class="breadcrumb-item active" aria-current="page">Giới thiệu</li>
                 </ol>
             </nav>
         </div>
@@ -32,7 +33,7 @@
                 <div class="single-food text-center">
                     <img src="{{ asset('assets/client/images/icons/3.png') }}" alt="">
                     <span class="items counter">2000</span>
-                    <p>food item</p>
+                    <p>món ăn</p>
                     <span class="g-s-4"><img src="{{ asset('assets/images/shapes/10.png') }}" alt=""></span>
                     <span class="g-s-5"><img src="{{ asset('assets/images/shapes/14.png') }}" alt=""></span>
                 </div>
@@ -41,7 +42,7 @@
                 <div class="single-food orange text-center">
                     <img src="{{ asset('assets/client/images/icons/f-2.png') }}" alt="">
                     <span class="items counter">500</span>
-                    <p> burger food item</p>
+                    <p> món ăn burger</p>
                     <span class="g-s-4"><img src="{{ asset('assets/images/shapes/10.png') }}" alt=""></span>
                     <span class="g-s-5"><img src="{{ asset('assets/images/shapes/14.png') }}" alt=""></span>
                 </div>
@@ -50,7 +51,7 @@
                 <div class="single-food text-center">
                     <img src="{{ asset('assets/client/images/icons/f-3.png') }}" alt="">
                     <span class="items counter">1000</span>
-                    <p> soft drinks item</p>
+                    <p> mặt hàng nước giải khát</p>
                     <span class="g-s-4"><img src="{{ asset('assets/images/shapes/10.png') }}" alt=""></span>
                     <span class="g-s-5"><img src="{{ asset('assets/images/shapes/14.png') }}" alt=""></span>
                 </div>
@@ -59,7 +60,7 @@
                 <div class="single-food orange text-center">
                     <img src="{{ asset('assets/client/images/icons/f-4.png') }}" alt="">
                     <span class="items counter">600</span>
-                    <p>Delicious Fast Food</p>
+                    <p>Thức ăn nhanh ngon</p>
                     <span class="g-s-4"><img src="{{ asset('assets/images/shapes/10.png') }}" alt=""></span>
                     <span class="g-s-5"><img src="{{ asset('assets/images/shapes/14.png') }}" alt=""></span>
                 </div>
@@ -107,29 +108,29 @@
                     <div class="about-r-shapes">
                         <span class="as-1"><img src="{{ asset('assets/client/images/shapes/1.png') }}" alt=""></span>
                     </div>
-                    <h2>The Story about
-                        Food khan, only for
-                        <span>hungry people.</span>
+                    <h2>Câu chuyện về
+                        Thực phẩm khan, chỉ dành cho
+                        <span>người đói.</span>
                     </h2>
-                    <p>Food is a restaurant, bar and coffee roastery located on a busy corner site in
-                        Farringdon's
-                        Exmouth Market. With glazed.</p>
+                    <p>Food là một nhà hàng, quán bar và quán cà phê nằm ở một góc phố sầm uất ở
+                        của Farringdon
+                        Chợ Exmouth. Với kính.</p>
                     <div class="history-tab">
                         <ul class="nav" id="historyTab" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <div class="nav-link active" id="history-tab" data-bs-toggle="tab"
                                     data-bs-target="#history-tab-pane" role="tab" aria-controls="history-tab-pane"
-                                    aria-selected="true">history</div>
+                                    aria-selected="true">lịch sử</div>
                             </li>
                             <li class="nav-item" role="presentation">
                                 <div class="nav-link" id="journey-tab" data-bs-toggle="tab"
                                     data-bs-target="#journey-tab-pane" role="tab" aria-controls="journey-tab-pane"
-                                    aria-selected="false">journey</div>
+                                    aria-selected="false">hành trình</div>
                             </li>
                             <li class="nav-item" role="presentation">
                                 <div class="nav-link" id="experience-tab" data-bs-toggle="tab"
                                     data-bs-target="#experience-tab-pane" role="tab"
-                                    aria-controls="experience-tab-pane" aria-selected="false">experience</div>
+                                    aria-controls="experience-tab-pane" aria-selected="false">kinh nghiệm</div>
                             </li>
                         </ul>
 
@@ -137,34 +138,35 @@
                             <div class="tab-pane fade show active" id="history-tab-pane" role="tabpanel"
                                 aria-labelledby="history-tab" tabindex="0">
                                 <div class="his-content">
-                                    <p>FoodKhan is Bangladeshi’s own fast food restaurants chain offering Burgers,
-                                        French fries, Milkshakes, Smoothies and so much more.
+                                    <p>FoodKhan là chuỗi nhà hàng thức ăn nhanh của Bangladesh cung cấp Bánh mì kẹp thịt,
+                                        Khoai tây chiên, sữa lắc, sinh tố và nhiều hơn thế nữa.
                                     </p>
                                     <div
                                         class="sig-wrapper d-flex flex-wrap justify-content-around align-items-center">
                                         <div class="sig-img d-flex align-items-center"><img
                                                 src="{{ asset('assets/client/images/icons/sig.png') }}" alt="">
-                                            <span>head of chef</span>
+                                        <span>đầu bếp trưởng</span>
+
                                         </div>
-                                        <a href="food-page.html" class="btn">all items</a>
+                                        <a href="food-page.html" class="btn">tất cả món đồ</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="journey-tab-pane" role="tabpanel"
                                 aria-labelledby="journey-tab" tabindex="0">
                                 <div class="his-content">
-                                    <p>FoodKhan is Bangladeshi’s own fast food restaurants chain offering Burgers,
-                                        French fries, Milkshakes, Smoothies and so much more. We are known for our
-                                        delicious taste, superior quality
+                                    <p>FoodKhan là chuỗi nhà hàng thức ăn nhanh của Bangladesh cung cấp Bánh mì kẹp thịt,
+                                        Khoai tây chiên, sữa lắc, sinh tố và nhiều hơn thế nữa. Chúng tôi được biết đến với
+                                        hương vị thơm ngon, chất lượng vượt trội
                                     </p>
                                     <div
                                         class="sig-wrapper d-flex flex-wrap justify-content-around align-items-center">
                                         <div class="sig-img d-flex align-items-center"><img
-                                                src="{{ asset('assets/client/images/icons/sig.png') }}" alt="">
-                                            <span>head of chef</span>
+                                                src="{{ asset('assets/client/images/icons/sig.png') }}" alt="">                                            <span>đầu bếp trưởng</span>
+
                                         </div>
 
-                                        <a href="food-page.html" class="btn">all items</a>
+                                        <a href="food-page.html" class="btn">tất cả món đồ</a>
                                     </div>
                                 </div>
                             </div>
@@ -180,10 +182,11 @@
                                         class="sig-wrapper d-flex flex-wrap justify-content-around align-items-center">
                                         <div class="sig-img d-flex align-items-center"><img
                                                 src="{{ asset('assets/client/images/icons/sig.png') }}" alt="">
-                                            <span>head of chef</span>
+                                            <span>đầu bếp trưởng</span>
+
                                         </div>
 
-                                        <a href="food-page.html" class="btn">all items</a>
+                                        <a href="food-page.html" class="btn">tất cả món đồ</a>
                                     </div>
                                 </div>
                             </div>
@@ -207,14 +210,14 @@
         <div class="row align-items-center">
             <div class="col-lg-6  wow fadeInLeft">
                 <div class="delicious-left">
-                    <h2>Fresh taste at a
-                        great price, only for
-                        <span>Delicious Food lover.</span>
+                    <h2>Hương vị tươi ngon tại một
+                        giá cực tốt chỉ dành cho
+                        <span>Người yêu món ăn ngon.</span>
                     </h2>
                     <a class="play-btn1 item-ripple popup-youtube"
                         href="https://www.youtube.com/watch?v=9xwazD5SyVg"><i class="fas fa-play"></i></a>
-                    <a href="https://www.youtube.com/watch?v=9xwazD5SyVg" class=" popup-youtube intro"> intro
-                        video</a>
+                    <a href="https://www.youtube.com/watch?v=9xwazD5SyVg" class=" popup-youtube intro"> phần giới thiệu
+                        băng hình</a>
                 </div>
             </div>
             <div class="col-lg-6 d-none d-lg-block  wow fadeInRight">
@@ -234,8 +237,8 @@
     </div>
     <div class="container">
         <div class="common-title-area text-center padding-bottom-50">
-            <h3>team membar</h3>
-            <h2>professional <span>chef</span></h2>
+            <h3>thành viên của đội</h3>
+            <h2>Đầu bếp <span>chuyên nghiệp</span></h2>
         </div>
         <div class="team-slider-active">
             <div class="single-team text-center">
@@ -244,7 +247,7 @@
                 </div>
                 <div class="t-content">
                     <h5>Mathij Sen Deo</h5>
-                    <p>It is a long established fact that a reader BBQ food Chicken.</p>
+                    <p>Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ Gà.</p>
                 </div>
                 <div class="t-social-b">
                     <span class="follow">follow :</span>
@@ -260,7 +263,7 @@
                 </div>
                 <div class="t-content">
                     <h5>Malina Weissa</h5>
-                    <p>It is a long established fact that a reader BBQ food Chicken.</p>
+                    <p>Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ Gà.</p>
                 </div>
                 <div class="t-social-b">
                     <span class="follow">follow :</span>
@@ -276,7 +279,7 @@
                 </div>
                 <div class="t-content">
                     <h5>Tonmoy Khan</h5>
-                    <p>It is a long established fact that a reader BBQ food Chicken.</p>
+                    <p>Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ Gà.</p>
                 </div>
                 <div class="t-social-b">
                     <span class="follow">follow :</span>
@@ -292,7 +295,7 @@
                 </div>
                 <div class="t-content">
                     <h5>Mathja Semo</h5>
-                    <p>It is a long established fact that a reader BBQ food Chicken.</p>
+                    <p>Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ Gà.</p>
                 </div>
                 <div class="t-social-b">
                     <span class="follow">follow :</span>
@@ -308,10 +311,10 @@
                 </div>
                 <div class="t-content">
                     <h5>Mathij Sen Deo</h5>
-                    <p>It is a long established fact that a reader BBQ food Chicken.</p>
+                    <p>Một thực tế đã được chứng minh từ lâu là độc giả món ăn BBQ Gà.</p>
                 </div>
                 <div class="t-social-b">
-                    <span class="follow">follow :</span>
+                    <span class="follow">Theo dõi :</span>
                     <span class="t-social"><a href="#"><i class="fab fa-facebook"></i></a></span>
                     <span class="t-social"><a href="#"><i class="fab fa-twitter"></i></a></span>
                     <span class="t-social"><a href="#"><i class="fab fa-instagram"></i></a></span>
@@ -329,11 +332,13 @@
         <div class="testi-shapes">
             <span class="ts-1"><img src="{{ asset('assets/client/images/img/31.png') }}"  alt=""></span>
             <span class="ts-2"><img src="{{ asset('assets/client/images/img/32.png') }}"  alt=""></span>
-            <span class="ts-3 item-animateTwo"><img src="assets/images/shapes/7.png" alt=""></span>
+            <span class="ts-3 item-animateTwo"><img src="{{ asset('assets/client/images/shapes/7.png') }}" alt=""></span>
+
         </div>
         <div class="common-title-area text-center padding-bottom-50">
-            <h3>testimonial</h3>
-            <h2>client <span>feedback</span></h2>
+            <h3>
+                lời chứng thực</h3>
+            <h2>phản hồi từ <span>khách hàng</span></h2>
         </div>
         <div class="testimonial-active">
             <div class="single-testimonial">
@@ -356,10 +361,10 @@
                         </div>
                     </div>
                 </div>
-                <p>Food Khan is a gret Restaurant from the University of Texas at Austin has been
-                    researching
-                    the benefits of frequent testing and the feedback
-                    leads to. He explains that in the history of the study.</p>
+                <p>Food Khan là một nhà hàng tuyệt vời của Đại học Texas ở Austin đã được
+                    nghiên cứu
+                    lợi ích của việc kiểm tra thường xuyên và phản hồi
+                    dẫn đến. Ông giải thích rằng trong lịch sử nghiên cứu.</p>
             </div>
             <div class="single-testimonial">
                 <div class="testi-top">
@@ -382,10 +387,10 @@
                         </div>
                     </div>
                 </div>
-                <p>Food Khan is a gret Restaurant from the University of Texas at Austin has been
-                    researching
-                    the benefits of frequent testing and the feedback
-                    leads to. He explains that in the history of the study.</p>
+                <p>Food Khan là một nhà hàng tuyệt vời của Đại học Texas ở Austin đã được
+                    nghiên cứu
+                    lợi ích của việc kiểm tra thường xuyên và phản hồi
+                    dẫn đến. Ông giải thích rằng trong lịch sử nghiên cứu.</p>
             </div>
             <div class="single-testimonial">
                 <div class="testi-top">
@@ -408,10 +413,10 @@
                         </div>
                     </div>
                 </div>
-                <p>Food Khan is a gret Restaurant from the University of Texas at Austin has been
-                    researching
-                    the benefits of frequent testing and the feedback
-                    leads to. He explains that in the history of the study.</p>
+                <p>Food Khan là một nhà hàng tuyệt vời của Đại học Texas ở Austin đã được
+                    nghiên cứu
+                    lợi ích của việc kiểm tra thường xuyên và phản hồi
+                    dẫn đến. Ông giải thích rằng trong lịch sử nghiên cứu.</p>
             </div>
             <div class="single-testimonial">
                 <div class="testi-top">
@@ -434,10 +439,10 @@
                         </div>
                     </div>
                 </div>
-                <p>Food Khan is a gret Restaurant from the University of Texas at Austin has been
-                    researching
-                    the benefits of frequent testing and the feedback
-                    leads to. He explains that in the history of the study.</p>
+                <p>Food Khan là một nhà hàng tuyệt vời của Đại học Texas ở Austin đã được
+                    nghiên cứu
+                    lợi ích của việc kiểm tra thường xuyên và phản hồi
+                    dẫn đến. Ông giải thích rằng trong lịch sử nghiên cứu.</p>
             </div>
             <div class="single-testimonial">
                 <div class="testi-top">
@@ -460,10 +465,10 @@
                         </div>
                     </div>
                 </div>
-                <p>Food Khan is a gret Restaurant from the University of Texas at Austin has been
-                    researching
-                    the benefits of frequent testing and the feedback
-                    leads to. He explains that in the history of the study.</p>
+                <p>Food Khan là một nhà hàng tuyệt vời của Đại học Texas ở Austin đã được
+                    nghiên cứu
+                    lợi ích của việc kiểm tra thường xuyên và phản hồi
+                    dẫn đến. Ông giải thích rằng trong lịch sử nghiên cứu.</p>
             </div>
             <div class="single-testimonial">
                 <div class="testi-top">
@@ -486,10 +491,10 @@
                         </div>
                     </div>
                 </div>
-                <p>Food Khan is a gret Restaurant from the University of Texas at Austin has been
-                    researching
-                    the benefits of frequent testing and the feedback
-                    leads to. He explains that in the history of the study.</p>
+                <p>Food Khan là một nhà hàng tuyệt vời của Đại học Texas ở Austin đã được
+                    nghiên cứu
+                    lợi ích của việc kiểm tra thường xuyên và phản hồi
+                    dẫn đến. Ông giải thích rằng trong lịch sử nghiên cứu.</p>
             </div>
             <div class="single-testimonial">
                 <div class="testi-top">
@@ -512,10 +517,10 @@
                         </div>
                     </div>
                 </div>
-                <p>Food Khan is a gret Restaurant from the University of Texas at Austin has been
-                    researching
-                    the benefits of frequent testing and the feedback
-                    leads to. He explains that in the history of the study.</p>
+                <p>Food Khan là một nhà hàng tuyệt vời của Đại học Texas ở Austin đã được
+                    nghiên cứu
+                    lợi ích của việc kiểm tra thường xuyên và phản hồi
+                    dẫn đến. Ông giải thích rằng trong lịch sử nghiên cứu.</p>
             </div>
             <div class="single-testimonial">
                 <div class="testi-top">
@@ -538,10 +543,10 @@
                         </div>
                     </div>
                 </div>
-                <p>Food Khan is a gret Restaurant from the University of Texas at Austin has been
-                    researching
-                    the benefits of frequent testing and the feedback
-                    leads to. He explains that in the history of the study.</p>
+                <p>Food Khan là một nhà hàng tuyệt vời của Đại học Texas ở Austin đã được
+                    nghiên cứu
+                    lợi ích của việc kiểm tra thường xuyên và phản hồi
+                    dẫn đến. Ông giải thích rằng trong lịch sử nghiên cứu.</p>
             </div>
         </div>
 
@@ -585,8 +590,8 @@
     <div class="container">
         <div class="common-title-area text-center padding-bottom-60">
             <h3>food khan</h3>
-            <h2>blog & <span>
-                    news
+            <h2>Tin tức & <span>
+                    bài viết
                 </span> </h2>
         </div>
         <div class="blog-slider-active">
@@ -599,10 +604,52 @@
                     </div>
                 </div>
                 <div class="blog-meta d-flex justify-content-between">
-                    <span><a href="#"><i class="fas fa-tags"></i> chicken burger</a></span>
+                    <span><a href="#"><i class="fas fa-tags"></i> burger gà</a></span>
                     <span><a href="#"><i class="fas fa-user-circle"></i> milone hridoy</a></span>
                 </div>
-                <h4><a href="blog-single.html">Game day Burger with Homemade</a></h4>
+                <h4><a href="blog-single.html">Burger ngày thi đấu với món tự làm</a></h4>
+            </div>
+            <div class="single-blog">
+                <div class="blog-img">
+                    <a href="blog-single.html"> <img src="{{ asset('assets/client/images/blog/b-2.jpg') }}" alt=""></a>
+                    <div class="b-badge">
+                        <span class="date"><a href="#">02</a></span><br>
+                        <span class="month"><a href="#">dec</a></span>
+                    </div>
+                </div>
+                <div class="blog-meta d-flex justify-content-between">
+                    <span><a href="#"><i class="fas fa-tags"></i> pizza</a></span>
+                    <span><a href="#"><i class="fas fa-user-circle"></i> milone hridoy</a></span>
+                </div>
+                <h4><a href="blog-single.html">Bánh pizza thơm ngon trên đế gỗ</a></h4>
+            </div>
+            <div class="single-blog">
+                <div class="blog-img">
+                    <a href="blog-single.html"> <img src="{{ asset('assets/client/images/blog/b-3.jpg') }}" alt=""></a>
+                    <div class="b-badge">
+                        <span class="date"><a href="#">02</a></span><br>
+                        <span class="month"><a href="#">dec</a></span>
+                    </div>
+                </div>
+                <div class="blog-meta d-flex justify-content-between">
+                    <span><a href="#"><i class="fas fa-tags"></i> burger gà</a></span>
+                    <span><a href="#"><i class="fas fa-user-circle"></i> milone hridoy</a></span>
+                </div>
+                <h4><a href="blog-single.html">Burger ngày thi đấu với món tự làm</a></h4>
+            </div>
+            <div class="single-blog">
+                <div class="blog-img">
+                    <a href="blog-single.html"> <img src="{{ asset('assets/client/images/blog/b-1.jpg') }}" alt=""></a>
+                    <div class="b-badge">
+                        <span class="date"><a href="#">02</a></span><br>
+                        <span class="month"><a href="#">dec</a></span>
+                    </div>
+                </div>
+                <div class="blog-meta d-flex justify-content-between">
+                    <span><a href="#"><i class="fas fa-tags"></i> burger gà</a></span>
+                    <span><a href="#"><i class="fas fa-user-circle"></i> milone hridoy</a></span>
+                </div>
+                <h4><a href="blog-single.html">Burger ngày thi đấu với món tự làm</a></h4>
             </div>
             <div class="single-blog">
                 <div class="blog-img">
@@ -627,10 +674,10 @@
                     </div>
                 </div>
                 <div class="blog-meta d-flex justify-content-between">
-                    <span><a href="#"><i class="fas fa-tags"></i> chicken burger</a></span>
+                    <span><a href="#"><i class="fas fa-tags"></i> burger gà</a></span>
                     <span><a href="#"><i class="fas fa-user-circle"></i> milone hridoy</a></span>
                 </div>
-                <h4><a href="blog-single.html">Game day Burger with Homemade</a></h4>
+                <h4><a href="blog-single.html">Burger ngày thi đấu với món tự làm</a></h4>
             </div>
             <div class="single-blog">
                 <div class="blog-img">
@@ -674,7 +721,6 @@
                 </div>
                 <h4><a href="blog-single.html">Game day Burger with Homemade</a></h4>
             </div>
-
         </div>
     </div>
 </section>

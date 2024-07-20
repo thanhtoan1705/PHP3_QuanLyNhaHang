@@ -1,4 +1,5 @@
 @extends('layouts.clients')
+@section('title','dangky')
 @section('content')
 <!-- breadcrumb-area -->
 <div class="banner-area breadcrumb-area padding-top-120 padding-bottom-90">
@@ -14,10 +15,10 @@
     <div class="container padding-top-120">
         <div class="row justify-content-center">
             <nav aria-label="breadcrumb">
-                <h2 class="page-title">Signup Page</h2>
+                <h2 class="page-title">Trang đăng ký</h2>
                 <ol class="breadcrumb text-center">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page"> Signup Page</li>
+                    <li class="breadcrumb-item active" aria-current="page"> Trang đăng ký</li>
                 </ol>
             </nav>
         </div>
@@ -67,7 +68,7 @@
             </div>
             <div class="col-lg-6 col-md-12 wow fadeInUp">
                 <div class="contact-form-area login-form-area signup-form-area">
-                    <h3>Signup <span>now</span></h3>
+                    <h3>Đăng ký <span>ngay</span></h3>
                     <form action="#">
                         <div class="google-button">
                             <a href="#" class="btn"><span><i class="fab fa-google"></i></span> google</a>
@@ -79,15 +80,15 @@
                         <div class="checkbox-area">
                             <div class="checkbox-part">
                                 <input type="checkbox" id="remember">
-                                <label for="remember">remember me</label>
+                                <label for="remember">Ghi nhớ tôi</label>
                             </div>
                             <div class="forgot-pas">
-                                <a href="#">forgot password?</a>
+                                <a href="#">Quên mật khẩu?</a>
                             </div>
                         </div>
                         <div class="login-btn">
-                            <button type="submit" class="btn">login account</button>
-                            <span>already have an account? <a href="login.html">login</a></span>
+                            <button type="submit" class="btn">Đăng ký</button>
+                            <span>Bạn đã có tài khoản? <a href="login.html">Đăng nhập</a></span>
                         </div>
                     </form>
                 </div>
