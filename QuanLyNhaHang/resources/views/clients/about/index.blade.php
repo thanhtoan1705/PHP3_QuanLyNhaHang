@@ -145,7 +145,8 @@
                                         class="sig-wrapper d-flex flex-wrap justify-content-around align-items-center">
                                         <div class="sig-img d-flex align-items-center"><img
                                                 src="{{ asset('assets/client/images/icons/sig.png') }}" alt="">
-                                            <span>đầu bếp trưởng</span>
+                                        <span>đầu bếp trưởng</span>
+
                                         </div>
                                         <a href="food-page.html" class="btn">tất cả món đồ</a>
                                     </div>
@@ -161,8 +162,8 @@
                                     <div
                                         class="sig-wrapper d-flex flex-wrap justify-content-around align-items-center">
                                         <div class="sig-img d-flex align-items-center"><img
-                                                src="{{ asset('assets/client/images/icons/sig.png') }}" alt="">
-                                            <span>đầu bếp trưởng</span>
+                                                src="{{ asset('assets/client/images/icons/sig.png') }}" alt="">                                            <span>đầu bếp trưởng</span>
+
                                         </div>
 
                                         <a href="food-page.html" class="btn">tất cả món đồ</a>
@@ -182,6 +183,7 @@
                                         <div class="sig-img d-flex align-items-center"><img
                                                 src="{{ asset('assets/client/images/icons/sig.png') }}" alt="">
                                             <span>đầu bếp trưởng</span>
+
                                         </div>
 
                                         <a href="food-page.html" class="btn">tất cả món đồ</a>
@@ -331,6 +333,7 @@
             <span class="ts-1"><img src="{{ asset('assets/client/images/img/31.png') }}"  alt=""></span>
             <span class="ts-2"><img src="{{ asset('assets/client/images/img/32.png') }}"  alt=""></span>
             <span class="ts-3 item-animateTwo"><img src="{{ asset('assets/client/images/shapes/7.png') }}" alt=""></span>
+
         </div>
         <div class="common-title-area text-center padding-bottom-50">
             <h3>
@@ -676,7 +679,48 @@
                 </div>
                 <h4><a href="blog-single.html">Burger ngày thi đấu với món tự làm</a></h4>
             </div>
-
+            <div class="single-blog">
+                <div class="blog-img">
+                    <a href="blog-single.html"> <img src="{{ asset('assets/client/images/blog/b-1.jpg') }}" alt=""></a>
+                    <div class="b-badge">
+                        <span class="date"><a href="#">02</a></span><br>
+                        <span class="month"><a href="#">dec</a></span>
+                    </div>
+                </div>
+                <div class="blog-meta d-flex justify-content-between">
+                    <span><a href="#"><i class="fas fa-tags"></i> chicken burger</a></span>
+                    <span><a href="#"><i class="fas fa-user-circle"></i> milone hridoy</a></span>
+                </div>
+                <h4><a href="blog-single.html">Game day Burger with Homemade</a></h4>
+            </div>
+            <div class="single-blog">
+                <div class="blog-img">
+                    <a href="blog-single.html"> <img src="{{ asset('assets/client/images/blog/b-2.jpg') }}" alt=""></a>
+                    <div class="b-badge">
+                        <span class="date"><a href="#">02</a></span><br>
+                        <span class="month"><a href="#">dec</a></span>
+                    </div>
+                </div>
+                <div class="blog-meta d-flex justify-content-between">
+                    <span><a href="#"><i class="fas fa-tags"></i> pizza</a></span>
+                    <span><a href="#"><i class="fas fa-user-circle"></i> milone hridoy</a></span>
+                </div>
+                <h4><a href="blog-single.html">Delicious pizza with on a wooden</a></h4>
+            </div>
+            <div class="single-blog">
+                <div class="blog-img">
+                    <a href="blog-single.html"> <img src="{{ asset('assets/client/images/blog/b-3.jpg') }}" alt=""></a>
+                    <div class="b-badge">
+                        <span class="date"><a href="#">02</a></span><br>
+                        <span class="month"><a href="#">dec</a></span>
+                    </div>
+                </div>
+                <div class="blog-meta d-flex justify-content-between">
+                    <span><a href="#"><i class="fas fa-tags"></i> chicken burger</a></span>
+                    <span><a href="#"><i class="fas fa-user-circle"></i> milone hridoy</a></span>
+                </div>
+                <h4><a href="blog-single.html">Game day Burger with Homemade</a></h4>
+            </div>
         </div>
     </div>
 </section>

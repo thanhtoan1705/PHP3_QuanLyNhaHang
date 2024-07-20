@@ -6,6 +6,9 @@ use App\Http\Controllers\Admin\TableController;
 use App\Http\Controllers\Admin\StaffController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\PaymentController;
+use App\Http\Controllers\Admin\Category\CategoryController;
+use App\Http\Controllers\Admin\Comment\CommentController;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\Auth\UserController as AuthUserController;
 use App\Http\Controllers\Admin\Customer\CustomerController;
@@ -38,7 +41,6 @@ Route::get('bai-viet', [BlogController::class, 'index'])->name('blog');
 Route::get('bai-viet-chi-tiet', [BlogDetailController::class, 'index'])->name('blogDetail');
 Route::get('tai-khoan', [AccountController::class, 'index'])->name('account');
 Route::get('lien-he', [ContactController::class, 'index'])->name('contact');
-
 
 
 
@@ -75,4 +77,12 @@ Route::get('user/list', [UserController::class, 'index'])->name('user.list');
 Route::get('user/create', [UserController::class, 'create'])->name('user.create');
 Route::get('user/edit', [UserController::class, 'edit'])->name('user.edit');
 Route::get('admin/login', [AuthUserController::class, 'login'])->name('admin.login');
+
+Route::get('category', [CategoryController::class, 'list'])->name('category.list');
+Route::get('category/add', [CategoryController::class, 'add'])->name('category.add');
+Route::get('category/update', [CategoryController::class, 'update'])->name('category.update');
+
+
+Route::get('comment', [CommentController::class, 'index'])->name('comment.list');
+
 

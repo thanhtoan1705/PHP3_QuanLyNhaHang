@@ -35,6 +35,7 @@
         <div class="error-wrapper text-center">
             <img class="item-bounce" src="{{ asset('assets/client/images/img/404.png') }}" alt="">
             <a href="index.html" class="btn margin-top-40">về trang chủ</a>
+
         </div>
     </div>
 </div>
