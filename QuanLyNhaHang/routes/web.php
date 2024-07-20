@@ -28,18 +28,18 @@ Route::get('about', [AboutController::class, 'index']);
 Route::get('404', [ErrorController::class, 'index']);
 Route::get('register', [RegisterController::class, 'index']);
 Route::get('login', [LoginController::class, 'index']);
-Route::get('blog', [BlogController::class, 'index']);
-Route::get('blogDetail', [BlogDetailController::class, 'index']);
+Route::get('blog', [BlogController::class, 'index'])->name('blog');
+Route::get('blogDetail', [BlogDetailController::class, 'index'])->name('blog.detail');
 
 
 
 Route::get('dashboard', [DashboardController::class, 'index']);
 
-Route::get('category', [CategoryController::class, 'list']);
-Route::get('category/add', [CategoryController::class, 'add']);
-Route::get('category/update', [CategoryController::class, 'update']);
+Route::get('category', [CategoryController::class, 'list'])->name('category.list');
+Route::get('category/add', [CategoryController::class, 'add'])->name('category.add');
+Route::get('category/update', [CategoryController::class, 'update'])->name('category.update');
 
 
-Route::get('comment', [CommentController::class, 'index']);
+Route::get('comment', [CommentController::class, 'index'])->name('comment.list');
 
 

@@ -8,7 +8,7 @@
                         <div class="tab-pane fade show active" id="Preview" role="tabpanel" aria-labelledby="home-tab">
                             <div class="card-header flex-wrap border-0">
                                 <div>
-                                    <a href="/category/add"> <button class="btn btn-primary">Thêm danh mục</button></a>
+                                    <a href="{{ route('category.add') }}"> <button class="btn btn-primary">Thêm danh mục</button></a>
                                     <h2 class="mt-4 card-title">Danh sách danh mục</h2>
 
                                 </div>
@@ -52,7 +52,7 @@
                                                             </svg>
                                                         </button>
                                                         <div class="dropdown-menu">
-                                                            <a class="dropdown-item" href="/category/update">Chỉnh sửa</a>
+                                                            <a class="dropdown-item" href="{{ route('category.update') }}">Chỉnh sửa</a>
                                                             <a class="dropdown-item" href="#">xóa</a>
                                                         </div>
                                                     </div>

@@ -75,15 +75,15 @@
                         <div class="checkbox-area">
                             <div class="checkbox-part">
                                 <input type="checkbox" id="remember">
-                                <label for="remember">remember me</label>
+                                <label for="remember">Nhớ tài khoản</label>
                             </div>
                             <div class="forgot-pas">
-                                <a href="#">forgot password?</a>
+                                <a href="#">quên mật khẩu?</a>
                             </div>
                         </div>
                         <div class="login-btn">
-                            <button type="submit" class="btn">login account</button>
-                            <span>Don't have an account? <a href="signup.html">Signup here </a></span>
+                            <button type="submit" class="btn">đăng nhập tài khoản</button>
+                            <span>Không có tài khoản? <a href="signup.html">Đăng ký tại đây </a></span>
                         </div>
                     </form>
                 </div>

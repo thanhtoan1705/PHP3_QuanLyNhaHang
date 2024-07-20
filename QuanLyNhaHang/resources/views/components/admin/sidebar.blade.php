@@ -24,12 +24,8 @@
                 <span class="nav-text">Danh mục</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="chat.html">Chat<span class="badge badge-danger badge-xs ms-1">NEW</span></a></li>
-                    <li><a class="has-arrow" href="javascript:void(0);" aria-expanded="false">Users Manager<span class="badge badge-danger badge-xs ms-1">NEW</span></a>
-                    </li>
-                    <li><a class="has-arrow" href="javascript:void(0);" aria-expanded="false">Email</a>
-                    </li>
-                    <li><a href="app-calender.html">Calendar</a></li>
+                    <li><a href="{{ route('category.list')}}">Danh sách Danh mục</a></li>
+                    <li><a href="{{ route('category.add')}}">Thêm Danh mục</a></li>
                 </ul>
             </li>
             <li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
@@ -113,8 +109,7 @@
                 <span class="nav-text">Bình luận</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="table-bootstrap-basic.html">Bootstrap</a></li>
-                    <li><a href="table-datatable-basic.html">Datatable</a></li>
+                    <li><a href="{{route('comment.list')}}">Danh sách Bình luận</a></li>
                 </ul>
             </li>
             <li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">

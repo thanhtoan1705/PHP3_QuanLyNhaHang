@@ -48,7 +48,7 @@
                 <li><a href="about.html">Giới thiệu</a></li>
                 <li><a href="menu.html">Menu</a></li>
                 <li>
-                  <a href="#">Bài Viết <span><i class="fas fa-angle-down"></i></span></a>
+                  <a href="{{route('blog')}}">Bài Viết <span><i class="fas fa-angle-down"></i></span></a>
                 </li>
                 <li><a href="contact.html">Liên hệ</a></li>
               </ul>
