@@ -35,10 +35,10 @@ Route::get('gio-hang', [CartController::class, 'index'])->name('cart');
 Route::get('thanh-toan', [CheckoutController::class, 'index'])->name('checkout');
 Route::get('gioi-thieu', [AboutController::class, 'index'])->name('about');
 Route::get('404', [ErrorController::class, 'index']);
-Route::get('dang-ky', [RegisterController::class, 'index'])->name('regiter');
+Route::get('dang-ky', [RegisterController::class, 'index'])->name('register');
 Route::get('dang-nhap', [LoginController::class, 'index'])->name('login');
 Route::get('bai-viet', [BlogController::class, 'index'])->name('blog');
-Route::get('bai-viet-chi-tiet', [BlogDetailController::class, 'index'])->name('blogDetail');
+Route::get('bai-viet-chi-tiet', [BlogDetailController::class, 'index'])->name('blog.detail');
 Route::get('tai-khoan', [AccountController::class, 'index'])->name('account');
 Route::get('lien-he', [ContactController::class, 'index'])->name('contact');
 
