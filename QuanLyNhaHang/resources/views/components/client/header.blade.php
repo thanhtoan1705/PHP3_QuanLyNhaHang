@@ -43,14 +43,15 @@
             <nav id="mobile-menu">
               <ul class="main-menu">
                 <li>
-                  <a href="#">Trang chủ <span><i class="fas fa-angle-down"></i></span></a>
+                  <a href="{{ route('home') }}">Trang chủ <span></span></a>
                 </li>
                 <li><a href="{{ route('about') }}">Giới thiệu</a></li>
-                <li><a href="menu.html">Menu</a></li>
+
+                <li><a href="{{ route('menu') }}">Menu</a></li>
                 <li>
-                  <a href="#">Bài Viết <span><i class="fas fa-angle-down"></i></span></a>
+                  <a href="{{ route('blog') }}">Bài Viết <span></span></a>
                 </li>
-                <li><a href="contact.html">Liên hệ</a></li>
+                <li><a href="#">Liên hệ</a></li>
               </ul>
             </nav>
           </div>
@@ -60,12 +61,12 @@
                 <a href="wishlist.html"><i class="fas fa-heart"></i></a>
               </span>
               <span>
-                <a href="profile.html"><i class="fas fa-user"></i></a>
+                <a href="{{ route('account') }}"><i class="fas fa-user"></i></a>
               </span>
               <span>
-                <a href="shopping-cart.html"><i class="fas fa-shopping-basket"></i></a>
+                <a href="{{ route('cart') }}"><i class="fas fa-shopping-basket"></i></a>
               </span>
-              <a href="#" class="btn">Đăng Nhập</a>
+              <a href="{{ route('login') }}" class="btn">Đăng Nhập</a>
             </div>
           </div>
         </div>

@@ -25,11 +25,11 @@
           </div>
           <div class="col-lg-6 col-md-6">
             <div class="f-title">
-              <h4>Cảm thấy đói! Đặt hàng của bạn<span> Thích đồ ăn.</span></h4>
+              <h4>Thấy đói! Đặt hàng của bạn<span> Thích đồ ăn.</span></h4>
             </div>
           </div>
           <div class="col-lg-2 col-md-3">
-            <a href="shopping-cart.html" class="btn">đặt hàng ngay</a>
+            <a href="shopping-cart.html" class="btn">đặt ngay</a>
           </div>
         </div>
         <hr />
@@ -49,7 +49,7 @@
             <div class="widget">
               <h6>đặt bàn</h6>
               <p>Dogfood và xe bán đồ ăn Sliders. Dưới Om oss kan ni läsa</p>
-              <a href="#" class="f-link">make a call</a>
+              <a href="#" class="f-link">Gọi cho tôi</a>
             </div>
           </div>
           <div class="col-lg-3 col-md-6 col-12 margin-bottom-20">
