@@ -17,9 +17,7 @@
                 <nav aria-label="breadcrumb">
                     <h2 class="page-title">Liên hệ</h2>
                     <ol class="breadcrumb text-center">
-                        <li class="breadcrumb-item"><a href="/">Trang chủ</a> / <a href="#lien_he"> liên
-                                hệ chúng
-                                tôi</a></li>
+                        <li class="breadcrumb-item"><a href="/">Trang chủ</a> / <a href="#lien_he"> liên hệ chúng tôi</a></li>
                     </ol>
                 </nav>
             </div>

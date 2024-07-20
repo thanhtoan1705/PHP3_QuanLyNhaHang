@@ -19,7 +19,7 @@
                                     </div>
                                     <div class="mb-3 col-md-6">
                                         <label class="form-label">Họ <span class="text-danger">*</span></label>
-                                        <input type="ho" class="form-control" placeholder="Họ">
+                                        <input type="text" class="form-control" placeholder="Họ">
                                     </div>
                                     <div class="mb-3 col-md-6">
                                         <label class="form-label">Email <span class="text-danger">*</span></label>
@@ -27,15 +27,11 @@
                                     </div>
                                     <div class="mb-3 col-md-6">
                                         <label class="form-label">Số điện thoại <span class="text-danger">*</span></label>
-                                        <input type="sdt" class="form-control" placeholder="Số điện thoại">
+                                        <input type="number" class="form-control" placeholder="Số điện thoại">
                                     </div>
-                                    <div class="mb-3">
-                                        <label class="form-label">Mô tả</label>
-                                        <textarea class="form-txtarea form-control" rows="8" id="comment">Mô tả</textarea>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="formFile" class="form-label">Chọn hình ảnh</label>
-                                        <input class="form-control" type="file" id="formFile">
+                                    <div class="mb-3 col-md-6">
+                                        <label class="form-label">Địa chỉ <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" placeholder="Địa chỉ">
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label">Quyền:</label>

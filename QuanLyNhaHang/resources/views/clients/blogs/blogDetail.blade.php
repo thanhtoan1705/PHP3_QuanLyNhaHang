@@ -15,12 +15,11 @@
                 <h2 class="page-title">Tin tức</h2>
                 <ol class="breadcrumb text-center">
                     <li class="breadcrumb-item"><a href="index.html">Home </a>/<a href="index.html"> pages</a></li>
-                   
+
                 </ol>
             </nav>
         </div>
     </div>
-</div>
 
 <!-- Blog Content Section -->
 <section class="blog-content-section blog-details-page padding-120">
@@ -193,9 +192,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- divider -->
-                    <div class="divider"></div>
+                        <!-- divider -->
+                        <div class="divider"></div>
 
 
                     <!-- blog comment area -->
@@ -412,10 +410,163 @@
                             <span class="gshape-1"><img src="{{ asset('assets/client/images/shapes/35.png')}}" alt=""></span>
                         </div>
 
+                        <div class="single-widget product-widget  wow fadeInUp">
+                            <h6 class="margin-bottom-10">Hot Sale Products</h6>
+                            <div class="single-product d-flex align-items-center">
+                                <div class="dish-img">
+                                    <a href="single-food.html"><img
+                                            src="{{ asset('admin/assets/images/menu-item/pd6.png') }}"
+                                            alt=""></a>
+                                </div>
+                                <div class="dish-content">
+                                    <h6> <a href="single-food.html">Chicken Fry
+                                            Recipe
+                                        </a></h6>
+                                    <span class="price">$10.00</span>
+                                    <span>
+                                        <a class="cart-select" href="shopping-cart.html"><i
+                                                class="fas fa-shopping-basket"></i></a>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="single-product d-flex align-items-center">
+                                <div class="dish-img">
+                                    <a href="single-food.html"> <img
+                                            src="{{ asset('admin/assets/images/menu-item/pd4.png') }}"
+                                            alt=""></a>
+                                </div>
+                                <div class="dish-content">
+                                    <h6> <a href="single-food.html">Chicken Soup
+                                            Rejala
+                                        </a></h6>
+                                    <span class="price">$20.00</span>
+                                    <span>
+                                        <a class="cart-select" href="shopping-cart.html"><i
+                                                class="fas fa-shopping-basket"></i></a>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="single-product d-flex align-items-center">
+                                <div class="dish-img">
+                                    <a href="single-food.html"> <img
+                                            src="{{ asset('admin/assets/images/menu-item/pd7.png') }}"
+                                            alt=""></a>
+                                </div>
+                                <div class="dish-content">
+                                    <h6> <a href="single-food.html">The Best Black
+                                            Frame
+                                        </a></h6>
+                                    <span class="price">$80.00</span>
+                                    <span>
+                                        <a class="cart-select" href="shopping-cart.html"><i
+                                                class="fas fa-shopping-basket"></i></a>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="single-product d-flex align-items-center">
+                                <div class="dish-img">
+                                    <a href="single-food.html"> <img
+                                            src="{{ asset('admin/assets/images/menu-item/pd8.png') }}"
+                                            alt=""></a>
+                                </div>
+                                <div class="dish-content">
+                                    <h6> <a href="single-food.html">The Best Black
+                                            Frame
+                                        </a></h6>
+                                    <span class="price">$80.00</span>
+                                    <span>
+                                        <a class="cart-select" href="shopping-cart.html"><i
+                                                class="fas fa-shopping-basket"></i></a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-widget tag-widget  wow fadeInUp">
+                            <div class="widget-title">
+                                <h5>tags.</h5>
+                            </div>
+                            <div class="tag-items">
+                                <ul>
+                                    <li><a href="#">bbq</a></li>
+                                    <li><a href="#">tikka</a></li>
+                                    <li><a href="#">pizza</a></li>
+                                    <li><a href="#">chicken sharma</a></li>
+                                    <li><a href="#">garlic burger</a></li>
+                                    <li><a href="#">sandwich</a></li>
+                                    <li><a href="#">chicken soup</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="single-widget filter-menu-widget  wow fadeInUp">
+                            <h6><a href="#">filter by menu</a></h6>
+                            <div class="filter-menu d-flex align-items-center">
+                                <div class="dish-img">
+                                    <a href="single-dish.html"> <img
+                                            src="{{ asset('admin/assets/images/menu-item/fm1.png') }}"
+                                            alt=""></a>
+                                </div>
+                                <div class="dish-content d-flex justify-content-between">
+                                    <h6> <a href="single-dish.html">burger food
+                                        </a></h6>
+                                    <span class="price">20</span>
+                                </div>
+                            </div>
+                            <div class="filter-menu d-flex align-items-center">
+                                <div class="dish-img">
+                                    <a href="single-dish.html"> <img
+                                            src="{{ asset('admin/assets/images/menu-item/fm2.png') }}"
+                                            alt=""></a>
+                                </div>
+                                <div class="dish-content d-flex justify-content-between">
+                                    <h6> <a href="single-dish.html">Chicken Fry
+                                        </a></h6>
+                                    <span class="price">50</span>
+                                </div>
+                            </div>
+                            <div class="filter-menu d-flex align-items-center">
+                                <div class="dish-img">
+                                    <a href="single-dish.html"> <img
+                                            src="{{ asset('admin/assets/images/menu-item/fm3.png') }}"
+                                            alt=""></a>
+                                </div>
+                                <div class="dish-content d-flex justify-content-between">
+                                    <h6> <a href="single-dish.html">Pizza
+                                        </a></h6>
+                                    <span class="price">20</span>
+                                </div>
+                            </div>
+                            <div class="filter-menu d-flex align-items-center">
+                                <div class="dish-img">
+                                    <a href="single-dish.html"> <img
+                                            src="{{ asset('admin/assets/images/menu-item/fm4.png') }}"
+                                            alt=""></a>
+                                </div>
+                                <div class="dish-content d-flex">
+
+                                    <h6> <a href="single-dish.html">Chicken fry
+                                        </a></h6>
+
+                                    <span class="price">50</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-widget banner-widget  wow fadeInUp">
+                            <div class="gallery-img-4">
+                                <h5>Super Combo
+                                    Burger</h5>
+                                <a href="shopping-cart.html" class="btn">order now</a>
+                                <img src="{{ asset('admin/assets/images/gallery/22.png') }}" alt="">
+                                <span class="gprice-4"><img src="{{ asset('admin/assets/images/gallery/25.png') }}"
+                                        alt=""></span>
+                                <span class="gshape-1"><img src="{{ asset('admin/assets/images/shapes/35.png') }}"
+                                        alt=""></span>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 @endsection
