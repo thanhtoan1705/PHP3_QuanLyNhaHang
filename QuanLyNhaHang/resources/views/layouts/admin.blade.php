@@ -17,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
 
     <!-- PAGE TITLE HERE -->
-    <title>Salero Restaurant Admin Bootstrap 5 Template</title>
+    <title>@yield('title', 'Dashboard')</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="images/favicon.png">
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
@@ -27,7 +27,7 @@
 
     <!-- Form step -->
     <link href="{{ asset('assets/admin/vendor/jquery-smartwizard/dist/css/smart_wizard.min.css') }}" rel="stylesheet">
-   
+
     <link rel="stylesheet" href="{{ asset('assets/admin/vendor/swiper/css/swiper-bundle.min.css') }}">
     <link rel="stylesheet"
         href="{{ asset('assets/admin/vendor/dotted-map/css/contrib/jquery.smallipop-0.3.0.min.css') }}" type="text/css"
@@ -164,7 +164,7 @@
 	<!-- Form Steps -->
 	<script src="{{ asset('assets/admin/vendor/jquery-smartwizard/dist/js/jquery.smartWizard.js') }}"></script>
 	<script src="{{ asset('assets/admin/vendor/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
-	
+
 	<script src="{{ asset('assets/admin/js/custom.js') }}"></script>
 	<script src="{{ asset('assets/admin/js/deznav-init.js') }}"></script>
 	<script src="{{ asset('assets/admin/js/demo.js') }}"></script>
@@ -172,7 +172,7 @@
 	<script>
 		$(document).ready(function(){
 			// SmartWizard initialize
-			$('#smartwizard').smartWizard(); 
+			$('#smartwizard').smartWizard();
 		});
 	</script>
 

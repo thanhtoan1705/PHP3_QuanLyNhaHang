@@ -57,9 +57,6 @@
           <div class="col-lg-4 col-md-9 col-8">
             <div class="customer-area">
               <span>
-                <a href="wishlist.html"><i class="fas fa-heart"></i></a>
-              </span>
-              <span>
                 <a href="{{ route('account') }}"><i class="fas fa-user"></i></a>
               </span>
               <span>
