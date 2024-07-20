@@ -328,7 +328,7 @@
                 </div>
             </div>
 
-            <!-- new-items -->
+            <!-- mới-items -->
             <!-- menu-items-wrapper -->
             <div class="tab-content" id="nav-tabContent">
                 <!-- menu-items-1 -->
@@ -472,7 +472,8 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between align-items-center h-100">
                                     <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/br1.png') }}" alt="" />
+                                        <img src="{{ asset('assets/client/images/menu-item/br1.png') }}"
+                                            alt="" />
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="{{ route('dishDetail') }}">naga burger</a></h5>
@@ -484,7 +485,8 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between align-items-center h-100">
                                     <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/br2.png') }}" alt="" />
+                                        <img src="{{ asset('assets/client/images/menu-item/br2.png') }}"
+                                            alt="" />
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="{{ route('dishDetail') }}">Beef Burger</a></h5>
@@ -501,7 +503,8 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between align-items-center h-100">
                                     <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/br3.png') }}" alt="" />
+                                        <img src="{{ asset('assets/client/images/menu-item/br3.png') }}"
+                                            alt="" />
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="{{ route('dishDetail') }}">BBQ Burger</a></h5>
@@ -513,7 +516,8 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between align-items-center h-100">
                                     <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/br5.png') }}" alt="" />
+                                        <img src="{{ asset('assets/client/images/menu-item/br5.png') }}"
+                                            alt="" />
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="{{ route('dishDetail') }}">Crispy Burger</a></h5>
@@ -525,7 +529,8 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between align-items-center h-100">
                                     <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/br6.png') }}" alt="" />
+                                        <img src="{{ asset('assets/client/images/menu-item/br6.png') }}"
+                                            alt="" />
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="{{ route('dishDetail') }}">Chicken Grill</a></h5>
@@ -563,7 +568,8 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between">
                                     <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/tc6.png') }}" alt="" />
+                                        <img src="{{ asset('assets/client/images/menu-item/tc6.png') }}"
+                                            alt="" />
                                     </div>
                                     <div class="menu-content">
                                         <h5><a href="{{ route('dishDetail') }}">Fried Chicken</a></h5>
@@ -1214,9 +1220,9 @@
                                     </p>
                                     <span class="price badge-color">giá : 150.000 VNĐ</span>
                                     <span class="rating">
-                                        <i class="fas fa-star"></i> 5star</span>
+                                        <i class="fas fa-star"></i> 5 Sao</span>
                                 </div>
-                                <span class="badge badge-bg-color">new</span>
+                                <span class="badge badge-bg-color">mới</span>
                                 <div class="cart-opt">
                                     <span>
                                         <a href="#"><i class="fas fa-heart"></i></a>
@@ -1316,7 +1322,7 @@
                                     </p>
                                     <span class="badge-color price">giá : 150.000 VNĐ</span>
                                     <span class="rating">
-                                        <i class="fas fa-star"></i> 5star</span>
+                                        <i class="fas fa-star"></i> 5 Sao</span>
                                 </div>
                                 <span class="badge"></span>
                                 <div class="cart-opt">
@@ -1425,9 +1431,9 @@
                                     </p>
                                     <span class="price badge-color">giá : 150.000 VNĐ</span>
                                     <span class="rating">
-                                        <i class="fas fa-star"></i> 5star</span>
+                                        <i class="fas fa-star"></i> 5 Sao</span>
                                 </div>
-                                <span class="badge badge-bg-color">new</span>
+                                <span class="badge badge-bg-color">mới</span>
                                 <div class="cart-opt">
                                     <span>
                                         <a href="#"><i class="fas fa-heart"></i></a>
@@ -1527,7 +1533,7 @@
                                     </p>
                                     <span class="badge-color price">giá : 150.000 VNĐ</span>
                                     <span class="rating">
-                                        <i class="fas fa-star"></i> 5star</span>
+                                        <i class="fas fa-star"></i> 5 Sao</span>
                                 </div>
                                 <span class="badge"></span>
                                 <div class="cart-opt">
@@ -1636,9 +1642,9 @@
                                     </p>
                                     <span class="price badge-color">giá : 150.000 VNĐ</span>
                                     <span class="rating">
-                                        <i class="fas fa-star"></i> 5star</span>
+                                        <i class="fas fa-star"></i> 5 Sao</span>
                                 </div>
-                                <span class="badge badge-bg-color">new</span>
+                                <span class="badge badge-bg-color">mới</span>
                                 <div class="cart-opt">
                                     <span>
                                         <a href="#"><i class="fas fa-heart"></i></a>
@@ -1738,7 +1744,7 @@
                                     </p>
                                     <span class="badge-color price">giá : 150.000 VNĐ</span>
                                     <span class="rating">
-                                        <i class="fas fa-star"></i> 5star</span>
+                                        <i class="fas fa-star"></i> 5 Sao</span>
                                 </div>
                                 <span class="badge"></span>
                                 <div class="cart-opt">
@@ -1847,9 +1853,9 @@
                                     </p>
                                     <span class="price badge-color">giá : 150.000 VNĐ</span>
                                     <span class="rating">
-                                        <i class="fas fa-star"></i> 5star</span>
+                                        <i class="fas fa-star"></i> 5 Sao</span>
                                 </div>
-                                <span class="badge badge-bg-color">new</span>
+                                <span class="badge badge-bg-color">mới</span>
                                 <div class="cart-opt">
                                     <span>
                                         <a href="#"><i class="fas fa-heart"></i></a>
@@ -1949,7 +1955,7 @@
                                     </p>
                                     <span class="badge-color price">giá : 150.000 VNĐ</span>
                                     <span class="rating">
-                                        <i class="fas fa-star"></i> 5star</span>
+                                        <i class="fas fa-star"></i> 5 Sao</span>
                                 </div>
                                 <span class="badge"></span>
                                 <div class="cart-opt">
@@ -2058,9 +2064,9 @@
                                     </p>
                                     <span class="price badge-color">giá : 150.000 VNĐ</span>
                                     <span class="rating">
-                                        <i class="fas fa-star"></i> 5star</span>
+                                        <i class="fas fa-star"></i> 5 Sao</span>
                                 </div>
-                                <span class="badge badge-bg-color">new</span>
+                                <span class="badge badge-bg-color">mới</span>
                                 <div class="cart-opt">
                                     <span>
                                         <a href="#"><i class="fas fa-heart"></i></a>
@@ -2160,7 +2166,7 @@
                                     </p>
                                     <span class="badge-color price">giá : 150.000 VNĐ</span>
                                     <span class="rating">
-                                        <i class="fas fa-star"></i> 5star</span>
+                                        <i class="fas fa-star"></i> 5 Sao</span>
                                 </div>
                                 <span class="badge"></span>
                                 <div class="cart-opt">
@@ -2341,29 +2347,29 @@
                 <div class="col-lg-5 offset-lg-1 col-md-12 col-sm-12 col-12">
                     <div class="countdown-right">
                         <div class="common-title-area padding-bottom-20">
-                            <h3>coming soon</h3>
-                            <h2>Spicy Chicken Pizza <span>Food </span></h2>
-                            <p>feel hunger! order your favourite food.</p>
+                            <h3>sắp ra mắt</h3>
+                            <h2>Pizza gà cay <span>Đồ ăn </span></h2>
+                            <p>Cảm thấy đói! Đặt món ăn yêu thích của bạn.</p>
                         </div>
                         <div class="count-box countdown">
                             <div>
                                 <span class="days">00</span>
-                                <p class="days_ref">days</p>
+                                <p class="days_ref">Ngày</p>
                             </div>
                             <span class="seperator">:</span>
                             <div>
                                 <span class="hours">00</span>
-                                <p class="hours_ref">hour</p>
+                                <p class="hours_ref">Giờ</p>
                             </div>
                             <span class="seperator">:</span>
                             <div>
                                 <span class="minutes">00</span>
-                                <p class="minutes_ref">minutes</p>
+                                <p class="minutes_ref">Phút</p>
                             </div>
                             <span class="seperator">:</span>
                             <div>
                                 <span class="seconds">00</span>
-                                <p class="seconds_ref">seconds</p>
+                                <p class="seconds_ref">Giây</p>
                             </div>
                         </div>
                         <a href="shopping-cart.html" class="btn">Đặt hàng ngay bây giờ</a>
@@ -2387,8 +2393,8 @@
                         alt="" /></span>
             </div>
             <div class="common-title-area text-center padding-bottom-50 wow fadeInUp">
-                <h3>testimonial</h3>
-                <h2>client <span>feedback</span></h2>
+                <h3>lời chứng thực</h3>
+                <h2>khách hàng <span>nhận xét</span></h2>
             </div>
             <div class="testimonial-active">
                 <div class="single-testimonial">

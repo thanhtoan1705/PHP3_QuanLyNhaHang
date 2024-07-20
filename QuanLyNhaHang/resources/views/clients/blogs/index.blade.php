@@ -1,21 +1,22 @@
 @extends('layouts.clients')
 @section('content')
-<div class="banner-area breadcrumb-area padding-top-120 padding-bottom-90">
+    <div class="banner-area breadcrumb-area padding-top-120 padding-bottom-90">
         <div class="bread-shapes">
-            <span class="b-shape-1 item-bounce"><img src="{{ asset('admin/assets/images/img/5.png')}}" alt=""></span>
-            <span class="b-shape-2"><img src="{{ asset('admin/assets/images/img/6.png')}}" alt=""></span>
-            <span class="b-shape-3"><img src="{{ asset('admin/assets/images/img/7.png')}}" alt=""></span>
-            <span class="b-shape-4"><img src="{{ asset('admin/assets/images/img/9.png')}}" alt=""></span>
-            <span class="b-shape-5"><img src="{{ asset('admin/assets/images/shapes/18.png')}}" alt=""></span>
-            <span class="b-shape-6 item-animateOne"><img src="{{ asset('admin/assets/images/img/7.png')}}" alt=""></span>
+            <span class="b-shape-1 item-bounce"><img src="{{ asset('assets/client/images/img/5.png') }}" alt=""></span>
+            <span class="b-shape-2"><img src="{{ asset('assets/client/images/img/6.png') }}" alt=""></span>
+            <span class="b-shape-3"><img src="{{ asset('assets/client/images/img/7.png') }}" alt=""></span>
+            <span class="b-shape-4"><img src="{{ asset('assets/client/images/img/9.png') }}" alt=""></span>
+            <span class="b-shape-5"><img src="{{ asset('assets/client/images/shapes/18.png') }}" alt=""></span>
+            <span class="b-shape-6 item-animateOne"><img src="{{ asset('assets/client/images/img/7.png') }}"
+                    alt=""></span>
         </div>
         <div class="container padding-top-120">
             <div class="row justify-content-center">
                 <nav aria-label="breadcrumb text-center">
-                    <h2 class="page-title">blog</h2>
+                    <h2 class="page-title">Bài viết</h2>
                     <ol class="breadcrumb text-center">
-                        <li class="breadcrumb-item"><a href="index.html">Home </a>/<a href="index.html"> pages</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">blog page</li>
+                        <li class="breadcrumb-item"><a href="/">Trang chủ</a> / <a href="{{ route('blog') }}"> Bài
+                                viết</a></li>
                     </ol>
                 </nav>
             </div>
@@ -25,13 +26,16 @@
     <!-- Blog Content Section -->
     <section class="blog-content-section padding-top-110 padding-bottom-120">
         <div class="blog-shapes">
-            <span class="bbs-1"><img src="{{ asset('admin/assets/images/shapes/13.png')}}" alt=""></span>
-            <span class="bbs-2 item-bounce"><img src="{{ asset('admin/assets/images/shapes/12.png')}}" alt=""></span>
-            <span class="bbs-3"><img src="{{ asset('admin/assets/images/shapes/7.png')}}" alt=""></span>
-            <span class="bbs-4 item-bounce"><img src="{{ asset('admin/assets/images/shapes/26.png')}}" alt=""></span>
-            <span class="bbs-5 item-animateTwo"><img src="{{ asset('admin/assets/images/shapes/26.png')}}" alt=""></span>
-            <span class="bbs-6"><img src="{{ asset('admin/assets/images/shapes/16.png')}}" alt=""></span>
-            <span class="bbs-7"><img src="{{ asset('admin/assets/images/img/32.png')}}" alt=""></span>
+            <span class="bbs-1"><img src="{{ asset('assets/client/images/shapes/13.png') }}" alt=""></span>
+            <span class="bbs-2 item-bounce"><img src="{{ asset('assets/client/images/shapes/12.png') }}"
+                    alt=""></span>
+            <span class="bbs-3"><img src="{{ asset('assets/client/images/shapes/7.png') }}" alt=""></span>
+            <span class="bbs-4 item-bounce"><img src="{{ asset('assets/client/images/shapes/26.png') }}"
+                    alt=""></span>
+            <span class="bbs-5 item-animateTwo"><img src="{{ asset('assets/client/images/shapes/26.png') }}"
+                    alt=""></span>
+            <span class="bbs-6"><img src="{{ asset('assets/client/images/shapes/16.png') }}" alt=""></span>
+            <span class="bbs-7"><img src="{{ asset('assets/client/images/img/32.png') }}" alt=""></span>
         </div>
         <div class="container">
             <div class="row">
@@ -39,7 +43,8 @@
                     <div class="blog-posts">
                         <div class="blog-single-post wow fadeInUp">
                             <div class="blog-thumbnail">
-                                <a href="blog-single.html"><img src="{{ asset('admin/assets/images/blog/blog1.jpg')}}" alt="thumbnail"></a>
+                                <a href="{{ route('blogDetail') }}"><img src="{{ asset('assets/client/images/blog/blog1.jpg') }}"
+                                        alt="thumbnail"></a>
                                 <div class="meta-date">
                                     <span class="bold">02</span>
                                     <span>dec</span>
@@ -54,43 +59,44 @@
                                         <a href="#"> <i class="fas fa-user-circle"></i> Miyako Prince</a>
                                     </div>
                                     <div class="blog-author">
-                                        <a href="#"><i class="fas fa-comments"></i> 120+ Comment</a>
+                                        <a href="#"><i class="fas fa-comments"></i> 120+ Bình luận</a>
                                     </div>
                                 </div>
                                 <div class="blog-title">
-                                    <h4><a href="blog-single.html">Game day burger with Homemade</a></h4>
+                                    <h4><a href="{{ route('blogDetail') }}">Game Day Burger Với Món Tự Làm</a></h4>
                                 </div>
                                 <div class="blog-content">
-                                    <p>Organizations today are in constant flux. Industries are consolidating, business
-                                        models are emerging, new technologies are being developed, and consumer
-                                        behaviors are evolving.</p>
+                                    <p>Các tổ chức ngày nay luôn thay đổi. Các ngành công nghiệp đang được củng cố, kinh
+                                        doanh
+                                        các mô hình đang nổi lên, các công nghệ mới đang được phát triển và người tiêu dùng
+                                        hành vi đang phát triển.</p>
                                 </div>
                                 <div class="blog-excerpt-link">
-                                    <a href="blog-single.html" class="btn">read more</a>
+                                    <a href="{{ route('blogDetail') }}" class="btn">đọc thêm</a>
                                 </div>
                             </div>
                         </div>
                         <div class="blog-single-post wow fadeInUp">
                             <div class="blog-thumbnail-slider">
                                 <div class="thumbnail-single-slide">
-                                    <a href="blog-single.html"><img src="{{ asset('admin/assets/images/blog/blog2.jpg')}}"
-                                            alt="thumbnail"></a>
+                                    <a href="{{ route('blogDetail') }}"><img
+                                            src="{{ asset('assets/client/images/blog/blog2.jpg') }}" alt="thumbnail"></a>
                                     <div class="meta-date">
                                         <span class="bold">02</span>
                                         <span>dec</span>
                                     </div>
                                 </div>
                                 <div class="thumbnail-single-slide">
-                                    <a href="blog-single.html"><img src="{{ asset('admin/assets/images/blog/blog2.jpg')}}"
-                                            alt="thumbnail"></a>
+                                    <a href="{{ route('blogDetail') }}"><img
+                                            src="{{ asset('assets/client/images/blog/blog2.jpg') }}" alt="thumbnail"></a>
                                     <div class="meta-date">
                                         <span class="bold">02</span>
                                         <span>dec</span>
                                     </div>
                                 </div>
                                 <div class="thumbnail-single-slide">
-                                    <a href="blog-single.html"><img src="{{ asset('admin/assets/images/blog/blog2.jpg')}}"
-                                            alt="thumbnail"></a>
+                                    <a href="{{ route('blogDetail') }}"><img
+                                            src="{{ asset('assets/client/images/blog/blog2.jpg') }}" alt="thumbnail"></a>
                                     <div class="meta-date">
                                         <span class="bold">02</span>
                                         <span>dec</span>
@@ -106,19 +112,21 @@
                                         <a href="#"> <i class="fas fa-user-circle"></i> Miyako Prince</a>
                                     </div>
                                     <div class="blog-author">
-                                        <a href="#"><i class="fas fa-comments"></i> 120+ Comment</a>
+                                        <a href="#"><i class="fas fa-comments"></i> 120+ Bình luận</a>
                                     </div>
                                 </div>
                                 <div class="blog-title">
-                                    <h4><a href="blog-single.html">A Burger Worthy of the Presidnet at Upland</a></h4>
+                                    <h4><a href="{{ route('blogDetail') }}">Một Burger xứng đáng với chức vụ Tổng thống tại
+                                            Upland</a></h4>
                                 </div>
                                 <div class="blog-content ">
-                                    <p>Organizations today are in constant flux. Industries are consolidating, business
-                                        models are emerging, new technologies are being developed, and consumer
-                                        behaviors are evolving.</p>
+                                    <p>Các tổ chức ngày nay luôn thay đổi. Các ngành công nghiệp đang được củng cố, kinh
+                                        doanh
+                                        các mô hình đang nổi lên, các công nghệ mới đang được phát triển và người tiêu dùng
+                                        hành vi đang phát triển.</p>
                                 </div>
                                 <div class="blog-excerpt-link">
-                                    <a href="blog-single.html" class="btn">read more</a>
+                                    <a href="{{ route('blogDetail') }}" class="btn">đọc thêm</a>
                                 </div>
                             </div>
                         </div>
@@ -128,7 +136,8 @@
                                     <span class="bold">02</span>
                                     <span>dec</span>
                                 </div>
-                                <a href="blog-single.html"><img src="{{ asset('admin/assets/images/blog/blog3.jpg')}}" alt="thumbnail"></a>
+                                <a href="{{ route('blogDetail') }}"><img src="{{ asset('assets/client/images/blog/blog3.jpg') }}"
+                                        alt="thumbnail"></a>
                                 <div class="video-play-button">
                                     <a href="https://www.youtube.com/watch?v=8AGgbIQyqR8" class="button-video">
                                         <i class="fa fa-play item-ripple"></i>
@@ -144,19 +153,20 @@
                                         <a href="#"> <i class="fas fa-user-circle"></i> Miyako Prince</a>
                                     </div>
                                     <div class="blog-author">
-                                        <a href="#"><i class="fas fa-comments"></i> 120+ Comment</a>
+                                        <a href="#"><i class="fas fa-comments"></i> 120+ Bình luận</a>
                                     </div>
                                 </div>
                                 <div class="blog-title">
-                                    <h4><a href="blog-single.html">How to make Pizza like a Neapolitan Master</a></h4>
+                                    <h4><a href="{{ route('blogDetail') }}">Cách làm Pizza như bậc thầy người Neapolitan</a></h4>
                                 </div>
                                 <div class="blog-content ">
-                                    <p>Organizations today are in constant flux. Industries are consolidating, business
-                                        models are emerging, new technologies are being developed, and consumer
-                                        behaviors are evolving.</p>
+                                    <p>Các tổ chức ngày nay luôn thay đổi. Các ngành công nghiệp đang được củng cố, kinh
+                                        doanh
+                                        các mô hình đang nổi lên, các công nghệ mới đang được phát triển và người tiêu dùng
+                                        hành vi đang phát triển.</p>
                                 </div>
                                 <div class="blog-excerpt-link">
-                                    <a href="blog-single.html" class="btn">read more</a>
+                                    <a href="{{ route('blogDetail') }}" class="btn">đọc thêm</a>
                                 </div>
                             </div>
                         </div>
@@ -176,19 +186,20 @@
                                         <a href="#"><i class="fas fa-user-circle"></i> Miyako Prince</a>
                                     </div>
                                     <div class="blog-author">
-                                        <a href="#"><i class="fas fa-comments"></i> 120+ Comment</a>
+                                        <a href="#"><i class="fas fa-comments"></i> 120+ Bình luận</a>
                                     </div>
                                 </div>
                                 <div class="blog-title">
-                                    <h4><a href="blog-single.html">How to make Pizza like a Neapolitan Master</a></h4>
+                                    <h4><a href="{{ route('blogDetail') }}">Cách làm Pizza như bậc thầy người Neapolitan</a></h4>
                                 </div>
                                 <div class="blog-content ">
-                                    <p>Organizations today are in constant flux. Industries are consolidating, business
-                                        models are emerging, new technologies are being developed, and consumer
-                                        behaviors are evolving.</p>
+                                    <p>Các tổ chức ngày nay luôn thay đổi. Các ngành công nghiệp đang được củng cố, kinh
+                                        doanh
+                                        các mô hình đang nổi lên, các công nghệ mới đang được phát triển và người tiêu dùng
+                                        hành vi đang phát triển.</p>
                                 </div>
                                 <div class="blog-excerpt-link">
-                                    <a href="blog-single.html" class="btn">read more</a>
+                                    <a href="{{ route('blogDetail') }}" class="btn">đọc thêm</a>
                                 </div>
                             </div>
                         </div>
@@ -204,12 +215,12 @@
                 <div class="col-lg-3">
                     <div class="blog-sidebar margin-top-10">
                         <div class="single-widget wow fadeInUp author-widget">
-                            <img src="{{ asset('admin/assets/images/blog/user.jpg')}}" alt="image">
+                            <img src="{{ asset('assets/client/images/blog/user.jpg') }}" alt="image">
                             <div class="author-name margin-top-20">
                                 <h5>Miyako Prince</h5>
                             </div>
                             <div class="author-content margin-top-10">
-                                <p> Hi! I'm author of this post. Read my post, be in trend.</p>
+                                <p>CHÀO! Tôi là tác giả của bài viết này. Đọc bài viết của tôi, theo xu hướng.</p>
                             </div>
                             <div class="author-social-link margin-top-20">
                                 <ul>
@@ -230,10 +241,12 @@
                         </div>
 
                         <div class="single-widget product-widget  wow fadeInUp ">
-                            <h6 class="margin-bottom-10">Hot Sale Products</h6>
+                            <h6 class="margin-bottom-10">Sản phẩm bán chạy</h6>
                             <div class="single-product d-flex align-items-center">
                                 <div class="dish-img">
-                                    <a href="single-dish.html"><img src="{{ asset('admin/assets/images/menu-item/pd6.png')}}" alt=""></a>
+                                    <a href="single-dish.html"><img
+                                            src="{{ asset('assets/client/images/menu-item/pd6.png') }}"
+                                            alt=""></a>
                                 </div>
                                 <div class="dish-content">
                                     <h6> <a href="single-dish.html">Chicken Fry
@@ -248,7 +261,9 @@
                             </div>
                             <div class="single-product d-flex align-items-center  wow fadeInUp ">
                                 <div class="dish-img">
-                                    <a href="single-dish.html"> <img src="{{ asset('admin/assets/images/menu-item/pd4.png')}}" alt=""></a>
+                                    <a href="single-dish.html"> <img
+                                            src="{{ asset('assets/client/images/menu-item/pd4.png') }}"
+                                            alt=""></a>
                                 </div>
                                 <div class="dish-content">
                                     <h6> <a href="single-dish.html">Chicken Soup
@@ -263,7 +278,9 @@
                             </div>
                             <div class="single-product d-flex align-items-center  wow fadeInUp ">
                                 <div class="dish-img">
-                                    <a href="single-dish.html"><img src="{{ asset('admin/assets/images/menu-item/pd7.png')}}" alt=""></a>
+                                    <a href="single-dish.html"><img
+                                            src="{{ asset('assets/client/images/menu-item/pd7.png') }}"
+                                            alt=""></a>
                                 </div>
                                 <div class="dish-content">
                                     <h6> <a href="single-dish.html">The Best Black
@@ -278,7 +295,9 @@
                             </div>
                             <div class="single-product d-flex align-items-center  wow fadeInUp">
                                 <div class="dish-img">
-                                    <a href="single-dish.html"> <img src="{{ asset('admin/assets/images/menu-item/pd8.png')}}" alt=""></a>
+                                    <a href="single-dish.html"> <img
+                                            src="{{ asset('assets/client/images/menu-item/pd8.png') }}"
+                                            alt=""></a>
                                 </div>
                                 <div class="dish-content">
                                     <h6> <a href="single-dish.html">The Best Black
@@ -294,7 +313,7 @@
                         </div>
                         <div class="single-widget tag-widget  wow fadeInUp">
                             <div class="widget-title">
-                                <h5>tags.</h5>
+                                <h5>Thẻ.</h5>
                             </div>
                             <div class="tag-items">
                                 <ul>
@@ -310,10 +329,12 @@
                         </div>
 
                         <div class="single-widget filter-menu-widget  wow fadeInUp">
-                            <h6><a href="#">filter by menu</a></h6>
+                            <h6><a href="#">lọc theo thực đơn</a></h6>
                             <div class="filter-menu d-flex align-items-center">
                                 <div class="dish-img">
-                                    <a href="single-dish.html"> <img src="{{ asset('admin/assets/images/menu-item/fm1.png')}}" alt=""></a>
+                                    <a href="single-dish.html"> <img
+                                            src="{{ asset('assets/client/images/menu-item/fm1.png') }}"
+                                            alt=""></a>
                                 </div>
                                 <div class="dish-content d-flex justify-content-between">
                                     <h6> <a href="single-dish.html">burger food
@@ -323,7 +344,9 @@
                             </div>
                             <div class="filter-menu d-flex align-items-center">
                                 <div class="dish-img">
-                                    <a href="single-dish.html"> <img src="{{ asset('admin/assets/images/menu-item/fm2.png')}}" alt=""></a>
+                                    <a href="single-dish.html"> <img
+                                            src="{{ asset('assets/client/images/menu-item/fm2.png') }}"
+                                            alt=""></a>
                                 </div>
                                 <div class="dish-content d-flex justify-content-between">
                                     <h6> <a href="single-dish.html">Chicken Fry
@@ -333,7 +356,9 @@
                             </div>
                             <div class="filter-menu d-flex align-items-center">
                                 <div class="dish-img">
-                                    <a href="single-dish.html"><img src="{{ asset('admin/assets/images/menu-item/fm3.png')}}" alt=""></a>
+                                    <a href="single-dish.html"><img
+                                            src="{{ asset('assets/client/images/menu-item/fm3.png') }}"
+                                            alt=""></a>
                                 </div>
                                 <div class="dish-content d-flex justify-content-between">
                                     <h6> <a href="single-dish.html">Pizza
@@ -343,7 +368,9 @@
                             </div>
                             <div class="filter-menu d-flex align-items-center">
                                 <div class="dish-img">
-                                    <a href="single-dish.html"> <img src="{{ asset('admin/assets/images/menu-item/fm4.png')}}" alt=""></a>
+                                    <a href="single-dish.html"> <img
+                                            src="{{ asset('assets/client/images/menu-item/fm4.png') }}"
+                                            alt=""></a>
                                 </div>
                                 <div class="dish-content d-flex">
 
@@ -358,10 +385,12 @@
                             <div class="gallery-img-4">
                                 <h5>Super Combo
                                     Burger</h5>
-                                <a href="shopping-cart.html" class="btn">order now</a>
-                                <img src="{{ asset('admin/assets/images/gallery/22.png')}}" alt="">
-                                <span class="gprice-4"><img src="{{ asset('admin/assets/images/gallery/25.png')}}" alt=""></span>
-                                <span class="gshape-1"><img src="{{ asset('admin/assets/images/shapes/35.png')}}" alt=""></span>
+                                <a href="{{ route('cart') }}" class="btn">đặt hàng ngay bây giờ</a>
+                                <img src="{{ asset('assets/client/images/gallery/22.png') }}" alt="">
+                                <span class="gprice-4"><img src="{{ asset('assets/client/images/gallery/25.png') }}"
+                                        alt=""></span>
+                                <span class="gshape-1"><img src="{{ asset('assets/client/images/shapes/35.png') }}"
+                                        alt=""></span>
                             </div>
 
                         </div>
@@ -370,4 +399,4 @@
             </div>
         </div>
     </section>
-    @endsection
+@endsection

@@ -39,9 +39,9 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="single-food single-menus">
                         <img src="{{ asset('assets/client/images/menu-item/menu1.png') }}" alt="">
-                        <h6>100% Best Quality</h6>
-                        <p>We Provide Best Quality Food</p>
-                        <a href="shopping-cart.html">Order Now</a>
+                        <h6>Chất lượng tốt nhất 100%</h6>
+                        <p>Chúng tôi cung cấp thực phẩm chất lượng tốt nhất</p>
+                        <a href="shopping-cart.html">Đặt hàng ngay</a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -190,7 +190,7 @@
                                             <div class="menu-content">
                                                 <h6><a href="single-dish.html">Gà rán</a></h6>
                                                 <p>tôm. mực, dứa</p>
-                                                <span>giá :$10,00</span>
+                                                <span>giá :10.000vnđ</span>
                                             </div>
                                         </div>
                                     </div>
@@ -203,7 +203,7 @@
                                             <div class="menu-content">
                                                 <h6><a href="single-dish.html">Gà rán</a></h6>
                                                 <p>tôm. mực, dứa</p>
-                                                <span>giá :$10,00</span>
+                                                <span>giá :10.000vnđ</span>
                                             </div>
                                         </div>
                                     </div>
@@ -216,7 +216,7 @@
                                             <div class="menu-content">
                                                 <h6><a href="single-dish.html">Gà rán</a></h6>
                                                 <p>tôm. mực, dứa</p>
-                                                <span>giá :$10,00</span>
+                                                <span>giá :10.000vnđ</span>
                                             </div>
                                         </div>
                                     </div>
@@ -229,7 +229,7 @@
                                             <div class="menu-content">
                                                 <h6><a href="single-dish.html">Gà rán</a></h6>
                                                 <p>tôm. mực, dứa</p>
-                                                <span>giá :$10,00</span>
+                                                <span>giá :10.000vnđ</span>
                                             </div>
                                         </div>
                                     </div>
@@ -269,7 +269,7 @@
                                             <div class="menu-content">
                                                 <h6><a href="single-dish.html"> Gà Chiên</a></h6>
                                                 <p>tôm. mực, dứa</p>
-                                                <span>giá :$10,00</span>
+                                                <span>giá :10.000vnđ</span>
                                             </div>
                                         </div>
                                     </div>
@@ -348,7 +348,7 @@
                                             <div class="menu-content">
                                                 <h6><a href="single-dish.html">Gà rán</a></h6>
                                                 <p>tôm. mực, dứa</p>
-                                                <span>giá :$10,00</span>
+                                                <span>giá :10.000vnđ</span>
                                             </div>
                                         </div>
                                     </div>
@@ -361,7 +361,7 @@
                                             <div class="menu-content">
                                                 <h6><a href="single-dish.html">Gà rán</a></h6>
                                                 <p>tôm. mực, dứa</p>
-                                                <span>giá :$10,00</span>
+                                                <span>giá :10.000vnđ</span>
                                             </div>
                                         </div>
                                     </div>
@@ -374,7 +374,7 @@
                                             <div class="menu-content">
                                                 <h6><a href="single-dish.html">Gà rán</a></h6>
                                                 <p>tôm. mực, dứa</p>
-                                                <span>giá :$10,00</span>
+                                                <span>giá :10.000vnđ</span>
                                             </div>
                                         </div>
                                     </div>
@@ -387,7 +387,7 @@
                                             <div class="menu-content">
                                                 <h6><a href="single-dish.html">Gà rán</a></h6>
                                                 <p>tôm. mực, dứa</p>
-                                                <span>giá :$10,00</span>
+                                                <span>giá :10.000vnđ</span>
                                             </div>
                                         </div>
                                     </div>
@@ -397,8 +397,8 @@
                                 <div class="chicken-tab-content">
                                     <h5>Combo <br>Siêu phẩm
                                         Bánh mì kẹp thịt</h5>
-                                        <p>Tôm, mực</p>
-                                        <a href="shopping-cart.html">Đặt hàng ngay</a>
+                                    <p>Tôm, mực</p>
+                                    <a href="shopping-cart.html">Đặt hàng ngay</a>
                                     <span class='main-img'><img
                                             src="{{ asset('assets/client/images/menu-item/chicken-banner.png') }}"
                                             alt=""></span>
@@ -426,8 +426,8 @@
                                             </div>
                                             <div class="menu-content">
                                                 <h6><a href="single-dish.html">Gà rán</a></h6>
- <p>tôm. mực, dứa</p>
- <span>giá :$10,00</span>
+                                                <p>tôm. mực, dứa</p>
+                                                <span>giá :10.000vnđ</span>
                                             </div>
                                         </div>
                                     </div>
@@ -440,20 +440,7 @@
                                             <div class="menu-content">
                                                 <h6><a href="single-dish.html">Gà rán</a></h6>
                                                 <p>tôm. mực, dứa</p>
-                                                <span>giá :$10,00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-menu-item d-flex justify-content-between">
-                                            <div class="menu-img">
-                                                <img src="{{ asset('assets/client/images/menu-item/tc7.png') }}"
-                                                    alt="">
-                                            </div>
-                                            <div class="menu-content">
-                                                <h6><a href="single-dish.html">Gà rán</a></h6>
- <p>tôm. mực, dứa</p>
- <span>giá :$10,00</span>
+                                                <span>giá :10.000vnđ</span>
                                             </div>
                                         </div>
                                     </div>
@@ -466,7 +453,20 @@
                                             <div class="menu-content">
                                                 <h6><a href="single-dish.html">Gà rán</a></h6>
                                                 <p>tôm. mực, dứa</p>
-                                                <span>giá :$10,00</span>
+                                                <span>giá :10.000vnđ</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="single-menu-item d-flex justify-content-between">
+                                            <div class="menu-img">
+                                                <img src="{{ asset('assets/client/images/menu-item/tc7.png') }}"
+                                                    alt="">
+                                            </div>
+                                            <div class="menu-content">
+                                                <h6><a href="single-dish.html">Gà rán</a></h6>
+                                                <p>tôm. mực, dứa</p>
+                                                <span>giá :10.000vnđ</span>
                                             </div>
                                         </div>
                                     </div>
@@ -505,8 +505,8 @@
                                             </div>
                                             <div class="menu-content">
                                                 <h6><a href="single-dish.html">Fried Chicken</a></h6>
-                                                <p>shirmp. squid, pineapple</p>
-                                                <span>price :$10.00</span>
+                                                <p>Tôm. Mực, dứa</p>
+                                                <span>Giá :10.000vnđ</span>
                                             </div>
                                         </div>
                                     </div>
@@ -518,8 +518,8 @@
                                             </div>
                                             <div class="menu-content">
                                                 <h6><a href="single-dish.html">Roast Chicken</a></h6>
-                                                <p>shirmp. squid, pineapple</p>
-                                                <span>price :$15.00</span>
+                                                <p>Tôm. Mực, dứa</p>
+                                                <span>Giá :10.000vnđ</span>
                                             </div>
                                         </div>
                                     </div>
@@ -531,8 +531,8 @@
                                             </div>
                                             <div class="menu-content">
                                                 <h6><a href="single-dish.html">Crispy Fry</a></h6>
-                                                <p>shirmp. squid, pineapple</p>
-                                                <span>price :$15.00</span>
+                                                <p>Tôm. Mực, dứa</p>
+                                                <span>Giá :10.000vnđ</span>
                                             </div>
                                         </div>
                                     </div>
@@ -544,8 +544,8 @@
                                             </div>
                                             <div class="menu-content">
                                                 <h6><a href="single-dish.html">Baked Roast</a></h6>
-                                                <p>shirmp. squid, pineapple</p>
-                                                <span>price :$15.00</span>
+                                                <p>Tôm. Mực, dứa</p>
+                                                <span>Giá :10.000vnđ</span>
                                             </div>
                                         </div>
                                     </div>
@@ -693,8 +693,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Beef Burger</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$10.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -705,8 +705,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Crispy Fried Chicken</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -717,8 +717,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">BBQ Burger</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$10.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -729,8 +729,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Crispy Burger</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -741,8 +741,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Chicken Burger</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -753,8 +753,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Chicken grill Fry</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -772,8 +772,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">BBQ Burger</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$10.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -784,8 +784,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Crispy Fried Chicken</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -796,8 +796,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Beef Burger</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$10.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -808,8 +808,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Crispy Burger</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -820,8 +820,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Chicken Burger</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -832,8 +832,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Chicken grill Fry</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -851,8 +851,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Crispy Fried Chicken</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -863,8 +863,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Beef Burger</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$10.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -875,8 +875,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">BBQ Burger</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$10.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -887,8 +887,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Crispy Burger</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -899,8 +899,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Chicken Burger</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -911,8 +911,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Chicken grill Fry</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -930,8 +930,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Beef Burger</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$10.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -942,8 +942,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Crispy Fried Chicken</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -954,8 +954,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">BBQ Burger</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$10.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -966,8 +966,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Crispy Burger</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -978,8 +978,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Chicken Burger</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -990,8 +990,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Chicken grill Fry</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -1009,8 +1009,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Crispy Fried Chicken</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -1021,8 +1021,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Beef Burger</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$10.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -1033,8 +1033,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">BBQ Burger</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$10.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -1045,8 +1045,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Crispy Burger</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -1057,8 +1057,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Chicken Burger</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -1069,8 +1069,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Chicken grill Fry</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -1094,7 +1094,7 @@
                         <div class="col-lg-6 col-md-12 margin-bottom-30 wow fadeInLeft">
                             <div class="gallery-img-1">
                                 <h3 class="margin-bottom-10">Buzzed Burger</h3>
-                                <p>Sale off 50% only this week</p>
+                                <p>Sale off 50% chỉ trong tuần này</p>
                                 <a href="shopping-cart.html" class="btn">order now</a>
                                 <img src="{{ asset('assets/client/images/gallery/24.png') }}" alt="">
                                 <span class="gs"><img src="{{ asset('assets/client/images/shapes/bbr.png') }}"
@@ -1106,7 +1106,7 @@
                             <div class="gallery-img-1 gallery-img-01">
                                 <h5 class="margin-bottom-10">Chicken Combo<br>
                                     Burger</h5>
-                                <p>Sale off 50% only this week</p>
+                                <p>Sale off 50% chỉ trong tuần này</p>
                                 <a href="shopping-cart.html" class="btn">order now</a>
                                 <img src="{{ asset('assets/client/images/menu-item/mg2.png') }}" alt="">
                                 <span class="yellow"><img src="{{ asset('assets/client/images/shapes/37.png') }}"
@@ -1254,8 +1254,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Margherita Pizza</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -1267,8 +1267,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Tomato sauce</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$10.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -1280,8 +1280,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Marinara Pizza</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$10.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -1293,8 +1293,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Frutti di Mare</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -1306,8 +1306,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Americana Pizza</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -1319,8 +1319,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Pizza al Pesto</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -1339,8 +1339,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Margherita Pizza</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -1352,8 +1352,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Tomato sauce</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$10.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -1365,8 +1365,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Marinara Pizza</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$10.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -1378,8 +1378,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Frutti di Mare</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -1391,8 +1391,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Americana Pizza</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -1404,8 +1404,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Pizza al Pesto</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -1424,8 +1424,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Margherita Pizza</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -1437,8 +1437,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Tomato sauce</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$10.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -1450,8 +1450,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Marinara Pizza</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$10.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -1463,8 +1463,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Frutti di Mare</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -1476,8 +1476,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Americana Pizza</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -1489,8 +1489,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Pizza al Pesto</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -1509,8 +1509,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Margherita Pizza</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -1522,8 +1522,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Tomato sauce</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$10.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -1535,8 +1535,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Marinara Pizza</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$10.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -1548,8 +1548,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Frutti di Mare</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -1561,8 +1561,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Americana Pizza</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -1574,8 +1574,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Pizza al Pesto</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -1594,8 +1594,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Margherita Pizza</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -1607,8 +1607,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Tomato sauce</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$10.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -1620,8 +1620,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Marinara Pizza</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$10.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -1633,8 +1633,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Frutti di Mare</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -1646,8 +1646,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Americana Pizza</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -1659,8 +1659,8 @@
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Pizza al Pesto</a></h6>
-                                        <p>shirmp. squid, pineapple</p>
-                                        <span>price :$15.00</span>
+                                        <p>Tôm. Mực, dứa</p>
+                                        <span>Giá :10.000vnđ</span>
                                     </div>
                                 </div>
                             </div>
@@ -1708,11 +1708,10 @@
                                 <span><i class="fas fa-star"></i></span>
                             </div>
                         </div>
+
                     </div>
-                    <p>Food Khan is a gret Restaurant from the University of Texas at Austin has been
-                        researching
-                        the benefits of frequent testing and the feedback
-                        leads to. He explains that in the history of the study.</p>
+                    <p>Food Khan là một nhà hàng tuyệt vời của Đại học Texas ở Austin đã được nghiên cứu lợi ích của việc
+                        kiểm tra thường xuyên và phản hồi dẫn đến. Ông giải thích điều đó trong lịch sử nghiên cứu.</p>
                 </div>
                 <div class="single-testimonial">
                     <div class="testi-top">
@@ -1736,10 +1735,8 @@
                             </div>
                         </div>
                     </div>
-                    <p>Food Khan is a gret Restaurant from the University of Texas at Austin has been
-                        researching
-                        the benefits of frequent testing and the feedback
-                        leads to. He explains that in the history of the study.</p>
+                    <p>Food Khan là một nhà hàng tuyệt vời của Đại học Texas ở Austin đã được nghiên cứu lợi ích của việc
+                        kiểm tra thường xuyên và phản hồi dẫn đến. Ông giải thích điều đó trong lịch sử nghiên cứu.</p>
                 </div>
                 <div class="single-testimonial">
                     <div class="testi-top">
@@ -1763,10 +1760,8 @@
                             </div>
                         </div>
                     </div>
-                    <p>Food Khan is a gret Restaurant from the University of Texas at Austin has been
-                        researching
-                        the benefits of frequent testing and the feedback
-                        leads to. He explains that in the history of the study.</p>
+                    <p>Food Khan là một nhà hàng tuyệt vời của Đại học Texas ở Austin đã được nghiên cứu lợi ích của việc
+                        kiểm tra thường xuyên và phản hồi dẫn đến. Ông giải thích điều đó trong lịch sử nghiên cứu.</p>
                 </div>
                 <div class="single-testimonial">
                     <div class="testi-top">
@@ -1790,10 +1785,8 @@
                             </div>
                         </div>
                     </div>
-                    <p>Food Khan is a gret Restaurant from the University of Texas at Austin has been
-                        researching
-                        the benefits of frequent testing and the feedback
-                        leads to. He explains that in the history of the study.</p>
+                    <p>Food Khan là một nhà hàng tuyệt vời của Đại học Texas ở Austin đã được nghiên cứu lợi ích của việc
+                        kiểm tra thường xuyên và phản hồi dẫn đến. Ông giải thích điều đó trong lịch sử nghiên cứu.</p>
                 </div>
                 <div class="single-testimonial">
                     <div class="testi-top">
@@ -1817,10 +1810,8 @@
                             </div>
                         </div>
                     </div>
-                    <p>Food Khan is a gret Restaurant from the University of Texas at Austin has been
-                        researching
-                        the benefits of frequent testing and the feedback
-                        leads to. He explains that in the history of the study.</p>
+                    <p>Food Khan là một nhà hàng tuyệt vời của Đại học Texas ở Austin đã được nghiên cứu lợi ích của việc
+                        kiểm tra thường xuyên và phản hồi dẫn đến. Ông giải thích điều đó trong lịch sử nghiên cứu.</p>
                 </div>
                 <div class="single-testimonial">
                     <div class="testi-top">
@@ -1844,10 +1835,8 @@
                             </div>
                         </div>
                     </div>
-                    <p>Food Khan is a gret Restaurant from the University of Texas at Austin has been
-                        researching
-                        the benefits of frequent testing and the feedback
-                        leads to. He explains that in the history of the study.</p>
+                    <p>Food Khan là một nhà hàng tuyệt vời của Đại học Texas ở Austin đã được nghiên cứu lợi ích của việc
+                        kiểm tra thường xuyên và phản hồi dẫn đến. Ông giải thích điều đó trong lịch sử nghiên cứu.</p>
                 </div>
                 <div class="single-testimonial">
                     <div class="testi-top">
@@ -1871,10 +1860,8 @@
                             </div>
                         </div>
                     </div>
-                    <p>Food Khan is a gret Restaurant from the University of Texas at Austin has been
-                        researching
-                        the benefits of frequent testing and the feedback
-                        leads to. He explains that in the history of the study.</p>
+                    <p>Food Khan là một nhà hàng tuyệt vời của Đại học Texas ở Austin đã được nghiên cứu lợi ích của việc
+                        kiểm tra thường xuyên và phản hồi dẫn đến. Ông giải thích điều đó trong lịch sử nghiên cứu.</p>
                 </div>
                 <div class="single-testimonial">
                     <div class="testi-top">
@@ -1898,10 +1885,8 @@
                             </div>
                         </div>
                     </div>
-                    <p>Food Khan is a gret Restaurant from the University of Texas at Austin has been
-                        researching
-                        the benefits of frequent testing and the feedback
-                        leads to. He explains that in the history of the study.</p>
+                    <p>Food Khan là một nhà hàng tuyệt vời của Đại học Texas ở Austin đã được nghiên cứu lợi ích của việc
+                        kiểm tra thường xuyên và phản hồi dẫn đến. Ông giải thích điều đó trong lịch sử nghiên cứu.</p>
                 </div>
             </div>
 

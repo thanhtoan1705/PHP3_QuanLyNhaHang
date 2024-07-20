@@ -17,8 +17,8 @@
                 <nav aria-label="breadcrumb">
                     <h2 class="page-title">Tài khoản</h2>
                     <ol class="breadcrumb text-center">
-                        <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Tài khoản</li>
+                        <li class="breadcrumb-item"><a href="/">Trang chủ</a> / <a href="{{ route('account') }}"> Tài
+                                khoản</a></li>
                     </ol>
                 </nav>
             </div>
@@ -69,9 +69,10 @@
                             <h5 class="tab-title">Hello <span>Toàn Đào!</span> </h5>
                             <p>
                                 Từ bảng điều khiển tài khoản của bạn. bạn có thể dễ dàng kiểm tra &amp; xem gần đây của bạn
-                                đơn đặt hàng,<br> quản lý địa chỉ giao hàng và thanh toán của bạn cũng như chỉnh sửa mật khẩu và
+                                đơn đặt hàng,<br> quản lý địa chỉ giao hàng và thanh toán của bạn cũng như chỉnh sửa mật
+                                khẩu và
                                 Chi tiết tài khoản.
-                                </p>
+                            </p>
                             <div class="recent-orders margin-top-40">
                                 <h5 class="margin-bottom-30">Recent Orders</h5>
                                 <div class="table-responsive">
