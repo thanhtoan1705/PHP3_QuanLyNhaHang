@@ -56,7 +56,7 @@
                                                             </svg>
                                                         </button>
                                                         <div class="dropdown-menu">
-                                                            <a class="dropdown-item" href="#">Chỉnh sửa</a>
+                                                            <a class="dropdown-item" href="{{route('dish.edit')}}">Chỉnh sửa</a>
                                                             <a class="dropdown-item" href="#">xóa</a>
                                                         </div>
                                                     </div>
@@ -89,7 +89,7 @@
                                                             </svg>
                                                         </button>
                                                         <div class="dropdown-menu">
-                                                            <a class="dropdown-item" href="#">Chỉnh sửa</a>
+                                                            <a class="dropdown-item" href="{{route('dish.edit')}}">Chỉnh sửa</a>
                                                             <a class="dropdown-item" href="#">Xóa</a>
                                                         </div>
                                                     </div>
@@ -122,7 +122,7 @@
                                                             </svg>
                                                         </button>
                                                         <div class="dropdown-menu">
-                                                            <a class="dropdown-item" href="#">Chỉnh sửa</a>
+                                                            <a class="dropdown-item" href="{{route('dish.edit')}}">Chỉnh sửa</a>
                                                             <a class="dropdown-item" href="#">Xóa</a>
                                                         </div>
                                                     </div>

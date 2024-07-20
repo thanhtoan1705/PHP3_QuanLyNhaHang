@@ -17,7 +17,7 @@
                                                 <th><strong>Bình luận</strong></th>
                                                 <th><strong>Đánh giá</strong></th>
                                                 <th><strong>Ngày Bình luận</strong></th>
-                                                <th></th>
+                                           
                                             </tr>
 
                                         </thead>
@@ -53,30 +53,7 @@
                                                     fill="var(--primary)" />
                                             </svg></td>
                                                 <td>12/07/2024</td>
-                                                <td>
-                                                    <div class="dropdown">
-                                                        <button type="button" class="btn btn-success light sharp"
-                                                            data-bs-toggle="dropdown">
-                                                            <svg width="20px" height="20px" viewBox="0 0 24 24"
-                                                                version="1.1">
-                                                                <g stroke="none" stroke-width="1" fill="none"
-                                                                    fill-rule="evenodd">
-                                                                    <rect x="0" y="0" width="24" height="24" />
-                                                                    <circle fill="#000000" cx="5" cy="12"
-                                                                        r="2" />
-                                                                    <circle fill="#000000" cx="12" cy="12"
-                                                                        r="2" />
-                                                                    <circle fill="#000000" cx="19" cy="12"
-                                                                        r="2" />
-                                                                </g>
-                                                            </svg>
-                                                        </button>
-                                                        <div class="dropdown-menu">
-                                                            <a class="dropdown-item" href="#">Chỉnh sửa</a>
-                                                            <a class="dropdown-item" href="#">xóa</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
+                                                
                                             </tr>
                                             <tr>
                                                 <td><strong>02</strong></td>
@@ -101,30 +78,7 @@
                                                     fill="var(--primary)" />
                                             </svg></td>
                                                 <td>14/07/2024</td>
-                                                <td>
-                                                    <div class="dropdown">
-                                                        <button type="button" class="btn btn-danger light sharp"
-                                                            data-bs-toggle="dropdown">
-                                                            <svg width="20px" height="20px" viewBox="0 0 24 24"
-                                                                version="1.1">
-                                                                <g stroke="none" stroke-width="1" fill="none"
-                                                                    fill-rule="evenodd">
-                                                                    <rect x="0" y="0" width="24" height="24" />
-                                                                    <circle fill="#000000" cx="5" cy="12"
-                                                                        r="2" />
-                                                                    <circle fill="#000000" cx="12" cy="12"
-                                                                        r="2" />
-                                                                    <circle fill="#000000" cx="19" cy="12"
-                                                                        r="2" />
-                                                                </g>
-                                                            </svg>
-                                                        </button>
-                                                        <div class="dropdown-menu">
-                                                            <a class="dropdown-item" href="#">Chỉnh sửa</a>
-                                                            <a class="dropdown-item" href="#">Xóa</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
+                                                
                                             </tr>
                                             <tr>
                                                 <td><strong>03</strong></td>
@@ -173,30 +127,7 @@
                                         fill="var(--primary)" />
                                 </svg></td>
                                                 <td>17/07/2024</td>
-                                                <td>
-                                                    <div class="dropdown">
-                                                        <button type="button" class="btn btn-warning light sharp"
-                                                            data-bs-toggle="dropdown">
-                                                            <svg width="20px" height="20px" viewBox="0 0 24 24"
-                                                                version="1.1">
-                                                                <g stroke="none" stroke-width="1" fill="none"
-                                                                    fill-rule="evenodd">
-                                                                    <rect x="0" y="0" width="24" height="24" />
-                                                                    <circle fill="#000000" cx="5" cy="12"
-                                                                        r="2" />
-                                                                    <circle fill="#000000" cx="12" cy="12"
-                                                                        r="2" />
-                                                                    <circle fill="#000000" cx="19" cy="12"
-                                                                        r="2" />
-                                                                </g>
-                                                            </svg>
-                                                        </button>
-                                                        <div class="dropdown-menu">
-                                                            <a class="dropdown-item" href="#">Chỉnh sửa</a>
-                                                            <a class="dropdown-item" href="#">Xóa</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
+                                                
                                             </tr>
                                         </tbody>
                                     </table>
