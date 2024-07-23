@@ -78,14 +78,29 @@ Route::get('payment', [PaymentController::class, 'index'])->name('payment.list')
 
 
 
-Route::get('user/list', [UserController::class, 'index'])->name('user.list');
-Route::get('user/create', [UserController::class, 'create'])->name('user.create');
-Route::get('user/edit', [UserController::class, 'edit'])->name('user.edit');
+//user
+Route::name('user.')->group(function () {
+    Route::get('user/list', [UserController::class, 'index'])->name('list');
+    Route::get('user/create', [UserController::class, 'create'])->name('create');
+    Route::post('user/store', [UserController::class, 'store'])->name('store');
+    Route::get('user/edit/{id}', [UserController::class, 'edit'])->name('edit');
+    Route::put('user/update/{id}', [UserController::class, 'update'])->name('update');
+    Route::delete('user/delete/{id}', [UserController::class, 'destroy'])->name('destroy');
+});
+
+
+
+// login
 Route::get('admin/login', [AuthUserController::class, 'login'])->name('admin.login');
 
+
+
+//category
 Route::get('category', [CategoryController::class, 'list'])->name('category.list');
 Route::get('category/add', [CategoryController::class, 'add'])->name('category.add');
 Route::get('category/update', [CategoryController::class, 'update'])->name('category.update');
 
 
+
+//comment
 Route::get('comment', [CommentController::class, 'index'])->name('comment.list');
