@@ -12,9 +12,11 @@ class CreateDishesTable extends Migration
             $table->id();
             $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->string('name', 255);
+            $table->string('slug', 255)->unique();
             $table->text('description')->nullable();
             $table->bigInteger('price');
             $table->string('image', 255)->nullable();
+            $table->tinyInteger('status')->nullable()->comment('0: hết món, 1: còn món');
             $table->timestamps();
         });
     }

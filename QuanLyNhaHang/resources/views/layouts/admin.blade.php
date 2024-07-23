@@ -90,6 +90,7 @@
         </div>
 
         <x-admin.footer></x-admin.footer>
+        @stack('script')
 
 
     </div>

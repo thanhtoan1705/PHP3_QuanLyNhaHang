@@ -17,4 +17,9 @@ class Category extends Model
     {
         return $this->hasMany(Dish::class);
     }
+
+    public static function getAllCategories()
+    {
+        return self::all();
+    }
 }

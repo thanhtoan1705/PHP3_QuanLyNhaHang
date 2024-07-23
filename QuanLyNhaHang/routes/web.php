@@ -48,9 +48,14 @@ Route::get('dashboard', [DashboardController::class, 'index']);
 
 
 
-Route::get('dish', [AdminDishController::class, 'list'])->name('dish.list');
-Route::get('dish/add', [AdminDishController::class, 'add'])->name('dish.add');
-Route::get('dish/edit', [AdminDishController::class, 'edit'])->name('dish.edit');
+Route::name('dish.')->group(function () {
+    Route::get('dish', [AdminDishController::class, 'list'])->name('list');
+    Route::get('dish/add', [AdminDishController::class, 'add'])->name('add');
+    Route::post('dish/store', [AdminDishController::class, 'store'])->name('store');
+    Route::get('dish/edit/{slug}', [AdminDishController::class, 'edit'])->name('edit');
+    Route::put('dish/update/{slug}', [AdminDishController::class, 'update'])->name('update');
+    Route::delete('dish/delete/{slug}', [AdminDishController::class, 'delete'])->name('delete');
+});
 
 
 
@@ -84,5 +89,3 @@ Route::get('category/update', [CategoryController::class, 'update'])->name('cate
 
 
 Route::get('comment', [CommentController::class, 'index'])->name('comment.list');
-
-
