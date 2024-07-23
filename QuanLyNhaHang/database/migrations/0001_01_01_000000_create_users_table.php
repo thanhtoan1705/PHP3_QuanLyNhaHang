@@ -18,7 +18,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('phone', 20);
             $table->string('address');
-            $table->enum('role', ['admin', 'customers']);
+            $table->enum('role', ['admin', 'user']);
+            $table->enum('active', ['active', 'inactive']);
             $table->string('google_id')->nullable();
             $table->string('facebook_id')->nullable();
             $table->timestamp('email_verified_at')->nullable();

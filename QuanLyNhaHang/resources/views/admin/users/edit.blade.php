@@ -11,39 +11,78 @@
                     </div>
                     <div class="card-body">
                         <div class="basic-form">
-                            <form>
+                            <form action="{{ route('user.update', $user->id) }}" method="post">
+                                @csrf
+                                @method('PUT')
                                 <div class="row">
                                     <div class="mb-3 col-md-6">
                                         <label class="form-label">Tên <span class="text-danger">*</span> </label>
-                                        <input type="text" class="form-control" placeholder="Tên">
-                                    </div>
-                                    <div class="mb-3 col-md-6">
-                                        <label class="form-label">Họ <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" placeholder="Họ">
+                                        <input type="text" name="name" id="name" class="form-control"
+                                            value="{{ old('name', $user->name) }}" placeholder="Tên">
+                                        @error('name')
+                                            <span class="text-danger"> {{ $message }} </span>
+                                        @enderror
                                     </div>
                                     <div class="mb-3 col-md-6">
                                         <label class="form-label">Email <span class="text-danger">*</span></label>
-                                        <input type="email" class="form-control" placeholder="Email">
+                                        <input type="email" name="email" id="email" class="form-control"
+                                            value="{{ old('email', $user->email) }}" placeholder="Email">
+                                        @error('email')
+                                            <span class="text-danger"> {{ $message }} </span>
+                                        @enderror
                                     </div>
                                     <div class="mb-3 col-md-6">
                                         <label class="form-label">Số điện thoại <span class="text-danger">*</span></label>
-                                        <input type="number" class="form-control" placeholder="Số điện thoại">
+                                        <input type="number" name="phone" id="phone" class="form-control"
+                                            value="{{ old('phone', $user->phone) }}" placeholder="Số điện thoại">
+                                        @error('phone')
+                                            <span class="text-danger"> {{ $message }} </span>
+                                        @enderror
                                     </div>
                                     <div class="mb-3 col-md-6">
                                         <label class="form-label">Địa chỉ <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" placeholder="Địa chỉ">
+                                        <input type="text" name="address" id="address" class="form-control"
+                                            value="{{ old('address', $user->address) }}" placeholder="Địa chỉ">
+                                        @error('address')
+                                            <span class="text-danger"> {{ $message }} </span>
+                                        @enderror
                                     </div>
-                                    <div class="mb-3">
-                                        <label class="form-label">Quyền:</label>
-                                        <select class="default-select  form-control wide">
-                                            <option value="supper-admin">Supper Admin</option>
-                                            <option value="admin">Admin</option>
-                                            <option value="user">Người Dùng</option>
+                                    <div class="mb-3 col-md-12">
+                                        <label class="form-label">Password: <span class="text-danger">*</span></label>
+                                        <input type="password" name="password" id="password" class="form-control"
+                                            value="{{ old('password') }}" placeholder="Mật khẩu">
+                                        @error('password')
+                                            <span class="text-danger"> {{ $message }} </span>
+                                        @enderror
+                                    </div>
+                                    <div class="mb-3 col-md-6">
+                                        <label class="form-label">Quyền: <span class="text-danger">*</span></label>
+                                        <select class="default-select form-control wide" name="role" id="role">
+                                            <option value="admin" {{ $user->role == 'admin' ? 'selected' : '' }}>Admin
+                                            </option>
+                                            <option value="user" {{ $user->role == 'user' ? 'selected' : '' }}>Người Dùng
+                                            </option>
                                         </select>
+                                        @error('role')
+                                            <span class="text-danger"> {{ $message }} </span>
+                                        @enderror
                                     </div>
+
+                                    <div class="mb-3 col-md-6">
+                                        <label class="form-label">Hoạt động: <span class="text-danger">*</span></label>
+                                        <select class="default-select form-control wide" name="active" id="active">
+                                            <option value="active" {{ $user->active == 'active' ? 'selected' : '' }}>Hoạt
+                                                động</option>
+                                            <option value="inactive" {{ $user->active == 'inactive' ? 'selected' : '' }}>
+                                                Không hoạt động</option>
+                                        </select>
+                                        @error('active')
+                                            <span class="text-danger"> {{ $message }} </span>
+                                        @enderror
+                                    </div>
+
                                     <div>
-                                        <button type="submit" class="btn btn-primary">Thêm</button>
-                                        <button type="submit" class="btn btn-danger">Hủy bỏ</button>
+                                        <button type="submit" class="btn btn-primary">Cập nhật</button>
                                     </div>
                                 </div>
                             </form>
