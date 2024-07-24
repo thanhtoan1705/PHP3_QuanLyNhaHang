@@ -88,7 +88,7 @@
                 <div class="row">
                     <div class="col-lg-10 offset-lg-1 col-md-12">
                         <div class="form-wraper padding-bottom-40">
-                            <form action="#">
+                            <form action="{{ route('table') }}">
                                 <select class="form-item2">
                                     <option value="">4 người</option>
                                     <option value="">3 người</option>

@@ -35,7 +35,7 @@
         <div class="row d-flex align-items-center">
           <div class="col-lg-2 col-md-2 col-sm-2 col-3">
             <div class="logo">
-              <a href="index.html">
+              <a href="/">
                 <img src="{{ asset('assets/client/images/logo/logo.png')}}" alt="logo" /></a>
             </div>
           </div>

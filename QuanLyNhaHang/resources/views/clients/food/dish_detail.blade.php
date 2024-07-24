@@ -18,9 +18,8 @@
                 <nav aria-label="breadcrumb">
                     <h2 class="page-title">Công thức chiên gà</h2>
                     <ol class="breadcrumb text-center">
-                        <li class="breadcrumb-item"><a href="index.html">Trang chủ </a> / <a href="index.html"> Cửa hàng món ăn</a>
+                        <li class="breadcrumb-item"><a href="/">Trang chủ </a> / <a href="{{ route('dishDetail') }}"> Cửa hàng món ăn</a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">Công thức chiên gà</li>
                     </ol>
                 </nav>
             </div>
@@ -260,54 +259,9 @@
                     </div>
                     <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
                         <div class="pd-inner-content">
-                            <p>Bánh hamburger (hay còn gọi tắt là burger) là một loại bánh sandwich bao gồm một hoặc nhiều miếng được nấu chín.
-                                miếng thịt xay, thường là thịt bò, đặt bên trong ổ bánh mì hoặc bánh mì cắt lát. Các
-                                patty có thể được chiên áp chảo, nướng, hun khói hoặc nướng trên lửa. Bánh mì kẹp thịt thường được phục vụ
-                                với phô mai.</p>
-                                <p> <b>Thành phần </b> Bánh mì Focaccia, Sốt Balsamic, Pesto, Cà chua, Phô mai Thụy Sĩ</p>
-                            <h6 class="margin-bottom-30">Kích thước burger</h6>
-                            <div class="table-box d-flex flex-wrap">
-                                <table class="margin-bottom-30">
-                                    <tr>
-                                        <th rowpan="3" class="heading">bánh mì kẹp thịt <br>king <br><br>khoai tây chiên</th> thông thường                                        <th>s</th>
-                                        <td>128</td>
-                                        <td>340</td>
-                                        <td>15</td>
-                                    </tr>
-                                    <tr>
-                                        <th>m</th>
-                                        <td>128</td>
-                                        <td>340</td>
-                                        <td>15</td>
-                                    </tr>
-                                    <tr>
-                                        <th>l</th>
-                                        <td>128</td>
-                                        <td>340</td>
-                                        <td>15</td>
-                                    </tr>
-                                </table>
-                                <table>
-                                    <tr>
-                                        <th rowpan="3" class="heading">bánh mì kẹp thịt <br>vua <br>thỏa mãn</th>                                        <th>value</th>
-                                        <td>87</td>
-                                        <td>190</td>
-                                        <td>8</td>
-                                    </tr>
-                                    <tr>
-                                        <th>s</th>
-                                        <td>87</td>
-                                        <td>190</td>
-                                        <td>8</td>
-                                    </tr>
-                                    <tr>
-                                        <th>m</th>
-                                        <td>87</td>
-                                        <td>190</td>
-                                        <td>8</td>
-                                    </tr>
-                                </table>
-                            </div>
+                            <label for="">Ghi bình luận</label>
+                            <textarea class="form-control" name="" id="" cols="30" rows="10" placeholder="Vui lòng nhập đánh giá"></textarea>
+                            <button class="btn btn-danger mt-3">Gửi bình luận</button>
                         </div>
                     </div>
                 </div>

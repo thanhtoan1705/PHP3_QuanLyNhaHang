@@ -19,14 +19,14 @@ use App\Http\Controllers\Client\Cart\CartController;
 use App\Http\Controllers\Client\Checkout\CheckoutController;
 use App\Http\Controllers\Client\About\AboutController;
 use App\Http\Controllers\Client\Auth\AccountController;
+use App\Http\Controllers\Client\Auth\LoginController as AuthLoginController;
 use App\Http\Controllers\Client\Dish\DishController;
-use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Client\Auth\RegisterController;
 use App\Http\Controllers\Client\Blog\BlogController;
 use App\Http\Controllers\Client\Blog\BlogDetailController;
 use App\Http\Controllers\Client\Contact\ContactController;
 use App\Http\Controllers\Client\Gallery\GalleryController;
-
+use App\Http\Controllers\Client\Table\TableController as ClientTableController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('chi-tiet-mon-an', [DishController::class, 'dishDetail'])->name('dishDetail');
@@ -36,11 +36,12 @@ Route::get('thanh-toan', [CheckoutController::class, 'index'])->name('checkout')
 Route::get('gioi-thieu', [AboutController::class, 'index'])->name('about');
 Route::get('404', [ErrorController::class, 'index']);
 Route::get('dang-ky', [RegisterController::class, 'index'])->name('register');
-Route::get('dang-nhap', [LoginController::class, 'index'])->name('login');
+Route::get('dang-nhap', [AuthLoginController::class, 'index'])->name('login');
 Route::get('bai-viet', [BlogController::class, 'index'])->name('blog');
 Route::get('bai-viet-chi-tiet', [BlogDetailController::class, 'index'])->name('blog.detail');
 Route::get('tai-khoan', [AccountController::class, 'index'])->name('account');
 Route::get('lien-he', [ContactController::class, 'index'])->name('contact');
+Route::get('dat-ban', [ClientTableController::class, 'index'])->name('table');
 
 
 

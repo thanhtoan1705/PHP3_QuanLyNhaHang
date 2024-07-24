@@ -17,8 +17,7 @@
             <nav aria-label="breadcrumb">
                 <h2 class="page-title">Trang đăng ký</h2>
                 <ol class="breadcrumb text-center">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page"> Trang đăng ký</li>
+                    <li class="breadcrumb-item"><a href="/">Trang chủ</a> / <a href="{{ route('register') }}">Đăng ký</a></li>
                 </ol>
             </nav>
         </div>
