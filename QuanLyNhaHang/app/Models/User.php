@@ -42,20 +42,6 @@ class User extends Authenticatable
         return self::latest('id')->where('active', 'inactive')->paginate($perPage);
     }
 
-    // public static function getLatestPaginated($perPage = 5, $pageName = 'page_active')
-    // {
-    //     return self::latest('id')
-    //         ->where('active', 'active')
-    //         ->paginate($perPage, ['*'], $pageName);
-    // }
-
-    // public static function getInactiveLatestPaginated($perPage = 5, $pageName = 'page_inactive')
-    // {
-    //     return self::latest('id')
-    //         ->where('active', 'inactive')
-    //         ->paginate($perPage, ['*'], $pageName);
-    // }
-
     public static function createUser($data)
     {
 
@@ -64,17 +50,19 @@ class User extends Authenticatable
 
         return self::create($data);
     }
-    // public static function updateUser($data)
-    // {
 
-    //     if (isset($data['password'])) {
-    //         $data['password'] = Hash::make($data['password']);
-    //     } else {
-    //         unset($data['password']);
-    //     }
+    public function updateUser(array $data)
+    {
+        // Nếu không có mật khẩu mới, giữ lại mật khẩu cũ
+        if (isset($data['password']) && $data['password']) {
+            $data['password'] = Hash::make($data['password']);
+        } else {
+            $data['password'] = $this->password;
+        }
 
-    //     return self::update($data);
-    // }
+        // Cập nhật người dùng
+        return $this->update($data);
+    }
 
     public function reviews(): HasMany
     {
