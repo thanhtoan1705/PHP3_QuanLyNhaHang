@@ -6,8 +6,7 @@
             <div class="col-xl-12">
                 <div class="card dz-card" id="bootstrap-table1">
                     <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="Preview" role="tabpanel"
-                            aria-labelledby="home-tab">
+                        <div class="tab-pane fade show active" id="Preview" role="tabpanel" aria-labelledby="home-tab">
                             <div class="card-header flex-wrap border-0">
                                 <div>
                                     <h2 class="card-title">Cập nhật danh mục</h2>
@@ -26,14 +25,26 @@
                                                     placeholder="Nhập tên danh mục" value="{{ $category->name }}" />
                                             </div>
 
-                                            <!-- Hình ảnh -->
+                                            <!-- Hình ảnh hiện tại -->
                                             <div class="mb-3">
-                                                <label for="image" class="form-label">Hình ảnh</label>
-                                                <input type="file" class="form-control" name="image" id="image" />
+                                                <label for="current_image" class="form-label">Hình ảnh hiện tại</label><br>
+                                                @if ($category->image)
+                                                    <img src="{{ asset('storage/images/' . $category->image) }}"
+                                                        alt="Current Image" style="max-width: 200px; max-height: 200px;">
+                                                @else
+                                                    <span>Không có hình ảnh</span>
+                                                @endif
                                             </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <!-- Chọn hình ảnh mới -->
+                                        <div class="mb-3">
+                                            <label for="image" class="form-label">Chọn hình ảnh mới</label>
+                                            <input type="file" class="form-control" name="image" id="image" />
+                                        </div>
 
-                                            <!-- Nút cập nhật -->
-                                            <button type="submit" class="btn btn-primary">Cập nhật</button>
+                                        <!-- Nút cập nhật -->
+                                        <button type="submit" class="btn btn-primary">Cập nhật</button>
                                         </form>
                                     </div>
                                 </div>

@@ -16,8 +16,6 @@ class CategoryController extends Controller
 
         $categories = category::all();
 
-        // dd($categories);
-
         return view('admin.category.list', compact('categories'));
 
     }
@@ -48,7 +46,7 @@ class CategoryController extends Controller
         Category::create($validated);
         // dd($validated);
         // die();
-        return redirect()->route('category.list');
+        return redirect()->route('category.list')->with('messege','thêm thằng công');
     }
 
     public function update($slug)
