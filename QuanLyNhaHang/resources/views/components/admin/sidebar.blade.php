@@ -32,8 +32,8 @@
                     <span class="nav-text">Danh mục</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="{{ route('category.list')}}">Danh sách Danh mục</a></li>
-                    <li><a href="{{ route('category.add')}}">Thêm Danh mục</a></li>
+                    <li><a href="{{ route('category.list') }}">Danh sách Danh mục</a></li>
+                    <li><a href="{{ route('category.add') }}">Thêm Danh mục</a></li>
                 </ul>
             </li>
             <li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
@@ -80,7 +80,7 @@
                     <li><a href="{{ route('table.add') }}">Thêm bàn</a></li>
                 </ul>
             </li>
-            <li><a href="{{ route('user.list') }}" class="" aria-expanded="false">
+            <li><a class="has-arrow " href="{{ route('user.list') }}" class="" aria-expanded="false">
                     <div class="menu-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -102,6 +102,10 @@
                     </div>
                     <span class="nav-text">Người dùng</span>
                 </a>
+                <ul aria-expanded="false">
+                    <li><a href="{{ route('user.list') }}">Danh sách người dùng</a></li>
+                    <li><a href="{{ route('user.create') }}">Thêm người dùng</a></li>
+                </ul>
             </li>
             <li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
                     <div class="menu-icon">
@@ -158,7 +162,7 @@
                     <span class="nav-text">Bình luận</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="{{route('comment.list')}}">Danh sách Bình luận</a></li>
+                    <li><a href="{{ route('comment.list') }}">Danh sách Bình luận</a></li>
                 </ul>
             </li>
             <li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
@@ -183,18 +187,6 @@
                 <ul aria-expanded="false">
                     <li><a href="{{ route('staff.list') }}">Danh sách nhân viên</a></li>
                     <li><a href="{{ route('staff.add') }}">Thêm nhân viên</a></li>
-                    <li><a href="{{ route('staff.update') }}">Sửa nhân viên</a></li>
-                    {{-- <li><a class="has-arrow" href="javascript:void(0);" aria-expanded="false">Error</a>
-                        <ul aria-expanded="false">
-                            <li><a href="page-error-400.html">Error 400</a></li>
-                            <li><a href="page-error-403.html">Error 403</a></li>
-                            <li><a href="page-error-404.html">Error 404</a></li>
-                            <li><a href="page-error-500.html">Error 500</a></li>
-                            <li><a href="page-error-503.html">Error 503</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="page-lock-screen.html">Lock Screen</a></li>
-                    <li><a href="empty-page.html">Empty Page</a></li> --}}
                 </ul>
             </li>
         </ul>

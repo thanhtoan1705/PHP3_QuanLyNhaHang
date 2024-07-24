@@ -22,23 +22,6 @@ class UserController extends Controller
      */
     public function index()
     {
-        // $users = $this->user->latest('id')
-        //     ->where('active', 'active')
-        //     ->paginate(5)
-        //     ->setPageName('page_active');
-
-        // $usersInactive = $this->user->latest('id')
-        //     ->where('active', 'inactive')
-        //     ->paginate(5)
-        //     ->setPageName('page_inactive');
-        // return view('admin.users.list', compact('users', 'usersInactive'));
-
-        // $users = $this->user->getLatestPaginated(5, 'page_active');
-        // $usersInactive = $this->user->getInactiveLatestPaginated(5, 'page_inactive');
-        // return view('admin.users.list', compact('users', 'usersInactive'));
-
-
-        // của mình
         $users = $this->user->getLatestPaginated(5);
         $usersInactive = $this->user->getInactiveLatestPaginated(5);
         return view('admin.users.list', compact('users', 'usersInactive'));
@@ -87,15 +70,8 @@ class UserController extends Controller
     {
         $user = $this->user->findOrFail($id);
         $dataUpdate = $request->validated();
-        // dd($dataUpdate);
 
-        if ($request->filled('password')) {
-            $dataUpdate['password'] = Hash::make($request->password);
-        } else {
-            $dataUpdate['password'] = $user->password;
-        }
-
-        $user->update($dataUpdate);
+        $user->updateUser($dataUpdate);
 
         return redirect()->route('user.list')->with(['message' => 'Cập nhật thành công']);
     }
