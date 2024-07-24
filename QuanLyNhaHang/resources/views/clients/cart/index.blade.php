@@ -18,7 +18,7 @@
                 <nav aria-label="breadcrumb text-center">
                     <h2 class="page-title">Giỏ hàng</h2>
                     <ol class="breadcrumb text-center">
-                        <li class="breadcrumb-item"><a href="/">Trang chủ </a>/<a href="/cart"> Giỏ hàng</a></li>
+                        <li class="breadcrumb-item"><a href="/">Trang chủ </a>/<a href="{{ route('cart') }}"> Giỏ hàng</a></li>
                     </ol>
                 </nav>
             </div>
@@ -176,9 +176,10 @@
                                     <li>Tổng cộng</li>
                                     <li>30.000</li>
                                 </ul>
-                                <button class="btn" type="submit">Tiến hành thanh toán</button>
+                                    <a href="{{ route('checkout') }}" class="btn btn-danger mt-3">Tiến hành thanh toán</a>
                             </div>
                         </div>
+
 
                     </div>
                 </div>

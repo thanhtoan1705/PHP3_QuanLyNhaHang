@@ -538,12 +538,12 @@
                     <div class="collapse navbar-collapse justify-content-between">
 						<div class="header-left">
 							<div class="dashboard_bar">
-                                Dashboard
+                                Bảng điều khiển
                             </div>
 						</div>
                         <div class="header-right d-flex align-items-center">
 							<div class="input-group search-area">
-								<input type="text" class="form-control" placeholder="Search here...">
+								<input type="text" class="form-control" placeholder="Tìm kiếm...">
 								<span class="input-group-text"><a href="javascript:void(0)">
 									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<g clip-path="url(#clip0_1_450)">

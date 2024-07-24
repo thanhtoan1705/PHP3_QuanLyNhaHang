@@ -74,7 +74,7 @@
                                 Chi tiết tài khoản.
                             </p>
                             <div class="recent-orders margin-top-40">
-                                <h5 class="margin-bottom-30">Recent Orders</h5>
+                                <h5 class="margin-bottom-30">Những đơn đặt hàng gần đây</h5>
                                 <div class="table-responsive">
                                     <table class="table">
                                         <thead>
@@ -82,7 +82,7 @@
                                                 <th>Sản phẩm</th>
                                                 <th>Ngày</th>
                                                 <th>Trạng thái</th>
-                                                <th>Chi nhánh</th>
+                                                <th>Bàn</th>
                                                 <th>Tổng cộng</th>
                                                 <th>Hành động</th>
                                             </tr>
@@ -92,7 +92,7 @@
                                                 <td>Sữa lắc hoàng gia Kesar</td>
                                                 <td>Ngày 45 tháng 3 năm 2020</td>
                                                 <td>Đang xử lý</td>
-                                                <td>Chi nhánh Uttara</td>
+                                                <td>Bàn 2</td>
                                                 <td>$125,00</td>
                                                 <td><a href="#" class="btn-small d-block">Hủy đơn hàng</a></td>
                                             </tr>
@@ -100,17 +100,9 @@
                                                 <td>Pizza phô mai đôi</td>
                                                 <td>Ngày 29 tháng 6 năm 2020</td>
                                                 <td>Đã hoàn thành</td>
-                                                <td>Chi nhánh Dhaka</td>
+                                                <td>Bàn 3</td>
                                                 <td>$364,00</td>
                                                 <td><a href="#" class="btn-small d-block">Hủy đơn hàng</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td> Indian Fries</td>
-                                                <td>August 02, 2020</td>
-                                                <td>Completed</td>
-                                                <td>USA Branch</td>
-                                                <td>$280.00</td>
-                                                <td><a href="#" class="btn-small d-block">Cancel Order</a></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -132,80 +124,74 @@
                         <!-- order-tab -->
                         <div class="tab-pane fade" id="order" role="tabpanel" aria-labelledby="order-tab"
                             tabindex="0">
-                            <h5 class="margin-bottom-30">Your Orders</h5>
+                            <h5 class="margin-bottom-30">Đơn hàng của bạn</h5>
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th>Product</th>
-                                            <th>Date</th>
-                                            <th>Status</th>
-                                            <th>Branch</th>
-                                            <th>Total</th>
-                                            <th>Actions</th>
+                                            <th>Sản phẩm</th>
+                                            <th>Ngày</th>
+                                            <th>Trạng thái</th>
+                                            <th>Bàn</th>
+                                            <th>Tổng cộng</th>
+                                            <th>Hành động</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>Kesar Royal Milkshake</td>
-                                            <td>March 45, 2020</td>
-                                            <td>Processing</td>
-                                            <td>Uttara Branch</td>
-                                            <td>$125.00</td>
-                                            <td><a href="#" class="btn-small d-block">Cancel Order</a></td>
+                                            <td>Sữa lắc hoàng gia Kesar</td>
+                                            <td>Ngày 45 tháng 3 năm 2020</td>
+                                            <td>Đang xử lý</td>
+                                            <td>Bàn 2</td>
+                                            <td>$125,00</td>
+                                            <td><a href="#" class="btn-small d-block">Hủy đơn hàng</a></td>
                                         </tr>
                                         <tr>
-                                            <td>Double Cheese pizza</td>
-                                            <td>June 29, 2020</td>
-                                            <td>Completed</td>
-                                            <td>Dhaka Branch</td>
-                                            <td>$364.00</td>
-                                            <td><a href="#" class="btn-small d-block">Cancel Order</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td> Indian Fries</td>
-                                            <td>August 02, 2020</td>
-                                            <td>Completed</td>
-                                            <td>USA Branch</td>
-                                            <td>$280.00</td>
-                                            <td><a href="#" class="btn-small d-block">Cancel Order</a></td>
+                                            <td>Pizza phô mai đôi</td>
+                                            <td>Ngày 29 tháng 6 năm 2020</td>
+                                            <td>Đã hoàn thành</td>
+                                            <td>Bàn 3</td>
+                                            <td>$364,00</td>
+                                            <td><a href="#" class="btn-small d-block">Hủy đơn hàng</a></td>
                                         </tr>
                                     </tbody>
                                 </table>
+
                             </div>
                             <div class="pagination order-pagination">
                                 <ul>
-                                    <li class="prev"><a href="#">Prev</a></li>
+                                    <li class="prev"><a href="#">Trở lại</a></li>
                                     <li><a href="#">1</a></li>
                                     <li><a href="#">2</a></li>
                                     <li><a href="#">3</a></li>
                                     <li class="pagination-dot">...</li>
                                     <li><a href="#">10</a></li>
-                                    <li class="next"><a href="#">Next</a></li>
+                                    <li class="next"><a href="#">Tiếp</a></li>
                                 </ul>
                             </div>
                         </div>
                         <!-- track-order-tab -->
                         <div class="tab-pane fade" id="track-order" role="tabpanel" aria-labelledby="track-order-tab"
                             tabindex="0">
-                            <h5 class="tab-title">Orders tracking</h5>
-                            <p>To track your order please enter your OrderID in the box below and press "Track" button.
-                                This
-                                was given to you on your
-                                receipt and in the confirmation email you should have received.
+                            <h5 class="tab-title">Theo dõi đơn hàng</h5>
+                            <p>Để theo dõi đơn hàng của bạn, vui lòng nhập ID đơn hàng của bạn vào ô bên dưới và nhấn nút
+                                "Theo dõi".
+                                Cái này
+                                đã được trao cho bạn trên của bạn
+                                nhận và trong email xác nhận mà lẽ ra bạn phải nhận được.
                             </p>
                             <form>
                                 <div class="mb-3">
-                                    <label for="order-id" class="form-label">Order Id</label>
+                                    <label for="order-id" class="form-label">Mã đơn hàng</label>
                                     <input type="text" class="form-control" id="order-id"
                                         aria-describedby="helpingLine">
-                                    <div id="helpingLine" class="form-text">Found in your order confirmation email</div>
+                                    <div id="helpingLine" class="form-text">Tìm thấy trong email xác nhận đặt hàng của bạn</div>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="billing-email" class="form-label">Billing email</label>
+                                    <label for="billing-email" class="form-label">Thanh toán bằng thư điện tử</label>
                                     <input type="email" class="form-control" id="billing-email">
                                 </div>
-                                <button type="submit" class="btn btn-primary">Track</button>
+                                <button type="submit" class="btn btn-primary">Theo dõi</button>
                             </form>
                         </div>
                         <!-- address-tab -->
@@ -214,24 +200,23 @@
                             <div class="front-address" id="front-address">
                                 <div class="row">
                                     <div class="col-lg-6">
-                                        <h5 class="tab-title">Billing Address</h5>
+                                        <h5 class="tab-title">Địa chỉ cảu hàng</h5>
                                         <ul>
-                                            <li>Uttara, Dhaka</li>
-                                            <li>Yello Road, Bangladesh</li>
-                                            <li>Dhaka</li>
-                                            <li>1230</li>
-                                            <li><a href="#" class="edit-address">Edit</a></li>
+                                            <li>Việt Nam</li>
+                                            <li>Ninh Kiều Cần Thơ</li>
+                                            <li>Hoàng Quốc Việt</li>
+                                            <li>123</li>
+                                            <li><a href="#" class="edit-address">Chỉnh sửa</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-6">
-                                        <h5 class="tab-title">Shipping Address</h5>
+                                        <h5 class="tab-title">Địa chỉ của tôi</h5>
                                         <ul>
-                                            <li>4299 Express Lane</li>
-                                            <li>Sarasota,</li>
-                                            <li>FL 34249 USA.</li>
-                                            <li>Phone: 1.941.227.4444</li>
-                                            <li>Sarasota</li>
-                                            <li><a href="#" class="edit-address">Edit</a></li>
+                                            <li>Việt Nam</li>
+                                            <li>Vĩnh Long</li>
+                                            <li>Nguyễn Văn Cừ</li>
+                                            <li>SDT: 0123456789</li>
+                                            <li><a href="#" class="edit-address">Chỉnh sửa</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -300,13 +285,13 @@
                             <form>
                                 <!-- account-details -->
                                 <div class="account-details">
-                                    <h5 class="tab-title">Account Details</h5>
+                                    <h5 class="tab-title">Chi tiết tài khoản</h5>
                                     <div class="mb-3">
-                                        <label for="userName" class="form-label">Name</label>
+                                        <label for="userName" class="form-label">Tên</label>
                                         <input type="text" class="form-control" id="userName">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="userPhone" class="form-label">Phone Number</label>
+                                        <label for="userPhone" class="form-label">Số điện thoại</label>
                                         <input type="text" class="form-control" id="userPhone">
                                     </div>
                                     <div class="mb-3">
@@ -316,21 +301,21 @@
                                 </div>
                                 <!-- password-change -->
                                 <div class="password-change">
-                                    <h5 class="tab-title">Change Password</h5>
+                                    <h5 class="tab-title">Thay đổi mật khẩu</h5>
                                     <div class="mb-3">
-                                        <label for="currentPass" class="form-label">Current Password</label>
+                                        <label for="currentPass" class="form-label">Mật khẩu cũ</label>
                                         <input type="password" class="form-control" id="currentPass">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="newPass" class="form-label">New Password</label>
+                                        <label for="newPass" class="form-label">Mật khẩu mới</label>
                                         <input type="password" class="form-control" id="newPass">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="conPass" class="form-label">Confirm New Password</label>
+                                        <label for="conPass" class="form-label">Nhập mật khẩu mới</label>
                                         <input type="password" class="form-control" id="conPass">
                                     </div>
                                 </div>
-                                <button class="btn btn-primary">Save Changes</button>
+                                <button class="btn btn-primary">Lưu thay đổi</button>
                             </form>
 
                         </div>

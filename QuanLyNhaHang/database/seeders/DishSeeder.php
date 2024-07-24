@@ -17,6 +17,7 @@ class DishSeeder extends Seeder
         Dish::create([
             'name' => 'Lẫu thái',
             'category_id' => '1',
+            'slug' => 'lau-thai',
             'description' => 'bét seo lơ',
             'price' => '10000000',
             'image' => '123.png'

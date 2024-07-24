@@ -18,7 +18,7 @@
                 <nav aria-label="breadcrumb">
                     <h2 class="page-title">Thanh toán</h2>
                     <ol class="breadcrumb text-center">
-                        <li class="breadcrumb-item"><a href="/">Trang chủ / </a> <a href="/checkout">
+                        <li class="breadcrumb-item"><a href="/">Trang chủ / </a> <a href="{{ route('checkout') }}">
                                 Thanh toán</a></li>
                     </ol>
                 </nav>
