@@ -8,7 +8,6 @@ use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\PaymentController;
 use App\Http\Controllers\Admin\Category\CategoryController;
 use App\Http\Controllers\Admin\Comment\CommentController;
-
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\Auth\UserController as AuthUserController;
 use App\Http\Controllers\Admin\Customer\CustomerController;
@@ -28,6 +27,8 @@ use App\Http\Controllers\Client\Contact\ContactController;
 use App\Http\Controllers\Client\Gallery\GalleryController;
 use App\Http\Controllers\Client\Table\TableController as ClientTableController;
 
+
+
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('chi-tiet-mon-an', [DishController::class, 'dishDetail'])->name('dishDetail');
 Route::get('menu', [DishController::class, 'menu'])->name('menu');
@@ -42,6 +43,7 @@ Route::get('bai-viet-chi-tiet', [BlogDetailController::class, 'index'])->name('b
 Route::get('tai-khoan', [AccountController::class, 'index'])->name('account');
 Route::get('lien-he', [ContactController::class, 'index'])->name('contact');
 Route::get('dat-ban', [ClientTableController::class, 'index'])->name('table');
+
 
 
 
@@ -76,6 +78,19 @@ Route::get('staff/update', [StaffController::class, 'update'])->name('staff.upda
 Route::get('order', [OrderController::class, 'index'])->name('order.list');
 Route::get('order/detail', [OrderController::class, 'detail'])->name('order.detail');
 Route::get('payment', [PaymentController::class, 'index'])->name('payment.list');
+
+
+
+Route::get('dish', [AdminDishController::class, 'list'])->name('dish.list');
+Route::get('dish/add', [AdminDishController::class, 'add'])->name('dish.add');
+Route::get('dish/edit', [AdminDishController::class, 'edit'])->name('dish.edit');
+
+
+
+Route::get('table', [TableController::class, 'list'])->name('table.list');
+Route::get('table/add', [TableController::class, 'add'])->name('table.add');
+Route::get('table/edit', [TableController::class, 'edit'])->name('table.edit');
+
 
 
 
