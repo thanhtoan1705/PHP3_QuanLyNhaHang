@@ -96,10 +96,16 @@ Route::get('admin/login', [AuthUserController::class, 'login'])->name('admin.log
 
 
 
-//category
-Route::get('category', [CategoryController::class, 'list'])->name('category.list');
-Route::get('category/add', [CategoryController::class, 'add'])->name('category.add');
-Route::get('category/update', [CategoryController::class, 'update'])->name('category.update');
+//Category
+Route::name('category.')->group(function(){
+    Route::get('category', [CategoryController::class, 'list'])->name('list');
+    Route::get('category/add', [CategoryController::class, 'add'])->name('add');
+    Route::post('category/store', [CategoryController::class, 'store'])->name('store');
+    // Route để hiển thị form cập nhật
+    Route::get('/categories/edit/{slug}', [CategoryController::class, 'update'])->name('update');
+    Route::post('/categories/update/{slug}', [CategoryController::class, 'processUpdate'])->name('processUpdate');
+    Route::delete('category/{id}', [CategoryController::class, 'delete'])->name('delete');
+});
 
 
 

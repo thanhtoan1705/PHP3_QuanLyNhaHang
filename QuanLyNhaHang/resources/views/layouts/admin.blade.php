@@ -105,7 +105,7 @@
     <script src="{{ asset('assets/admin/vendor/swiper/js/swiper-bundle.min.js') }}"></script>
 
 
-    <!-- JS for dotted map -->
+     <!-- JS for dotted map -->
     <script src="{{ asset('assets/admin/vendor/dotted-map/js/contrib/jquery.smallipop-0.3.0.min.js') }}"></script>
     <script src="{{ asset('assets/admin/vendor/dotted-map/js/contrib/suntimes.js') }}"></script>
     <script src="{{ asset('assets/admin/vendor/dotted-map/js/contrib/color-0.4.1.js') }}"></script>
