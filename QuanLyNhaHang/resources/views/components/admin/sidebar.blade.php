@@ -136,7 +136,6 @@
                 <ul aria-expanded="false">
                     <li><a href="{{ route('staff.list') }}">Danh sách nhân viên</a></li>
                     <li><a href="{{ route('staff.add') }}">Thêm nhân viên</a></li>
-                    <li><a href="{{ route('staff.update') }}">Sửa nhân viên</a></li>
                     {{-- <li><a class="has-arrow" href="javascript:void(0);" aria-expanded="false">Error</a>
                         <ul aria-expanded="false">
                             <li><a href="page-error-400.html">Error 400</a></li>
