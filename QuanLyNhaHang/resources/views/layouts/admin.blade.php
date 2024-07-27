@@ -60,7 +60,7 @@
         <x-admin.sidebar></x-admin.sidebar>
 
         @yield('content')
-
+        @stack('scripts')
         <div class="modal fade" id="exampleModal1" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">

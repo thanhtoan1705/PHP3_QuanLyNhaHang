@@ -70,8 +70,11 @@ Route::get('table/edit', [TableController::class, 'edit'])->name('table.edit');
 // Staff
 Route::get('staff/list', [StaffController::class, 'list'])->name('staff.list');
 Route::get('staff/add', [StaffController::class, 'add'])->name('staff.add');
-Route::get('staff/update', [StaffController::class, 'update'])->name('staff.update');
 
+Route::post('staff/store', [StaffController::class, 'store'])->name('staff.store');
+Route::get('staff/edit/{id}', [StaffController::class, 'edit'])->name('staff.edit');
+Route::put('staff/update/{id}', [StaffController::class, 'update'])->name('staff.update');
+Route::get('staff/delete/{id}', [StaffController::class, 'delete'])->name('staff.delete');
 
 
 // Order
