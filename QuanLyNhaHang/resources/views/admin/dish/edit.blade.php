@@ -12,7 +12,8 @@
                     </div>
                     <div class="card-body">
                         <div class="basic-form">
-                            <form action="{{ route('dish.update', $dish->slug) }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('dish.update', $dish->slug) }}" method="POST"
+                                enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
                                 <div class="row">
@@ -59,11 +60,14 @@
                                         <label for="formFile" class="form-label">Chọn hình ảnh</label>
                                         <input class="form-control" type="file" name="image" id="formFile">
                                         @if ($dish->image)
-                                        <div id="imagePreview" class="mt-3 position-relative">
-                                            <button type="button" id="removeImage" class="btn btn-danger btn-sm position-absolute top-0 end-0" style="z-index: 1;">X</button>
-                                            <img src="{{ asset('storage/images/' . $dish->image) }}" alt="{{ $dish->name }}" width="100" class="img-thumbnail">
-                                        </div>
-                                    @endif
+                                            <div id="imagePreview" class="mt-3 position-relative">
+                                                <button type="button" id="removeImage"
+                                                    class="btn btn-danger btn-sm position-absolute top-0 end-0"
+                                                    style="z-index: 1;">X</button>
+                                                <img src="{{ asset('storage/images/' . $dish->image) }}"
+                                                    alt="{{ $dish->name }}" width="100" class="img-thumbnail">
+                                            </div>
+                                        @endif
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label">Chọn trạng thái:</label>

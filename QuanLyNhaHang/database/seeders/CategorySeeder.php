@@ -15,7 +15,8 @@ class CategorySeeder extends Seeder
     {
         Category::create([
             'name' => 'Category 1',
-            'image' => '567.png'
+            'image' => '567.png',
+            'slug' => 'category-1',
         ]);
     }
 }

@@ -18,6 +18,7 @@ class UserSeeder extends Seeder
                 'name' => 'User 1',
                 'email' => 'user1@example.com',
                 'password' => bcrypt('password1'),
+                'two_factor_secret' => 'null',
                 'phone' => '0123456789',
                 'address' => 'Address 1',
                 'role' => 'user',
@@ -26,7 +27,7 @@ class UserSeeder extends Seeder
             [
                 'name' => 'User 2',
                 'email' => 'user2@example.com',
-                'password' => bcrypt('password2'),
+                'password' => bcrypt('password1'),
                 'phone' => '0987654321',
                 'address' => 'Address 2',
                 'role' => 'user',
@@ -62,7 +63,7 @@ class UserSeeder extends Seeder
             [
                 'name' => 'User 6',
                 'email' => 'user6@example.com',
-                'password' => bcrypt('123456789'), // Mã hóa mật khẩu
+                'password' => bcrypt('password1'),
                 'phone' => '0354234441',
                 'address' => 'Address 1',
                 'role' => 'user',
@@ -75,7 +76,7 @@ class UserSeeder extends Seeder
                 'password' => bcrypt('newpassword1'),
                 'phone' => '0912345678',
                 'address' => 'New Address 1',
-                'role' => 'user',
+                'role' => 'admin',
                 'active' => 'active',
             ],
             [

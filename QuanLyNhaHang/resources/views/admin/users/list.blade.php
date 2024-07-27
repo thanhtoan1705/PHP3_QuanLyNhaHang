@@ -67,9 +67,6 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @php
-                                                    $count = 1;
-                                                @endphp
                                                 @foreach ($users as $index => $item)
                                                     <tr>
                                                         <td>
@@ -154,9 +151,6 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @php
-                                                    $count = 1;
-                                                @endphp
                                                 @foreach ($usersInactive as $index => $item)
                                                     <tr>
                                                         <td>

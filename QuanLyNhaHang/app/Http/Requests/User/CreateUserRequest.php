@@ -24,8 +24,8 @@ class CreateUserRequest extends FormRequest
         return [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'phone' => ['required', 'regex:/^0[0-9]{9,}$/', 'unique:users,phone'],
-            'address' => 'required|string|max:255',
+            'phone' => ['nullable', 'regex:/^0[0-9]{9,}$/', 'unique:users,phone'],
+            'address' => 'nullable|string|max:255',
             'role' => 'required|string|in:admin,user',
             'password' => 'required|min:6',
         ];
@@ -46,6 +46,7 @@ class CreateUserRequest extends FormRequest
             'phone.required' => 'Số điện thoại không được để trống.',
             'phone.string' => 'Số điện thoại phải là một chuỗi ký tự.',
             'phone.regex' => 'Số điện thoại phải bắt đầu bằng số 0 và có đúng 10 chữ số.',
+            'phone.unique' => 'Số điện thoại đã được sử dụng.',
             'address.required' => 'Địa chỉ không được để trống.',
             'address.string' => 'Địa chỉ phải là một chuỗi ký tự.',
             'address.max' => 'Địa chỉ không được vượt quá 255 ký tự.',

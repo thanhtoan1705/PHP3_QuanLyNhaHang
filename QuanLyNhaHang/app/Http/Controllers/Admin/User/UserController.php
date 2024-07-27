@@ -43,7 +43,7 @@ class UserController extends Controller
         $dataCreate = $request->validated();
         $user = $this->user->createUser($dataCreate);
 
-        return redirect()->route('user.list')->with(['message' => 'Tạo nên thành công']);
+        return redirect()->route('user.list')->with(['message' => 'Tạo người dùng thành công']);
     }
 
     /**
