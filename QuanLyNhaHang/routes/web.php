@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\Comment\CommentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\Auth\UserController as AuthUserController;
 use App\Http\Controllers\Admin\Customer\CustomerController;
+use App\Http\Controllers\Admin\Post\PostController;
 use App\Http\Controllers\Admin\User\UserController;
 use App\Http\Controllers\Client\HomeController;
 use App\Http\Controllers\Client\ErrorController;
@@ -27,7 +28,15 @@ use App\Http\Controllers\Client\Contact\ContactController;
 use App\Http\Controllers\Client\Gallery\GalleryController;
 use App\Http\Controllers\Client\Table\TableController as ClientTableController;
 
-
+// Route::middleware([
+//     'auth:sanctum',
+//     config('jetstream.auth_session'),
+//     'verified',
+// ])->group(function () {
+//     Route::get('/dashboard', function () {
+//         return view('dashboard');
+//     })->middleware(['auth', 'verified'])->name('dashboard');
+// });
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('chi-tiet-mon-an', [DishController::class, 'dishDetail'])->name('dishDetail');
@@ -36,8 +45,8 @@ Route::get('gio-hang', [CartController::class, 'index'])->name('cart');
 Route::get('thanh-toan', [CheckoutController::class, 'index'])->name('checkout');
 Route::get('gioi-thieu', [AboutController::class, 'index'])->name('about');
 Route::get('404', [ErrorController::class, 'index']);
-Route::get('dang-ky', [RegisterController::class, 'index'])->name('register');
-Route::get('dang-nhap', [AuthLoginController::class, 'index'])->name('login');
+// Route::get('dang-ky', [RegisterController::class, 'index'])->name('register');
+// Route::get('dang-nhap', [AuthLoginController::class, 'index'])->name('login');
 Route::get('bai-viet', [BlogController::class, 'index'])->name('blog');
 Route::get('bai-viet-chi-tiet', [BlogDetailController::class, 'index'])->name('blog.detail');
 Route::get('tai-khoan', [AccountController::class, 'index'])->name('account');
@@ -47,7 +56,7 @@ Route::get('dat-ban', [ClientTableController::class, 'index'])->name('table');
 
 
 
-Route::get('dashboard', [DashboardController::class, 'index']);
+Route::get('dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified']);
 
 
 
@@ -58,7 +67,7 @@ Route::name('dish.')->group(function () {
     Route::get('dish/edit/{slug}', [AdminDishController::class, 'edit'])->name('edit');
     Route::put('dish/update/{slug}', [AdminDishController::class, 'update'])->name('update');
     Route::delete('dish/delete/{slug}', [AdminDishController::class, 'delete'])->name('delete');
-});
+})->middleware('auth');
 
 
 
@@ -84,11 +93,9 @@ Route::get('payment', [PaymentController::class, 'index'])->name('payment.list')
 
 
 
-
 Route::get('table', [TableController::class, 'list'])->name('table.list');
 Route::get('table/add', [TableController::class, 'add'])->name('table.add');
 Route::get('table/edit', [TableController::class, 'edit'])->name('table.edit');
-
 
 
 
@@ -100,7 +107,19 @@ Route::name('user.')->group(function () {
     Route::get('user/edit/{id}', [UserController::class, 'edit'])->name('edit');
     Route::put('user/update/{id}', [UserController::class, 'update'])->name('update');
     Route::delete('user/delete/{id}', [UserController::class, 'destroy'])->name('destroy');
-});
+})->middleware('auth');
+
+
+
+// post
+Route::name('post.')->group(function () {
+    Route::get('post/list', [PostController::class, 'index'])->name('list');
+    Route::get('post/create', [PostController::class, 'create'])->name('create');
+    Route::post('post/store', [PostController::class, 'store'])->name('store');
+    Route::get('post/edit/{id}', [PostController::class, 'edit'])->name('edit');
+    Route::put('post/update/{id}', [PostController::class, 'update'])->name('update');
+    Route::delete('post/delete/{id}', [PostController::class, 'destroy'])->name('destroy');
+})->middleware('auth');
 
 
 
@@ -110,7 +129,7 @@ Route::get('admin/login', [AuthUserController::class, 'login'])->name('admin.log
 
 
 //Category
-Route::name('category.')->group(function(){
+Route::name('category.')->group(function () {
     Route::get('category', [CategoryController::class, 'list'])->name('list');
     Route::get('category/add', [CategoryController::class, 'add'])->name('add');
     Route::post('category/store', [CategoryController::class, 'store'])->name('store');
@@ -118,7 +137,7 @@ Route::name('category.')->group(function(){
     Route::get('/categories/edit/{slug}', [CategoryController::class, 'update'])->name('update');
     Route::post('/categories/update/{slug}', [CategoryController::class, 'processUpdate'])->name('processUpdate');
     Route::delete('category/{id}', [CategoryController::class, 'delete'])->name('delete');
-});
+})->middleware('auth');
 
 
 
