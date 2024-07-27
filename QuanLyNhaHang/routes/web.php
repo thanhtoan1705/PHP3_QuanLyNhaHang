@@ -81,11 +81,6 @@ Route::get('payment', [PaymentController::class, 'index'])->name('payment.list')
 
 
 
-Route::get('dish', [AdminDishController::class, 'list'])->name('dish.list');
-Route::get('dish/add', [AdminDishController::class, 'add'])->name('dish.add');
-Route::get('dish/edit', [AdminDishController::class, 'edit'])->name('dish.edit');
-
-
 
 Route::get('table', [TableController::class, 'list'])->name('table.list');
 Route::get('table/add', [TableController::class, 'add'])->name('table.add');
