@@ -17,14 +17,12 @@ class CategoryController extends Controller
         $categories = category::all();
 
         return view('admin.category.list', compact('categories'));
-
     }
 
     public function add()
     {
 
         return view('admin.category.add');
-
     }
 
     public function store(CreateCategoryRequest $request)
@@ -42,34 +40,27 @@ class CategoryController extends Controller
         }
         // Create new category
         $validated['slug'] = Str::slug($validated['name']);
-        
+
         Category::create($validated);
-        // dd($validated);
-        // die();
-        return redirect()->route('category.list')->with('messege','thêm thằng công');
+        flash()->success('Thêm thành công.');
+        return redirect()->route('category.list');
     }
 
     public function update($slug)
     {
-        // Lấy danh mục cần cập nhật từ slug
-        $category = Category::where('slug',$slug)->firstOrFail();
+        $category = Category::where('slug', $slug)->firstOrFail();
 
-        // Trả về view để cập nhật danh mục với dữ liệu của danh mục đó
         return view('admin.category.update', compact('category'));
     }
 
     public function processUpdate(UpdateCategoryRequest $request, $slug)
     {
-        // Validate và lấy dữ liệu đã được xác thực từ request
         $validated = $request->validated();
 
-        // Tìm danh mục cần cập nhật từ ID
-        $category = Category::where('slug',$slug)->firstOrFail();
+        $category = Category::where('slug', $slug)->firstOrFail();
 
-        // Cập nhật dữ liệu mới vào danh mục
         $category->name = $validated['name'];
 
-        // Xử lý tệp ảnh nếu người dùng cập nhật ảnh mới
         if ($request->hasFile('image')) {
             $file = $request->file('image');
             $fileName = 'category_' . time() . '.' . $file->getClientOriginalExtension();
@@ -77,32 +68,24 @@ class CategoryController extends Controller
             $category->image = $fileName;
         }
 
-        // Lưu các thay đổi vào cơ sở dữ liệu
         $category->save();
-
-        // Redirect về danh sách danh mục sau khi cập nhật thành công
+        flash()->success('Cập nhật thành công.');
         return redirect()->route('category.list');
     }
 
     public function delete(Request $request, $id)
     {
-        // Tìm danh mục cần xóa từ ID
         $category = Category::findOrFail($id);
 
-        // Xóa tệp ảnh liên quan nếu có
         if ($category->image) {
-            // Xóa tệp ảnh từ thư mục lưu trữ
             $imagePath = public_path('storage/images/' . $category->image);
             if (file_exists($imagePath)) {
-                unlink($imagePath); // Xóa file
+                unlink($imagePath);
             }
         }
 
-        // Xóa danh mục
         $category->delete();
-
-        // Redirect về danh sách danh mục
+        flash()->success('Xóa thành công.');
         return redirect()->route('category.list');
     }
-
 }

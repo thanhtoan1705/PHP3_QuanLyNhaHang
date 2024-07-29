@@ -50,7 +50,7 @@
 
                                     <div class="mb-3">
                                         <label class="form-label">Mô tả</label>
-                                        <textarea class="form-control" name="description" rows="8">{{ $dish->description }}</textarea>
+                                        <textarea id="editor" class="form-control" name="description" rows="8">{{ $dish->description }}</textarea>
                                         @error('description')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -95,6 +95,25 @@
 @endsection
 
 @push('script')
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor'), {
+                toolbar: [
+                    'heading', '|',
+                    'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', '|',
+                    'insertTable', 'tableColumn', 'tableRow', 'mergeTableCells', '|',
+                    'undo', 'redo'
+                ],
+                table: {
+                    contentToolbar: [
+                        'tableColumn', 'tableRow', 'mergeTableCells'
+                    ]
+                }
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
     <script>
         document.getElementById('formFile').addEventListener('change', function(event) {
             var reader = new FileReader();

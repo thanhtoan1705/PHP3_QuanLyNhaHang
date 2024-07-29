@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\User\CreateUserRequest;
 use App\Http\Requests\User\UpdateUserRequest;
 use App\Models\User;
+use Flasher\Toastr\Laravel\Facade\Toastr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Pagination\Paginator;
@@ -42,8 +43,8 @@ class UserController extends Controller
     {
         $dataCreate = $request->validated();
         $user = $this->user->createUser($dataCreate);
-
-        return redirect()->route('user.list')->with(['message' => 'Tạo người dùng thành công']);
+        flash()->success('Tạo người dùng thành công.');
+        return redirect()->route('user.list');
     }
 
     /**
@@ -72,8 +73,8 @@ class UserController extends Controller
         $dataUpdate = $request->validated();
 
         $user->updateUser($dataUpdate);
-
-        return redirect()->route('user.list')->with(['message' => 'Cập nhật thành công']);
+        flash()->success('Cập nhật thành công.');
+        return redirect()->route('user.list');
     }
 
     /**
@@ -83,7 +84,7 @@ class UserController extends Controller
     {
         $user = $this->user->findOrFail($id);
         $user->delete();
-
-        return redirect()->route('user.list')->with(['message' => 'Xóa thành công']);
+        flash()->success('Xóa thành công.');
+        return redirect()->route('user.list');
     }
 }

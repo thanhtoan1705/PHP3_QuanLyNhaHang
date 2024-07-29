@@ -1,6 +1,13 @@
 @extends('layouts.admin')
+@section('title', 'List Table')
+
 @section('content')
     <div class="content-body">
+        @if (session('success'))
+            <script>
+                toastr.success("{{ session('success') }}");
+            </script>
+        @endif
         <div class="container">
             <div class="col-xl-12">
                 <div class="card dz-card" id="bootstrap-table1">

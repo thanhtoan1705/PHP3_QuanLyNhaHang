@@ -1,9 +1,13 @@
 @extends('layouts.admin')
-
 @section('title', 'List Post')
 
 @section('content')
     <div class="content-body">
+        @if (session('success'))
+            <script>
+                toastr.success("{{ session('success') }}");
+            </script>
+        @endif
         <div class="container">
             <div class="col-xl-12">
                 <div class="card dz-card" id="bootstrap-table1">
@@ -34,7 +38,7 @@
                                                     <td><img src="{{ asset('storage/images/' . $post->image) }}"
                                                             alt="" width="150px" height="100px"></td>
                                                     <td>
-                                                        {{ $post->content }}
+                                                        {!! $post->content !!}
                                                     </td>
                                                     <td>
                                                         <div class="dropdown">
