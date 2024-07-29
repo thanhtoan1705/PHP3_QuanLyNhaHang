@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\Auth\UserController as AuthUserController;
 use App\Http\Controllers\Admin\Customer\CustomerController;
 use App\Http\Controllers\Admin\Post\PostController;
+use App\Http\Controllers\Admin\Table\TableController as TableTableController;
 use App\Http\Controllers\Admin\User\UserController;
 use App\Http\Controllers\Client\HomeController;
 use App\Http\Controllers\Client\ErrorController;
@@ -71,9 +72,19 @@ Route::name('dish.')->group(function () {
 
 
 
-Route::get('table', [TableController::class, 'list'])->name('table.list');
-Route::get('table/add', [TableController::class, 'add'])->name('table.add');
-Route::get('table/edit', [TableController::class, 'edit'])->name('table.edit');
+Route::get('table-book', [TableController::class, 'list'])->name('table-book.list');
+Route::get('table-book/add', [TableController::class, 'add'])->name('table-book.add');
+Route::get('table-book/edit', [TableController::class, 'edit'])->name('table-book.edit');
+
+
+Route::name('table.')->group(function () {
+    Route::get('table', [TableTableController::class, 'index'])->name('list');
+    Route::get('table/add', [TableTableController::class, 'add'])->name('add');
+    Route::post('table/store', [TableTableController::class, 'store'])->name('store');
+    Route::get('table/edit/{id}', [TableTableController::class, 'edit'])->name('edit');
+    Route::put('table/update/{id}', [TableTableController::class, 'update'])->name('update');
+    Route::delete('table/delete/{id}', [TableTableController::class, 'destroy'])->name('delete');
+})->middleware('auth');
 
 
 // Staff
@@ -91,11 +102,6 @@ Route::get('order', [OrderController::class, 'index'])->name('order.list');
 Route::get('order/detail', [OrderController::class, 'detail'])->name('order.detail');
 Route::get('payment', [PaymentController::class, 'index'])->name('payment.list');
 
-
-
-Route::get('table', [TableController::class, 'list'])->name('table.list');
-Route::get('table/add', [TableController::class, 'add'])->name('table.add');
-Route::get('table/edit', [TableController::class, 'edit'])->name('table.edit');
 
 
 

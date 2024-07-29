@@ -1,61 +1,53 @@
 @extends('layouts.admin')
 
-@section('title', 'Edit Dish')
+@section('title', 'Chỉnh sửa bàn')
 
 @section('content')
     <div class="content-body">
         <div class="container">
-            <div class="col-xl-12 col-lg-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">Sửa đặt bàn</h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="basic-form">
-                            <form>
-                                <div class="row">
-                                    <div class="mb-3 col-md-6">
-                                        <label class="form-label">Tên</label>
-                                        <input type="text" class="form-control" placeholder="Bánh mì">
-                                    </div>
-                                    <div class="mb-3 col-md-6">
-                                        <label class="form-label">Số lượng</label>
-                                        <input type="email" class="form-control" placeholder="200.000">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="form-label">Vị trí bàn:</label>
-                                        <select class="default-select  form-control wide">
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                        </select>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="form-label">Chón món:</label>
-                                        <select class="default-select  form-control wide">
-                                            <option>Bánh mì</option>
-                                            <option>Mì cay</option>
-                                            <option>Lẫu</option>
-                                            <option>Nướng thịt bò</option>
-                                        </select>
-                                    </div>
-                                    <div class="mb-3 col-md-12">
-                                        <label class="form-label">Tổng tiền</label>
-                                        <input type="email" class="form-control" placeholder="200.000">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="form-label">Trang thái:</label>
-                                        <select class="default-select  form-control wide">
-                                            <option>Đã thanh toán</option>
-                                            <option>Chưa thanh toán</option>
-                                        </select>
-                                    </div>
-                                    <div>
-                                        <button type="submit" class="btn btn-primary">Sửa đặt bàn</button>
-                                    </div>
+            <div class="col-xl-12">
+                <div class="card dz-card" id="bootstrap-table1">
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="Preview" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="card-header flex-wrap border-0">
+                                <div>
+                                    <h2 class="card-title">Cập nhật bàn</h2>
                                 </div>
-                            </form>
+                            </div>
+                            <div class="card-body pt-0">
+                                <form action="{{ route('table.update', $table->id) }}" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                    @method('PUT')
+                                    <div class="row">
+                                        <!-- Tên danh mục -->
+                                        <div class="col-lg-6">
+                                            <div class="mb-3">
+                                                <label for="number" class="form-label">Tên danh mục</label>
+                                                <input type="number" class="form-control" name="number" id="number"
+                                                    placeholder="Nhập tên danh mục"
+                                                    value="{{ old('number', $table->number) }}" />
+                                                @error('number')
+                                                    <span class="text-danger"> {{ $message }} </span>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                        <!-- Số lượng ghế -->
+                                        <div class="col-lg-6">
+                                            <div class="mb-3">
+                                                <label for="seats" class="form-label">Số lượng ghế</label>
+                                                <input type="number" class="form-control" name="seats" id="seats"
+                                                    value="{{ old('number', $table->seats) }}"
+                                                    placeholder="Vui lòng chọn số" />
+                                                @error('seats')
+                                                    <span class="text-danger"> {{ $message }} </span>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Nút cập nhật -->
+                                    <button type="submit" class="btn btn-primary">Cập nhật</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>

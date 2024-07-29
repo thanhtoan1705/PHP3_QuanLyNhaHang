@@ -23,4 +23,17 @@ class Table extends Model
     {
         return $this->hasMany(Reservation::class);
     }
+
+    public static function createNewTable($validatedData)
+    {
+        return self::create([
+            'number' => $validatedData['number'],
+            'seats' => $validatedData['seats'],
+        ]);
+    }
+
+    public function updateTable($validatedData)
+    {
+        return $this->update($validatedData);
+    }
 }
