@@ -25,6 +25,9 @@
     <link href="{{ asset('assets/admin/vendor/swiper/css/swiper-bundle.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/admin/vendor/datatables/css/jquery.dataTables.min.css') }}" rel="stylesheet">
 
+    <!-- Add Toastr CSS in the <head> section -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+
     <!-- Form step -->
     <link href="{{ asset('assets/admin/vendor/jquery-smartwizard/dist/css/smart_wizard.min.css') }}" rel="stylesheet">
 
@@ -35,11 +38,8 @@
     <link href="{{ asset('assets/admin/vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css') }}"
         rel="stylesheet">
 
-    <!-- tagify-css -->
-
-    <!-- Style css -->
     <link href="{{ asset('assets/admin/css/style.css') }}" rel="stylesheet">
-
+    @stack('css')
 </head>
 
 <body>
@@ -60,7 +60,7 @@
         <x-admin.sidebar></x-admin.sidebar>
 
         @yield('content')
-        @stack('scripts')
+
         <div class="modal fade" id="exampleModal1" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -90,10 +90,14 @@
         </div>
 
         <x-admin.footer></x-admin.footer>
-        @stack('script')
-
-
     </div>
+
+    {{-- ckeditor5 --}}
+    <script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"></script>
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    @stack('script')
+
+
     <!-- Required vendors -->
     <script src="{{ asset('assets/admin/vendor/global/global.min.js') }}"></script>
     <script src="{{ asset('assets/admin/vendor/chart.js/Chart.bundle.min.js') }}"></script>
@@ -105,7 +109,7 @@
     <script src="{{ asset('assets/admin/vendor/swiper/js/swiper-bundle.min.js') }}"></script>
 
 
-     <!-- JS for dotted map -->
+    <!-- JS for dotted map -->
     <script src="{{ asset('assets/admin/vendor/dotted-map/js/contrib/jquery.smallipop-0.3.0.min.js') }}"></script>
     <script src="{{ asset('assets/admin/vendor/dotted-map/js/contrib/suntimes.js') }}"></script>
     <script src="{{ asset('assets/admin/vendor/dotted-map/js/contrib/color-0.4.1.js') }}"></script>
@@ -160,25 +164,24 @@
             },
         });
     </script>
-    <!-- Form validate init -->
+
     <script src="{{ asset('assets/admin/js/plugins-init/jquery.validate-init.js') }}"></script>
-	<!-- Form Steps -->
-	<script src="{{ asset('assets/admin/vendor/jquery-smartwizard/dist/js/jquery.smartWizard.js') }}"></script>
-	<script src="{{ asset('assets/admin/vendor/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
 
-	<script src="{{ asset('assets/admin/js/custom.js') }}"></script>
-	<script src="{{ asset('assets/admin/js/deznav-init.js') }}"></script>
-	<script src="{{ asset('assets/admin/js/demo.js') }}"></script>
+    <script src="{{ asset('assets/admin/vendor/jquery-smartwizard/dist/js/jquery.smartWizard.js') }}"></script>
+    <script src="{{ asset('assets/admin/vendor/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
+
+    <script src="{{ asset('assets/admin/js/custom.js') }}"></script>
+    <script src="{{ asset('assets/admin/js/deznav-init.js') }}"></script>
+    <script src="{{ asset('assets/admin/js/demo.js') }}"></script>
     <script src="{{ asset('assets/admin/js/styleSwitcher.js') }}"></script>
-	<script>
-		$(document).ready(function(){
-			// SmartWizard initialize
-			$('#smartwizard').smartWizard();
-		});
-	</script>
-
+    <script>
+        $(document).ready(function() {
+            $('#smartwizard').smartWizard();
+        });
+    </script>
+    <!-- Add Toastr JS before the closing </body> tag -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 </body>
 
-<!-- Mirrored from salero.dexignzone.com/xhtml/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 18 Jul 2024 05:55:56 GMT -->
 
 </html>

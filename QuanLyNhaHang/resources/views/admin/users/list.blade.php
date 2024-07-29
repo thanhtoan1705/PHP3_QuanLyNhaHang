@@ -3,6 +3,11 @@
 
 @section('content')
     <div class="content-body">
+        @if (session('success'))
+            <script>
+                toastr.success("{{ session('success') }}");
+            </script>
+        @endif
         <div class="container">
             <div class="row">
                 <nav aria-label="breadcrumb">
@@ -12,11 +17,6 @@
                     </ol>
                 </nav>
             </div>
-            @if (session('message'))
-                <div class="alert alert-success">
-                    {{ session('message') }}
-                </div>
-            @endif
             <div class="d-flex justify-content-between mb-4 flex-wrap">
                 <ul class="revnue-tab nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">

@@ -1,7 +1,13 @@
 @extends('layouts.admin')
-@section('content')
+@section('title', 'List Category')
 
+@section('content')
     <div class="content-body">
+        @if (session('success'))
+            <script>
+                toastr.success("{{ session('success') }}");
+            </script>
+        @endif
         <div class="container">
             <div class="col-xl-12">
                 <div class="card dz-card" id="bootstrap-table1">
@@ -34,7 +40,8 @@
 
                                                     <td><strong>{{ $category->id }}</strong></td>
                                                     <td>{{ $category->name }}</td>
-                                                    <td><img width="200px" height="100px" class="img-fluid" src="{{ asset('storage/images/' . $category->image) }}"
+                                                    <td><img width="200px" height="100px" class="img-fluid"
+                                                            src="{{ asset('storage/images/' . $category->image) }}"
                                                             alt=""></td>
 
                                                     <td>
@@ -57,39 +64,48 @@
                                                             </button>
                                                             <div class="dropdown-menu">
                                                                 <a class="dropdown-item"
-                                                                    href="{{ route('category.update', $category->slug) }}">Chỉnh sửa</a>
-                                                                    <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#deleteModal{{ $category->id }}">Xóa</a>
+                                                                    href="{{ route('category.update', $category->slug) }}">Chỉnh
+                                                                    sửa</a>
+                                                                <a class="dropdown-item" data-bs-toggle="modal"
+                                                                    data-bs-target="#deleteModal{{ $category->id }}">Xóa</a>
                                                             </div>
                                                         </div>
                                                     </td>
                                                     <!-- Form ẩn để gửi DELETE request -->
-                                                  <form id="delete-form-{{ $category->id }}"
+                                                    <form id="delete-form-{{ $category->id }}"
                                                         action="{{ route('category.delete', $category->id) }}"
                                                         method="POST" style="display: none;">
                                                         @csrf
                                                         @method('DELETE')
-                                                    </form> 
+                                                    </form>
                                                     {{-- <form action="{{ route('category.processUpdate', ['id' => $category->id]) }}" method="POST">
                                                         @csrf
                                                         <!-- Các trường nhập liệu để cập nhật thông tin danh mục -->
                                                     </form> --}}
                                                 </tr>
-                                                <div class="modal fade" id="deleteModal{{ $category->id }}" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                                <div class="modal fade" id="deleteModal{{ $category->id }}" tabindex="-1"
+                                                    aria-labelledby="deleteModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
-                                                                <h5 class="modal-title" id="deleteModalLabel">Xóa danh mục</h5>
-                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                <h5 class="modal-title" id="deleteModalLabel">Xóa danh mục
+                                                                </h5>
+                                                                <button type="button" class="btn-close"
+                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
                                                             <div class="modal-body">
                                                                 Bạn có chắc chắn muốn xóa danh mục này không?
                                                             </div>
                                                             <div class="modal-footer">
-                                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
-                                                                <form action="{{ route('category.delete', $category->id) }}" method="POST">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-bs-dismiss="modal">Hủy</button>
+                                                                <form
+                                                                    action="{{ route('category.delete', $category->id) }}"
+                                                                    method="POST">
                                                                     @csrf
                                                                     @method('DELETE')
-                                                                    <button type="submit" class="btn btn-danger">Xóa</button>
+                                                                    <button type="submit"
+                                                                        class="btn btn-danger">Xóa</button>
                                                                 </form>
                                                             </div>
                                                         </div>

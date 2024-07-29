@@ -40,8 +40,9 @@
                                         @enderror
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label">Nội dung: <span class="text-danger">*</span></label>
-                                        <textarea name="content" id="" cols="180" rows="3">{{ old('content') ?? $post->content }}</textarea>
+                                        <label for="content" class="form-label">Nội dung: <span
+                                                class="text-danger">*</span></label>
+                                        <textarea class="form-control" name="content" id="editor">{{ old('content') ?? $post->content }}</textarea>
                                         @error('content')
                                             <span class="text-danger"> {{ $message }} </span>
                                         @enderror
@@ -60,6 +61,25 @@
 @endsection
 
 @push('script')
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor'), {
+                toolbar: [
+                    'heading', '|',
+                    'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', '|',
+                    'insertTable', 'tableColumn', 'tableRow', 'mergeTableCells', '|',
+                    'undo', 'redo'
+                ],
+                table: {
+                    contentToolbar: [
+                        'tableColumn', 'tableRow', 'mergeTableCells'
+                    ]
+                }
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
     <script>
         document.getElementById('formFile').addEventListener('change', function(event) {
             var reader = new FileReader();

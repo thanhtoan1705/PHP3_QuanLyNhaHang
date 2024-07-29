@@ -18,7 +18,7 @@
                                     <div class="mb-3">
                                         <label class="form-label">Chọn danh mục:</label>
                                         <select name="category_id" class="default-select form-control wide">
-                                            @foreach($categories as $category)
+                                            @foreach ($categories as $category)
                                                 <option value="{{ $category->id }}">{{ $category->name }}</option>
                                             @endforeach
                                         </select>
@@ -42,7 +42,7 @@
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label">Mô tả</label>
-                                        <textarea name="description" class="form-txtarea form-control" rows="8" id="comment"></textarea>
+                                        <textarea id="" name="description" class="form-txtarea form-control" rows="8" id="comment"></textarea>
                                         @error('description')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror

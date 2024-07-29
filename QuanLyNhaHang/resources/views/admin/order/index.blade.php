@@ -1,10 +1,13 @@
 @extends('layouts.admin')
 @section('title', 'list order')
+
 @section('content')
-    <!--**********************************
-                                            Content body start
-                                        ***********************************-->
     <div class="content-body">
+        @if (session('success'))
+            <script>
+                toastr.success("{{ session('success') }}");
+            </script>
+        @endif
         <div class="container">
             <div class="d-flex justify-content-between mb-4 flex-wrap">
                 <ul class="revnue-tab nav nav-tabs" id="myTab" role="tablist">
@@ -381,6 +384,6 @@
     </div>
 
     <!--**********************************
-                                            Content body end
-                                        ***********************************-->
+                                                Content body end
+                                            ***********************************-->
 @endsection

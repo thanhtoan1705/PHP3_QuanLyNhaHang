@@ -44,7 +44,8 @@ class PostController extends Controller
         $dataCreate = $request->validated();
         $dataCreate['user_id'] = Auth::id();
         Post::createPost($dataCreate);
-        return redirect()->route('post.list')->with(['message' => 'Tạo bài viết thành công']);
+        flash()->success('Tạo bài viết thành công.');
+        return redirect()->route('post.list');
     }
 
     /**
@@ -72,7 +73,8 @@ class PostController extends Controller
         $post = $this->post->findOrFail($id);
         $dataUpdate = $request->validated();
         $this->post->updatePost($dataUpdate);
-        return redirect()->route('post.list')->with(['message' => 'Cập nhật bài viết thành công']);
+        flash()->success('Cập nhật bài viết thành công.');
+        return redirect()->route('post.list');
     }
 
     /**
@@ -82,6 +84,7 @@ class PostController extends Controller
     {
         $post = $this->post->findOrFail($id);
         $post->delete();
-        return redirect()->route('post.list')->with(['message' => 'Xóa bài viết thành công']);
+        flash()->success('Xóa bài viết thành công.');
+        return redirect()->route('post.list');
     }
 }
