@@ -16,9 +16,9 @@
         <div class="container padding-top-120">
             <div class="row justify-content-center">
                 <nav aria-label="breadcrumb">
-                    <h2 class="page-title">Công thức chiên gà</h2>
+                    <h2 class="page-title">{{ $dishDetail->name }}</h2>
                     <ol class="breadcrumb text-center">
-                        <li class="breadcrumb-item"><a href="/">Trang chủ </a> / <a href="{{ route('dishDetail') }}"> Cửa hàng món ăn</a>
+                        <li class="breadcrumb-item"><a href="/">Trang chủ </a> / <a href="{{ route('dishDetail', $dishDetail->id) }}"> Cửa hàng món ăn</a>
                         </li>
                     </ol>
                 </nav>
@@ -40,77 +40,53 @@
                         <div class="slider-for">
                             <div class="single-slide">
                                 <div class="product-content">
-                                    <img class="mp" src="{{ asset('assets/client/images/img/br1.png')}}" alt="">
+                                    <img width="100px" class="mp" src="{{ asset('storage/images/' . $dishDetail->image)}}" alt="">
                                     <img class="pbadge" src="{{ asset('assets/client/images/icons/pbadge.png')}}" alt="">
                                 </div>
                             </div>
                             <div class="single-slide">
                                 <div class="product-content">
-                                    <img class="mp" src="{{ asset('assets/client/images/img/br1.png')}}" alt="">
+                                    <img width="100px" class="mp" src="{{ asset('storage/images/' . $dishDetail->image)}}" alt="">
                                     <img class="pbadge" src="{{ asset('assets/client/images/icons/pbadge.png')}}" alt="">
                                 </div>
                             </div>
                             <div class="single-slide">
                                 <div class="product-content">
-                                    <img class="mp" src="{{ asset('assets/client/images/img/br1.png')}}" alt="">
+                                    <img width="100px" class="mp" src="{{ asset('storage/images/' . $dishDetail->image)}}" alt="">
                                     <img class="pbadge" src="{{ asset('assets/client/images/icons/pbadge.png')}}" alt="">
                                 </div>
                             </div>
                         </div>
 
-                        <div class="slider-nav margin-top-30">
-                            <div class="div">
-                                <div class="pnav">
-                                    <img src="{{ asset('assets/client/images/img/br3.png')}}" alt="">
-                                </div>
-                            </div>
-                            <div class="div">
-                                <div class="pnav">
-                                    <img src="{{ asset('assets/client/images/img/br2.png')}}" alt="">
-                                </div>
-                            </div>
-                            <div class="div">
-                                <div class="pnav">
-                                    <img src="{{ asset('assets/client/images/img/br3.png')}}" alt="">
-                                </div>
-                            </div>
-                        </div>
+                       
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInRight">
                     <div class="recipe-right">
-                        <h2>Công thức chiên gà</h2>
+                        <h2>{{$dishDetail->name}}</h2>
                         <form action="{{ route('cart') }}">
                             <div class="chickens-inforbar d-flex justify-content-around align-items-center">
-                                <span class="cp">100.000 VNĐ <del>200.000 VNĐ</del></span>
+                                <span class="cp">{{number_format($dishDetail->price)}} VNĐ </span>
                                 <span class="rate"> 5<i class="fas fa-star"></i></span>
                                 <span> <span class="colored"><i class="fas fa-comments"></i></span> Bình luận</span>
                                 <span> <span class="colored"><i class="fas fa-heart"></i></span> 200+ thích</span>
                             </div>
-                            <p>Thứ ít bổ sung buổi tối gọi là hư không một biển phước thịt thứ tư gọi là nơi di chuyển
-                                Một phần tư sườn sườn được phục vụ kèm với thịt heo kéo, ức om bia tùy chọn.
+                            <p>{{$dishDetail->description}}
                             </p>
                             <div class="chickens-details d-flex justify-content-between">
-                                <span><input type="number" placeholder="01"></span>
-                                <span> <label for="size">Kích thước</label>
-                                    <select name="#" id="size">
-                                        <option value="#">XI</option>
-                                        <option value="#">XI</option>
-                                        <option value="#">XI</option>
-                                        <option value="#">XI</option>
-                                    </select>
-                                </span>
+                                <span><input min="1" type="number" placeholder="1"></span>
+                            
                                 <span>
-                                    <label for="stock">Cổ phiếu có sẵn</label>
+                                    <label for="stock">số lượng có sẵn</label>
                                     <input id="stock" type="number" placeholder="60">
                                 </span>
                             </div>
-                            <div class="chickens-meta">
+                            {{-- <div class="chickens-meta">
                                 <ul class="d-flex justify-content-between">
                                     <li>Thẻ : SKU: <span>Food-Collections</span></li>
                                     <li>danh mục: <span>Recipe</span></li>
                                 </ul>
-                            </div>
+                            </div> --}}
                             <button type="submit" class="btn">Thêm vào giỏ hàng</button>
                         </form>
                     </div>
@@ -154,10 +130,7 @@
                                 <span class="pds3"><img src="{{ asset('assets/client/images/shapes/28.png')}}" alt=""></span>
                             </div>
 
-                            <p>Hamburger (hay còn gọi tắt là burger) là một loại bánh sandwich bao gồm một hoặc nhiều miếng được nấu chín.
-                                miếng thịt xay, thường là thịt bò, đặt bên trong ổ bánh mì hoặc bánh mì cắt lát. Các
-                                patty có thể được chiên áp chảo, nướng, hun khói hoặc nướng trên lửa. Bánh mì kẹp thịt thường được phục vụ
-                                với phô mai.</p>
+                            <p>{{$dishDetail->description}}.</p>
                                 <p> <b>Thành phần </b> Bánh mì Focaccia, Sốt Balsamic, Pesto, Cà chua, Phô mai Thụy Sĩ</p>
                             <h6 class="margin-bottom-30">Kích thước burger</h6>
                             <div class="table-box d-flex flex-wrap">
@@ -207,10 +180,7 @@
                     </div>
                     <div class="tab-pane fade" id="info" role="tabpanel" aria-labelledby="info">
                         <div class="pd-inner-content">
-                            <p>Hamburger (hay còn gọi tắt là burger) là một loại bánh sandwich bao gồm một hoặc nhiều miếng được nấu chín.
-                                miếng thịt xay, thường là thịt bò, đặt bên trong ổ bánh mì hoặc bánh mì cắt lát. Các
-                                patty có thể được chiên áp chảo, nướng, hun khói hoặc nướng trên lửa. Bánh mì kẹp thịt thường được phục vụ
-                                với phô mai.</p>
+                            <p>{{$dishDetail->description}}.</p>
                                 <p> <b>Thành phần </b> Bánh mì Focaccia, Sốt Balsamic, Pesto, Cà chua, Phô mai Thụy Sĩ</p>                            <h6 class="margin-bottom-30">burger size</h6>
 
                             <div class="table-box d-flex flex-wrap">
@@ -279,16 +249,17 @@
             <h3>liên quan đến <span>sản phẩm</span></h3>
             <div class="related-product-inner">
                 <div class="row">
+                    @foreach($relatedDishes as $relatedDish )
                     <div class="col-xl-3 col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                         <div class="single-dishes">
                             <div class="dish-img">
-                                <img src="{{ asset('assets/client/images/menu-item/pd1.png')}}" style="width: inherit;" alt="">
+                                <img src="{{ asset('storage/images/' . $relatedDish->image)}}" style="width: inherit;" alt="">
                             </div>
                             <div class="dish-content">
-                                <h5><a href="single-food.html">Burger tỏi
+                                <h5><a href="single-food.html">{{$relatedDish->name}}
                                     </a></h5>
-                                    <p>Một thực tế đã được xác nhận từ lâu là một độc giả thích ăn món BBQ Gà.</p>
-                                    <span class="price">giá : 200.00 VNĐ</span>
+                                    <p>{{$relatedDish->description}}</p>
+                                    <span class="price">giá : {{number_format($relatedDish->price)}} VNĐ</span>
 
                             </div>
                             <span class="badge">hot</span>
@@ -302,74 +273,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".4s">
-                        <div class="single-dishes">
-                            <div class="dish-img">
-                                <img src="{{ asset('assets/client/images/menu-item/pd2.png')}}" style="width: inherit;" alt="">
-                            </div>
-                            <div class="dish-content">
-                                <h5> <a href="single-food.html">Pizza rau
-                                    </a></h5>
-                                    <p>Một thực tế đã được xác nhận từ lâu là một độc giả thích ăn món BBQ Gà.</p>
-                                <span class="price">giá : 200.00 VNĐ</span>
-
-                            </div>
-                            <span class="badge"></span>
-                            <div class="cart-opt">
-                                <span>
-                                    <a href="#"><i class="fas fa-heart"></i></a>
-                                </span>
-                                <span>
-                                    <a href="shopping-cart.html"><i class="fas fa-shopping-basket"></i></a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".6s">
-                        <div class="single-dishes">
-                            <div class="dish-img">
-                                <img src="{{ asset('assets/client/images/menu-item/pd3.png')}}" style="width: inherit;" alt="">
-                            </div>
-                            <div class="dish-content">
-                                <h5> <a href="single-food.html">Gà chiên
-                                    </a></h5>
-                                <p>Đó là một thực tế lâu dài rằng một độc giả món ăn BBQ Gà.</p>
-                                <span class="price badge-color">giá : 200.00 VNĐ</span>
-                                <span class="rating"> <i class="fas fa-star"></i> 5 sao</span>
-                            </div>
-                            <span class="badge badge-bg-color">mới</span>
-                            <div class="cart-opt">
-                                <span>
-                                    <a href="#"><i class="fas fa-heart"></i></a>
-                                </span>
-                                <span>
-                                    <a href="shopping-cart.html"><i class="fas fa-shopping-basket"></i></a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".8s">
-                        <div class="single-dishes">
-                            <div class="dish-img">
-                                <img src="{{ asset('assets/client/images/menu-item/pd4.png')}}" style="width: inherit;" alt="">
-                            </div>
-                            <div class="dish-content">
-                                <h5><a href="single-food.html">Súp gà
-                                    </a></h5>
-                                    <p>Đó là một thực tế lâu dài rằng một độc giả món ăn BBQ Gà.</p>
-                                    <span class="price">giá : 200.00 VNĐ</span>
-                            </div>
-                            <span class="badge">sale</span>
-                            <div class="cart-opt">
-                                <span>
-                                    <a href="#"><i class="fas fa-heart"></i></a>
-                                </span>
-                                <span>
-                                    <a href="shopping-cart.html"><i class="fas fa-shopping-basket"></i></a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

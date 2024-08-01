@@ -56,9 +56,10 @@ class Dish extends Model
     {
         if (isset($validatedData['image'])) {
             $imagePath = $validatedData['image']->store('images', 'public');
-            $validatedData['image'] = basename($imagePath);
+            $validatedData['image'] = basename($imagePath); 
         }
         $validatedData['slug'] = Str::slug($validatedData['name']);
         return $this->update($validatedData);
     }
+    
 }

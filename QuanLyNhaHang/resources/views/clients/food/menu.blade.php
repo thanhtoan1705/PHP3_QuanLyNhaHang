@@ -23,7 +23,11 @@
             </div>
         </div>
     </div>
-
+    <style>
+        .logo_menu {
+            width: 66px !important;
+        }
+    </style>
     <!-- food-items countdown -->
     <div class="foods-counter menus-area">
         <div class="container">
@@ -65,109 +69,50 @@
     </div>
 
     <!-- chicken tab-area -->
-    <section class="menu-area  pizza-area burger-area chicken-area padding-top-40">
+    <section class="menu-area pizza-area burger-area chicken-area padding-top-40">
         <div class="menu-i-shapes">
             <span class="bleft"><img src="{{ asset('assets/client/images/menu-item/bleft.png') }}" alt=""></span>
         </div>
         <div class="container">
             <div class="common-title-area text-center padding-40">
                 <h3>món ăn</h3>
-                <h2>thực đơn gà <span></span> </h2>
+                <h2>thực đơn món ăn<span></span></h2>
             </div>
             <!-- menu-nav-wrapper -->
             <div class="menu-nav-wrapper">
                 <div class="container">
                     <div class="row">
+                        @php
+                            $isFirst = true;
+                        @endphp
+
                         <ul class="nav" id="myTab" role="tablist">
                             <!-- menu-nav-1 -->
-                            <li class="nav-item" role="presentation">
-                                <div class="nav-link active" id="nav-chicken-1" data-bs-toggle="tab"
-                                    data-bs-target="#chicken-1" role="tab" aria-controls="chicken-1"
-                                    aria-selected="true">
-                                    <div class="single-menu-nav pizza-single-menu-nav  text-center">
-                                        <div class="menu-img margin-bottom-10">
-                                            <img src="{{ asset('assets/client/images/menu-item/tc1.png') }}"
-                                                alt="">
+                            @foreach ($categories as $category)
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link{{ $isFirst ? ' active' : '' }}" id="food-{{ $category->id }}"
+                                        data-bs-toggle="tab" data-bs-target="#cfood-{{ $category->id }}" type="button"
+                                        role="tab" aria-controls="food-{{ $category->id }}"
+                                        aria-selected="{{ $isFirst ? 'true' : 'false' }}">
+                                        <div class="single-menu-nav pizza-single-menu-nav text-center">
+                                            <div class="menu-img margin-bottom-10">
+                                                <img class="logo_menu"
+                                                    src="{{ asset('storage/images/' . $category->image) }}" alt="">
+                                            </div>
+                                            <h6>{{ $category->name }}</h6>
+                                            <span class="g-s-4"><img
+                                                    src="{{ asset('assets/client/images/shapes/10.png') }}"
+                                                    alt=""></span>
+                                            <span class="g-s-5"><img
+                                                    src="{{ asset('assets/client/images/shapes/14.png') }}"
+                                                    alt=""></span>
                                         </div>
-                                        <h6>Spicy Chicken</h6>
-                                        <span class="g-s-4"><img src="{{ asset('assets/client/images/shapes/10.png') }}"
-                                                alt=""></span>
-                                        <span class="g-s-5"><img src="{{ asset('assets/client/images/shapes/14.png') }}"
-                                                alt=""></span>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- menu-nav-2 -->
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="nav-chicken-2" data-bs-toggle="tab" data-bs-target="#chicken-2"
-                                    type="button" role="tab" aria-controls="chicken-2" aria-selected="false">
-                                    <div class="single-menu-nav pizza-single-menu-nav  text-center">
-                                        <div class="menu-img margin-bottom-10">
-                                            <img src="{{ asset('assets/client/images/menu-item/tc2.png') }}"
-                                                alt="">
-                                        </div>
-                                        <h6>Chicken Fry</h6>
-                                        <span class="g-s-4"><img src="{{ asset('assets/client/images/shapes/10.png') }}"
-                                                alt=""></span>
-                                        <span class="g-s-5"><img src="{{ asset('assets/client/images/shapes/14.png') }}"
-                                                alt=""></span>
-                                    </div>
-                                </button>
-                            </li>
-                            <!-- menu-nav-3 -->
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="nav-chicken-3" data-bs-toggle="tab"
-                                    data-bs-target="#chicken-3" type="button" role="tab" aria-controls="chicken-3"
-                                    aria-selected="false">
-                                    <div class="single-menu-nav pizza-single-menu-nav  text-center">
-                                        <div class="menu-img margin-bottom-10">
-                                            <img src="{{ asset('assets/client/images/menu-item/tc3.png') }}"
-                                                alt="">
-                                        </div>
-                                        <h6>Chicken Stick</h6>
-                                        <span class="g-s-4"><img src="{{ asset('assets/client/images/shapes/10.png') }}"
-                                                alt=""></span>
-                                        <span class="g-s-5"><img src="{{ asset('assets/client/images/shapes/14.png') }}"
-                                                alt=""></span>
-                                    </div>
-                                </button>
-                            </li>
-                            <!-- menu-nav-4 -->
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="nav-chicken-4" data-bs-toggle="tab"
-                                    data-bs-target="#chicken-4" type="button" role="tab" aria-controls="chicken-4"
-                                    aria-selected="false">
-                                    <div class="single-menu-nav pizza-single-menu-nav  text-center">
-                                        <div class="menu-img margin-bottom-10">
-                                            <img src="{{ asset('assets/client/images/menu-item/tc4.png') }}"
-                                                alt="">
-                                        </div>
-                                        <h6>Chicken Bites</h6>
-                                        <span class="g-s-4"><img src="{{ asset('assets/client/images/shapes/10.png') }}"
-                                                alt=""></span>
-                                        <span class="g-s-5"><img src="{{ asset('assets/client/images/shapes/14.png') }}"
-                                                alt=""></span>
-                                    </div>
-                                </button>
-                            </li>
-                            <!-- menu-nav-5 -->
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="nav-chicken-5" data-bs-toggle="tab"
-                                    data-bs-target="#chicken-5" type="button" role="tab" aria-controls="chicken-5"
-                                    aria-selected="false">
-                                    <div class="single-menu-nav pizza-single-menu-nav  text-center">
-                                        <div class="menu-img margin-bottom-10">
-                                            <img src="{{ asset('assets/client/images/menu-item/tc5.png') }}"
-                                                alt="">
-                                        </div>
-                                        <h6>Crispy Strips</h6>
-                                        <span class="g-s-4"><img src="{{ asset('assets/client/images/shapes/10.png') }}"
-                                                alt=""></span>
-                                        <span class="g-s-5"><img src="{{ asset('assets/client/images/shapes/14.png') }}"
-                                                alt=""></span>
-                                    </div>
-                                </button>
-                            </li>
+                                    </button>
+                                    @php
+                                        $isFirst = false;
+                                    @endphp
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -175,911 +120,59 @@
 
             <!-- menu-items-wrapper -->
             <div class="tab-content" id="nav-tabContent">
-                <!-- menu-items-1 -->
-                <div class="tab-pane fade show active" id="chicken-1" role="tabpanel" aria-labelledby="nav-chicken-1">
-                    <div class="menu-items-wrapper pizza-items-wrapper  margin-top-50">
-                        <div class="row">
-                            <div class="col-lg-8">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-menu-item d-flex justify-content-between">
-                                            <div class="menu-img">
-                                                <img src="{{ asset('assets/client/images/menu-item/tc6.png') }}"
-                                                    alt="">
-                                            </div>
-                                            <div class="menu-content">
-                                                <h6><a href="single-dish.html">Gà rán</a></h6>
-                                                <p>tôm. mực, dứa</p>
-                                                <span>giá :10.000vnđ</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-menu-item d-flex justify-content-between">
-                                            <div class="menu-img">
-                                                <img src="{{ asset('assets/client/images/menu-item/tc7.png') }}"
-                                                    alt="">
-                                            </div>
-                                            <div class="menu-content">
-                                                <h6><a href="single-dish.html">Gà rán</a></h6>
-                                                <p>tôm. mực, dứa</p>
-                                                <span>giá :10.000vnđ</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-menu-item d-flex justify-content-between">
-                                            <div class="menu-img">
-                                                <img src="{{ asset('assets/client/images/menu-item/tc8.png') }}"
-                                                    alt="">
-                                            </div>
-                                            <div class="menu-content">
-                                                <h6><a href="single-dish.html">Gà rán</a></h6>
-                                                <p>tôm. mực, dứa</p>
-                                                <span>giá :10.000vnđ</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-menu-item d-flex justify-content-between">
-                                            <div class="menu-img">
-                                                <img src="{{ asset('assets/client/images/menu-item/tc9.png') }}"
-                                                    alt="">
-                                            </div>
-                                            <div class="menu-content">
-                                                <h6><a href="single-dish.html">Gà rán</a></h6>
-                                                <p>tôm. mực, dứa</p>
-                                                <span>giá :10.000vnđ</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="chicken-tab-content">
-                                    <h5>Combo <br>Siêu phẩm
-                                        Bánh mì kẹp thịt</h5>
-                                    <p>Tôm, mực</p>
-                                    <a href="shopping-cart.html">Đặt hàng ngay</a>
-                                    <span class='main-img'><img
-                                            src="{{ asset('assets/client/images/menu-item/chicken-banner.png') }}"
-                                            alt=""></span>
-                                    <span class="gprice-2">$15</span>
-                                    <span class="gshape1"><img src="{{ asset('assets/client/images/shapes/38.png') }}"
-                                            alt=""></span>
-                                    <span class="gshape2"><img src="{{ asset('assets/client/images/shapes/39.png') }}"
-                                            alt=""></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <!-- menu-items-2 -->
-                <div class="tab-pane fade" id="chicken-2" role="tabpanel" aria-labelledby="nav-chicken-2">
-                    <div class="menu-items-wrapper pizza-items-wrapper  margin-top-50">
-                        <div class="row">
-                            <div class="col-lg-8">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-menu-item d-flex justify-content-between">
-                                            <div class="menu-img">
-                                                <img src="{{ asset('assets/client/images/menu-item/tc6.png') }}"
-                                                    alt="">
+                @foreach ($categories as $category)
+                    <div class="tab-pane fade{{ $loop->first ? ' show active' : '' }}" id="cfood-{{ $category->id }}"
+                        role="tabpanel" aria-labelledby="food-{{ $category->id }}">
+                        <div class="menu-items-wrapper pizza-items-wrapper margin-top-50">
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <div class="row">
+                                        @foreach ($category->dishes as $dish)
+                                            <div class="col-lg-6 col-md-6">
+                                                <div class="row">
+                                                    <div class="col-lg-10 single-menu-item d-flex justify-content-between">
+                                                        <div class="menu-img">
+                                                            <img src="{{ asset('storage/images/' . $dish->image) }}"
+                                                                alt="">
+                                                        </div>
+                                                        <div class="col-lg-12 menu-content">
+                                                            <h6><a href="single-dish.html">{{ $dish->name }}</a></h6>
+                                                            <p>{{ $dish->description }}</p>
+                                                            <span>giá :{{ number_format($dish->price) }} VNĐ</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="menu-content">
-                                                <h6><a href="single-dish.html"> Gà Chiên</a></h6>
-                                                <p>tôm. mực, dứa</p>
-                                                <span>giá :10.000vnđ</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-menu-item d-flex justify-content-between">
-                                            <div class="menu-img">
-                                                <img src="{{ asset('assets/client/images/menu-item/tc6.png') }}"
-                                                    alt="">
-                                            </div>
-                                            <div class="menu-content">
-                                                <h6><a href="single-dish.html">Gà nướng </a></h6>
-                                                <p>tôm. mực, dứa</p>
-                                                <span>giá :$15,00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-menu-item d-flex justify-content-between">
-                                            <div class="menu-img">
-                                                <img src="{{ asset('assets/client/images/menu-item/tc6.png') }}"
-                                                    alt="">
-                                            </div>
-                                            <div class="menu-content">
-                                                <h6><a href="single-dish.html">Gà nướng </a></h6>
-                                                <p>tôm. mực, dứa</p>
-                                                <span>giá :$15,00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-menu-item d-flex justify-content-between">
-                                            <div class="menu-img">
-                                                <img src="{{ asset('assets/client/images/menu-item/tc6.png') }}"
-                                                    alt="">
-                                            </div>
-                                            <div class="menu-content">
-                                                <h6><a href="single-dish.html">Gà nướng </a></h6>
-                                                <p>tôm. mực, dứa</p>
-                                                <span>giá :$15,00</span>
-                                            </div>
-                                        </div>
+                                        @endforeach
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="chicken-tab-content">
-                                    <h5>Combo <br>Siêu phẩm
-                                        Bánh mì kẹp thịt</h5>
-                                    <p>Tôm, mực</p>
-                                    <a href="shopping-cart.html">Đặt hàng ngay</a>
-                                    <span class='main-img'><img
-                                            src="{{ asset('assets/client/images/menu-item/chicken-banner.png') }}"
-                                            alt=""></span>
-                                    <span class="gprice-2">$15</span>
-                                    <span class="gshape1"><img src="{{ asset('assets/client/images/shapes/38.png') }}"
-                                            alt=""></span>
-                                    <span class="gshape2"><img src="{{ asset('assets/client/images/shapes/39.png') }}"
-                                            alt=""></span>
+                                <div class="col-lg-4">
+                                    <div class="chicken-tab-content">
+                                        <h5>Combo <br>Siêu phẩm Bánh mì kẹp thịt</h5>
+                                        <p>Tôm, mực</p>
+                                        <a href="shopping-cart.html">Đặt hàng ngay</a>
+                                        <span class='main-img'><img
+                                                src="{{ asset('assets/client/images/menu-item/chicken-banner.png') }}"
+                                                alt=""></span>
+                                        <span class="gprice-2">$15</span>
+                                        <span class="gshape1"><img
+                                                src="{{ asset('assets/client/images/shapes/38.png') }}"
+                                                alt=""></span>
+                                        <span class="gshape2"><img
+                                                src="{{ asset('assets/client/images/shapes/39.png') }}"
+                                                alt=""></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- menu-items-3 -->
-                <div class="tab-pane fade" id="chicken-3" role="tabpanel" aria-labelledby="nav-chicken-3">
-                    <div class="menu-items-wrapper pizza-items-wrapper  margin-top-50">
-                        <div class="row">
-                            <div class="col-lg-8">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-menu-item d-flex justify-content-between">
-                                            <div class="menu-img">
-                                                <img src="{{ asset('assets/client/images/menu-item/tc9.png') }}"
-                                                    alt="">
-                                            </div>
-                                            <div class="menu-content">
-                                                <h6><a href="single-dish.html">Gà rán</a></h6>
-                                                <p>tôm. mực, dứa</p>
-                                                <span>giá :10.000vnđ</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-menu-item d-flex justify-content-between">
-                                            <div class="menu-img">
-                                                <img src="{{ asset('assets/client/images/menu-item/tc9.png') }}"
-                                                    alt="">
-                                            </div>
-                                            <div class="menu-content">
-                                                <h6><a href="single-dish.html">Gà rán</a></h6>
-                                                <p>tôm. mực, dứa</p>
-                                                <span>giá :10.000vnđ</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-menu-item d-flex justify-content-between">
-                                            <div class="menu-img">
-                                                <img src="{{ asset('assets/client/images/menu-item/tc9.png') }}"
-                                                    alt="">
-                                            </div>
-                                            <div class="menu-content">
-                                                <h6><a href="single-dish.html">Gà rán</a></h6>
-                                                <p>tôm. mực, dứa</p>
-                                                <span>giá :10.000vnđ</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-menu-item d-flex justify-content-between">
-                                            <div class="menu-img">
-                                                <img src="{{ asset('assets/client/images/menu-item/tc9.png') }}"
-                                                    alt="">
-                                            </div>
-                                            <div class="menu-content">
-                                                <h6><a href="single-dish.html">Gà rán</a></h6>
-                                                <p>tôm. mực, dứa</p>
-                                                <span>giá :10.000vnđ</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="chicken-tab-content">
-                                    <h5>Combo <br>Siêu phẩm
-                                        Bánh mì kẹp thịt</h5>
-                                    <p>Tôm, mực</p>
-                                    <a href="shopping-cart.html">Đặt hàng ngay</a>
-                                    <span class='main-img'><img
-                                            src="{{ asset('assets/client/images/menu-item/chicken-banner.png') }}"
-                                            alt=""></span>
-                                    <span class="gprice-2">$15</span>
-                                    <span class="gshape1"><img src="{{ asset('assets/client/images/shapes/38.png') }}"
-                                            alt=""></span>
-                                    <span class="gshape2"><img src="{{ asset('assets/client/images/shapes/39.png') }}"
-                                            alt=""></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- menu-items-4 -->
-                <div class="tab-pane fade" id="chicken-4" role="tabpanel" aria-labelledby="nav-chicken-4">
-                    <div class="menu-items-wrapper pizza-items-wrapper  margin-top-50">
-                        <div class="row">
-                            <div class="col-lg-8">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-menu-item d-flex justify-content-between">
-                                            <div class="menu-img">
-                                                <img src="{{ asset('assets/client/images/menu-item/tc7.png') }}"
-                                                    alt="">
-                                            </div>
-                                            <div class="menu-content">
-                                                <h6><a href="single-dish.html">Gà rán</a></h6>
-                                                <p>tôm. mực, dứa</p>
-                                                <span>giá :10.000vnđ</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-menu-item d-flex justify-content-between">
-                                            <div class="menu-img">
-                                                <img src="{{ asset('assets/client/images/menu-item/tc7.png') }}"
-                                                    alt="">
-                                            </div>
-                                            <div class="menu-content">
-                                                <h6><a href="single-dish.html">Gà rán</a></h6>
-                                                <p>tôm. mực, dứa</p>
-                                                <span>giá :10.000vnđ</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-menu-item d-flex justify-content-between">
-                                            <div class="menu-img">
-                                                <img src="{{ asset('assets/client/images/menu-item/tc7.png') }}"
-                                                    alt="">
-                                            </div>
-                                            <div class="menu-content">
-                                                <h6><a href="single-dish.html">Gà rán</a></h6>
-                                                <p>tôm. mực, dứa</p>
-                                                <span>giá :10.000vnđ</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-menu-item d-flex justify-content-between">
-                                            <div class="menu-img">
-                                                <img src="{{ asset('assets/client/images/menu-item/tc7.png') }}"
-                                                    alt="">
-                                            </div>
-                                            <div class="menu-content">
-                                                <h6><a href="single-dish.html">Gà rán</a></h6>
-                                                <p>tôm. mực, dứa</p>
-                                                <span>giá :10.000vnđ</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="chicken-tab-content">
-                                    <h5>Super <br>Combo
-                                        Burger</h5>
-                                    <p>Shrimp, Squid</p>
-                                    <a href="shopping-cart.html">Order Now</a>
-                                    <span class='main-img'><img
-                                            src="{{ asset('assets/client/images/menu-item/chicken-banner.png') }}"
-                                            alt=""></span>
-                                    <span class="gprice-2">$15</span>
-                                    <span class="gshape1"><img src="{{ asset('assets/client/images/shapes/38.png') }}"
-                                            alt=""></span>
-                                    <span class="gshape2"><img src="{{ asset('assets/client/images/shapes/39.png') }}"
-                                            alt=""></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- menu-items-5 -->
-                <div class="tab-pane fade" id="chicken-5" role="tabpanel" aria-labelledby="nav-chicken-5">
-                    <div class="menu-items-wrapper pizza-items-wrapper  margin-top-50">
-                        <div class="row">
-                            <div class="col-lg-8">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-menu-item d-flex justify-content-between">
-                                            <div class="menu-img">
-                                                <img src="{{ asset('assets/client/images/menu-item/tc8.png') }}"
-                                                    alt="">
-                                            </div>
-                                            <div class="menu-content">
-                                                <h6><a href="single-dish.html">Fried Chicken</a></h6>
-                                                <p>Tôm. Mực, dứa</p>
-                                                <span>Giá :10.000vnđ</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-menu-item d-flex justify-content-between">
-                                            <div class="menu-img">
-                                                <img src="{{ asset('assets/client/images/menu-item/tc8.png') }}"
-                                                    alt="">
-                                            </div>
-                                            <div class="menu-content">
-                                                <h6><a href="single-dish.html">Roast Chicken</a></h6>
-                                                <p>Tôm. Mực, dứa</p>
-                                                <span>Giá :10.000vnđ</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-menu-item d-flex justify-content-between">
-                                            <div class="menu-img">
-                                                <img src="{{ asset('assets/client/images/menu-item/tc8.png') }}"
-                                                    alt="">
-                                            </div>
-                                            <div class="menu-content">
-                                                <h6><a href="single-dish.html">Crispy Fry</a></h6>
-                                                <p>Tôm. Mực, dứa</p>
-                                                <span>Giá :10.000vnđ</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-menu-item d-flex justify-content-between">
-                                            <div class="menu-img">
-                                                <img src="{{ asset('assets/client/images/menu-item/tc8.png') }}"
-                                                    alt="">
-                                            </div>
-                                            <div class="menu-content">
-                                                <h6><a href="single-dish.html">Baked Roast</a></h6>
-                                                <p>Tôm. Mực, dứa</p>
-                                                <span>Giá :10.000vnđ</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="chicken-tab-content">
-                                    <h5>Super <br>Combo
-                                        Burger</h5>
-                                    <p>Shrimp, Squid</p>
-                                    <a href="shopping-cart.html">Order Now</a>
-                                    <span class='main-img'><img
-                                            src="{{ asset('assets/client/images/menu-item/chicken-banner.png') }}"
-                                            alt=""></span>
-                                    <span class="gprice-2">$15</span>
-                                    <span class="gshape1"><img src="{{ asset('assets/client/images/shapes/38.png') }}"
-                                            alt=""></span>
-                                    <span class="gshape2"><img src="{{ asset('assets/client/images/shapes/39.png') }}"
-                                            alt=""></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
 
-    <!-- burger tab-area -->
-    <section class="menu-area  pizza-area burger-area padding-top-40">
-        <div class="menu-i-shapes">
-            <span class="brs"><img src="{{ asset('assets/client/images/shapes/34.png') }}" alt=""></span>
-        </div>
-        <div class="container">
-            <div class="common-title-area text-center padding-40">
-                <h3>food items</h3>
-                <h2>Delicious <span>burger</span> </h2>
-            </div>
-            <!-- menu-nav-wrapper -->
-            <div class="menu-nav-wrapper">
-                <div class="container">
-                    <div class="row">
-                        <ul class="nav" id="myTab" role="tablist">
-                            <!-- menu-nav-1 -->
-                            <li class="nav-item" role="presentation">
-                                <div class="nav-link active" id="nav-burger-1" data-bs-toggle="tab"
-                                    data-bs-target="#burger-1" role="tab" aria-controls="burger-1"
-                                    aria-selected="true">
-                                    <div class="single-menu-nav pizza-single-menu-nav  text-center">
-                                        <div class="menu-img margin-bottom-10">
-                                            <img src="{{ asset('assets/client/images/menu-item/bn1.png') }}"
-                                                alt="">
-                                        </div>
-                                        <h6>Classic Burger</h6>
-                                        <span class="g-s-4"><img src="{{ asset('assets/client/images/shapes/10.png') }}"
-                                                alt=""></span>
-                                        <span class="g-s-5"><img src="{{ asset('assets/client/images/shapes/14.png') }}"
-                                                alt=""></span>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- menu-nav-2 -->
-                            <li class="nav-item" role="presentation">
-                                <div class="nav-link" id="nav-burger-2" data-bs-toggle="tab" data-bs-target="#burger-2"
-                                    role="tab" aria-controls="burger-2" aria-selected="false">
-                                    <div class="single-menu-nav pizza-single-menu-nav  text-center">
-                                        <div class="menu-img margin-bottom-10">
-                                            <img src="{{ asset('assets/client/images/menu-item/bn2.png') }}"
-                                                alt="">
-                                        </div>
-                                        <h6>Mushroom Burger</h6>
-                                        <span class="g-s-4"><img src="{{ asset('assets/client/images/shapes/10.png') }}"
-                                                alt=""></span>
-                                        <span class="g-s-5"><img src="{{ asset('assets/client/images/shapes/14.png') }}"
-                                                alt=""></span>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- menu-nav-3 -->
-                            <li class="nav-item" role="presentation">
-                                <div class="nav-link" id="nav-burger-3" data-bs-toggle="tab" data-bs-target="#burger-3"
-                                    role="tab" aria-controls="burger-3" aria-selected="false">
-                                    <div class="single-menu-nav pizza-single-menu-nav  text-center">
-                                        <div class="menu-img margin-bottom-10">
-                                            <img src="{{ asset('assets/client/images/menu-item/pn3.png') }}"
-                                                alt="">
-                                        </div>
-                                        <h6>Beef Burger</h6>
-                                        <span class="g-s-4"><img src="{{ asset('assets/client/images/shapes/10.png') }}"
-                                                alt=""></span>
-                                        <span class="g-s-5"><img src="{{ asset('assets/client/images/shapes/14.png') }}"
-                                                alt=""></span>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- menu-nav-4 -->
-                            <li class="nav-item" role="presentation">
-                                <div class="nav-link" id="nav-burger-4" data-bs-toggle="tab" data-bs-target="#burger-4"
-                                    role="tab" aria-controls="burger-4" aria-selected="false">
-                                    <div class="single-menu-nav pizza-single-menu-nav  text-center">
-                                        <div class="menu-img margin-bottom-10">
-                                            <img src="{{ asset('assets/client/images/menu-item/pn4.png') }}"
-                                                alt="">
-                                        </div>
-                                        <h6>Chicken Burger</h6>
-                                        <span class="g-s-4"><img src="{{ asset('assets/client/images/shapes/10.png') }}"
-                                                alt=""></span>
-                                        <span class="g-s-5"><img src="{{ asset('assets/client/images/shapes/14.png') }}"
-                                                alt=""></span>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- menu-nav-5 -->
-                            <li class="nav-item" role="presentation">
-                                <div class="nav-link" id="nav-burger-5" data-bs-toggle="tab" data-bs-target="#burger-5"
-                                    role="tab" aria-controls="burger-5" aria-selected="false">
-                                    <div class="single-menu-nav pizza-single-menu-nav  text-center">
-                                        <div class="menu-img margin-bottom-10">
-                                            <img src="{{ asset('assets/client/images/menu-item/pn5.png') }}"
-                                                alt="">
-                                        </div>
-                                        <h6>Vegetable Burger</h6>
-                                        <span class="g-s-4"><img src="{{ asset('assets/client/images/shapes/10.png') }}"
-                                                alt=""></span>
-                                        <span class="g-s-5"><img src="{{ asset('assets/client/images/shapes/14.png') }}"
-                                                alt=""></span>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
 
-            <!-- menu-items-wrapper -->
-            <div class="tab-content" id="nav-tabContent1">
-                <!-- menu-items-1 -->
-                <div class="tab-pane fade show active" id="burger-1" role="tabpanel" aria-labelledby="nav-burger-1">
-                    <div class="menu-items-wrapper pizza-items-wrapper  margin-top-50">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4">
-                                <div class="single-menu-item d-flex justify-content-between">
-                                    <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/br2.png') }}" alt="">
-                                    </div>
-                                    <div class="menu-content">
-                                        <h6><a href="single-dish.html">Beef Burger</a></h6>
-                                        <p>Tôm. Mực, dứa</p>
-                                        <span>Giá :10.000vnđ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="single-menu-item d-flex justify-content-between">
-                                    <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/br1.png') }}" alt="">
-                                    </div>
-                                    <div class="menu-content">
-                                        <h6><a href="single-dish.html">Crispy Fried Chicken</a></h6>
-                                        <p>Tôm. Mực, dứa</p>
-                                        <span>Giá :10.000vnđ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="single-menu-item d-flex justify-content-between">
-                                    <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/br3.png') }}" alt="">
-                                    </div>
-                                    <div class="menu-content">
-                                        <h6><a href="single-dish.html">BBQ Burger</a></h6>
-                                        <p>Tôm. Mực, dứa</p>
-                                        <span>Giá :10.000vnđ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="single-menu-item d-flex justify-content-between">
-                                    <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/br4.png') }}" alt="">
-                                    </div>
-                                    <div class="menu-content">
-                                        <h6><a href="single-dish.html">Crispy Burger</a></h6>
-                                        <p>Tôm. Mực, dứa</p>
-                                        <span>Giá :10.000vnđ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="single-menu-item d-flex justify-content-between">
-                                    <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/br5.png') }}" alt="">
-                                    </div>
-                                    <div class="menu-content">
-                                        <h6><a href="single-dish.html">Chicken Burger</a></h6>
-                                        <p>Tôm. Mực, dứa</p>
-                                        <span>Giá :10.000vnđ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="single-menu-item d-flex justify-content-between">
-                                    <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/br6.png') }}" alt="">
-                                    </div>
-                                    <div class="menu-content">
-                                        <h6><a href="single-dish.html">Chicken grill Fry</a></h6>
-                                        <p>Tôm. Mực, dứa</p>
-                                        <span>Giá :10.000vnđ</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- menu-items-2 -->
-                <div class="tab-pane fade" id="burger-2" role="tabpanel" aria-labelledby="nav-burger-2">
-                    <div class="menu-items-wrapper pizza-items-wrapper  margin-top-50">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4">
-                                <div class="single-menu-item d-flex justify-content-between">
-                                    <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/br5.png') }}" alt="">
-                                    </div>
-                                    <div class="menu-content">
-                                        <h6><a href="single-dish.html">BBQ Burger</a></h6>
-                                        <p>Tôm. Mực, dứa</p>
-                                        <span>Giá :10.000vnđ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="single-menu-item d-flex justify-content-between">
-                                    <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/br5.png') }}" alt="">
-                                    </div>
-                                    <div class="menu-content">
-                                        <h6><a href="single-dish.html">Crispy Fried Chicken</a></h6>
-                                        <p>Tôm. Mực, dứa</p>
-                                        <span>Giá :10.000vnđ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="single-menu-item d-flex justify-content-between">
-                                    <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/br5.png') }}" alt="">
-                                    </div>
-                                    <div class="menu-content">
-                                        <h6><a href="single-dish.html">Beef Burger</a></h6>
-                                        <p>Tôm. Mực, dứa</p>
-                                        <span>Giá :10.000vnđ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="single-menu-item d-flex justify-content-between">
-                                    <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/br5.png') }}" alt="">
-                                    </div>
-                                    <div class="menu-content">
-                                        <h6><a href="single-dish.html">Crispy Burger</a></h6>
-                                        <p>Tôm. Mực, dứa</p>
-                                        <span>Giá :10.000vnđ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="single-menu-item d-flex justify-content-between">
-                                    <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/br5.png') }}" alt="">
-                                    </div>
-                                    <div class="menu-content">
-                                        <h6><a href="single-dish.html">Chicken Burger</a></h6>
-                                        <p>Tôm. Mực, dứa</p>
-                                        <span>Giá :10.000vnđ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="single-menu-item d-flex justify-content-between">
-                                    <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/br5.png') }}" alt="">
-                                    </div>
-                                    <div class="menu-content">
-                                        <h6><a href="single-dish.html">Chicken grill Fry</a></h6>
-                                        <p>Tôm. Mực, dứa</p>
-                                        <span>Giá :10.000vnđ</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- menu-items-3 -->
-                <div class="tab-pane fade" id="burger-3" role="tabpanel" aria-labelledby="nav-burger-3">
-                    <div class="menu-items-wrapper pizza-items-wrapper  margin-top-50">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4">
-                                <div class="single-menu-item d-flex justify-content-between">
-                                    <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/br2.png') }}" alt="">
-                                    </div>
-                                    <div class="menu-content">
-                                        <h6><a href="single-dish.html">Crispy Fried Chicken</a></h6>
-                                        <p>Tôm. Mực, dứa</p>
-                                        <span>Giá :10.000vnđ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="single-menu-item d-flex justify-content-between">
-                                    <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/br2.png') }}" alt="">
-                                    </div>
-                                    <div class="menu-content">
-                                        <h6><a href="single-dish.html">Beef Burger</a></h6>
-                                        <p>Tôm. Mực, dứa</p>
-                                        <span>Giá :10.000vnđ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="single-menu-item d-flex justify-content-between">
-                                    <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/br2.png') }}" alt="">
-                                    </div>
-                                    <div class="menu-content">
-                                        <h6><a href="single-dish.html">BBQ Burger</a></h6>
-                                        <p>Tôm. Mực, dứa</p>
-                                        <span>Giá :10.000vnđ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="single-menu-item d-flex justify-content-between">
-                                    <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/br2.png') }}" alt="">
-                                    </div>
-                                    <div class="menu-content">
-                                        <h6><a href="single-dish.html">Crispy Burger</a></h6>
-                                        <p>Tôm. Mực, dứa</p>
-                                        <span>Giá :10.000vnđ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="single-menu-item d-flex justify-content-between">
-                                    <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/br2.png') }}" alt="">
-                                    </div>
-                                    <div class="menu-content">
-                                        <h6><a href="single-dish.html">Chicken Burger</a></h6>
-                                        <p>Tôm. Mực, dứa</p>
-                                        <span>Giá :10.000vnđ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="single-menu-item d-flex justify-content-between">
-                                    <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/br2.png') }}" alt="">
-                                    </div>
-                                    <div class="menu-content">
-                                        <h6><a href="single-dish.html">Chicken grill Fry</a></h6>
-                                        <p>Tôm. Mực, dứa</p>
-                                        <span>Giá :10.000vnđ</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- menu-items-4 -->
-                <div class="tab-pane fade" id="burger-4" role="tabpanel" aria-labelledby="nav-burger-4">
-                    <div class="menu-items-wrapper pizza-items-wrapper  margin-top-50">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4">
-                                <div class="single-menu-item d-flex justify-content-between">
-                                    <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/br3.png') }}" alt="">
-                                    </div>
-                                    <div class="menu-content">
-                                        <h6><a href="single-dish.html">Beef Burger</a></h6>
-                                        <p>Tôm. Mực, dứa</p>
-                                        <span>Giá :10.000vnđ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="single-menu-item d-flex justify-content-between">
-                                    <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/br3.png') }}" alt="">
-                                    </div>
-                                    <div class="menu-content">
-                                        <h6><a href="single-dish.html">Crispy Fried Chicken</a></h6>
-                                        <p>Tôm. Mực, dứa</p>
-                                        <span>Giá :10.000vnđ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="single-menu-item d-flex justify-content-between">
-                                    <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/br3.png') }}" alt="">
-                                    </div>
-                                    <div class="menu-content">
-                                        <h6><a href="single-dish.html">BBQ Burger</a></h6>
-                                        <p>Tôm. Mực, dứa</p>
-                                        <span>Giá :10.000vnđ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="single-menu-item d-flex justify-content-between">
-                                    <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/br3.png') }}" alt="">
-                                    </div>
-                                    <div class="menu-content">
-                                        <h6><a href="single-dish.html">Crispy Burger</a></h6>
-                                        <p>Tôm. Mực, dứa</p>
-                                        <span>Giá :10.000vnđ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="single-menu-item d-flex justify-content-between">
-                                    <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/br3.png') }}" alt="">
-                                    </div>
-                                    <div class="menu-content">
-                                        <h6><a href="single-dish.html">Chicken Burger</a></h6>
-                                        <p>Tôm. Mực, dứa</p>
-                                        <span>Giá :10.000vnđ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="single-menu-item d-flex justify-content-between">
-                                    <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/br3.png') }}" alt="">
-                                    </div>
-                                    <div class="menu-content">
-                                        <h6><a href="single-dish.html">Chicken grill Fry</a></h6>
-                                        <p>Tôm. Mực, dứa</p>
-                                        <span>Giá :10.000vnđ</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- menu-items-5 -->
-                <div class="tab-pane fade" id="burger-5" role="tabpanel" aria-labelledby="nav-burger-5">
-                    <div class="menu-items-wrapper pizza-items-wrapper  margin-top-50">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4">
-                                <div class="single-menu-item d-flex justify-content-between">
-                                    <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/br1.png') }}" alt="">
-                                    </div>
-                                    <div class="menu-content">
-                                        <h6><a href="single-dish.html">Crispy Fried Chicken</a></h6>
-                                        <p>Tôm. Mực, dứa</p>
-                                        <span>Giá :10.000vnđ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="single-menu-item d-flex justify-content-between">
-                                    <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/br1.png') }}" alt="">
-                                    </div>
-                                    <div class="menu-content">
-                                        <h6><a href="single-dish.html">Beef Burger</a></h6>
-                                        <p>Tôm. Mực, dứa</p>
-                                        <span>Giá :10.000vnđ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="single-menu-item d-flex justify-content-between">
-                                    <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/br1.png') }}" alt="">
-                                    </div>
-                                    <div class="menu-content">
-                                        <h6><a href="single-dish.html">BBQ Burger</a></h6>
-                                        <p>Tôm. Mực, dứa</p>
-                                        <span>Giá :10.000vnđ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="single-menu-item d-flex justify-content-between">
-                                    <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/br1.png') }}" alt="">
-                                    </div>
-                                    <div class="menu-content">
-                                        <h6><a href="single-dish.html">Crispy Burger</a></h6>
-                                        <p>Tôm. Mực, dứa</p>
-                                        <span>Giá :10.000vnđ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="single-menu-item d-flex justify-content-between">
-                                    <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/br1.png') }}" alt="">
-                                    </div>
-                                    <div class="menu-content">
-                                        <h6><a href="single-dish.html">Chicken Burger</a></h6>
-                                        <p>Tôm. Mực, dứa</p>
-                                        <span>Giá :10.000vnđ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="single-menu-item d-flex justify-content-between">
-                                    <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/br1.png') }}" alt="">
-                                    </div>
-                                    <div class="menu-content">
-                                        <h6><a href="single-dish.html">Chicken grill Fry</a></h6>
-                                        <p>Tôm. Mực, dứa</p>
-                                        <span>Giá :10.000vnđ</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- pizza banner -->
     <section class="banner-gallery pizza-banner padding-top-90 padding-bottom-30">
@@ -1150,11 +243,9 @@
                                                 alt="">
                                         </div>
                                         <h6>pizza</h6>
-                                        <span class="g-s-4"><img
-                                                src="{{ asset('assets/client/images/shapes/10.png') }}"
+                                        <span class="g-s-4"><img src="{{ asset('assets/client/images/shapes/10.png') }}"
                                                 alt=""></span>
-                                        <span class="g-s-5"><img
-                                                src="{{ asset('assets/client/images/shapes/14.png') }}"
+                                        <span class="g-s-5"><img src="{{ asset('assets/client/images/shapes/14.png') }}"
                                                 alt=""></span>
                                     </div>
                                 </div>
@@ -1169,11 +260,9 @@
                                                 alt="">
                                         </div>
                                         <h6>pizza</h6>
-                                        <span class="g-s-4"><img
-                                                src="{{ asset('assets/client/images/shapes/10.png') }}"
+                                        <span class="g-s-4"><img src="{{ asset('assets/client/images/shapes/10.png') }}"
                                                 alt=""></span>
-                                        <span class="g-s-5"><img
-                                                src="{{ asset('assets/client/images/shapes/14.png') }}"
+                                        <span class="g-s-5"><img src="{{ asset('assets/client/images/shapes/14.png') }}"
                                                 alt=""></span>
                                     </div>
                                 </div>
@@ -1188,11 +277,9 @@
                                                 alt="">
                                         </div>
                                         <h6>pizza</h6>
-                                        <span class="g-s-4"><img
-                                                src="{{ asset('assets/client/images/shapes/10.png') }}"
+                                        <span class="g-s-4"><img src="{{ asset('assets/client/images/shapes/10.png') }}"
                                                 alt=""></span>
-                                        <span class="g-s-5"><img
-                                                src="{{ asset('assets/client/images/shapes/14.png') }}"
+                                        <span class="g-s-5"><img src="{{ asset('assets/client/images/shapes/14.png') }}"
                                                 alt=""></span>
                                     </div>
                                 </div>
@@ -1207,11 +294,9 @@
                                                 alt="">
                                         </div>
                                         <h6>pizza</h6>
-                                        <span class="g-s-4"><img
-                                                src="{{ asset('assets/client/images/shapes/10.png') }}"
+                                        <span class="g-s-4"><img src="{{ asset('assets/client/images/shapes/10.png') }}"
                                                 alt=""></span>
-                                        <span class="g-s-5"><img
-                                                src="{{ asset('assets/client/images/shapes/14.png') }}"
+                                        <span class="g-s-5"><img src="{{ asset('assets/client/images/shapes/14.png') }}"
                                                 alt=""></span>
                                     </div>
                                 </div>
@@ -1226,11 +311,9 @@
                                                 alt="">
                                         </div>
                                         <h6>pizza</h6>
-                                        <span class="g-s-4"><img
-                                                src="{{ asset('assets/client/images/shapes/10.png') }}"
+                                        <span class="g-s-4"><img src="{{ asset('assets/client/images/shapes/10.png') }}"
                                                 alt=""></span>
-                                        <span class="g-s-5"><img
-                                                src="{{ asset('assets/client/images/shapes/14.png') }}"
+                                        <span class="g-s-5"><img src="{{ asset('assets/client/images/shapes/14.png') }}"
                                                 alt=""></span>
                                     </div>
                                 </div>
@@ -1249,8 +332,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between">
                                     <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/piz1.png') }}"
-                                            alt="">
+                                        <img src="{{ asset('assets/client/images/menu-item/piz1.png') }}" alt="">
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Margherita Pizza</a></h6>
@@ -1262,8 +344,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between">
                                     <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/piz2.png') }}"
-                                            alt="">
+                                        <img src="{{ asset('assets/client/images/menu-item/piz2.png') }}" alt="">
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Tomato sauce</a></h6>
@@ -1275,8 +356,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between">
                                     <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/piz3.png') }}"
-                                            alt="">
+                                        <img src="{{ asset('assets/client/images/menu-item/piz3.png') }}" alt="">
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Marinara Pizza</a></h6>
@@ -1288,8 +368,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between">
                                     <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/piz4.png') }}"
-                                            alt="">
+                                        <img src="{{ asset('assets/client/images/menu-item/piz4.png') }}" alt="">
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Frutti di Mare</a></h6>
@@ -1301,8 +380,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between">
                                     <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/piz5.png') }}"
-                                            alt="">
+                                        <img src="{{ asset('assets/client/images/menu-item/piz5.png') }}" alt="">
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Americana Pizza</a></h6>
@@ -1314,8 +392,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between">
                                     <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/piz6.png') }}"
-                                            alt="">
+                                        <img src="{{ asset('assets/client/images/menu-item/piz6.png') }}" alt="">
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Pizza al Pesto</a></h6>
@@ -1334,8 +411,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between">
                                     <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/piz1.png') }}"
-                                            alt="">
+                                        <img src="{{ asset('assets/client/images/menu-item/piz1.png') }}" alt="">
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Margherita Pizza</a></h6>
@@ -1347,8 +423,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between">
                                     <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/piz2.png') }}"
-                                            alt="">
+                                        <img src="{{ asset('assets/client/images/menu-item/piz2.png') }}" alt="">
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Tomato sauce</a></h6>
@@ -1360,8 +435,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between">
                                     <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/piz3.png') }}"
-                                            alt="">
+                                        <img src="{{ asset('assets/client/images/menu-item/piz3.png') }}" alt="">
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Marinara Pizza</a></h6>
@@ -1373,8 +447,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between">
                                     <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/piz4.png') }}"
-                                            alt="">
+                                        <img src="{{ asset('assets/client/images/menu-item/piz4.png') }}" alt="">
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Frutti di Mare</a></h6>
@@ -1386,8 +459,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between">
                                     <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/piz5.png') }}"
-                                            alt="">
+                                        <img src="{{ asset('assets/client/images/menu-item/piz5.png') }}" alt="">
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Americana Pizza</a></h6>
@@ -1399,8 +471,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between">
                                     <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/piz6.png') }}"
-                                            alt="">
+                                        <img src="{{ asset('assets/client/images/menu-item/piz6.png') }}" alt="">
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Pizza al Pesto</a></h6>
@@ -1419,8 +490,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between">
                                     <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/piz1.png') }}"
-                                            alt="">
+                                        <img src="{{ asset('assets/client/images/menu-item/piz1.png') }}" alt="">
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Margherita Pizza</a></h6>
@@ -1432,8 +502,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between">
                                     <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/piz2.png') }}"
-                                            alt="">
+                                        <img src="{{ asset('assets/client/images/menu-item/piz2.png') }}" alt="">
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Tomato sauce</a></h6>
@@ -1445,8 +514,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between">
                                     <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/piz3.png') }}"
-                                            alt="">
+                                        <img src="{{ asset('assets/client/images/menu-item/piz3.png') }}" alt="">
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Marinara Pizza</a></h6>
@@ -1458,8 +526,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between">
                                     <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/piz4.png') }}"
-                                            alt="">
+                                        <img src="{{ asset('assets/client/images/menu-item/piz4.png') }}" alt="">
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Frutti di Mare</a></h6>
@@ -1471,8 +538,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between">
                                     <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/piz5.png') }}"
-                                            alt="">
+                                        <img src="{{ asset('assets/client/images/menu-item/piz5.png') }}" alt="">
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Americana Pizza</a></h6>
@@ -1484,8 +550,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between">
                                     <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/piz6.png') }}"
-                                            alt="">
+                                        <img src="{{ asset('assets/client/images/menu-item/piz6.png') }}" alt="">
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Pizza al Pesto</a></h6>
@@ -1504,8 +569,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between">
                                     <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/piz1.png') }}"
-                                            alt="">
+                                        <img src="{{ asset('assets/client/images/menu-item/piz1.png') }}" alt="">
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Margherita Pizza</a></h6>
@@ -1517,8 +581,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between">
                                     <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/piz2.png') }}"
-                                            alt="">
+                                        <img src="{{ asset('assets/client/images/menu-item/piz2.png') }}" alt="">
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Tomato sauce</a></h6>
@@ -1530,8 +593,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between">
                                     <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/piz3.png') }}"
-                                            alt="">
+                                        <img src="{{ asset('assets/client/images/menu-item/piz3.png') }}" alt="">
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Marinara Pizza</a></h6>
@@ -1543,8 +605,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between">
                                     <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/piz4.png') }}"
-                                            alt="">
+                                        <img src="{{ asset('assets/client/images/menu-item/piz4.png') }}" alt="">
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Frutti di Mare</a></h6>
@@ -1556,8 +617,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between">
                                     <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/piz5.png') }}"
-                                            alt="">
+                                        <img src="{{ asset('assets/client/images/menu-item/piz5.png') }}" alt="">
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Americana Pizza</a></h6>
@@ -1569,8 +629,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between">
                                     <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/piz6.png') }}"
-                                            alt="">
+                                        <img src="{{ asset('assets/client/images/menu-item/piz6.png') }}" alt="">
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Pizza al Pesto</a></h6>
@@ -1589,8 +648,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between">
                                     <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/piz1.png') }}"
-                                            alt="">
+                                        <img src="{{ asset('assets/client/images/menu-item/piz1.png') }}" alt="">
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Margherita Pizza</a></h6>
@@ -1602,8 +660,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between">
                                     <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/piz2.png') }}"
-                                            alt="">
+                                        <img src="{{ asset('assets/client/images/menu-item/piz2.png') }}" alt="">
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Tomato sauce</a></h6>
@@ -1615,8 +672,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between">
                                     <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/piz3.png') }}"
-                                            alt="">
+                                        <img src="{{ asset('assets/client/images/menu-item/piz3.png') }}" alt="">
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Marinara Pizza</a></h6>
@@ -1628,8 +684,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between">
                                     <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/piz4.png') }}"
-                                            alt="">
+                                        <img src="{{ asset('assets/client/images/menu-item/piz4.png') }}" alt="">
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Frutti di Mare</a></h6>
@@ -1641,8 +696,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between">
                                     <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/piz5.png') }}"
-                                            alt="">
+                                        <img src="{{ asset('assets/client/images/menu-item/piz5.png') }}" alt="">
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Americana Pizza</a></h6>
@@ -1654,8 +708,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-menu-item d-flex justify-content-between">
                                     <div class="menu-img">
-                                        <img src="{{ asset('assets/client/images/menu-item/piz6.png') }}"
-                                            alt="">
+                                        <img src="{{ asset('assets/client/images/menu-item/piz6.png') }}" alt="">
                                     </div>
                                     <div class="menu-content">
                                         <h6><a href="single-dish.html">Pizza al Pesto</a></h6>
@@ -1675,12 +728,9 @@
     <section class="testimonial padding-bottom-120 padding-top-80">
         <div class="container">
             <div class="testi-shapes">
-                <span class="ts-1"><img src="{{ asset('assets/client/images/img/31.png') }}"
-                        alt=""></span>
-                <span class="ts-2"><img src="{{ asset('assets/client/images/img/32.png') }}"
-                        alt=""></span>
-                <span class="ts-3"><img src="{{ asset('assets/client/images/shapes/7.png') }}"
-                        alt=""></span>
+                <span class="ts-1"><img src="{{ asset('assets/client/images/img/31.png') }}" alt=""></span>
+                <span class="ts-2"><img src="{{ asset('assets/client/images/img/32.png') }}" alt=""></span>
+                <span class="ts-3"><img src="{{ asset('assets/client/images/shapes/7.png') }}" alt=""></span>
             </div>
             <div class="common-title-area text-center padding-bottom-50">
                 <h3>testimonial</h3>

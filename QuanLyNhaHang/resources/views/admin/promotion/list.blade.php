@@ -1,35 +1,25 @@
 @extends('layouts.admin')
-
-@section('title', 'Danh sách danh mục')
-
-@section('content')
+@section('title', 'Danh sách khuyến mãi')
 
 @section('content')
+
     <div class="content-body">
-        @if (session('success'))
-            <script>
-                toastr.success("{{ session('success') }}");
-            </script>
-        @endif
         <div class="container">
             <div class="col-xl-12">
                 <div class="card dz-card" id="bootstrap-table1">
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="Preview" role="tabpanel" aria-labelledby="home-tab">
+                            @if (session('success'))
+                            <script>
+                                toastr.success("{{ session('success') }}");
+                            </script>
+                        @endif
                             <div class="card-header flex-wrap border-0">
                                 <div>
-                                    @if (session('success'))
-                                        <script>
-                                            toastr.success("{{ session('success') }}");
-                                        </script>
-                                    @endif
-
-                                    <h2 class="mt-4 card-title">Danh sách danh mục</h2>
-
+                                    <h2 class="mt-4 card-title">Danh sách khuyến mãi</h2>
                                 </div>
                                 <div>
-                                    <a href="{{ route('category.add') }}" class="btn btn-primary mt-2 me-1">Thêm Danh
-                                        mục</a>
+                                    <a href="{{ route('promotion.add') }}" class="btn btn-primary mt-2 me-1">Thêm Khuyến mãi</a>
 
                                 </div>
                             </div>
@@ -38,23 +28,29 @@
                                     <table class="table table-responsive-md">
                                         <thead>
                                             <tr>
-                                                <th style="width:200px;"><strong>Số thứ tự</strong></th>
-                                                <th><strong>Tên danh mục</strong></th>
-                                                <th><strong>Hình ảnh</strong></th>
+                                                <th><strong>Số thứ tự</strong></th>
+                                                <th><strong>Mã khuyến mãi</strong></th>
+                                                <th><strong>Giá khuyến mãi</strong></th>
+                                                <th><strong>Ngày bắt đầu</strong></th>
+                                                <th><strong>Ngày kết thúc</strong></th>
+                                                <th><strong>Mô tả</strong></th>
 
                                                 <th></th>
                                             </tr>
 
                                         </thead>
                                         <tbody>
-                                            @foreach ($categories as $index => $category)
+                                            @foreach ($promotions as $index => $promotion)
                                                 <tr>
 
-                                                    <td><strong>{{ $categories->firstItem() + $index }}</strong></td>
-                                                    <td>{{ $category->name }}</td>
-                                                    <td><img width="200px" height="100px" class="img-fluid"
-                                                            src="{{ asset('storage/images/' . $category->image) }}"
-                                                            alt=""></td>
+                                                    <td><strong>{{ $promotions->firstItem() + $index }}</strong></td>
+                                                    <td>{{ $promotion->code }}</td>
+                                                    <td>{{ number_format($promotion->discount) }} VNĐ</td>
+                                                    <td>{{ \Carbon\Carbon::parse($promotion->start_time)->format('d-m-Y') }}
+                                                    </td>
+                                                    <td>{{ \Carbon\Carbon::parse($promotion->end_time)->format('d-m-Y') }}
+                                                    </td>
+                                                    <td>{{ $promotion->describe }}</td>
 
                                                     <td>
                                                         <div class="dropdown">
@@ -76,38 +72,43 @@
                                                             </button>
                                                             <div class="dropdown-menu">
                                                                 <a class="dropdown-item"
-                                                                    href="{{ route('category.update', $category->id) }}">Chỉnh
-                                                                    sửa</a>
+                                                                    href="{{ route('promotion.update', $promotion->id) }}">Sửa</a>
                                                                 <a class="dropdown-item" data-bs-toggle="modal"
-                                                                    data-bs-target="#deleteModal{{ $category->id }}">Xóa</a>
+                                                                    data-bs-target="#deleteModal{{ $promotion->id }}">Xóa</a>
                                                             </div>
                                                         </div>
                                                     </td>
-                                                    <form id="delete-form-{{ $category->id }}"
-                                                        action="{{ route('category.delete', $category->id) }}"
+                                                    <!-- Form ẩn để gửi DELETE request -->
+                                                    <form id="delete-form-{{ $promotion->id }}"
+                                                        action="{{ route('category.delete', $promotion->id) }}"
                                                         method="POST" style="display: none;">
                                                         @csrf
                                                         @method('DELETE')
                                                     </form>
+
+                                                    {{-- <form action="{{ route('category.processUpdate', ['id' => $category->id]) }}" method="POST">
+                                                    @csrf
+                                                    <!-- Các trường nhập liệu để cập nhật thông tin khuyến mãi -->
+                                                </form> --}}
                                                 </tr>
-                                                <div class="modal fade" id="deleteModal{{ $category->id }}" tabindex="-1"
+                                                <div class="modal fade" id="deleteModal{{ $promotion->id }}" tabindex="-1"
                                                     aria-labelledby="deleteModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
-                                                                <h5 class="modal-title" id="deleteModalLabel">Xóa danh mục
+                                                                <h5 class="modal-title" id="deleteModalLabel">Xóa khuyến mãi
                                                                 </h5>
                                                                 <button type="button" class="btn-close"
                                                                     data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
                                                             <div class="modal-body">
-                                                                Bạn có chắc chắn muốn xóa danh mục này không?
+                                                                Bạn có chắc chắn muốn xóa khuyến mãi này không?
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-secondary"
                                                                     data-bs-dismiss="modal">Hủy</button>
                                                                 <form
-                                                                    action="{{ route('category.delete', $category->id) }}"
+                                                                    action="{{ route('promotion.delete', $promotion->id) }}"
                                                                     method="POST">
                                                                     @csrf
                                                                     @method('DELETE')
@@ -121,7 +122,7 @@
                                             @endforeach
                                         </tbody>
                                     </table>
-                                    {{ $categories->links() }}
+                                    {{ $promotions->links() }}
                                 </div>
                             </div>
                         </div>

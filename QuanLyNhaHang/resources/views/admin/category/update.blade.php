@@ -1,4 +1,5 @@
 @extends('layouts.admin')
+@section('title', 'Chỉnh sửa danh mục')
 
 @section('content')
     <div class="content-body">
@@ -15,7 +16,7 @@
                             <div class="card-body pt-0">
                                 <div class="row">
                                     <div class="col-lg-6">
-                                        <form action="{{ route('category.processUpdate', ['slug' => $category->slug]) }}"
+                                        <form action="{{ route('category.processUpdate', ['id' => $category->id]) }}"
                                             method="POST" enctype="multipart/form-data">
                                             @csrf
                                             <!-- Tên danh mục -->
@@ -23,6 +24,9 @@
                                                 <label for="name" class="form-label">Tên danh mục</label>
                                                 <input type="text" class="form-control" name="name" id="name"
                                                     placeholder="Nhập tên danh mục" value="{{ $category->name }}" />
+                                                    @error('name')
+                                                <span class="text-danger"> {{ $message }} </span>
+                                            @enderror
                                             </div>
 
                                             <!-- Hình ảnh hiện tại -->
@@ -41,6 +45,9 @@
                                         <div class="mb-3">
                                             <label for="image" class="form-label">Chọn hình ảnh mới</label>
                                             <input type="file" class="form-control" name="image" id="image" />
+                                            @error('image')
+                                                <span class="text-danger"> {{ $message }} </span>
+                                            @enderror
                                         </div>
 
                                         <!-- Nút cập nhật -->

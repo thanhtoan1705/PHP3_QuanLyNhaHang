@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\Promotion\PromotionController;
 use App\Http\Controllers\Admin\DishController as AdminDishController;
 use App\Http\Controllers\Admin\TableController;
 use App\Http\Controllers\Admin\StaffController;
@@ -28,7 +29,7 @@ use App\Http\Controllers\Client\Gallery\GalleryController;
 use App\Http\Controllers\Client\Table\TableController as ClientTableController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('chi-tiet-mon-an', [DishController::class, 'dishDetail'])->name('dishDetail');
+Route::get('chi-tiet-mon-an/{id}', [DishController::class, 'dishDetail'])->name('dishDetail');
 Route::get('menu', [DishController::class, 'menu'])->name('menu');
 Route::get('gioi-thieu', [AboutController::class, 'index'])->name('about');
 Route::get('404', [ErrorController::class, 'index']);
@@ -85,7 +86,6 @@ Route::name('table.')->group(function () {
 // Staff
 Route::get('staff/list', [StaffController::class, 'list'])->name('staff.list')->middleware(['auth', 'role:admin']);
 Route::get('staff/add', [StaffController::class, 'add'])->name('staff.add')->middleware(['auth', 'role:admin']);
-
 Route::post('staff/store', [StaffController::class, 'store'])->name('staff.store')->middleware(['auth', 'role:admin']);
 Route::get('staff/edit/{id}', [StaffController::class, 'edit'])->name('staff.edit')->middleware(['auth', 'role:admin']);
 Route::put('staff/update/{id}', [StaffController::class, 'update'])->name('staff.update')->middleware(['auth', 'role:admin']);
@@ -129,12 +129,23 @@ Route::name('category.')->group(function () {
     Route::get('category', [CategoryController::class, 'list'])->name('list')->middleware(['auth', 'role:admin']);
     Route::get('category/add', [CategoryController::class, 'add'])->name('add')->middleware(['auth', 'role:admin']);
     Route::post('category/store', [CategoryController::class, 'store'])->name('store')->middleware(['auth', 'role:admin']);
-    // Route để hiển thị form cập nhật
-    Route::get('/categories/edit/{slug}', [CategoryController::class, 'update'])->name('update')->middleware(['auth', 'role:admin']);
-    Route::post('/categories/update/{slug}', [CategoryController::class, 'processUpdate'])->name('processUpdate')->middleware(['auth', 'role:admin']);
+    Route::get('/categories/edit/{id}', [CategoryController::class, 'update'])->name('update')->middleware(['auth', 'role:admin']);
+    Route::post('/categories/update/{id}', [CategoryController::class, 'processUpdate'])->name('processUpdate')->middleware(['auth', 'role:admin']);
     Route::delete('category/{id}', [CategoryController::class, 'delete'])->name('delete')->middleware(['auth', 'role:admin']);
 })->middleware(['auth', 'role:admin']);
 
+
+
+
+//Promotion
+Route::name('promotion.')->group(function(){
+    Route::get('promotion/list', [PromotionController::class, 'list'])->name('list');
+    Route::get('promotion/add', [PromotionController::class, 'add'])->name('add');
+    Route::post('promotion/store', [PromotionController::class, 'store'])->name('store');
+    Route::get('/promotion/edit/{id}', [PromotionController::class, 'update'])->name('update');
+    Route::post('/promotion/update/{id}', [PromotionController::class, 'processUpdate'])->name('processUpdate');
+    Route::delete('promotion/{id}', [PromotionController::class, 'delete'])->name('delete');
+});
 
 
 //comment
