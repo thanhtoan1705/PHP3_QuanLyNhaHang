@@ -71,6 +71,12 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function hasRole($role)
+    {
+        return $this->role === $role;
+    }
+
     public static function getLatestPaginated($perPage = 5)
     {
         return self::latest('id')->where('active', 'active')->paginate($perPage);
