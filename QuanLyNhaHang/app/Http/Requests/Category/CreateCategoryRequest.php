@@ -22,7 +22,7 @@ class CreateCategoryRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|min:2|max:255|string|regex:/^[a-zA-Z]+$/',
+            'name' => 'required|min:2|max:255|string|unique:categories,name',
             'image' =>'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'slug' => 'nullable'
         ];
@@ -39,7 +39,8 @@ class CreateCategoryRequest extends FormRequest
             'name.required' => 'Tên không được để trống.',
             'name.min' => 'Tên phải có ít nhất 2 ký tự.',
             'name.max' => 'Tên không được quá 255 ký tự.',
-            'name.regex' => 'Tên chỉ được phép chứa các ký tự chữ cái.',
+            'name.unique' => 'Danh mục đã tồn tại.',
+            // 'name.regex' => 'Tên chỉ được phép chứa các ký tự chữ cái.',
             //image
             'image.required' => 'Ảnh không được để trống.',
             'image.image' => 'File phải là định dạng hình ảnh.',

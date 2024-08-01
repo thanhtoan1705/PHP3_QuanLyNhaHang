@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\Promotion\PromotionController;
 use App\Http\Controllers\Admin\DishController as AdminDishController;
 use App\Http\Controllers\Admin\TableController;
 use App\Http\Controllers\Admin\StaffController;
@@ -29,7 +30,7 @@ use App\Http\Controllers\Client\Gallery\GalleryController;
 use App\Http\Controllers\Client\Table\TableController as ClientTableController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('chi-tiet-mon-an', [DishController::class, 'dishDetail'])->name('dishDetail');
+Route::get('chi-tiet-mon-an/{id}', [DishController::class, 'dishDetail'])->name('dishDetail');
 Route::get('menu', [DishController::class, 'menu'])->name('menu');
 Route::get('gio-hang', [CartController::class, 'index'])->name('cart');
 Route::get('thanh-toan', [CheckoutController::class, 'index'])->name('checkout');
@@ -96,17 +97,26 @@ Route::get('admin/login', [AuthUserController::class, 'login'])->name('admin.log
 
 
 
-//Category
 Route::name('category.')->group(function(){
     Route::get('category', [CategoryController::class, 'list'])->name('list');
     Route::get('category/add', [CategoryController::class, 'add'])->name('add');
     Route::post('category/store', [CategoryController::class, 'store'])->name('store');
-    // Route để hiển thị form cập nhật
-    Route::get('/categories/edit/{slug}', [CategoryController::class, 'update'])->name('update');
-    Route::post('/categories/update/{slug}', [CategoryController::class, 'processUpdate'])->name('processUpdate');
+    Route::get('/categories/edit/{id}', [CategoryController::class, 'update'])->name('update');
+    Route::post('/categories/update/{id}', [CategoryController::class, 'processUpdate'])->name('processUpdate');
     Route::delete('category/{id}', [CategoryController::class, 'delete'])->name('delete');
 });
 
+
+
+//Promotion
+Route::name('promotion.')->group(function(){
+    Route::get('promotion/list', [PromotionController::class, 'list'])->name('list');
+    Route::get('promotion/add', [PromotionController::class, 'add'])->name('add');
+    Route::post('promotion/store', [PromotionController::class, 'store'])->name('store');
+    Route::get('/promotion/edit/{id}', [PromotionController::class, 'update'])->name('update');
+    Route::post('/promotion/update/{id}', [PromotionController::class, 'processUpdate'])->name('processUpdate');
+    Route::delete('promotion/{id}', [PromotionController::class, 'delete'])->name('delete');
+});
 
 
 //comment

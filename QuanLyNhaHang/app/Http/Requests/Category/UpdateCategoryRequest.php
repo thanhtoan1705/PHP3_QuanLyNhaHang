@@ -21,10 +21,32 @@ class UpdateCategoryRequest extends FormRequest
      */
     public function rules(): array
     {
+        $id = $this->route('id');
         return [
-            'name' => 'required',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'name' => 'required|min:2|max:255|string|unique:categories,name,'. $id,
+            'image' =>'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'slug' => 'nullable'
+        ];
+    }
+
+    /**
+     * Custom messages for validation errors.
+     *
+     * @return array
+     */
+    public function messages(): array
+    {
+        return [
+            'name.required' => 'Tên không được để trống.',
+            'name.min' => 'Tên phải có ít nhất 2 ký tự.',
+            'name.max' => 'Tên không được quá 255 ký tự.',
+            'name.unique' => 'Danh mục đã tồn tại.',
+            // 'name.regex' => 'Tên chỉ được phép chứa các ký tự chữ cái.',
+            //image
+            'image.required' => 'Ảnh không được để trống.',
+            'image.image' => 'File phải là định dạng hình ảnh.',
+            'image.mimes' => 'Ảnh phải có định dạng jpeg, png, jpg hoặc gif.',
+            'image.max' => 'Kích thước ảnh không được vượt quá 2MB.',
         ];
     }
 }

@@ -1,4 +1,6 @@
 @extends('layouts.admin')
+@section('title', 'Thêm danh mục')
+
 @section('content')
     <div class="content-body">
         <div class="container">
@@ -20,7 +22,7 @@
                                         <div class="mb-3">
                                             <label for="" class="form-label">Tên danh mục</label>
                                             <input type="text" class="form-control" name="name" id="name" 
-                                                placeholder="Nhập tên danh mục" />
+                                                placeholder="Nhập tên danh mục" value="{{old('name')}}" />
                                                 @error('name')
                                                 <span class="text-danger"> {{ $message }} </span>
                                             @enderror
