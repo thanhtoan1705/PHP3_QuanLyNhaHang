@@ -107,13 +107,13 @@
                                                                 <div class="dropdown-menu dropdown-menu-right"
                                                                     style="">
                                                                     <a class="dropdown-item"
-                                                                        href="{{ route('user.edit', $item->id) }}">Edit</a>
+                                                                        href="{{ route('user.edit', $item->id) }}">Chỉnh sửa</a>
                                                                     <form action="{{ route('user.destroy', $item->id) }}"
                                                                         method="POST" style="display: inline;">
                                                                         @csrf
                                                                         @method('DELETE')
                                                                         <button type="submit" class="dropdown-item"
-                                                                            onclick="return confirm('Are you sure you want to delete this user?')">Delete</button>
+                                                                            onclick="return confirm('Are you sure you want to delete this user?')">Xóa</button>
                                                                     </form>
                                                                 </div>
                                                             </div>

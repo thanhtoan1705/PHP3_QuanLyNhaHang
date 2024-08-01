@@ -96,7 +96,7 @@
                                                                 <div class="dropdown-menu dropdown-menu-right"
                                                                     style="">
                                                                     <a class="dropdown-item"
-                                                                        href="{{ route('staff.edit', $item->id) }}">Sửa</a>
+                                                                        href="{{ route('staff.edit', $item->id) }}">Chỉnh sửa</a>
                                                                     <a class="dropdown-item"
                                                                         href="{{ route('staff.delete', $item->id) }}"
                                                                         onclick="return confirm('Bạn có chắc muốn xóa')">Xóa</a>

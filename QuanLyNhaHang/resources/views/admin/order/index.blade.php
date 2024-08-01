@@ -100,7 +100,7 @@
                                                             <div class="dropdown-menu dropdown-menu-right" style="">
                                                                 <a class="dropdown-item"
                                                                     href="{{ route('order.detail') }}">Xem chi tiết</a>
-                                                                <a class="dropdown-item" href="">Sửa</a>
+                                                                <a class="dropdown-item" href="">Chỉnh sửa</a>
                                                                 <a class="dropdown-item" href="">Xóa</a>
                                                             </div>
                                                         </div>

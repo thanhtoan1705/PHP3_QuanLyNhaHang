@@ -14,7 +14,7 @@ class RegistrationTest extends TestCase
     public function test_registration_screen_can_be_rendered(): void
     {
         if (! Features::enabled(Features::registration())) {
-            $this->markTestSkipped('Registration support is not enabled.');
+            $this->markTestSkipped('Hỗ trợ đăng ký không được kích hoạt.');
         }
 
         $response = $this->get('/register');
@@ -25,7 +25,7 @@ class RegistrationTest extends TestCase
     public function test_registration_screen_cannot_be_rendered_if_support_is_disabled(): void
     {
         if (Features::enabled(Features::registration())) {
-            $this->markTestSkipped('Registration support is enabled.');
+            $this->markTestSkipped('Hỗ trợ đăng ký được kích hoạt.');
         }
 
         $response = $this->get('/register');
@@ -36,7 +36,7 @@ class RegistrationTest extends TestCase
     public function test_new_users_can_register(): void
     {
         if (! Features::enabled(Features::registration())) {
-            $this->markTestSkipped('Registration support is not enabled.');
+            $this->markTestSkipped('Hỗ trợ đăng ký không được kích hoạt.');
         }
 
         $response = $this->post('/register', [
@@ -48,6 +48,6 @@ class RegistrationTest extends TestCase
         ]);
 
         $this->assertAuthenticated();
-        $response->assertRedirect(route('dashboard', absolute: false));
+        $response->assertRedirect(route('home', absolute: false));
     }
 }

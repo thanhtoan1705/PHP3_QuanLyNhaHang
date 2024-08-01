@@ -64,13 +64,13 @@
                                                             </div>
                                                             <div class="dropdown-menu dropdown-menu-right" style="">
                                                                 <a class="dropdown-item"
-                                                                    href="{{ route('post.edit', $post->id) }}">Edit</a>
+                                                                    href="{{ route('post.edit', $post->id) }}">Chính sửa</a>
                                                                 <form action="{{ route('post.destroy', $post->id) }}"
                                                                     method="POST" style="display: inline;">
                                                                     @csrf
                                                                     @method('DELETE')
                                                                     <button type="submit" class="dropdown-item"
-                                                                        onclick="return confirm('Bạn có chắc chắn muốn xóa người dùng này ?')">Delete</button>
+                                                                        onclick="return confirm('Bạn có chắc chắn muốn xóa người dùng này ?')">Xóa</button>
                                                                 </form>
                                                             </div>
                                                         </div>
