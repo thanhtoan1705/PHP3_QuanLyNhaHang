@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\Auth\UserController as AuthUserController;
 use App\Http\Controllers\Admin\Customer\CustomerController;
 use App\Http\Controllers\Admin\Post\PostController;
 use App\Http\Controllers\Admin\Table\TableController as TableTableController;
+use App\Http\Controllers\Admin\Table\TableBookController;
 use App\Http\Controllers\Admin\User\UserController;
 use App\Http\Controllers\Client\HomeController;
 use App\Http\Controllers\Client\ErrorController;
@@ -52,8 +53,8 @@ Route::get('bai-viet', [BlogController::class, 'index'])->name('blog');
 Route::get('bai-viet-chi-tiet', [BlogDetailController::class, 'index'])->name('blog.detail');
 Route::get('tai-khoan', [AccountController::class, 'index'])->name('account');
 Route::get('lien-he', [ContactController::class, 'index'])->name('contact');
-Route::get('dat-ban', [ClientTableController::class, 'index'])->name('table');
-
+Route::get('/dat-ban', [ClientTableController::class, 'index'])->name('tableClient');
+Route::post('/dat-ban', [ClientTableController::class, 'store'])->name('tableClient.store');
 
 
 
@@ -71,10 +72,15 @@ Route::name('dish.')->group(function () {
 })->middleware('auth');
 
 
-
-Route::get('table-book', [TableController::class, 'list'])->name('table-book.list');
-Route::get('table-book/add', [TableController::class, 'add'])->name('table-book.add');
-Route::get('table-book/edit', [TableController::class, 'edit'])->name('table-book.edit');
+Route::name('table-book.')->group(function () {
+    Route::get('table-book', [TableBookController::class, 'index'])->name('list');
+    Route::get('table-book/add', [TableBookController::class, 'add'])->name('add');
+    Route::post('table-book/store', [TableBookController::class, 'store'])->name('store');
+    Route::get('table-book/edit/{id}', [TableBookController::class, 'edit'])->name('edit');
+    Route::put('table-book/update/{id}', [TableBookController::class, 'update'])->name('update');
+    Route::delete('table-book/destroy/{id}', [TableBookController::class, 'destroy'])->name('destroy');
+    Route::get('table-book/table-details/{id}', [TableBookController::class, 'getTableDetails'])->name('table-details');
+})->middleware('auth');
 
 
 Route::name('table.')->group(function () {

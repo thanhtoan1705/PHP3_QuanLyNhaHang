@@ -12,120 +12,107 @@
                                         <div>
                                             <h3 class="card-title">Danh sách bàn ăn</h3>
                                         </div>
+                                        <div>
+                                            <a href="{{ route('table-book.add') }}" class="btn btn-primary me-1">Thêm đặt bàn</a>
+                                        </div>
                                     </div>
                                     <table class="table table-responsive-md">
                                         <thead>
                                             <tr>
                                                 <th style="width:80px;"><strong>#</strong></th>
                                                 <th><strong>Người đặt bàn</strong></th>
-                                                <th><strong>Số lượng</strong></th>
-                                                <th><strong>Chỗ ngồi</strong></th>
+                                                <th><strong>Bàn số</strong></th>
+                                                <th><strong>Số người</strong></th>
                                                 <th><strong>Món ăn</strong></th>
+                                                <th><strong>Giờ và ngày đặt</strong></th>
                                                 <th><strong>Tổng tiền</strong></th>
                                                 <th><strong>Trạng thái</strong></th>
                                                 <th></th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td><strong>01</strong></td>
-                                                <td>Đoàn Tào</td>
-                                                <td>5</td>
-                                                <td>Bàn 4</td>
-                                                <td>Lẫu thái kim chi</td>
-                                                <td>1 tỷ</td>
-                                                <td><span class="badge light badge-success">Đã thanh toán</span></td>
-                                                <td>
-                                                    <div class="dropdown">
-                                                        <button type="button" class="btn btn-success light sharp"
-                                                            data-bs-toggle="dropdown">
-                                                            <svg width="20px" height="20px" viewBox="0 0 24 24"
-                                                                version="1.1">
-                                                                <g stroke="none" stroke-width="1" fill="none"
-                                                                    fill-rule="evenodd">
-                                                                    <rect x="0" y="0" width="24" height="24" />
-                                                                    <circle fill="#000000" cx="5" cy="12"
-                                                                        r="2" />
-                                                                    <circle fill="#000000" cx="12" cy="12"
-                                                                        r="2" />
-                                                                    <circle fill="#000000" cx="19" cy="12"
-                                                                        r="2" />
-                                                                </g>
-                                                            </svg>
-                                                        </button>
-                                                        <div class="dropdown-menu">
-                                                            <a class="dropdown-item" href="#">Chỉnh sửa</a>
-                                                            <a class="dropdown-item" href="#">xóa</a>
+                                            @foreach ($orders as $order)
+                                                <tr>
+                                                    <td><strong>{{ $loop->iteration }}</strong></td>
+                                                    <td>{{ $order->name }}</td>
+                                                    <td>Bàn {{ $order->table->number }}</td>
+                                                    <td>{{ $order->table->seats }} người</td>
+                                                    <td>
+                                                        @foreach ($order->dishes as $dish)
+                                                            {{ $dish->name }} ({{ $dish->pivot->quantity }}),
+                                                        @endforeach
+                                                    </td>
+                                                    <td>{{ $order->order_time }} | {{ $order->order_date }}</td>
+                                                    <td>{{ number_format($order->calculateTotalPrice(), 0, ',', '.') }} VND
+                                                    </td>
+                                                    <td>
+                                                        <span
+                                                            class="badge {{ $order->status == 'Đã thanh toán' ? 'badge-success' : 'badge-danger' }}">
+                                                            {{ $order->status == 'Đã thanh toán' ? 'Đã thanh toán' : 'Chưa thanh toán' }}
+                                                        </span>
+                                                    </td>
+                                                    <td>
+                                                        <div class="dropdown">
+                                                            <button type="button" class="btn btn-success light sharp"
+                                                                data-bs-toggle="dropdown">
+                                                                <svg width="20px" height="20px" viewBox="0 0 24 24"
+                                                                    version="1.1">
+                                                                    <g stroke="none" stroke-width="1" fill="none"
+                                                                        fill-rule="evenodd">
+                                                                        <rect x="0" y="0" width="24" height="24" />
+                                                                        <circle fill="#000000" cx="5" cy="12"
+                                                                            r="2" />
+                                                                        <circle fill="#000000" cx="12" cy="12"
+                                                                            r="2" />
+                                                                        <circle fill="#000000" cx="19" cy="12"
+                                                                            r="2" />
+                                                                    </g>
+                                                                </svg>
+                                                            </button>
+                                                            <div class="dropdown-menu">
+                                                                <a class="dropdown-item"
+                                                                    href="{{ route('table-book.edit', $order->id) }}">Chỉnh
+                                                                    sửa</a>
+                                                                <a class="dropdown-item" data-bs-toggle="modal"
+                                                                    data-bs-target="#deleteModal{{ $order->id }}">Xóa</a>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <!-- Form ẩn để gửi DELETE request -->
+                                                    <form id="delete-form-{{ $order->id }}"
+                                                        action="{{ route('table-book.destroy', $order->id) }}"
+                                                        method="POST" style="display: none;">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                    </form>
+                                                </tr>
+                                            @endforeach
+                                            <div class="modal fade" id="deleteModal{{ $order->id }}" tabindex="-1"
+                                                aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="deleteModalLabel">Xóa danh mục
+                                                            </h5>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                                aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            Bạn có chắc chắn muốn xóa danh mục này không?
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary"
+                                                                data-bs-dismiss="modal">Hủy</button>
+                                                            <form action="{{ route('table-book.destroy', $order->id) }}"
+                                                                method="POST">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <button type="submit" class="btn btn-danger">Xóa</button>
+                                                            </form>
                                                         </div>
                                                     </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><strong>02</strong></td>
-                                                <td>Đoàn Tào</td>
-                                                <td>5</td>
-                                                <td>Bàn 4</td>
-                                                <td>Lẫu thái kim chi</td>
-                                                <td>1 tỷ</td>
-                                                <td><span class="badge light badge-danger">Chưa thanh toán</span></td>
-                                                <td>
-                                                    <div class="dropdown">
-                                                        <button type="button" class="btn btn-danger light sharp"
-                                                            data-bs-toggle="dropdown">
-                                                            <svg width="20px" height="20px" viewBox="0 0 24 24"
-                                                                version="1.1">
-                                                                <g stroke="none" stroke-width="1" fill="none"
-                                                                    fill-rule="evenodd">
-                                                                    <rect x="0" y="0" width="24" height="24" />
-                                                                    <circle fill="#000000" cx="5" cy="12"
-                                                                        r="2" />
-                                                                    <circle fill="#000000" cx="12" cy="12"
-                                                                        r="2" />
-                                                                    <circle fill="#000000" cx="19" cy="12"
-                                                                        r="2" />
-                                                                </g>
-                                                            </svg>
-                                                        </button>
-                                                        <div class="dropdown-menu">
-                                                            <a class="dropdown-item" href="#">Chỉnh sửa</a>
-                                                            <a class="dropdown-item" href="#">Xóa</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><strong>03</strong></td>
-                                                <td>Đoàn Tào</td>
-                                                <td>5</td>
-                                                <td>Bàn 4</td>
-                                                <td>Lẫu thái kim chi</td>
-                                                <td>1 tỷ</td>
-                                                <td><span class="badge light badge-warning">Đã thanh toán</span></td>
-                                                <td>
-                                                    <div class="dropdown">
-                                                        <button type="button" class="btn btn-warning light sharp"
-                                                            data-bs-toggle="dropdown">
-                                                            <svg width="20px" height="20px" viewBox="0 0 24 24"
-                                                                version="1.1">
-                                                                <g stroke="none" stroke-width="1" fill="none"
-                                                                    fill-rule="evenodd">
-                                                                    <rect x="0" y="0" width="24" height="24" />
-                                                                    <circle fill="#000000" cx="5" cy="12"
-                                                                        r="2" />
-                                                                    <circle fill="#000000" cx="12" cy="12"
-                                                                        r="2" />
-                                                                    <circle fill="#000000" cx="19" cy="12"
-                                                                        r="2" />
-                                                                </g>
-                                                            </svg>
-                                                        </button>
-                                                        <div class="dropdown-menu">
-                                                            <a class="dropdown-item" href="#">Chỉnh sửa</a>
-                                                            <a class="dropdown-item" href="#">Xóa</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                                </div>
+                                            </div>
                                         </tbody>
                                     </table>
                                 </div>
