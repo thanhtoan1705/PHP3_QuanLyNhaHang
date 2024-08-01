@@ -21,7 +21,7 @@
                                     <h2 class="mt-4 card-title">Danh sách bàn ăn</h2>
                                 </div>
                                 <div>
-                                    <a href="{{ route('user.create') }}" class="btn btn-primary me-1">Thêm Người Dùng</a>
+                                    <a href="{{ route('table.add') }}" class="btn btn-primary me-1">Thêm Bàn Ăn</a>
                                 </div>
                             </div>
                             <div class="card-body pt-0">

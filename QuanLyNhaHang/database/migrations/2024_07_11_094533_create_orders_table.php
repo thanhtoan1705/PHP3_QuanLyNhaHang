@@ -10,11 +10,13 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->foreignId('dish_id')->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->nullable()->constrained()->onDelete('cascade');
             $table->foreignId('table_id')->constrained()->onDelete('cascade');
-            $table->bigInteger('total_price');
+            $table->string('name');
+            $table->text('note')->nullable();
             $table->string('status', 20);
+            $table->date('order_date')->nullable();
+            $table->time('order_time')->nullable();
             $table->timestamps();
         });
     }
