@@ -57,6 +57,7 @@
                     </div>
                     <div class="col-lg-4 col-md-9 col-8">
                         <div class="customer-area">
+                            <a href="{{ route('account') }}" class="text-white">{{ $username }}</a>
                             <span>
                                 <a href="{{ route('account') }}"><i class="fas fa-user"></i></a>
                             </span>
@@ -68,7 +69,8 @@
                                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                     Đăng Xuất
                                 </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                    style="display: none;">
                                     @csrf
                                 </form>
                             @else

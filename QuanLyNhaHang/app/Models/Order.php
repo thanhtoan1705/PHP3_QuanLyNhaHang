@@ -107,4 +107,27 @@ class Order extends Model
             $order->dishes()->detach();
         });
     }
+
+    public static function createNewBookTableClient($validatedData)
+    {
+        $order = self::create([
+            'name' => $validatedData['name'],
+            'table_id' => $validatedData['table_id'],
+            // 'note' => $validatedData['note'],
+            'order_date' => $validatedData['order_date'],
+            'order_time' => $validatedData['order_time'],
+        ]);
+
+        if (isset($validatedData['dish_id'])) {
+            $dishIds = $validatedData['dish_id'];
+            $quantities = $validatedData['quantities'] ?? [];
+            foreach ($dishIds as $dishId) {
+                if (isset($quantities[$dishId]) && $quantities[$dishId] > 0) {
+                    $order->dishes()->attach($dishId, ['quantity' => $quantities[$dishId]]);
+                }
+            }
+        }
+
+        return $order;
+    }
 }

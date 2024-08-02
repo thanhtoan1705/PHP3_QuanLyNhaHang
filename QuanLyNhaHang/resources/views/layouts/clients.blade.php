@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{{ asset('assets/client/css/slick.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/client/css/jquery-ui.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/client/css/style.css') }}" />
+    @stack('css')
 </head>
 
 <body>
@@ -50,6 +51,7 @@
     <button class="scrollup"><i class="fas fa-angle-up"></i></button>
 
     <!-- Javascript Files -->
+    @stack('script')
     <script src="{{ asset('assets/client/js/vendor/jquery-2.2.4.min.js') }}"></script>
     <script src="{{ asset('assets/client/js/vendor/bootstrap.min.js') }}"></script>
     <script src="{{ asset('assets/client/js/vendor/jquery.meanmenu.min.js') }}"></script>

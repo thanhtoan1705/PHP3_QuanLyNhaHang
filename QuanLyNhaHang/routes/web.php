@@ -21,6 +21,7 @@ use App\Http\Controllers\Client\Cart\CartController;
 use App\Http\Controllers\Client\Checkout\CheckoutController;
 use App\Http\Controllers\Client\About\AboutController;
 use App\Http\Controllers\Client\Auth\AccountController;
+use App\Http\Controllers\Client\Auth\LoginController;
 use App\Http\Controllers\Client\Dish\DishController;
 use App\Http\Controllers\Client\Blog\BlogController;
 use App\Http\Controllers\Client\Blog\BlogDetailController;
@@ -47,6 +48,9 @@ Route::get('thanh-toan', [CheckoutController::class, 'index'])->name('checkout')
 Route::get('dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified', 'role:admin']);
 // login
 Route::get('admin/login', [AuthUserController::class, 'login'])->name('admin.login');
+Route::get('auth/google', [LoginController::class, 'redirectToGoogle'])->name('auth.google');
+Route::get('auth/google/callback', [LoginController::class, 'handleGoogleCallback'])->name('auth.google.callback');
+
 
 
 Route::name('dish.')->group(function () {

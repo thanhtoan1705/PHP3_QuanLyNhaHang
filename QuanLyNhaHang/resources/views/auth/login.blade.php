@@ -92,7 +92,7 @@
                             <form method="POST" action="{{ route('login') }}">
                                 @csrf
                                 <div class="google-button">
-                                    <a href="#" class="btn"><span><i class="fab fa-google"></i></span> google</a>
+                                    <a href="{{ route('auth.google') }}" class="btn"><span><i class="fab fa-google"></i></span> google</a>
                                 </div>
                                 <div>
                                     <x-label for="email" value="{{ __('Email') }}" />

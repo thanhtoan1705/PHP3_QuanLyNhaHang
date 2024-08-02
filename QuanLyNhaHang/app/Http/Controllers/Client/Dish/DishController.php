@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Client\Dish;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category; 
+use App\Models\Category;
 use Illuminate\Support\Facades\DB;
 use App\Models\Dish;
 
@@ -13,7 +13,7 @@ class DishController extends Controller
     public function dishDetail($id)
     {
         $dishDetail = Dish::findOrFail($id);
-        
+
         $categoryId = $dishDetail->category_id;
         $category = Category::find($categoryId);
 

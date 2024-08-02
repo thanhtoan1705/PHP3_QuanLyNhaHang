@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Client\Table;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\TableBook\CreateTableBookRequest;
+use App\Http\Requests\TableBook\CreateTableBookClientRequest;
 use Illuminate\Http\Request;
 use App\Models\Dish;
 use App\Models\Order;
@@ -15,13 +15,14 @@ class TableController extends Controller
     {
         $dishes = Dish::all();
         $tables = Table::all();
-        return view('clients.table.index', compact('dishes', 'tables'));
+        $bookedTableIds = Order::pluck('table_id')->toArray(); // Fetch booked table IDs
+        return view('clients.table.index', compact('dishes', 'tables', 'bookedTableIds'));
     }
 
-    public function store(CreateTableBookRequest $request)
+    public function store(CreateTableBookClientRequest $request)
     {
-        Order::createNewBookTable($request->validated());
-
-        return redirect()->route('table')->with('success', 'Bàn của bạn đã được đặt thành công.');
+        Order::createNewBookTableClient($request->validated());
+        flash()->success('Đặt bàn thành công.');
+        return redirect()->route('tableClient');
     }
 }
