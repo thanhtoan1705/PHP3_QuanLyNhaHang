@@ -28,16 +28,33 @@ use App\Http\Controllers\Client\Blog\BlogDetailController;
 use App\Http\Controllers\Client\Contact\ContactController;
 use App\Http\Controllers\Client\Gallery\GalleryController;
 use App\Http\Controllers\Client\Table\TableController as ClientTableController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Http\Request;
 
-// Route::middleware([
-//     'auth:sanctum',
-//     config('jetstream.auth_session'),
-//     'verified',
-// ])->group(function () {
-//     Route::get('/dashboard', function () {
-//         return view('dashboard');
-//     })->middleware(['auth', 'verified'])->name('dashboard');
-// });
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->middleware(['auth', 'verified'])->name('dashboard');
+});
+
+// Email Verification Routes
+Route::get('email/verify', function () {
+    return view('auth.verify-email');
+})->middleware('auth')->name('verification.notice');
+
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+    return redirect('/dashboard');
+})->middleware(['auth', 'signed'])->name('verification.verify');
+
+Route::post('/email/verification-notification', function (Request $request) {
+    $request->user()->sendEmailVerificationNotification();
+    return back()->with('message', 'Verification link sent!');
+})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('chi-tiet-mon-an', [DishController::class, 'dishDetail'])->name('dishDetail');
@@ -49,7 +66,8 @@ Route::get('404', [ErrorController::class, 'index']);
 // Route::get('dang-ky', [RegisterController::class, 'index'])->name('register');
 // Route::get('dang-nhap', [AuthLoginController::class, 'index'])->name('login');
 Route::get('bai-viet', [BlogController::class, 'index'])->name('blog');
-Route::get('bai-viet-chi-tiet', [BlogDetailController::class, 'index'])->name('blog.detail');
+Route::get('blog', [BlogController::class, 'components'])->name('blog.show');
+Route::get('bai-viet-chi-tiet/{id}', [BlogDetailController::class, 'show'])->name('blog.detail');
 Route::get('tai-khoan', [AccountController::class, 'index'])->name('account');
 Route::get('lien-he', [ContactController::class, 'index'])->name('contact');
 Route::get('dat-ban', [ClientTableController::class, 'index'])->name('table');
