@@ -24,7 +24,16 @@ class CreatePromotionRequest extends FormRequest
         return [
             'code' => 'required|min:4|max:255|string|unique:promotions,code',
             'discount' =>'required|numeric|min:0',
-            'start_time' => 'required|date|date_format:Y-m-d',
+            'number_use' =>'required|numeric|min:0',
+            'start_time' =>[ 
+                'required','date','date_format:Y-m-d',
+                function($attribute,$value,$fail){
+                    // Kiểm tra xem end_time có trước ngày hiện tại không
+              if (strtotime($value) < strtotime(date('Y-m-d'))) {
+                  $fail('Ngày bắt đầu không được trước ngày hiện tại.');
+              }
+          }
+        ],
             'end_time' => [
                 'required',
                 'date',
@@ -37,6 +46,7 @@ class CreatePromotionRequest extends FormRequest
                 }
             }
             ],
+            'status' =>'required|string',
             'describe' =>'required|max:255|min:10',
 
         ];
@@ -57,9 +67,12 @@ class CreatePromotionRequest extends FormRequest
             'code.unique' => 'Mã đã tồn tại.',
             //discount
             'discount.required' => 'Giá giảm không được để trống.',
-            'discount.max' => 'Giá giảm không được quá 255 ký tự.',
             'discount.numeric' => 'Giá giảm phải là số.',
             'discount.min' => 'Giá giảm không được là số âm.',
+            //number_use
+            'number_use.required' => 'Số lần không được để trống.',
+            'number_use.numeric' => 'Số lần phải là số.',
+            'number_use.min' => 'Số lần không được là số âm.',
             //start_time
             'start_time.required' => 'Ngày bắt đầu là bắt buộc.',
             'start_time.date' => 'Ngày bắt đầu không hợp lệ.',
@@ -73,8 +86,9 @@ class CreatePromotionRequest extends FormRequest
             'describe.required' => 'Mô tả không được để trống.',
             'describe.max' => 'Mô tả không được quá 255 ký tự.',
             'describe.min' => 'Mô tả không được ít hơn 2 ký tự.',
-
-
+            //status
+            'status.required' => 'trạng thái không được để trống.',
+            'status.string' => 'trạng thái phải là chuỗi.',
         ];
 
     }

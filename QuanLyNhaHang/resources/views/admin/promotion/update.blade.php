@@ -47,10 +47,35 @@
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="mb-3">
+                                                <label for="number_use" class="form-label">Số lần sử dụng</label>
+                                                <input type="text" class="form-control" name="number_use" id="number_use"
+                                                    value="{{ old('number_use',$promotion->number_use) }}" />
+                                                <!-- Hiển thị lỗi cho trường number_use -->
+                                                @error('number_use')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="mb-3">
+                                                <label for="status" class="form-label">Trạng thái</label>
+                                                <select class="default-select form-control wide" name="status" id="status">
+                                                    <option value="active" {{ $promotion->status == 'active' ? 'selected' : '' }}>Hoạt động
+                                                    </option>
+                                                    <option value="inactive" {{ $promotion->status == 'inactive' ? 'selected' : '' }}>Không hoạt động
+                                                    </option>
+                                                </select>
+                                                <!-- Hiển thị lỗi cho trường status -->
+                                                @error('status')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="mb-3">
                                                 <label for="start_time" class="form-label">Ngày bắt đầu hiện tại</label>
                                                 <input disabled type="text" class="form-control" name="start_time"
                                                     id="start_time" value="{{ $promotion->start_time }}" />
-                                                <!-- Hiển thị lỗi cho trường start_time -->
 
                                             </div>
                                         </div>
@@ -59,7 +84,6 @@
                                                 <label for="end_time" class="form-label">Ngày kết thúc hiện tại</label>
                                                 <input disabled type="text" class="form-control disabled" name="end_time"
                                                     id="end_time" value="{{ $promotion->end_time }}" />
-                                                <!-- Hiển thị lỗi cho trường end_time -->
 
                                             </div>
                                         </div>

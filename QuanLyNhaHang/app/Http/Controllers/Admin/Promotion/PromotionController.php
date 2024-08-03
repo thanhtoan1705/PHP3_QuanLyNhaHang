@@ -47,9 +47,12 @@ class PromotionController extends Controller
 
         $promotion->code = $validated['code'];
         $promotion->discount = $validated['discount'];
+        $promotion->number_use = $validated['number_use'];
         $promotion->start_time = $validated['start_time'];
         $promotion->end_time = $validated['end_time'];
+        $promotion->status = $validated['number_use']<= 0 ? 'inactive' : $validated['status'];
         $promotion->describe = $validated['describe'];
+        
         $promotion->save();
 
         flash()->success('Khuyến mãi đã được cập nhật thành công.');
