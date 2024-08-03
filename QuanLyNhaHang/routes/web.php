@@ -32,30 +32,30 @@ use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->middleware(['auth', 'verified'])->name('dashboard');
-});
+// Route::middleware([
+//     'auth:sanctum',
+//     config('jetstream.auth_session'),
+//     'verified',
+// ])->group(function () {
+//     Route::get('/dashboard', function () {
+//         return view('dashboard');
+//     })->middleware(['auth', 'verified'])->name('dashboard');
+// });
 
-// Email Verification Routes
-Route::get('email/verify', function () {
-    return view('auth.verify-email');
-})->middleware('auth')->name('verification.notice');
+// // Email Verification Routes
+// Route::get('email/verify', function () {
+//     return view('auth.verify-email');
+// })->middleware('auth')->name('verification.notice');
 
-Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
-    $request->fulfill();
-    return redirect('/dashboard');
-})->middleware(['auth', 'signed'])->name('verification.verify');
+// Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+//     $request->fulfill();
+//     return redirect('/dashboard');
+// })->middleware(['auth', 'signed'])->name('verification.verify');
 
-Route::post('/email/verification-notification', function (Request $request) {
-    $request->user()->sendEmailVerificationNotification();
-    return back()->with('message', 'Verification link sent!');
-})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+// Route::post('/email/verification-notification', function (Request $request) {
+//     $request->user()->sendEmailVerificationNotification();
+//     return back()->with('message', 'Verification link sent!');
+// })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('chi-tiet-mon-an/{id}', [DishController::class, 'dishDetail'])->name('dishDetail');
@@ -75,7 +75,7 @@ Route::get('thanh-toan', [CheckoutController::class, 'index'])->name('checkout')
 
 
 
-Route::get('dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified', 'role:admin']);
+Route::get('dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'role:admin']);
 // login
 Route::get('admin/login', [AuthUserController::class, 'login'])->name('admin.login');
 Route::get('auth/google', [LoginController::class, 'redirectToGoogle'])->name('auth.google');

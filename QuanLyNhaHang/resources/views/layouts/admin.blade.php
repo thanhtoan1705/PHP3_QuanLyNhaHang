@@ -22,21 +22,9 @@
     <link rel="shortcut icon" type="image/png" href="images/favicon.png">
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <link href="{{ asset('assets/admin/vendor/bootstrap-select/dist/css/bootstrap-select.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/admin/vendor/swiper/css/swiper-bundle.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/admin/vendor/datatables/css/jquery.dataTables.min.css') }}" rel="stylesheet">
 
     <!-- Add Toastr CSS in the <head> section -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
-
-    <!-- Form step -->
-    <link href="{{ asset('assets/admin/vendor/jquery-smartwizard/dist/css/smart_wizard.min.css') }}" rel="stylesheet">
-
-    <link rel="stylesheet" href="{{ asset('assets/admin/vendor/swiper/css/swiper-bundle.min.css') }}">
-    <link rel="stylesheet"
-        href="{{ asset('assets/admin/vendor/dotted-map/css/contrib/jquery.smallipop-0.3.0.min.css') }}" type="text/css"
-        media="all" />
-    <link href="{{ asset('assets/admin/vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css') }}"
-        rel="stylesheet">
 
     <link href="{{ asset('assets/admin/css/style.css') }}" rel="stylesheet">
     @stack('css')
@@ -44,7 +32,7 @@
 
 <body>
 
-    {{-- <div id="preloader">
+    <div id="preloader">
         <div class="loader-wrapper">
             <div class="loader-box">
                 <div class="icon">
@@ -52,7 +40,7 @@
                 </div>
             </div>
         </div>
-    </div> --}}
+    </div>
 
     <div id="main-wrapper">
         <x-admin.header></x-admin.header>
@@ -100,85 +88,8 @@
 
     <!-- Required vendors -->
     <script src="{{ asset('assets/admin/vendor/global/global.min.js') }}"></script>
-    <script src="{{ asset('assets/admin/vendor/chart.js/Chart.bundle.min.js') }}"></script>
     <script src="{{ asset('assets/admin/vendor/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
-    <script src="{{ asset('assets/admin/vendor/apexchart/apexchart.js') }}"></script>
-
-    <!-- Dashboard 1 -->
-    <script src="{{ asset('assets/admin/js/dashboard/dashboard-1.js') }}"></script>
-    <script src="{{ asset('assets/admin/vendor/swiper/js/swiper-bundle.min.js') }}"></script>
-
-
-    <!-- JS for dotted map -->
-    <script src="{{ asset('assets/admin/vendor/dotted-map/js/contrib/jquery.smallipop-0.3.0.min.js') }}"></script>
-    <script src="{{ asset('assets/admin/vendor/dotted-map/js/contrib/suntimes.js') }}"></script>
-    <script src="{{ asset('assets/admin/vendor/dotted-map/js/contrib/color-0.4.1.js') }}"></script>
-
-    <script src="{{ asset('assets/admin/vendor/dotted-map/js/world.js') }}"></script>
-    <script src="{{ asset('assets/admin/vendor/dotted-map/js/smallimap.js') }}"></script>
-    <script src="{{ asset('assets/admin/js/dashboard/dotted-map-init.js') }}"></script>
-
-    <!-- Apex Chart -->
-
-
-
-    <!-- Vectormap -->
-    <script src="{{ asset('assets/admin/vendor/jqvmap/js/jquery.vmap.min.js') }}"></script>
-    <script src="{{ asset('assets/admin/vendor/jqvmap/js/jquery.vmap.world.js') }}"></script>
-    <script src="{{ asset('assets/admin/vendor/jqvmap/js/jquery.vmap.usa.js') }}"></script>
     <script src="{{ asset('assets/admin/js/custom.js') }}"></script>
-    <script src="{{ asset('assets/admin/js/deznav-init.js') }}"></script>
-    <script src="{{ asset('assets/admin/js/demo.js') }}"></script>
-    <script src="{{ asset('assets/admin/js/styleSwitcher.js') }}"></script>
-
-    <script>
-        var swiper = new Swiper(".mySwiper", {
-            slidesPerView: 5,
-            //spaceBetween: 30,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            breakpoints: {
-
-                300: {
-                    slidesPerView: 1,
-                    spaceBetween: 20,
-                },
-                416: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                },
-                768: {
-                    slidesPerView: 3,
-                    spaceBetween: 20,
-                },
-                1280: {
-                    slidesPerView: 4,
-                    spaceBetween: 10,
-                },
-                1788: {
-                    slidesPerView: 5,
-                    spaceBetween: 20,
-                },
-            },
-        });
-    </script>
-
-    <script src="{{ asset('assets/admin/js/plugins-init/jquery.validate-init.js') }}"></script>
-
-    <script src="{{ asset('assets/admin/vendor/jquery-smartwizard/dist/js/jquery.smartWizard.js') }}"></script>
-    <script src="{{ asset('assets/admin/vendor/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
-
-    <script src="{{ asset('assets/admin/js/custom.js') }}"></script>
-    <script src="{{ asset('assets/admin/js/deznav-init.js') }}"></script>
-    <script src="{{ asset('assets/admin/js/demo.js') }}"></script>
-    <script src="{{ asset('assets/admin/js/styleSwitcher.js') }}"></script>
-    <script>
-        $(document).ready(function() {
-            $('#smartwizard').smartWizard();
-        });
-    </script>
     <!-- Add Toastr JS before the closing </body> tag -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 </body>

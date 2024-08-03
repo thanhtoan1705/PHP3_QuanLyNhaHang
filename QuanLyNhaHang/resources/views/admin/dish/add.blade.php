@@ -59,7 +59,6 @@
                                         <select name="status" class="default-select form-control wide">
                                             <option value="1">Còn món</option>
                                             <option value="0">Hết món</option>
-                                            <option value="2">Đang chuẩn bị</option>
                                         </select>
                                         @error('status')
                                             <span class="text-danger">{{ $message }}</span>

@@ -72,9 +72,9 @@
                                     <div class="mb-3">
                                         <label class="form-label">Chọn trạng thái:</label>
                                         <select name="status" class="default-select form-control wide">
-                                            <option value="0" {{ $dish->status == '0' ? 'selected' : '' }}>Còn món
+                                            <option value="0" {{ $dish->status == '0' ? 'selected' : '' }}>Hết món
                                             </option>
-                                            <option value="1" {{ $dish->status == '1' ? 'selected' : '' }}>Hết Món
+                                            <option value="1" {{ $dish->status == '1' ? 'selected' : '' }}>Còn Món
                                             </option>
                                         </select>
                                         @error('status')

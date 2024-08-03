@@ -92,7 +92,8 @@
                             <form method="POST" action="{{ route('login') }}">
                                 @csrf
                                 <div class="google-button">
-                                    <a href="{{ route('auth.google') }}" class="btn"><span><i class="fab fa-google"></i></span> google</a>
+                                    <a href="{{ route('auth.google') }}" class="btn"><span><i
+                                                class="fab fa-google"></i></span> google</a>
                                 </div>
                                 <div>
                                     <x-label for="email" value="{{ __('Email') }}" />
@@ -106,13 +107,15 @@
                                         required autocomplete="current-password" />
                                 </div>
 
-                                <div class="flex content-center items-center justify-between mt-4">
+                                <div class="flex content-center items-center mt-4">
                                     @if (Route::has('password.request'))
                                         <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                                             href="{{ route('password.request') }}">
                                             {{ __('Quên mật khẩu?') }}
                                         </a>
                                     @endif
+
+                                    <a href="{{ route('register') }}">{{ __('Đăng ký') }}</a>
 
                                     <x-button type="submit" class="btn ms-4">
                                         {{ __('Đăng nhập') }}

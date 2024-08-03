@@ -43,8 +43,8 @@
                                                             alt="" width="150px" height="100px"></td>
                                                     <td>
                                                         <span
-                                                            class="badge light {{ $dish->status == '0' ? 'badge-success' : 'badge-danger' }}">
-                                                            {{ $dish->status == '0' ? 'Còn món' : 'Hết món' }}
+                                                            class="badge light {{ $dish->status == '0' ? 'badge-danger' : 'badge-success' }}">
+                                                            {{ $dish->status == '0' ? 'Hết món' : 'Còn món' }}
                                                         </span>
                                                     </td>
                                                     <td>
