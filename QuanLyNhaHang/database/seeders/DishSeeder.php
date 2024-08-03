@@ -7,6 +7,8 @@ use App\Models\Dish;
 use GuzzleHttp\Promise\Create;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
+
 
 class DishSeeder extends Seeder
 {
@@ -24,7 +26,7 @@ class DishSeeder extends Seeder
                 Dish::create([
                     'name' => 'Dish ' . $i . ' for ' . $category->name,
                     'category_id' => $category->id,
-                    'slug' => 'dish-' . $i . '-' . $category->slug,
+                    'slug' => 'dish-' . $i . '-' . Str::slug($category->name),
                     'description' => 'Description for dish ' . $i,
                     'price' => rand(50000, 200000), // Giá ngẫu nhiên giữa 50.000 và 200.000
                     'image' => 'dish' . $i . '.png',

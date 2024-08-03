@@ -31,7 +31,6 @@ class CategorySeeder extends Seeder
             Category::create([
                 'name' => $category['name'],
                 'image' => $category['image'],
-                'slug' => Str::slug($category['name']),
             ]);
         }
     }
