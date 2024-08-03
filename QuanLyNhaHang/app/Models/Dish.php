@@ -13,7 +13,14 @@ class Dish extends Model
     use HasFactory;
 
     protected $fillable = [
-        'category_id', 'name', 'slug', 'description', 'price', 'image', 'status'
+        'category_id',
+        'name',
+        'slug',
+        'description',
+        'price',
+        'quantity',
+        'image',
+        'status'
     ];
 
     public function category(): BelongsTo
@@ -56,10 +63,9 @@ class Dish extends Model
     {
         if (isset($validatedData['image'])) {
             $imagePath = $validatedData['image']->store('images', 'public');
-            $validatedData['image'] = basename($imagePath); 
+            $validatedData['image'] = basename($imagePath);
         }
         $validatedData['slug'] = Str::slug($validatedData['name']);
         return $this->update($validatedData);
     }
-    
 }

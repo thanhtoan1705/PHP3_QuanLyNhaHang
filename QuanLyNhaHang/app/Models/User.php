@@ -133,6 +133,13 @@ class User extends Authenticatable
         return $this->hasMany(Cart::class);
     }
 
+    public function currentCartItems()
+    {
+        // Giả định người dùng có một giỏ hàng hiện tại
+        return $this->carts()->where('status', 'active')->first()->items();
+    }
+
+
     public function reservations(): HasMany
     {
         return $this->hasMany(Reservation::class);

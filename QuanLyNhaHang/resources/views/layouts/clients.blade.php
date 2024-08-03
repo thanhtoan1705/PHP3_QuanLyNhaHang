@@ -9,6 +9,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Page Title -->
     <title>@yield('title', 'Trang chủ')</title>
     <!-- Favicon Icon -->
@@ -22,6 +23,8 @@
     <link rel="stylesheet" href="{{ asset('assets/client/css/slick.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/client/css/jquery-ui.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/client/css/style.css') }}" />
+    <!-- Add Toastr CSS in the <head> section -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
 </head>
 
 <body>
@@ -50,6 +53,7 @@
     <button class="scrollup"><i class="fas fa-angle-up"></i></button>
 
     <!-- Javascript Files -->
+    @stack('script')
     <script src="{{ asset('assets/client/js/vendor/jquery-2.2.4.min.js') }}"></script>
     <script src="{{ asset('assets/client/js/vendor/bootstrap.min.js') }}"></script>
     <script src="{{ asset('assets/client/js/vendor/jquery.meanmenu.min.js') }}"></script>
@@ -63,6 +67,8 @@
     <script src="{{ asset('assets/client/js/vendor/easing.min.js') }}"></script>
     <script src="{{ asset('assets/client/js/vendor/wow.min.js') }}"></script>
     <script src="{{ asset('assets/client/js/main.js') }}"></script>
+    <!-- Add Toastr JS before the closing </body> tag -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 </body>
 
 

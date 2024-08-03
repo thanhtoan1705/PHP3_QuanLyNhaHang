@@ -36,11 +36,18 @@ Route::get('404', [ErrorController::class, 'index']);
 Route::get('bai-viet', [BlogController::class, 'index'])->name('blog');
 Route::get('bai-viet-chi-tiet', [BlogDetailController::class, 'index'])->name('blog.detail');
 Route::get('lien-he', [ContactController::class, 'index'])->name('contact');
-Route::get('/dat-ban', [ClientTableController::class, 'index'])->name('tableClient');
-Route::post('/dat-ban', [ClientTableController::class, 'store'])->name('tableClient.store');
-Route::get('tai-khoan', [AccountController::class, 'index'])->name('account');
-Route::get('gio-hang', [CartController::class, 'index'])->name('cart');
+Route::get('dat-ban', [ClientTableController::class, 'index'])->name('tableClient');
+Route::post('dat-ban', [ClientTableController::class, 'store'])->name('tableClient.store');
+Route::get('tai-khoan', [AccountController::class, 'index'])->name('account')->middleware('auth');
 Route::get('thanh-toan', [CheckoutController::class, 'index'])->name('checkout');
+Route::get('gio-hang', [CartController::class, 'index'])->name('cart')->middleware('auth');
+Route::post('them-gio-hang', [CartController::class, 'addToCart'])->name('cartAdd')->middleware('auth');
+Route::delete('gio-hang/{id}', [CartController::class, 'remove'])->name('cartRemove')->middleware('auth');
+Route::delete('cart/clear', [CartController::class, 'clear'])->name('cart.clear')->middleware('auth');
+
+Route::post('/cart/update', [CartController::class, 'update'])->name('cart.update')->middleware('auth');
+
+Route::post('nhap-ma-uu-dai', [CartController::class, 'applyDiscountCode'])->name('applyDiscountCode')->middleware('auth');
 
 
 
@@ -138,7 +145,7 @@ Route::name('category.')->group(function () {
 
 
 //Promotion
-Route::name('promotion.')->group(function(){
+Route::name('promotion.')->group(function () {
     Route::get('promotion/list', [PromotionController::class, 'list'])->name('list');
     Route::get('promotion/add', [PromotionController::class, 'add'])->name('add');
     Route::post('promotion/store', [PromotionController::class, 'store'])->name('store');

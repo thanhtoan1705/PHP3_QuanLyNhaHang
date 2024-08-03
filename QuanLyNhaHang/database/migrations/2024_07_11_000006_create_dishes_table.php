@@ -15,6 +15,7 @@ class CreateDishesTable extends Migration
             $table->string('slug', 255)->unique();
             $table->text('description')->nullable();
             $table->bigInteger('price');
+            $table->bigInteger('quantity')->nullable();
             $table->string('image', 255)->nullable();
             $table->tinyInteger('status')->nullable()->comment('0: hết món, 1: còn món');
             $table->timestamps();
