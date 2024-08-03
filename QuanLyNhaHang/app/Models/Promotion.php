@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
+
 class Promotion extends Model
 {
     use HasFactory;
@@ -16,17 +17,17 @@ class Promotion extends Model
 
     public function getStartTimeAttribute($value)
     {
-        return Carbon::parse($value)->format('d-m-Y'); // Định dạng ngày tháng ở đây
+        return Carbon::parse($value)->format('d-m-Y');
     }
 
     public function getEndTimeAttribute($value)
     {
-        return Carbon::parse($value)->format('d-m-Y'); // Định dạng ngày tháng ở đây
+        return Carbon::parse($value)->format('d-m-Y');
     }
      public function setNumberUseAttribute($value)
     {
         $this->attributes['number_use'] = $value;
-        
+
         // Cập nhật trạng thái nếu số lần sử dụng bằng 0
         if ($value == 0) {
             $this->attributes['status'] = 'inactive';

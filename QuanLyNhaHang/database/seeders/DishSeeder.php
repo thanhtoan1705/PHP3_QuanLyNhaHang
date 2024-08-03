@@ -29,6 +29,7 @@ class DishSeeder extends Seeder
                     'slug' => 'dish-' . $i . '-' . Str::slug($category->name),
                     'description' => 'Description for dish ' . $i,
                     'price' => rand(50000, 200000), // Giá ngẫu nhiên giữa 50.000 và 200.000
+                    'quantity' => rand(1, 10),
                     'image' => 'dish' . $i . '.png',
                 ]);
             }
