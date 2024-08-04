@@ -13,11 +13,21 @@ use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
-    public function list()
+    public function list(Request $request)
     {
-
-        $categories = category::paginate(5);
-
+        $search = $request->input('search');
+        $sort = $request->input('sort', 'desc');
+        $categories = Category::query()
+            ->when($search, function($query) use ($search) {
+                return $query->where('name', 'LIKE', "%{$search}%");             
+            })
+            ->orderBy('created_at', $sort)
+            ->paginate(5)
+            ->appends([
+                'search' => $search,
+                'sort' => $sort
+            ]);
+            
         return view('admin.category.list', compact('categories'));
     }
 

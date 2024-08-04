@@ -149,7 +149,7 @@
                 </a>
                 <ul aria-expanded="false">
                     <li><a href="{{ route('order.list') }}">Danh sách đơn hàng</a></li>
-                    <li><a href="{{ route('order.detail') }}">Chi tiết đơn hàng</a></li>
+                    {{-- <li><a href="{{ route('order.detail') }}">Chi tiết đơn hàng</a></li> --}}
 
                 </ul>
             </li>

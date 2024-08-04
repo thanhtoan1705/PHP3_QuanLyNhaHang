@@ -89,7 +89,7 @@
 </div>
 @endsection
 
-@push('scripts')
+@push('script')
 <script>
     document.getElementById('image-input').addEventListener('change', function() {
         const file = this.files[0];
