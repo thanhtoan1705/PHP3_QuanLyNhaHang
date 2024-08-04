@@ -75,7 +75,7 @@
     </div>
 @endsection
 
-@push('scripts')
+@push('script')
     <script>
         // Thêm sự kiện change cho input file
         document.querySelector('input[name="image"]').addEventListener('change', function() {

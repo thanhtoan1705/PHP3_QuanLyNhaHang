@@ -136,7 +136,7 @@ Route::get('staff/delete/{id}', [StaffController::class, 'delete'])->name('staff
 
 // Order
 Route::get('order', [OrderController::class, 'index'])->name('order.list')->middleware(['auth', 'role:admin']);
-Route::get('order/detail', [OrderController::class, 'detail'])->name('order.detail')->middleware(['auth', 'role:admin']);
+Route::get('order/detail/{id}', [OrderController::class, 'detail'])->name('order.detail')->middleware(['auth', 'role:admin']);
 Route::get('payment', [PaymentController::class, 'index'])->name('payment.list')->middleware(['auth', 'role:admin']);
 
 
