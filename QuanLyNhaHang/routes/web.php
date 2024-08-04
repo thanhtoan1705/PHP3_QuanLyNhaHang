@@ -75,9 +75,7 @@ Route::get('gio-hang', [CartController::class, 'index'])->name('cart')->middlewa
 Route::post('them-gio-hang', [CartController::class, 'addToCart'])->name('cartAdd')->middleware('auth');
 Route::delete('gio-hang/{id}', [CartController::class, 'remove'])->name('cartRemove')->middleware('auth');
 Route::delete('cart/clear', [CartController::class, 'clear'])->name('cart.clear')->middleware('auth');
-
 Route::post('/cart/update', [CartController::class, 'update'])->name('cart.update')->middleware('auth');
-
 Route::post('nhap-ma-uu-dai', [CartController::class, 'applyDiscountCode'])->name('applyDiscountCode')->middleware('auth');
 
 
@@ -88,6 +86,8 @@ Route::get('admin/login', [AuthUserController::class, 'login'])->name('admin.log
 Route::get('auth/google', [LoginController::class, 'redirectToGoogle'])->name('auth.google');
 Route::get('auth/google/callback', [LoginController::class, 'handleGoogleCallback'])->name('auth.google.callback');
 
+Route::get('login/facebook', [LoginController::class, 'redirectToFacebook'])->name('login.facebook');
+Route::get('login/facebook/callback', [LoginController::class, 'handleFacebookCallback']);
 
 
 Route::name('dish.')->group(function () {

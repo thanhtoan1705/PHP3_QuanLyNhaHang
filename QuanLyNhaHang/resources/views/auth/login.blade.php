@@ -91,23 +91,33 @@
                             @endif
                             <form method="POST" action="{{ route('login') }}">
                                 @csrf
-                                <div class="google-button">
-                                    <a href="{{ route('auth.google') }}" class="btn"><span><i
-                                                class="fab fa-google"></i></span> google</a>
+
+                                <div class="row">
+                                    <div class="google-button">
+                                        <a href="{{ route('auth.google') }}" class="btn google-btn"><span><i
+                                                    class="fab fa-google"></i></span> Google</a>
+                                    </div>
+                                    <div class="col">
+                                        <a href="{{ route('login.facebook') }}" style="background-color: blue;"
+                                            class="btn d-flex align-items-center justify-content-center">
+                                            <i class="fab fa-facebook-f me-2"></i> Facebook
+                                        </a>
+                                    </div>
                                 </div>
-                                <div>
+
+                                <div class="mt-4">
                                     <x-label for="email" value="{{ __('Email') }}" />
                                     <x-input id="email" type="email" name="email" :value="old('email')"
                                         placeholder="email của bạn" required autofocus autocomplete="username" />
                                 </div>
 
-                                <div class="mt-4">
+                                <div class="mt-2">
                                     <x-label for="password" value="{{ __('Mật khẩu') }}" />
                                     <x-input id="password" placeholder="nhập mật khẩu" type="password" name="password"
                                         required autocomplete="current-password" />
                                 </div>
 
-                                <div class="flex content-center items-center mt-4">
+                                <div class="flex content-center items-center mt-3">
                                     @if (Route::has('password.request'))
                                         <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                                             href="{{ route('password.request') }}">
