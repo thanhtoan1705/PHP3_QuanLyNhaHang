@@ -36,6 +36,7 @@ class UpdateTableBookRequest extends FormRequest
                     }
                 },
             ],
+            'user_id' => 'required',
             'dish_id' => 'required|array',
             'dish_id.*' => 'exists:dishes,id',
             'quantities' => 'required|array',

@@ -23,9 +23,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = $this->user->getLatestPaginated(5);
-        $usersInactive = $this->user->getInactiveLatestPaginated(5);
-        return view('admin.users.list', compact('users', 'usersInactive'));
+        $users = User::where('role', 'user')->paginate(5);
+        $staff = User::where('role', 'staff')->paginate(5);
+        return view('admin.users.list', compact('users', 'staff'));
     }
 
     /**

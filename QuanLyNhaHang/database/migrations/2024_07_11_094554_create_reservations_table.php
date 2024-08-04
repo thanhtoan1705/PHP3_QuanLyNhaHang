@@ -10,10 +10,13 @@ class CreateReservationsTable extends Migration
     {
         Schema::create('reservations', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->nullable()->constrained()->onDelete('cascade');
             $table->foreignId('table_id')->constrained()->onDelete('cascade');
-            $table->time('reservation_time');
-            $table->bigInteger('guest_count');
+            $table->string('name');
+            $table->text('note')->nullable();
+            $table->string('status', 20)->default('Chưa thanh toán');
+            $table->date('reservation_date')->nullable();
+            $table->time('reservation_time')->nullable();
             $table->timestamps();
         });
     }
@@ -23,4 +26,3 @@ class CreateReservationsTable extends Migration
         Schema::dropIfExists('reservations');
     }
 }
-

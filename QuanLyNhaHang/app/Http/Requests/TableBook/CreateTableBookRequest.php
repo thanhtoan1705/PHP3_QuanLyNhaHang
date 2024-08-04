@@ -29,7 +29,6 @@ class CreateTableBookRequest extends FormRequest
                 'required',
                 'string',
                 'max:255',
-                Rule::unique('orders'),
             ],
             'table_id' => [
                 'required',
@@ -45,13 +44,14 @@ class CreateTableBookRequest extends FormRequest
                 'unique:orders,table_id'
             ],
             'dish_id' => 'required|array',
+            'user_id' => 'required',
             'dish_id.*' => 'exists:dishes,id',
             'quantities' => 'required|array',
             'quantities.*' => 'integer|min:1',
             'note' => 'nullable|string',
             'seats' => 'nullable|required',
             'status' => 'required|string',
-            'order_date' => [
+            'reservation_date' => [
                 'required',
                 'date',
                 function ($attribute, $value, $fail) {
@@ -60,7 +60,7 @@ class CreateTableBookRequest extends FormRequest
                     }
                 },
             ],
-            'order_time' => [
+            'reservation_time' => [
                 'required',
                 'date_format:H:i',
                 function ($attribute, $value, $fail) {
@@ -80,7 +80,6 @@ class CreateTableBookRequest extends FormRequest
             'name.required' => 'Người đặt bàn là bắt buộc.',
             'name.string' => 'Tên người đặt phải là một chuỗi ký tự.',
             'name.max' => 'Tên người đặt không được vượt quá 255 ký tự.',
-            'name.unique' => 'Tên người đặt đã tồn tại.',
             'table_id.required' => 'Chọn bàn là bắt buộc.',
             'table_id.unique' => 'Bàn đã được đặt.',
             'table_id.exists' => 'Bàn không tồn tại.',
@@ -93,11 +92,11 @@ class CreateTableBookRequest extends FormRequest
             'quantities.*.min' => 'Số lượng món ăn phải ít nhất là 1.',
             'note.string' => 'Ghi chú phải là một chuỗi ký tự.',
             'status.required' => 'Trạng thái là bắt buộc.',
-            'order_date.required' => 'Ngày đặt không được để trống.',
-            'order_date.date' => 'Ngày đặt không hợp lệ.',
-            'order_date.after_or_equal' => 'Ngày đặt phải là hôm nay hoặc trong tương lai.',
-            'order_time.required' => 'Giờ đặt không được để trống.',
-            'order_time.date_format' => 'Giờ đặt phải theo định dạng HH:mm.',
+            'reservation_date.required' => 'Ngày đặt không được để trống.',
+            'reservation_date.date' => 'Ngày đặt không hợp lệ.',
+            'reservation_date.after_or_equal' => 'Ngày đặt phải là hôm nay hoặc trong tương lai.',
+            'reservation_time.required' => 'Giờ đặt không được để trống.',
+            'reservation_time.date_format' => 'Giờ đặt phải theo định dạng HH:mm.',
         ];
     }
 }

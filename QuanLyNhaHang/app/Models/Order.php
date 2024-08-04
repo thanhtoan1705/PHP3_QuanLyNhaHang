@@ -48,6 +48,7 @@ class Order extends Model
     public static function createNewBookTable($validatedData)
     {
         $order = self::create([
+            'user_id' => $validatedData['user_id'],
             'name' => $validatedData['name'],
             'table_id' => $validatedData['table_id'],
             'note' => $validatedData['note'],
@@ -74,6 +75,7 @@ class Order extends Model
     public function updateNewBookTable($validatedData)
     {
         $this->update([
+            'user_id' => $validatedData['user_id'],
             'name' => $validatedData['name'],
             'table_id' => $validatedData['table_id'],
             'note' => $validatedData['note'],

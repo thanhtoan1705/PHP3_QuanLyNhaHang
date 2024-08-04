@@ -31,7 +31,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($orders as $order)
+                                            @foreach ($reservation as $order)
                                                 <tr>
                                                     <td><strong>{{ $loop->iteration }}</strong></td>
                                                     <td>{{ $order->name }}</td>
@@ -42,7 +42,7 @@
                                                             {{ $dish->name }} ({{ $dish->pivot->quantity }}),
                                                         @endforeach
                                                     </td>
-                                                    <td>{{ $order->order_time }} | {{ $order->order_date }}</td>
+                                                    <td>{{ $order->reservation_time }} | {{ $order->reservation_date }}</td>
                                                     <td>{{ number_format($order->calculateTotalPrice(), 0, ',', '.') }} VND
                                                     </td>
                                                     <td>
@@ -85,37 +85,42 @@
                                                         @csrf
                                                         @method('DELETE')
                                                     </form>
-                                                </tr>
-                                            @endforeach
-                                            <div class="modal fade" id="deleteModal{{ $order->id }}" tabindex="-1"
-                                                aria-labelledby="deleteModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="deleteModalLabel">Xóa danh mục
-                                                            </h5>
-                                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                                aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            Bạn có chắc chắn muốn xóa danh mục này không?
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary"
-                                                                data-bs-dismiss="modal">Hủy</button>
-                                                            <form action="{{ route('table-book.destroy', $order->id) }}"
-                                                                method="POST">
-                                                                @csrf
-                                                                @method('DELETE')
-                                                                <button type="submit" class="btn btn-danger">Xóa</button>
-                                                            </form>
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="deleteModal{{ $order->id }}" tabindex="-1"
+                                                        aria-labelledby="deleteModalLabel{{ $order->id }}" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="deleteModalLabel{{ $order->id }}">Xóa danh mục
+                                                                    </h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                                        aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    Bạn có chắc chắn muốn xóa danh mục này không?
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary"
+                                                                        data-bs-dismiss="modal">Hủy</button>
+                                                                    <form action="{{ route('table-book.destroy', $order->id) }}"
+                                                                        method="POST">
+                                                                        @csrf
+                                                                        @method('DELETE')
+                                                                        <button type="submit" class="btn btn-danger">Xóa</button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
+                                                </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>
+                            </div>
+                            <!-- Phân trang -->
+                            <div class="d-flex justify-content-center">
+                                {{ $reservation->links() }}
                             </div>
                         </div>
                     </div>

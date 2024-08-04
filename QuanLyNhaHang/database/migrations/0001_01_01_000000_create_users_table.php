@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('phone', 20)->nullable()->default('0354233641');
             $table->string('address')->default('can tho');
             $table->string('password');
-            $table->enum('role', ['user', 'admin']);
+            $table->enum('role', ['user', 'admin', 'staff']);
             $table->enum('active', ['active', 'inactive']);
             $table->string('google_id')->nullable();
             $table->string('facebook_id')->nullable();
