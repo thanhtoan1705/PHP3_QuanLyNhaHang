@@ -110,7 +110,8 @@ Route::name('table-book.')->group(function () {
     Route::get('table-book/edit/{id}', [TableBookController::class, 'edit'])->name('edit')->middleware(['auth', 'role:admin,staff']);;
     Route::put('table-book/update/{id}', [TableBookController::class, 'update'])->name('update')->middleware(['auth', 'role:admin,staff']);;
     Route::delete('table-book/destroy/{id}', [TableBookController::class, 'destroy'])->name('destroy')->middleware(['auth', 'role:admin,staff']);;
-    Route::get('table-book/table-details/{id}', [TableBookController::class, 'getTableDetails'])->name('table-details')->middleware(['auth', 'role:admin,staff']);;
+    Route::get('table-book/table-details/{id}', [TableBookController::class, 'getTableDetails'])->name('table-details')->middleware(['auth', 'role:admin,staff']);
+    Route::post('table-book/payment/{id}', [TableBookController::class, 'processPayment'])->name('payment')->middleware(['auth', 'role:admin,staff']);
 })->middleware(['auth', 'role:admin,staff']);
 
 
@@ -124,6 +125,7 @@ Route::name('table.')->group(function () {
     Route::delete('table/delete/{id}', [TableTableController::class, 'destroy'])->name('delete')->middleware(['auth', 'role:admin,staff']);
 })->middleware(['auth', 'role:admin,staff']);
 
+Route::post('payment/store', [PaymentController::class, 'store'])->name('payment.store');
 
 
 // Staff

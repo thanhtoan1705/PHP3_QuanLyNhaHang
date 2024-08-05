@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Table;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class TableSeeder extends Seeder
@@ -13,19 +12,17 @@ class TableSeeder extends Seeder
      */
     public function run(): void
     {
-        Table::create([
-            'number' => '1',
-            'seats' => '2',
-        ]);
+        $tables = [
+            ['number' => 1, 'seats' => 6],
+            ['number' => 2, 'seats' => 6],
+            ['number' => 3, 'seats' => 6],
+            ['number' => 4, 'seats' => 6],
+            ['number' => 5, 'seats' => 6],
+            ['number' => 6, 'seats' => 6],
+        ];
 
-        Table::create([
-            'number' => '2',
-            'seats' => '4',
-        ]);
-
-        Table::create([
-            'number' => '3',
-            'seats' => '6',
-        ]);
+        foreach ($tables as $table) {
+            Table::create($table);
+        }
     }
 }
