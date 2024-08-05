@@ -13,8 +13,8 @@ class CreatePromotionsTable extends Migration
             $table->string('code', 255);
             $table->bigInteger('discount');
             $table->bigInteger('number_use');
-            $table->timestamp('start_time');
-            $table->timestamp('end_time')->useCurrent();
+            $table->date('start_time');
+            $table->date('end_time')->useCurrent();
             $table->text('describe')->nullable();
             $table->enum('status', ['active', 'inactive'])->default('inactive');
             $table->timestamps();

@@ -24,7 +24,7 @@ class CreatePromotionRequest extends FormRequest
         return [
             'code' => 'required|min:4|max:255|string|unique:promotions,code',
             'discount' =>'required|numeric|min:0',
-            'number_use' =>'required|numeric|min:0',
+            'number_use' =>'required|numeric|min:0|max:500',
             'start_time' =>[ 
                 'required','date','date_format:Y-m-d',
                 function($attribute,$value,$fail){
@@ -73,6 +73,7 @@ class CreatePromotionRequest extends FormRequest
             'number_use.required' => 'Số lần không được để trống.',
             'number_use.numeric' => 'Số lần phải là số.',
             'number_use.min' => 'Số lần không được là số âm.',
+            'number_use.max' => 'Số lần không được quá 500 lần.',
             //start_time
             'start_time.required' => 'Ngày bắt đầu là bắt buộc.',
             'start_time.date' => 'Ngày bắt đầu không hợp lệ.',

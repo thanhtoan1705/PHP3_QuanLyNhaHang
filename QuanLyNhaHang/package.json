@@ -17,6 +17,7 @@
     },
     "dependencies": {
         "@ckeditor/ckeditor5-build-classic": "^42.0.2",
+        "chart.js": "^4.4.3",
         "ckeditor5": "^42.0.2"
     }
 }

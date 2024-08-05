@@ -1,7 +1,12 @@
 <?php
 
+use App\Exports\PromotionsExport;
+use App\Exports\CategoriesExport;
+use Maatwebsite\Excel\Facades\Excel;
+
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\Promotion\PromotionController;
+use App\Http\Controllers\Admin\Statistical\StatisticalController;
 use App\Http\Controllers\Admin\DishController as AdminDishController;
 use App\Http\Controllers\Admin\TableController;
 use App\Http\Controllers\Admin\StaffController;
@@ -22,14 +27,24 @@ use App\Http\Controllers\Client\Checkout\CheckoutController;
 use App\Http\Controllers\Client\About\AboutController;
 use App\Http\Controllers\Client\Auth\AccountController;
 use App\Http\Controllers\Client\Dish\DishController;
+use App\Http\Controllers\Client\Review\ReviewController;
 use App\Http\Controllers\Client\Blog\BlogController;
 use App\Http\Controllers\Client\Blog\BlogDetailController;
 use App\Http\Controllers\Client\Contact\ContactController;
 use App\Http\Controllers\Client\Gallery\GalleryController;
 use App\Http\Controllers\Client\Table\TableController as ClientTableController;
 
+Route::get('/promotions/export', function () {
+    return Excel::download(new PromotionsExport, 'promotions.xlsx');
+})->name('promotions.export');
+Route::get('/categories/export', function () {
+    return Excel::download(new CategoriesExport, 'categories.xlsx');
+})->name('categories.export');
+
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('chi-tiet-mon-an/{id}', [DishController::class, 'dishDetail'])->name('dishDetail');
+Route::post('/dish/{id}/review', [ReviewController::class, 'store'])->name('reviews.store');
+Route::delete('/review/{id}', [ReviewController::class, 'destroy'])->name('reviews.destroy');
 Route::get('menu', [DishController::class, 'menu'])->name('menu');
 Route::get('gioi-thieu', [AboutController::class, 'index'])->name('about');
 Route::get('404', [ErrorController::class, 'index']);
@@ -45,6 +60,12 @@ Route::get('thanh-toan', [CheckoutController::class, 'index'])->name('checkout')
 
 
 Route::get('dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified', 'role:admin']);
+Route::get('statistical', [StatisticalController::class, 'index'])->name('statistical.index');
+Route::get('statistical/revenue-chart', [StatisticalController::class, 'revenueChart'])->name('statistical.revenue.chart');
+Route::get('admin/statistical/export', [StatisticalController::class, 'export'])->name('statistical.export');
+Route::get('admin/statistical/export-dates', [StatisticalController::class, 'exportStatisticalDates'])->name('statistical.export.dates');
+Route::get('admin/statistical/export-monthly', [StatisticalController::class, 'exportStatisticalMonths'])->name('statistical.export.monthly');
+
 // login
 Route::get('admin/login', [AuthUserController::class, 'login'])->name('admin.login');
 

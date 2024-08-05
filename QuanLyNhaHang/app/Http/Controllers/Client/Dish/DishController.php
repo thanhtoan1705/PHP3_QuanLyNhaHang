@@ -6,7 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Category; 
 use Illuminate\Support\Facades\DB;
 use App\Models\Dish;
-
+use App\Models\Review;
+use App\Http\Controllers\Client\Review\ReviewController;
 
 class DishController extends Controller
 {
@@ -20,7 +21,10 @@ class DishController extends Controller
         // Lấy các món ăn liên quan trong cùng một danh mục, loại bỏ món hiện tại
         $relatedDishes = $category ? $category->dishes()->where('id', '!=', $id)->limit(4)->get() : [];
 
-        return view('clients.food.dish_detail',compact('dishDetail','relatedDishes'));
+        $dish = Dish::findOrFail($id);
+        $reviews = Review::where('dish_id', $id)->get();
+
+        return view('clients.food.dish_detail',compact('dishDetail','relatedDishes', 'reviews'));
     }
 
     public function menu()

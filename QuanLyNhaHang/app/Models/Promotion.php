@@ -14,15 +14,6 @@ class Promotion extends Model
     ];
     protected $dates = ['start_time', 'end_time'];
 
-    public function getStartTimeAttribute($value)
-    {
-        return Carbon::parse($value)->format('d-m-Y'); // Định dạng ngày tháng ở đây
-    }
-
-    public function getEndTimeAttribute($value)
-    {
-        return Carbon::parse($value)->format('d-m-Y'); // Định dạng ngày tháng ở đây
-    }
      public function setNumberUseAttribute($value)
     {
         $this->attributes['number_use'] = $value;

@@ -4,7 +4,6 @@
 
 @section('content')
 
-@section('content')
     <div class="content-body">
         @if (session('success'))
             <script>
@@ -18,19 +17,11 @@
                         <div class="tab-pane fade show active" id="Preview" role="tabpanel" aria-labelledby="home-tab">
                             <div class="card-header flex-wrap border-0">
                                 <div>
-                                    @if (session('success'))
-                                        <script>
-                                            toastr.success("{{ session('success') }}");
-                                        </script>
-                                    @endif
-
                                     <h2 class="mt-4 card-title">Danh sách danh mục</h2>
-
                                 </div>
                                 <div>
-                                    <a href="{{ route('category.add') }}" class="btn btn-primary mt-2 me-1">Thêm Danh
-                                        mục</a>
-
+                                    <a href="{{ route('category.add') }}" class="btn btn-primary mt-2 me-1">Thêm Danh mục</a>
+                                    <a href="{{ route('categories.export') }}" class="btn btn-secondary mt-2">Xuất Excel</a>
                                 </div>
                             </div>
                             <div class="card-body pt-0">
@@ -41,21 +32,17 @@
                                                 <th style="width:200px;"><strong>Số thứ tự</strong></th>
                                                 <th><strong>Tên danh mục</strong></th>
                                                 <th><strong>Hình ảnh</strong></th>
-
                                                 <th></th>
                                             </tr>
-
                                         </thead>
                                         <tbody>
                                             @foreach ($categories as $index => $category)
                                                 <tr>
-
                                                     <td><strong>{{ $categories->firstItem() + $index }}</strong></td>
                                                     <td>{{ $category->name }}</td>
                                                     <td><img width="200px" height="100px" class="img-fluid"
                                                             src="{{ asset('storage/images/' . $category->image) }}"
                                                             alt=""></td>
-
                                                     <td>
                                                         <div class="dropdown">
                                                             <button type="button" class="btn btn-success light sharp"
@@ -76,8 +63,7 @@
                                                             </button>
                                                             <div class="dropdown-menu">
                                                                 <a class="dropdown-item"
-                                                                    href="{{ route('category.update', $category->id) }}">Chỉnh
-                                                                    sửa</a>
+                                                                    href="{{ route('category.update', $category->id) }}">Chỉnh sửa</a>
                                                                 <a class="dropdown-item" data-bs-toggle="modal"
                                                                     data-bs-target="#deleteModal{{ $category->id }}">Xóa</a>
                                                             </div>
@@ -95,8 +81,7 @@
                                                     <div class="modal-dialog">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
-                                                                <h5 class="modal-title" id="deleteModalLabel">Xóa danh mục
-                                                                </h5>
+                                                                <h5 class="modal-title" id="deleteModalLabel">Xóa danh mục</h5>
                                                                 <button type="button" class="btn-close"
                                                                     data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>

@@ -24,7 +24,7 @@ class UpdateCategoryRequest extends FormRequest
         $id = $this->route('id');
         return [
             'name' => 'required|min:2|max:255|string|unique:categories,name,'. $id,
-            'image' =>'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' =>'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'slug' => 'nullable'
         ];
     }
@@ -43,7 +43,6 @@ class UpdateCategoryRequest extends FormRequest
             'name.unique' => 'Danh mục đã tồn tại.',
             // 'name.regex' => 'Tên chỉ được phép chứa các ký tự chữ cái.',
             //image
-            'image.required' => 'Ảnh không được để trống.',
             'image.image' => 'File phải là định dạng hình ảnh.',
             'image.mimes' => 'Ảnh phải có định dạng jpeg, png, jpg hoặc gif.',
             'image.max' => 'Kích thước ảnh không được vượt quá 2MB.',

@@ -108,57 +108,57 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-6 custome-width">
-                    <div class="card">
-                        <div class="card-header border-0 pb-0">
-                            <h3 class="h-title">Revenue</h3>
+                    <div class="col-xl-6 custome-width">
+                        <div class="card">
+                            <div class="card-header border-0 pb-0">
+                                <h3 class="h-title">Revenue</h3>
 
-                            <ul class="revnue-tab nav nav-tabs" id="myTab" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
-                                        data-bs-target="#home-tab-pane" type="button" role="tab"
-                                        aria-controls="home-tab-pane" aria-selected="true">Daily</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
-                                        data-bs-target="#profile-tab-pane" type="button" role="tab"
-                                        aria-controls="profile-tab-pane" aria-selected="false">Weekly</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="contact-tab" data-bs-toggle="tab"
-                                        data-bs-target="#contact-tab-pane" type="button" role="tab"
-                                        aria-controls="contact-tab-pane" aria-selected="false">Monthly</button>
-                                </li>
-                            </ul>
+                                <ul class="revnue-tab nav nav-tabs" id="myTab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+                                            data-bs-target="#home-tab-pane" type="button" role="tab"
+                                            aria-controls="home-tab-pane" aria-selected="true">Daily</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
+                                            data-bs-target="#profile-tab-pane" type="button" role="tab"
+                                            aria-controls="profile-tab-pane" aria-selected="false">Weekly</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="contact-tab" data-bs-toggle="tab"
+                                            data-bs-target="#contact-tab-pane" type="button" role="tab"
+                                            aria-controls="contact-tab-pane" aria-selected="false">Monthly</button>
+                                    </li>
+                                </ul>
 
-                        </div>
-                        <div class="card-body pb-0">
-                            <div class=" d-flex flex-wrap">
-                                <span class="d-flex align-items-center me-2">
-                                    <svg class="me-2" width="14" height="14" viewBox="0 0 14 14"
-                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect x="0.108032" y="0.5" width="13" height="13" rx="4"
-                                            fill="#1921FA" />
-                                    </svg>
-                                    Income
-                                    <h5 class="mb-0 mx-2">$23,445</h5>
-                                    <span class="text-success ">+0.4%</span>
-                                </span>
-                                <span class="application d-flex align-items-center ms-me-5 ms-0">
-                                    <svg class="me-2" width="14" height="14" viewBox="0 0 14 14"
-                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect x="0.108032" y="0.5" width="13" height="13" rx="4"
-                                            fill="#FF3D3D" />
-                                    </svg>
-                                    Expense
-                                    <h5 class="mb-0 mx-2">$8,345</h5>
-                                    <span class="text-danger ">+0.4%</span>
-                                </span>
                             </div>
-                            <div id="activityz"></div>
+                            <div class="card-body pb-0">
+                                <div class=" d-flex flex-wrap">
+                                    <span class="d-flex align-items-center me-2">
+                                        <svg class="me-2" width="14" height="14" viewBox="0 0 14 14"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="0.108032" y="0.5" width="13" height="13" rx="4"
+                                                fill="#1921FA" />
+                                        </svg>
+                                        Income
+                                        <h5 class="mb-0 mx-2">$23,445</h5>
+                                        <span class="text-success ">+0.4%</span>
+                                    </span>
+                                    <span class="application d-flex align-items-center ms-me-5 ms-0">
+                                        <svg class="me-2" width="14" height="14" viewBox="0 0 14 14"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="0.108032" y="0.5" width="13" height="13" rx="4"
+                                                fill="#FF3D3D" />
+                                        </svg>
+                                        Expense
+                                        <h5 class="mb-0 mx-2">$8,345</h5>
+                                        <span class="text-danger ">+0.4%</span>
+                                    </span>
+                                </div>
+                                <div id="activityz"></div>
+                            </div>
                         </div>
                     </div>
-                </div>
                 <div class="col-xl-6 custome-width">
                     <div class="card">
                         <div class="card-header border-0 pb-0">
