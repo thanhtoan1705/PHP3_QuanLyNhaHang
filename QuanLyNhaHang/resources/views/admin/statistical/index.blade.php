@@ -64,7 +64,7 @@
                     </div>
                 </div>
                 <div class="container">
-                    <div class="row">                      
+                    <div class="row">
                         <div class="col-xl-12 col-lg-12">
                             <div class="card dz-card" id="bootstrap-table1">
                                 <div class="card-header flex-wrap border-0">
@@ -75,7 +75,7 @@
                                         <a href="{{ route('statistical.export') }}" class="btn btn-secondary">Xuất Excel</a>
                                     </div>
                                     <div>
-                                        
+
                                         <h4 class="card-title">Doanh thu tất cả: {{number_format($totalRevenue)}} VNĐ</h4>
                                     </div>
                                 </div>
@@ -92,7 +92,6 @@
                                                             <th>Khách hàng</th>
                                                             <th>Ngày đặt hàng</th>
                                                             <th>Phương thức thanh toán</th>
-                                                            <th>Trạng thái</th>
                                                             <th>Tổng tiền</th>
                                                         </tr>
                                                     </thead>
@@ -104,27 +103,21 @@
                                                             <td>{{ $statistical->user_id }}</td>
                                                             <td>{{ \Carbon\Carbon::parse($statistical->payment_date)->format('d-m-Y') }}</td>
                                                             <td>{{ $statistical->payment_method }}</td>
-                                                            <td>
-                                                                <span class="badge light
-                                                                    {{ $statistical->payment_status == 0 ? 'badge-success' : ($statistical->payment_status == 1 ? 'badge-warning' : 'badge-secondary') }}">
-                                                                    {{ $statistical->payment_status == 0 ? 'Đã thanh toán' : ($statistical->payment_status == 1 ? 'Chưa thanh toán' : 'Đã hủy') }}
-                                                                </span>
-                                                            </td>
                                                             <td>{{ number_format($statistical->total_amount) }} VNĐ</td>
-                                                            
+
                                                         </tr>
                                                         @endforeach
                                                     </tbody>
                                                 </table>
                                                 {{ $statisticals->links() }}
-                        
+
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="col-xl-12 col-lg-12">
                             <div class="card dz-card" id="bootstrap-table1">
                                 <div class="card-header flex-wrap border-0">
@@ -151,7 +144,6 @@
                                                             <th>Khách hàng</th>
                                                             <th>Ngày đặt hàng</th>
                                                             <th>Phương thức thanh toán</th>
-                                                            <th>Trạng thái</th>
                                                             <th>Tổng tiền</th>
                                                         </tr>
                                                     </thead>
@@ -163,12 +155,6 @@
                                                             <td>{{ $statisticalsdate->user_id }}</td>
                                                             <td>{{ \Carbon\Carbon::parse($statisticalsdate->payment_date)->format('d-m-Y') }}</td>
                                                             <td>{{ $statisticalsdate->payment_method }}</td>
-                                                            <td>
-                                                                <span class="badge light
-                                                                    {{ $statisticalsdate->payment_status == 0 ? 'badge-success' : ($statistical->payment_status == 1 ? 'badge-warning' : 'badge-secondary') }}">
-                                                                    {{ $statisticalsdate->payment_status == 0 ? 'Hoàn thành' : ($statistical->payment_status == 1 ? 'Chưa thanh toán' : 'Đã hủy') }}
-                                                                </span>
-                                                            </td>
                                                             <td>{{ number_format($statisticalsdate->total_amount) }} VNĐ</td>
                                                         </tr>
                                                         @endforeach
@@ -181,7 +167,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="col-xl-12 col-lg-12">
                             <div class="card dz-card" id="bootstrap-table1">
                                 <div class="card-header flex-wrap border-0">
@@ -195,8 +181,8 @@
                                     </div>
                                     <div>
                                         <h4 class="card-title">Doanh thu tháng: {{number_format($totalRevenuemonth)}} VNĐ</h4>
-                                        
-                                        
+
+
                                     </div>
                                 </div>
                                 <!--tab-content-->
@@ -212,7 +198,6 @@
                                                             <th>Khách hàng</th>
                                                             <th>Ngày đặt hàng</th>
                                                             <th>Phương thức thanh toán</th>
-                                                            <th>Trạng thái</th>
                                                             <th>Tổng tiền</th>
                                                         </tr>
                                                     </thead>
@@ -224,12 +209,6 @@
                                                             <td>{{ $statisticalmonth->user_id }}</td>
                                                             <td>{{ \Carbon\Carbon::parse($statisticalmonth->payment_date)->format('d-m-Y') }}</td>
                                                             <td>{{ $statisticalmonth->payment_method }}</td>
-                                                            <td>
-                                                                <span class="badge light
-                                                                    {{ $statisticalmonth->payment_status == 0 ? 'badge-success' : ($statisticalsdate->payment_status == 1 ? 'badge-warning' : 'badge-secondary') }}">
-                                                                    {{ $statisticalmonth->payment_status == 0 ? 'Hoàn thành' : ($statisticalsdate->payment_status == 1 ? 'Chưa thanh toán' : 'Đã hủy') }}
-                                                                </span>
-                                                            </td>
                                                             <td>{{ number_format($statisticalmonth->total_amount) }} VNĐ</td>
                                                         </tr>
                                                         @endforeach
@@ -242,7 +221,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
 

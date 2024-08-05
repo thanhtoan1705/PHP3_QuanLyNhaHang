@@ -32,12 +32,11 @@ class StatisticalMonthsExport implements FromCollection, WithHeadings, WithStyle
             'Ngày thanh toán' => $paymentDate->format('Y-m-d'), // Đảm bảo payment_date là đối tượng Carbon
             'Phương thức thanh toán' => $payment->payment_method,
             'Tổng tiền' => $payment->total_amount,
-            'Trạng thái' => $payment->payment_status == '0' ? 'Đã Thanh Toán' : 'Chưa Thanh Toán',
         ];
     });
 }
 
-    
+
 
     public function headings(): array
     {
@@ -48,7 +47,6 @@ class StatisticalMonthsExport implements FromCollection, WithHeadings, WithStyle
             'Ngày thanh toán',
             'Phương thức thanh toán',
             'Tổng tiền',
-            'Trạng thái',
         ];
     }
 
@@ -61,7 +59,7 @@ class StatisticalMonthsExport implements FromCollection, WithHeadings, WithStyle
     {
         // Add the total revenue to the sheet
         $sheet->setCellValue('I1', 'Tổng doanh thu tháng: ' . number_format($this->totalRevenuemonth, 0, ',', '.') . ' VNĐ');
-        
+
         // Style the total revenue cell
         $sheet->getStyle('A1')->applyFromArray([
             'font' => [
@@ -74,18 +72,10 @@ class StatisticalMonthsExport implements FromCollection, WithHeadings, WithStyle
         ]);
 
         // Style the header row
-        $sheet->getStyle('A1:G1')->applyFromArray([
+        $sheet->getStyle('A1:F1')->applyFromArray([
             'font' => [
                 'bold' => true,
             ]
-        ]);
-        $sheet->getStyle('A1:G6')->applyFromArray([
-            'borders' => [
-                'allBorders' => [
-                    'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
-                    'color' => ['argb' => '000000'], 
-                ],
-            ],
         ]);
         $sheet->getStyle('A1:G1')->applyFromArray([
             'fill' => [

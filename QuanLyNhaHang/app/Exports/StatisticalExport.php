@@ -32,7 +32,6 @@ class StatisticalExport implements FromCollection, WithHeadings, WithTitle, With
                 'Ngày thanh toán' => $payment->payment_date,
                 'Phương thức thanh toán' => $payment->payment_method,
                 'Tổng tiền' => $payment->total_amount,
-                'Trạng thái' => $payment->payment_status == '0' ? 'Đã Thanh Toán' : 'Chưa Thanh Toán',
             ];
         });
     }
@@ -46,7 +45,6 @@ class StatisticalExport implements FromCollection, WithHeadings, WithTitle, With
             'Ngày thanh toán',
             'Phương thức thanh toán',
             'Tổng tiền',
-            'Trạng thái',
         ];
     }
 

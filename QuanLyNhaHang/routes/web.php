@@ -111,7 +111,7 @@ Route::post('momo/return', [CheckoutController::class, 'momoReturn'])->name('mom
 // });
 
 
-Route::get('dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified', 'role:admin']);
+Route::get('dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'role:admin']);
 Route::get('statistical', [StatisticalController::class, 'index'])->name('statistical.index');
 Route::get('statistical/revenue-chart', [StatisticalController::class, 'revenueChart'])->name('statistical.revenue.chart');
 Route::get('admin/statistical/export', [StatisticalController::class, 'export'])->name('statistical.export');

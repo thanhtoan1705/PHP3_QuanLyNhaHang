@@ -16,13 +16,11 @@ class StatisticalController extends Controller
     public function index(Request $request)
     {
 
-        $statisticals = Payment::where('payment_status', '0')
-            ->paginate(5);
+        $statisticals = Payment::paginate(5);
         //day
         $date = $request->input('date', now()->format('Y-m-d'));
         $statisticalsdates = Payment::whereDate('payment_date', $date)
             ->orderBy('payment_date', 'desc')
-            ->where('payment_status', '0')
             ->paginate(5);
         //moth
         $day = $request->input('day', now()->format('d'));
@@ -36,7 +34,6 @@ class StatisticalController extends Controller
         // Lấy dữ liệu các thanh toán trong tháng
         $statisticalmonths = Payment::whereBetween('payment_date', [$firstDayOfMonth, $lastDayOfMonth])
             ->orderBy('payment_date', 'desc')
-            ->where('payment_status', '0')
             ->paginate(5);
 
         // Tính tổng doanh thu cho tháng hiện tại
@@ -52,7 +49,6 @@ class StatisticalController extends Controller
     {
         // Lấy dữ liệu tổng doanh thu theo từng ngày
         $revenueData = Payment::select(DB::raw('DATE(payment_date) as date'), DB::raw('SUM(total_amount) as total'))
-            ->where('payment_status', '0')
             ->groupBy(DB::raw('DATE(payment_date)'))
             ->get();
 
@@ -69,8 +65,8 @@ class StatisticalController extends Controller
 
     public function export(Request $request)
     {
-        $statisticals = Payment::where('payment_status', '0')->get();
-        $totalRevenue = Payment::where('payment_status', '0')->sum('total_amount');
+        $statisticals = Payment::get();
+        $totalRevenue = Payment::sum('total_amount');
 
         return Excel::download(new StatisticalExport($statisticals, $totalRevenue), 'payments.xlsx');
     }
@@ -80,7 +76,6 @@ class StatisticalController extends Controller
         $date = $request->input('date', now()->format('Y-m-d'));
         $statisticalsdates = Payment::whereDate('payment_date', $date)
             ->orderBy('payment_date', 'desc')
-            ->where('payment_status', '0')
             ->get();
 
         $totalRevenueday = $statisticalsdates->sum('total_amount');
@@ -100,7 +95,6 @@ class StatisticalController extends Controller
     // Fetch payments for the month
     $statisticalmonths = Payment::whereBetween('payment_date', [$firstDayOfMonth, $lastDayOfMonth])
         ->orderBy('payment_date', 'desc')
-        ->where('payment_status', '0')
         ->get();
 
     // Calculate total revenue for the month
