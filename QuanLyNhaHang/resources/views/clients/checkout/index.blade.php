@@ -37,88 +37,139 @@
             <span class="cs-5"><img src="{{ asset('assets/client/images/img/32.png') }}" alt=""></span>
             <span class="cs-6"><img src="{{ asset('assets/client/images/shapes/16.png') }}" alt=""></span>
         </div>
-        <div class="container">
-            <form action="#">
-                <div class="row">
-                    <div class="col-lg-6  wow fadeInUp">
-                        <div class="checkout-left">
-                            <h4>Chi tiết thanh toán</h4>
-                            <input type="text" placeholder="Tên" required>
-                            <input type="text" placeholder="Họ" required>
-                            <input type="text" placeholder="Công ty">
-                            <select name="#" id="#">
-                                <option value="#">Quốc gia</option>
-                                <option value="#">Việt Nam</option>
-                                <option value="#">Mỹ</option>
-                                <option value="#">Pháp</option>
-                            </select>
-                            <input type="text" placeholder="địa chỉ đường phố">
-                            <input type="text" placeholder="thị trấn/thành phố" required>
-                            <input type="number" placeholder="zip">
-                            <input type="tel" placeholder="Số điện thoại" required>
-                            <input type="email" placeholder="email" required>
-                            <input type="text" placeholder="ghi chú đặt hàng(không bắt buộc)">
+        <div class="container mt-5">
+            <div class="row">
+                <!-- Order Information -->
+                <form action="{{ route('payment.process') }}" method="POST">
+                    @csrf
+                    <div class="col-md-8">
+                        <div class="card mb-3">
+                            <div class="card-header bg-light">
+                                <h5 class="card-title mb-0">Thông tin đơn đặt bàn</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-2">
+                                    <strong>Tên người đặt bàn:</strong>
+                                    <span>{{ $lastReservation->name }}</span>
+                                </div>
+                                <div class="mb-2">
+                                    <strong>Điện thoại:</strong>
+                                    <span>{{ $lastReservation->phone }}</span>
+                                </div>
+                                <div class="mb-2">
+                                    <strong>Thời gian dùng bữa dự kiến:</strong>
+                                    <span>{{ $lastReservation->reservation_date }}
+                                        ({{ $lastReservation->reservation_time }})</span>
+                                </div>
+                                <div class="mb-2">
+                                    <strong>Số bàn:</strong>
+                                    <span>{{ $lastReservationTable->number }}</span>
+                                </div>
+                                <div class="mb-2">
+                                    <strong>Số khách:</strong>
+                                    <span>{{ $lastReservation->guests }}</span>
+                                </div>
+                                <div class="mb-2">
+                                    <strong>ghi chú về món ăn:</strong>
+                                    <span>{{ $lastReservation->note }}</span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-6  wow fadeInUp ">
-                        <div class="checkout-right">
-                            <h4>Đơn hàng của bạn</h4>
-                            <div class="pricing-box">
-                                <ul class="p-head">
-                                    <li class="uppercase">sản phẩm</li>
-                                    <li class="uppercase">tổng cộng</li>
-                                </ul>
-                                <div class="divider"></div>
-                                <ul>
-                                    <li>Đào tạo Photoshop cơ bản</li>
-                                    <li>$1,699</li>
-                                </ul>
-                                <ul>
-                                    <li>Nhà phân tích tài chính hoàn chỉnh</li>
-                                    <li>$1,699</li>
-                                </ul>
-                                <ul>
-                                    <li>WP nâng cao hoàn chỉnh</li>
-                                    <li>$1,699</li>
-                                </ul>
-                                <ul>
-                                    <li class="uppercase"><b>tổng phụ</b></li>
-                                    <li><b>$5,699</b></li>
-                                </ul>
-                                <ul>
-                                    <li class="uppercase"><b>đậu</b></li>
-                                    <li>Tỷ giá cố định: $5.00</li>
-                                    <li>Chuyển khoản ngân hàng</li>
-                                    <li>miễn phí</li>
-                                </ul>
-                                <ul class="bg-white">
-                                    <li class="uppercase">tổng cộng</li>
-                                    <li class="total"><b>$5,699</b></li>
-                                </ul>
-                            </div>
-                            <input type="radio" id="bank">
-                            <label for="bank">CHUYỂN KHOẢN TRỰC TIẾP</label>
-                            <br>
-                            <input type="radio" id="check">
-                            <label for="check">KIỂM TRA THANH TOÁN</label>
-                            <br>
-                            <div class="payment-img">
-                                <a href="#"><img src="{{ asset('assets/client/images/img/payment.png') }}"
-                                        alt=""></a>
-                            </div>
-                            <input type="radio" id="cash">
-                            <label for="cash">THANH TOÁN KHI GIAO HÀNG</label>
-                            <br>
 
-                            <input type="radio" id="terms">
-                            <label for="terms">Tôi đã đọc và chấp nhận <a href="#">Điều khoản và điều kiện
-                                    *</a></label>
-                            <br>
-                            <button type="submit" class="btn">đặt hàng</button>
+                        <div class="card">
+                            <div class="card-header bg-light">
+                                <h5 class="card-title mb-0">Thực đơn đặt trước</h5>
+                            </div>
+                            <div class="card-body p-0">
+                                <table class="table mb-0">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>STT</th>
+                                            <th>Món ăn</th>
+                                            <th>Giá bán</th>
+                                            <th>Số lượng</th>
+                                            <th>Thành tiền</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($carts as $key => $cart)
+                                            <tr>
+                                                <td>{{ $key + 1 }}</td>
+                                                <td>
+                                                    <img src="{{ asset('storage/images/' . $cart->dish->image) }}"
+                                                        alt="{{ $cart->dish->name }}" width="50">
+                                                    {{ $cart->dish->name }}
+                                                </td>
+                                                <td>{{ $cart->dish->price }}₫</td>
+                                                <td>{{ $cart->quantity }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="4" class="text-end"><strong>Tổng cộng</strong></td>
+                                                <td><strong>{{ $cart->total_price }}₫</strong></td>
+                                            </tr>
+                                        @endforeach
+
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </form>
+
+                    <!-- Payment Information -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-header bg-light">
+                                <h5 class="card-title mb-0">THANH TOÁN</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-2">
+                                    <strong>Tạm tính:</strong>
+                                    <span class="float-end">{{ $totalPrice }}₫</span>
+                                </div>
+                                @if ($promotions->isNotEmpty())
+                                    <div class="mb-2">
+                                        <strong>Khuyến mãi:</strong>
+                                        <span class="float-end">{{ $promotions->first()->discount }} ₫</span>
+                                    </div>
+                                @endif
+
+                                <div class="mb-2">
+                                    <strong>Tổng cộng (VAT):</strong>
+                                    <span
+                                        class="float-end text-danger">{{ $totalPriceAfterDiscount ? $totalPriceAfterDiscount : $totalPrice }}₫</span>
+                                </div>
+
+                                <div class="mb-3">
+                                    <strong>Phương thức thanh toán:</strong>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="paymentMethod"
+                                            id="paymentRestaurant" value="restaurant" checked>
+                                        <label class="form-check-label" for="paymentRestaurant">Thanh toán tại nhà
+                                            hàng</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="paymentMethod"
+                                            id="paymentVNPay" value="vnpay">
+                                        <label class="form-check-label" for="paymentVNPay">Thanh toán qua ví VNPAY</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="paymentMethod"
+                                            id="paymentmomo" value="momo">
+                                        <label class="form-check-label" for="paymentmomo">Thanh toán qua Momo</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="paymentMethod"
+                                            id="paymentBankTransfer" value="bank_transfer">
+                                        <label class="form-check-label" for="paymentBankTransfer">Chuyển khoản ngân
+                                            hàng</label>
+                                    </div>
+                                </div>
+                                <button class="btn btn-success w-100">THANH TOÁN</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 @endsection

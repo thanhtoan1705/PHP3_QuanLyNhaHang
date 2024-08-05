@@ -70,14 +70,16 @@ Route::get('lien-he', [ContactController::class, 'index'])->name('contact');
 Route::get('dat-ban', [ClientTableController::class, 'index'])->name('tableClient');
 Route::post('dat-ban', [ClientTableController::class, 'store'])->name('tableClient.store');
 Route::get('tai-khoan', [AccountController::class, 'index'])->name('account')->middleware('auth');
-Route::get('thanh-toan', [CheckoutController::class, 'index'])->name('checkout');
 Route::get('gio-hang', [CartController::class, 'index'])->name('cart')->middleware('auth');
 Route::post('them-gio-hang', [CartController::class, 'addToCart'])->name('cartAdd')->middleware('auth');
 Route::delete('gio-hang/{id}', [CartController::class, 'remove'])->name('cartRemove')->middleware('auth');
 Route::delete('cart/clear', [CartController::class, 'clear'])->name('cart.clear')->middleware('auth');
 Route::post('/cart/update', [CartController::class, 'update'])->name('cart.update')->middleware('auth');
 Route::post('nhap-ma-uu-dai', [CartController::class, 'applyDiscountCode'])->name('applyDiscountCode')->middleware('auth');
-
+Route::get('thanh-toan', [CheckoutController::class, 'index'])->name('checkout');
+Route::post('thanh-toan', [CheckoutController::class, 'checkout'])->name('checkout.store');
+Route::post('thanh-toan/tien-hanh', [CheckoutController::class, 'processPayment'])->name('payment.process');
+Route::post('momo/return', [CheckoutController::class, 'momoReturn'])->name('momo.return');
 
 
 Route::get('dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'role:admin,staff']);
@@ -136,7 +138,10 @@ Route::get('staff/delete/{id}', [StaffController::class, 'delete'])->name('staff
 
 // Order
 Route::get('order', [OrderController::class, 'index'])->name('order.list')->middleware(['auth', 'role:admin']);
-Route::get('order/detail/{id}', [OrderController::class, 'detail'])->name('order.detail')->middleware(['auth', 'role:admin']);
+Route::get('/orders/{id}', [OrderController::class, 'show'])->name('order.detail');
+Route::delete('/orders/{id}', [OrderController::class, 'destroy'])->name('order.delete');
+Route::get('/orders/{id}/pdf', [OrderController::class, 'generatePdf'])->name('order.pdf');
+
 Route::get('payment', [PaymentController::class, 'index'])->name('payment.list')->middleware(['auth', 'role:admin']);
 
 

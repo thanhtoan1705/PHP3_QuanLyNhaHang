@@ -14,8 +14,18 @@ class TableSeeder extends Seeder
     public function run(): void
     {
         Table::create([
+            'number' => '1',
+            'seats' => '2',
+        ]);
+
+        Table::create([
             'number' => '2',
             'seats' => '4',
+        ]);
+
+        Table::create([
+            'number' => '3',
+            'seats' => '6',
         ]);
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Requests\TableBook;
 
 use App\Models\Order;
+use App\Models\Reservation;
 use Carbon\Carbon;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
@@ -35,7 +36,7 @@ class CreateTableBookClientRequest extends FormRequest
                 'required',
                 'exists:tables,id',
                 function ($attribute, $value, $fail) {
-                    if (Order::where('table_id', $value)
+                    if (Reservation::where('table_id', $value)
                         ->where('order_date', $this->order_date)
                         ->where('order_time', '>', Carbon::now()->addHours(2)->format('H:i'))
                         ->exists()

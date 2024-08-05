@@ -121,23 +121,69 @@
                 @endif
             </div>
             <div class="row margin-top-60">
-                <div class="col-lg-5">
-                    <div class="lower-table">
-                        <h6>Tiến hành thanh toán</h6>
-                        <div class="lower-table-info">
-                            <ul class="d-flex justify-content-between">
-                                <li class="sub">Mã ưu đãi</li>
-                                <li>-{{ number_format($discount) }}đ</li>
-                            </ul>
-                            <hr>
-                            <ul class="d-flex justify-content-between">
-                                <li>Tổng cộng</li>
-                                <li>{{ number_format($total) }}đ</li>
-                            </ul>
-                            <a href="{{ route('checkout') }}" class="btn btn-danger mt-3">Tiến hành thanh toán</a>
+                <form action="{{ route('checkout.store') }}" method="POST">
+                    @csrf
+                    <div class="col-lg-7">
+                        <div class="row">
+                            <div class="mb-3 col-lg-4">
+                                <label for="name" class="form-label">Họ tên</label>
+                                <input type="text" name="name" class="form-control" id="name"
+                                    value="{{ $users->name }}">
+                            </div>
+                            <div class="mb-3 col-lg-4">
+                                <label for="phone" class="form-label">Số điện thoại</label>
+                                <input type="number" name="phone" class="form-control" id="phone"
+                                    value="{{ $users->phone }}">
+                            </div>
+                            <div class="mb-3 col-lg-4">
+                                <label for="guests" class="form-label">Số khách</label>
+                                <input type="number" name="guests" class="form-control" id="guests"
+                                    min="1">
+                            </div>
+                            <div class="mb-3 col-lg-4">
+                                <label class="form-label">Chọn bàn</label>
+                                <div class="row g-2">
+                                    <select class="form-select" name="table_id" id="table_id">
+                                        @foreach ($tables as $table)
+                                            <option value="{{ $table->id }}">{{ $table->number }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-3 col-lg-4">
+                                <label for="date" class="form-label">Ngày</label>
+                                <input type="date" name="reservation_date" class="form-control" id="date"
+                                    value="{{ old('reservation_date') }}">
+                            </div>
+                            <div class="mb-3 col-lg-4">
+                                <label for="timeSlot" class="form-label">Chọn giờ</label>
+                                <input type="time" name="reservation_time" class="form-control" id="timeSlot"
+                                    value="{{ old('reservation_time') }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="note" class="form-label">Lời nhắn với nhà hàng</label>
+                                <textarea class="form-control" name="note" id="note" rows="3"></textarea>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    <div class="col-lg-5">
+                        <div class="lower-table">
+                            <h6>Tiến hành thanh toán</h6>
+                            <div class="lower-table-info">
+                                <ul class="d-flex justify-content-between">
+                                    <li class="sub">Mã ưu đãi</li>
+                                    <li>-{{ number_format($discount) }}đ</li>
+                                </ul>
+                                <hr>
+                                <ul class="d-flex justify-content-between">
+                                    <li>Tổng cộng</li>
+                                    <li>{{ number_format($total) }}đ</li>
+                                </ul>
+                                <button type="submit" class="btn btn-danger mt-3">Tiến hành thanh toán</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

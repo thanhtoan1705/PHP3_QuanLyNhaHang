@@ -14,6 +14,8 @@ class Reservation extends Model
         'user_id',
         'table_id',
         'name',
+        'phone',
+        'guests',
         'note',
         'status',
         'reservation_date',

@@ -43,6 +43,11 @@ class Dish extends Model
         return $this->hasMany(Cart::class);
     }
 
+    public function orderDishes()
+    {
+        return $this->hasMany(OrderDish::class);
+    }
+
     public static function createNewDish($validatedData)
     {
         $imagePath = $validatedData['image']->store('images', 'public');
@@ -78,5 +83,4 @@ class Dish extends Model
         }
         return false;
     }
-
 }
