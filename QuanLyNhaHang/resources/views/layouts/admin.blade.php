@@ -92,6 +92,7 @@
 
 
     <!-- Required vendors -->
+    {{-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> --}}
     <script src="{{ asset('assets/admin/vendor/global/global.min.js') }}"></script>
     <script src="{{ asset('assets/admin/vendor/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
     <script src="{{ asset('assets/admin/js/custom.js') }}"></script>

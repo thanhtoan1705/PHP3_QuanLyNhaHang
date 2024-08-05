@@ -73,25 +73,9 @@
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="mb-3">
-                                                <label for="start_time" class="form-label">Ngày bắt đầu hiện tại</label>
-                                                <input disabled type="text" class="form-control" name="start_time"
-                                                    id="start_time" value="{{ $promotion->start_time }}" />
-
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="mb-3">
-                                                <label for="end_time" class="form-label">Ngày kết thúc hiện tại</label>
-                                                <input disabled type="text" class="form-control disabled" name="end_time"
-                                                    id="end_time" value="{{ $promotion->end_time }}" />
-
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="mb-3">
                                                 <label for="start_time" class="form-label">Ngày bắt đầu</label>
                                                 <input type="date" class="form-control" name="start_time" id="start_time"
-                                                    value="{{ old('start_time', $promotion->start_time) }}" />
+                                                    value="{{  $promotion->start_time }}" />
                                                 <!-- Hiển thị lỗi cho trường start_time -->
                                                 @error('start_time')
                                                     <span class="text-danger">{{ $message }}</span>
@@ -102,7 +86,7 @@
                                             <div class="mb-3">
                                                 <label for="end_time" class="form-label">Ngày kết thúc</label>
                                                 <input type="date" class="form-control" name="end_time" id="end_time"
-                                                    value="{{ old('end_time') }}" />
+                                                    value="{{  $promotion->end_time }}" />
                                                 <!-- Hiển thị lỗi cho trường end_time -->
                                                 @error('end_time')
                                                     <span class="text-danger">{{ $message }}</span>
@@ -127,4 +111,4 @@
             </div>
         </div>
     </div>
-@endsection
+    @endsection

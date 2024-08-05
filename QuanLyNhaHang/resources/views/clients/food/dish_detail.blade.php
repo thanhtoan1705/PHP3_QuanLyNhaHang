@@ -245,14 +245,75 @@
                     </div>
                     <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
                         <div class="pd-inner-content">
-                            <label for="">Ghi bình luận</label>
-                            <textarea class="form-control" name="" id="" cols="30" rows="10"
-                                placeholder="Vui lòng nhập đánh giá"></textarea>
-                            <button class="btn btn-danger mt-3">Gửi bình luận</button>
+                            <label for="">Ghi bình luận và đánh giá</label>
+                            <form action="{{ route('reviews.store', $dishDetail->id) }}" method="POST">
+                                @csrf
+                                <div class="form-group">
+                                    <textarea class="form-control" name="review" id="" cols="30" rows="5" placeholder="Vui lòng nhập bình luận"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="rating">Đánh giá:</label>
+                                    <select name="rating" id="rating" class="form-control">
+                                        <option value="">Chọn số sao</option>
+                                        <option value="1">1 sao</option>
+                                        <option value="2">2 sao</option>
+                                        <option value="3">3 sao</option>
+                                        <option value="4">4 sao</option>
+                                        <option value="5">5 sao</option>
+                                    </select>
+                                </div>
+                                <button class="btn btn-danger mt-3">Gửi đánh giá</button>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
+            <style>
+                .review-item {
+    transition: all 0.3s ease;
+}
+
+.review-item:hover {
+    background-color: #f8f9fa; /* Màu nền khi hover */
+}
+
+            </style>
+            <div class="container py-4">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h6 class="card-title mb-4">Đánh giá</h6>
+                        <p>Tổng bình luận: {{ count($reviews) }}</p>
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                @foreach($reviews as $review)
+                                <div class="review-item border-bottom pb-3 mb-3 row">
+                                    <div class="col-lg-8">
+                                    <p class="mb-1">{{ $review->review }}</p>
+                                    <p class="text-muted mb-1">
+                                        <!-- Hiển thị sao dựa trên rating -->
+                                        @for($i = 1; $i <= 5; $i++)
+                                            <i class="fa-solid fa-star {{ $i <= $review->rating ? 'text-warning' : 'text-muted' }}"></i>
+                                        @endfor
+                                    </p>
+                                    <p class="text-muted mb-0">Đăng bởi: {{ $review->user->name }}</p>
+                                </div>
+                                <div class="col-lg-4">
+                                    @if(Auth::id() == $review->user_id)
+                                    <form action="{{ route('reviews.destroy', $review->id) }}" method="POST" class="d-inline">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-sm btn-outline-danger"><i class="fa-solid fa-trash-can"></i></button>
+                                    </form>
+                                </div>
+                                    @endif
+                                </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
         </div>
     </section>

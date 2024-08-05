@@ -28,23 +28,21 @@
                                                 <span class="text-danger"> {{ $message }} </span>
                                             @enderror
                                             </div>
-
-                                            <!-- Hình ảnh hiện tại -->
-                                            <div class="mb-3">
-                                                <label for="current_image" class="form-label">Hình ảnh hiện tại</label><br>
-                                                @if ($category->image)
-                                                    <img src="{{ asset('storage/images/' . $category->image) }}"
-                                                        alt="Current Image" style="max-width: 200px; max-height: 200px;">
-                                                @else
-                                                    <span>Không có hình ảnh</span>
-                                                @endif
-                                            </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <!-- Chọn hình ảnh mới -->
                                         <div class="mb-3">
-                                            <label for="image" class="form-label">Chọn hình ảnh mới</label>
-                                            <input type="file" class="form-control" name="image" id="image" />
+                                            <label for="image" class="form-label">Chọn hình ảnh</label>
+                                            <input type="file" class="form-control" name="image" id="image"  accept="image/*"/>
+                                            @if ($category->image)
+                                            <div id="imagePreview" class="mt-3 position-relative">
+                                                <button type="button" id="removeImage"
+                                                    class="btn btn-danger btn-sm position-absolute top-0 end-0"
+                                                    style="z-index: 1;">X</button>
+                                                <img src="{{ asset('storage/images/' . $category->image) }}"
+                                                    alt="{{ $category->name }}" width="100" class="img-thumbnail">
+                                            </div>
+                                        @endif
                                             @error('image')
                                                 <span class="text-danger"> {{ $message }} </span>
                                             @enderror
@@ -63,3 +61,29 @@
         </div>
     </div>
 @endsection
+
+@push('script')
+
+<script>
+    document.getElementById('formFile').addEventListener('change', function(event) {
+        var reader = new FileReader();
+        reader.onload = function() {
+            var output = document.getElementById('imagePreview');
+            output.innerHTML = '<img src="' + reader.result +
+                '" width="100" class="mt-3"><button type="button" id="removeImage" class="btn btn-danger btn-sm">X</button>';
+            document.getElementById('removeImage').addEventListener('click', function() {
+                output.innerHTML = '';
+                document.getElementById('formFile').value = '';
+            });
+        };
+        reader.readAsDataURL(event.target.files[0]);
+    });
+
+    if (document.getElementById('removeImage')) {
+        document.getElementById('removeImage').addEventListener('click', function() {
+            document.getElementById('imagePreview').innerHTML = '';
+            document.getElementById('formFile').value = '';
+        });
+    }
+</script>
+@endpush

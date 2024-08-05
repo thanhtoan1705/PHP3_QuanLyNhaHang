@@ -24,6 +24,7 @@ class Promotion extends Model
     {
         return Carbon::parse($value)->format('d-m-Y');
     }
+
      public function setNumberUseAttribute($value)
     {
         $this->attributes['number_use'] = $value;
