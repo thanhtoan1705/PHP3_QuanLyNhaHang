@@ -35,7 +35,7 @@
                                     </div>
                                     <div class="mb-3 col-md-6">
                                         <label class="form-label">Giá</label>
-                                        <input type="text" name="price" class="form-control" placeholder="200.000">
+                                        <input type="number" name="price" class="form-control" placeholder="200.000">
                                         @error('price')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -49,10 +49,16 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="formFile" class="form-label">Chọn hình ảnh</label>
-                                        <input class="form-control" type="file" name="image" id="formFile">
+                                        <input class="form-control" type="file" name="image" id="formFile"  accept="image/*">
                                         @error('image')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
+                                    </div>
+                                    <div class="mb-3" id="image-preview" style="display: none;">
+                                        <img id="image-preview-img" src="" alt="Image Preview"
+                                            style="max-width: 200px; max-height: 200px;">
+                                        <button type="button" id="remove-image"
+                                            style="position: relative; top: -50px; left: -0px; background: none; border: none; font-size: 24px; color: #1921fa;">&times;</button>
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label">Chọn trạng thái:</label>
@@ -75,4 +81,24 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.getElementById('formFile').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('image-preview-img').src = e.target.result;
+                    document.getElementById('image-preview').style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        document.getElementById('remove-image').addEventListener('click', function() {
+            document.getElementById('formFile').value = "";
+            document.getElementById('image-preview').style.display = 'none';
+            document.getElementById('image-preview-img').src = "";
+        });
+    </script>
 @endsection
