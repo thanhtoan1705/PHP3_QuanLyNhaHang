@@ -8,6 +8,8 @@ use Laravel\Fortify\Contracts\LogoutResponse;
 use Laravel\Fortify\Fortify;
 use App\Models\Promotion;
 use App\Observers\PromotionObserver;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Auth;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -32,5 +34,10 @@ class AppServiceProvider extends ServiceProvider
         Paginator::useBootstrap();
 
         Promotion::observe(\App\Observers\PromotionObserver::class);
+
+        View::composer('*', function ($view) {
+            $view->with('user', Auth::user());
+            $view->with('username', Auth::check() ? Auth::user()->name : null);
+        });
     }
 }

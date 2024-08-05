@@ -59,7 +59,11 @@
                         <div class="customer-area">
                             <a href="{{ route('account') }}" class="text-white">{{ $username }}</a>
                             <span>
-                                <a href="{{ route('account') }}"><i class="fas fa-user"></i></a>
+                                @if (Auth::check())
+                                <a href="{{ route('account.show', Auth::user()->id) }}"><i class="fas fa-user"></i></a>
+                            @else
+                                <a href="{{ route('login') }}"><i class="fas fa-user"></i></a>
+                            @endif
                             </span>
                             <span>
                                 <a href="{{ route('cart') }}"><i class="fas fa-shopping-basket"></i></a>

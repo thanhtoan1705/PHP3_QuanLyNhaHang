@@ -69,7 +69,8 @@ Route::get('tai-khoan', [AccountController::class, 'index'])->name('account');
 Route::get('lien-he', [ContactController::class, 'index'])->name('contact');
 Route::get('dat-ban', [ClientTableController::class, 'index'])->name('tableClient');
 Route::post('dat-ban', [ClientTableController::class, 'store'])->name('tableClient.store');
-Route::get('tai-khoan', [AccountController::class, 'index'])->name('account')->middleware('auth');
+// Route::get('tai-khoan', [AccountController::class, 'index'])->name('account')->middleware('auth');
+// Route::get('chi-tiet-tai-khoan/{id}', [AccountController::class, 'show'])->name('account.show')->middleware('auth');
 Route::get('thanh-toan', [CheckoutController::class, 'index'])->name('checkout');
 Route::get('gio-hang', [CartController::class, 'index'])->name('cart')->middleware('auth');
 Route::post('them-gio-hang', [CartController::class, 'addToCart'])->name('cartAdd')->middleware('auth');
@@ -80,6 +81,14 @@ Route::post('/cart/update', [CartController::class, 'update'])->name('cart.updat
 
 Route::post('nhap-ma-uu-dai', [CartController::class, 'applyDiscountCode'])->name('applyDiscountCode')->middleware('auth');
 
+//account
+Route::middleware(['auth'])->group(function () {
+    Route::name('account.')->group(function () {
+        Route::get('account', [AccountController::class, 'index'])->name('index');
+        Route::get('account/{id}', [AccountController::class, 'show'])->name('show');
+        Route::put('account/update/{id}', [AccountController::class, 'update'])->name('update');
+    });
+});
 
 
 Route::get('dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'role:admin']);
