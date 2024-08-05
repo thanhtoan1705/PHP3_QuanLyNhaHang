@@ -8,6 +8,7 @@ use App\Http\Requests\TableBook\UpdateTableBookRequest;
 use App\Models\Category;
 use App\Models\Dish;
 use App\Models\Order;
+use App\Models\Payment;
 use App\Models\Reservation;
 use App\Models\Table;
 use App\Models\User;
@@ -43,10 +44,10 @@ class TableBookController extends Controller
     {
         try {
             $validated = $request->validated();
-            Reservation::createNewBookTable($validated);
+            $reservation = Reservation::createNewBookTable($validated);
 
             $table = Table::findOrFail($validated['table_id']);
-            $table->update(['seats' => $validated['seats']]);
+            // $table->update(['seats' => $validated['seats']]);
 
             flash()->success('Thêm thành công.');
         } catch (\Exception $e) {
@@ -55,6 +56,7 @@ class TableBookController extends Controller
 
         return redirect()->route('table-book.list');
     }
+
 
 
 
@@ -80,7 +82,6 @@ class TableBookController extends Controller
         $reservation->updateNewBookTable($request->validated());
 
         $table = Table::findOrFail($request->validated('table_id'));
-        $table->update(['seats' =>$request->validated('seats')]);
 
         flash()->success('Cập nhật thành công.');
         return redirect()->route('table-book.list');
@@ -109,4 +110,6 @@ class TableBookController extends Controller
         $table = Table::findOrFail($id);
         return response()->json($table);
     }
+
+
 }

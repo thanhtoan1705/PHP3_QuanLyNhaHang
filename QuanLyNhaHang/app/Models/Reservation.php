@@ -14,7 +14,9 @@ class Reservation extends Model
         'user_id',
         'table_id',
         'name',
+        'phone',
         'note',
+        'seats',
         'status',
         'reservation_date',
         'reservation_time',
@@ -61,10 +63,19 @@ class Reservation extends Model
             $dishIds = $validatedData['dish_id'];
             $quantities = $validatedData['quantities'] ?? [];
 
-            $order->dishes()->detach();
-
             foreach ($dishIds as $dishId) {
                 if (isset($quantities[$dishId]) && $quantities[$dishId] > 0) {
+                    $dish = Dish::find($dishId);
+
+                    // Check if the quantity ordered exceeds available quantity
+                    if ($dish->quantity < $quantities[$dishId]) {
+                        throw new \Exception("Số lượng món \"{$dish->name}\" đã vượt quá số lượng có sẵn.");
+                    }
+
+                    // Deduct the quantity from available stock
+                    $dish->quantity -= $quantities[$dishId];
+                    $dish->save();
+
                     $order->dishes()->attach($dishId, ['quantity' => $quantities[$dishId]]);
                 }
             }
@@ -90,17 +101,43 @@ class Reservation extends Model
             $dishIds = $validatedData['dish_id'];
             $quantities = $validatedData['quantities'] ?? [];
 
-            $this->dishes()->detach();
-
             foreach ($dishIds as $dishId) {
-                if (isset($quantities[$dishId]) && $quantities[$dishId] > 0) {
-                    $this->dishes()->attach($dishId, ['quantity' => $quantities[$dishId]]);
+                $newQuantity = $quantities[$dishId];
+                $existingDish = $this->dishes->find($dishId);
+
+                if ($existingDish) {
+                    $originalQuantity = $existingDish->pivot->quantity;
+
+                    // Tính toán sự khác biệt giữa số lượng mới và số lượng ban đầu
+                    $difference = $newQuantity - $originalQuantity;
+
+                    // Cập nhật số lượng món ăn có sẵn
+                    $dish = Dish::find($dishId);
+                    $dish->quantity -= $difference;
+                    if ($dish->quantity < 0) {
+                        throw new \Exception("Số lượng món \"{$dish->name}\" đã vượt quá số lượng có sẵn.");
+                    }
+                    $dish->save();
+
+                    // Cập nhật số lượng trong pivot table
+                    $this->dishes()->updateExistingPivot($dishId, ['quantity' => $newQuantity]);
+                } else {
+                    // Thêm món mới nếu nó chưa tồn tại trong đơn đặt hàng
+                    $dish = Dish::find($dishId);
+                    if ($dish->quantity < $newQuantity) {
+                        throw new \Exception("Số lượng món \"{$dish->name}\" đã vượt quá số lượng có sẵn.");
+                    }
+                    $dish->quantity -= $newQuantity;
+                    $dish->save();
+
+                    $this->dishes()->attach($dishId, ['quantity' => $newQuantity]);
                 }
             }
         }
 
         return $this;
     }
+
 
     protected static function boot()
     {
@@ -110,4 +147,41 @@ class Reservation extends Model
             $reservation->dishes()->detach();
         });
     }
+
+    public static function createNewBookTableClient($validatedData)
+    {
+        $order = self::create([
+            'name' => $validatedData['name'],
+            'phone' => $validatedData['phone'],
+            'table_id' => $validatedData['table_id'],
+            'note' => $validatedData['note'],
+            'reservation_date' => $validatedData['reservation_date'],
+            'reservation_time' => $validatedData['reservation_time'],
+        ]);
+
+        if (isset($validatedData['dish_id'])) {
+            $dishIds = $validatedData['dish_id'];
+            $quantities = $validatedData['quantities'] ?? [];
+
+            foreach ($dishIds as $dishId) {
+                if (isset($quantities[$dishId]) && $quantities[$dishId] > 0) {
+                    $dish = Dish::find($dishId);
+
+                    // Check if the quantity ordered exceeds available quantity
+                    if ($dish->quantity < $quantities[$dishId]) {
+                        throw new \Exception("Số lượng món \"{$dish->name}\" đã vượt quá số lượng có sẵn.");
+                    }
+
+                    // Deduct the quantity from available stock
+                    $dish->quantity -= $quantities[$dishId];
+                    $dish->save();
+
+                    $order->dishes()->attach($dishId, ['quantity' => $quantities[$dishId]]);
+                }
+            }
+        }
+
+        return $order;
+    }
+
 }

@@ -145,8 +145,16 @@
                             @if ($errors->any())
                                 <div class="alert alert-danger mt-3">
                                     <ul>
-                                        @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
+                                        @foreach ($errors->get('dish_id.*') as $key => $messages)
+                                            @foreach ($messages as $message)
+                                                <div class="text-danger">{{ $message }}</div>
+                                            @endforeach
+                                        @endforeach
+
+                                        @foreach ($errors->get('quantities.*') as $key => $messages)
+                                            @foreach ($messages as $message)
+                                                <div class="text-danger">{{ $message }}</div>
+                                            @endforeach
                                         @endforeach
                                     </ul>
                                 </div>

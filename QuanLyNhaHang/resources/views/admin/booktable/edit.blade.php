@@ -20,6 +20,9 @@
                                         <label class="form-label">Người đặt</label>
                                         <input type="text" name="name" class="form-control"
                                             value="{{ old('name', $reservation->name) }}">
+                                        @error('name')
+                                            <div class="text-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                     <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
                                     <div class="mb-3 col-md-3">
@@ -31,11 +34,17 @@
                                                     Bàn số {{ $table->number }}</option>
                                             @endforeach
                                         </select>
+                                        @error('table_id')
+                                            <div class="text-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                     <div class="mb-3 col-md-3">
                                         <label class="form-label">Số ghế</label>
                                         <input type="number" id="seats-input" name="seats" class="form-control"
                                             value="{{ old('seats', $reservation->table->seats) }}">
+                                        @error('seats')
+                                            <div class="text-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
 
                                     <div class="mb-3">
@@ -81,6 +90,7 @@
                                                     <h5 class="modal-title" id="dishModalLabel">Chọn món ăn</h5>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                         aria-label="Close"></button>
+
                                                 </div>
                                                 <div class="modal-body">
                                                     @foreach ($categories as $category)
@@ -92,14 +102,13 @@
                                                                         <img src="{{ asset('storage/images/' . $dish->image) }}"
                                                                             width="232px" height="174px"
                                                                             class="card-img-top" alt="{{ $dish->name }}">
-                                                                        <div
-                                                                            class="">
+                                                                        <div class="">
                                                                             <h5 class="card-title mb-0">{{ $dish->name }}
                                                                             </h5>
                                                                             <span
                                                                                 class="mb-0">{{ number_format($dish->price, 0, ',', '.') }}
                                                                                 VNĐ</span>
-                                                                                <p>Còn lại: {{ $dish->quantity }} món</p>
+                                                                            <p>Còn lại: {{ $dish->quantity }} món</p>
                                                                         </div>
                                                                         <button type="button"
                                                                             class="btn btn-primary select-dish"
@@ -123,11 +132,17 @@
                                         <label class="form-label">Ngày đặt</label>
                                         <input type="date" name="order_date" class="form-control"
                                             value="{{ old('order_date', $reservation->reservation_date) }}">
+                                        @error('order_date')
+                                            <div class="text-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                     <div class="mb-3 col-md-6">
                                         <label class="form-label">Giờ đặt</label>
                                         <input type="time" name="order_time" class="form-control"
                                             value="{{ old('order_time', \Carbon\Carbon::parse($reservation->reservation_time)->format('H:i')) }}">
+                                        @error('order_time')
+                                            <div class="text-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
 
                                     <div class="mb-3 col-md-12">
@@ -156,8 +171,16 @@
                             @if ($errors->any())
                                 <div class="alert alert-danger mt-3">
                                     <ul>
-                                        @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
+                                        @foreach ($errors->get('dish_id.*') as $key => $messages)
+                                            @foreach ($messages as $message)
+                                                <div class="text-danger">{{ $message }}</div>
+                                            @endforeach
+                                        @endforeach
+
+                                        @foreach ($errors->get('quantities.*') as $key => $messages)
+                                            @foreach ($messages as $message)
+                                                <div class="text-danger">{{ $message }}</div>
+                                            @endforeach
                                         @endforeach
                                     </ul>
                                 </div>
