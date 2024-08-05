@@ -50,7 +50,7 @@
 
                                     <div class="mb-3">
                                         <label class="form-label">Mô tả</label>
-                                        <textarea id="editor" class="form-control" name="description" rows="8">{{ $dish->description }}</textarea>
+                                        <textarea id="" class="form-control" name="description" rows="8">{{ $dish->description }}</textarea>
                                         @error('description')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -58,7 +58,7 @@
 
                                     <div class="mb-3">
                                         <label for="formFile" class="form-label">Chọn hình ảnh</label>
-                                        <input class="form-control" type="file" name="image" id="formFile">
+                                        <input class="form-control" type="file" name="image" id="formFile" accept="image/*">
                                         @if ($dish->image)
                                             <div id="imagePreview" class="mt-3 position-relative">
                                                 <button type="button" id="removeImage"
