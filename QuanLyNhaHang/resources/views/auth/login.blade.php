@@ -118,10 +118,10 @@
                                 </div>
 
                                 <div class="flex content-center items-center mt-3">
-                                    @if (Route::has('password.request'))
+                                    @if (route('password.request'))
                                         <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                                            href="{{ route('password.request') }}">
-                                            {{ __('Quên mật khẩu?') }}
+                                           href="{{ route('password.request') }}">
+                                           {{ __('Quên mật khẩu?') }}
                                         </a>
                                     @endif
 
@@ -131,6 +131,7 @@
                                         {{ __('Đăng nhập') }}
                                     </x-button>
                                 </div>
+
                             </form>
                         </x-guest-layout>
                     </div>

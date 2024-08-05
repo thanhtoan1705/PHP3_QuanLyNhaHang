@@ -30,6 +30,8 @@ use App\Http\Controllers\Client\Gallery\GalleryController;
 use App\Http\Controllers\Client\Table\TableController as ClientTableController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 
 // Route::middleware([
@@ -69,7 +71,9 @@ Route::get('tai-khoan', [AccountController::class, 'index'])->name('account');
 Route::get('lien-he', [ContactController::class, 'index'])->name('contact');
 Route::get('dat-ban', [ClientTableController::class, 'index'])->name('tableClient');
 Route::post('dat-ban', [ClientTableController::class, 'store'])->name('tableClient.store');
-Route::get('tai-khoan', [AccountController::class, 'index'])->name('account')->middleware('auth');
+// Route::get('tai-khoan', [AccountController::class, 'index'])->name('account')->middleware('auth');
+// Route::get('chi-tiet-tai-khoan/{id}', [AccountController::class, 'show'])->name('account.show')->middleware('auth');
+Route::get('thanh-toan', [CheckoutController::class, 'index'])->name('checkout');
 Route::get('gio-hang', [CartController::class, 'index'])->name('cart')->middleware('auth');
 Route::post('them-gio-hang', [CartController::class, 'addToCart'])->name('cartAdd')->middleware('auth');
 Route::delete('gio-hang/{id}', [CartController::class, 'remove'])->name('cartRemove')->middleware('auth');
@@ -81,6 +85,15 @@ Route::post('thanh-toan', [CheckoutController::class, 'checkout'])->name('checko
 Route::post('thanh-toan/tien-hanh', [CheckoutController::class, 'processPayment'])->name('payment.process');
 Route::post('momo/return', [CheckoutController::class, 'momoReturn'])->name('momo.return');
 
+//account
+// Route::middleware(['auth'])->group(function () {
+    Route::name('account.')->middleware('auth')->group(function () {
+        Route::get('account', [AccountController::class, 'index'])->name('index');
+        Route::put('account/update/{id}', [AccountController::class, 'update'])->name('update');
+        Route::get('account/show/{id}', [AccountController::class, 'show'])->name('show');
+    });
+
+// });
 
 Route::get('dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'role:admin,staff']);
 // login

@@ -45,7 +45,7 @@
                             data-bs-target="#track-order" type="button" role="tab" aria-controls="track-order"
                             aria-selected="false">
                             <i class="fa-solid fa-cart-shopping"></i>
-                            Kiểm tra đơn hàng
+                            Mã khuyến mãi
                         </button>
                         <button class="nav-link text-start" id="address-tab" data-bs-toggle="pill" data-bs-target="#address"
                             type="button" role="tab" aria-controls="address" aria-selected="false">
@@ -66,7 +66,7 @@
                         <!-- dahoboard-tab -->
                         <div class="tab-pane fade show active" id="dahoboard" role="tabpanel"
                             aria-labelledby="dahoboard-tab" tabindex="0">
-                            <h5 class="tab-title">Hello <span>Toàn Đào!</span> </h5>
+                            <h5 class="tab-title">Hello <span>{{ $user->name }}!</span> </h5>
                             <p>
                                 Từ bảng điều khiển tài khoản của bạn. bạn có thể dễ dàng kiểm tra &amp; xem gần đây của bạn
                                 đơn đặt hàng,<br> quản lý địa chỉ giao hàng và thanh toán của bạn cũng như chỉnh sửa mật
@@ -171,28 +171,25 @@
                             </div>
                         </div>
                         <!-- track-order-tab -->
-                        <div class="tab-pane fade" id="track-order" role="tabpanel" aria-labelledby="track-order-tab"
-                            tabindex="0">
-                            <h5 class="tab-title">Theo dõi đơn hàng</h5>
-                            <p>Để theo dõi đơn hàng của bạn, vui lòng nhập ID đơn hàng của bạn vào ô bên dưới và nhấn nút
-                                "Theo dõi".
-                                Cái này
-                                đã được trao cho bạn trên của bạn
-                                nhận và trong email xác nhận mà lẽ ra bạn phải nhận được.
-                            </p>
-                            <form>
+                        <div class="tab-pane fade" id="track-order" role="tabpanel" aria-labelledby="track-order-tab" tabindex="0">
+                            <h5 class="tab-title">Mã khuyến mãi</h5>
                                 <div class="mb-3">
-                                    <label for="order-id" class="form-label">Mã đơn hàng</label>
-                                    <input type="text" class="form-control" id="order-id"
-                                        aria-describedby="helpingLine">
-                                    <div id="helpingLine" class="form-text">Tìm thấy trong email xác nhận đặt hàng của bạn</div>
+                                    <div class="row">
+                                        @foreach($promotions as $promotion)
+                                        <div class="col-lg-4 mb-3">
+                                            <div class="card h-100">
+                                                <div class="card-body">
+                                                    <h6 class="card-title">Mã khuyến mãi: <span id="promo-code-{{ $promotion->id }}">{{ $promotion->code }}</span></h6>
+                                                    <p class="card-text">Số lần sử dụng: {{ $promotion->number_use }}</p>
+                                                    <button type="button" class="btn btn-primary" onclick="copyToClipboard('promo-code-{{ $promotion->id }}')">Copy</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @endforeach
+                                    </div>
+                                    {{ $promotions->links() }}
                                 </div>
-                                <div class="mb-3">
-                                    <label for="billing-email" class="form-label">Thanh toán bằng thư điện tử</label>
-                                    <input type="email" class="form-control" id="billing-email">
-                                </div>
-                                <button type="submit" class="btn btn-primary">Theo dõi</button>
-                            </form>
+                            
                         </div>
                         <!-- address-tab -->
                         <div class="tab-pane fade" id="address" role="tabpanel" aria-labelledby="address-tab"
@@ -200,103 +197,59 @@
                             <div class="front-address" id="front-address">
                                 <div class="row">
                                     <div class="col-lg-6">
-                                        <h5 class="tab-title">Địa chỉ cảu hàng</h5>
+                                        <h5 class="tab-title">Địa chỉ cửa hàng</h5>
                                         <ul>
                                             <li>Việt Nam</li>
                                             <li>Ninh Kiều Cần Thơ</li>
                                             <li>Hoàng Quốc Việt</li>
                                             <li>123</li>
-                                            <li><a href="#" class="edit-address">Chỉnh sửa</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-6">
                                         <h5 class="tab-title">Địa chỉ của tôi</h5>
                                         <ul>
-                                            <li>Việt Nam</li>
-                                            <li>Vĩnh Long</li>
-                                            <li>Nguyễn Văn Cừ</li>
-                                            <li>SDT: 0123456789</li>
-                                            <li><a href="#" class="edit-address">Chỉnh sửa</a></li>
+                                            <li>{{$user->address}}</li>
+                                            <li>{{$user->phone}}</li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                            <div class="edit-address-form" id="edit-address-form">
-                                <form>
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <h5 class="tab-title">Billing Address</h5>
-                                            <div class="mb-3">
-                                                <label for="billing-address-1" class="form-label">Address Line 1</label>
-                                                <input type="text" class="form-control" id="billing-address-1"
-                                                    value="Uttara Dhaka">
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="billing-address-2" class="form-label">Address Line 2</label>
-                                                <input type="text" class="form-control" id="billing-address-2"
-                                                    value="Yello Road, Bangladesh">
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="billing-town" class="form-label">Town</label>
-                                                <input type="text" class="form-control" id="billing-town"
-                                                    value="Dhaka">
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="billing-zip" class="form-label">Post / Area / Zip
-                                                    Code</label>
-                                                <input type="text" class="form-control" id="billing-zip"
-                                                    value="1230">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <h5 class="tab-title">Shipping Address</h5>
-                                            <div class="mb-3">
-                                                <label for="address-1" class="form-label">Address Line 1</label>
-                                                <input type="text" class="form-control" id="address-1"
-                                                    value="Uttara Dhaka">
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="address-2" class="form-label">Address Line 2</label>
-                                                <input type="text" class="form-control" id="address-2"
-                                                    value="Yello Road, Bangladesh">
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="town" class="form-label">Town</label>
-                                                <input type="text" class="form-control" id="town"
-                                                    value="Dhaka">
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="zip" class="form-label">Post / Area / Zip
-                                                    Code</label>
-                                                <input type="text" class="form-control" id="zip"
-                                                    value="1230">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button class="btn btn-primary">Save</button>
-                                    <button class="btn btn-primary" id="back-btn">Back</button>
-                                </form>
-                            </div>
+                            
                         </div>
                         <!-- account-details -->
                         <div class="tab-pane fade" id="account-details" role="tabpanel"
                             aria-labelledby="account-details-tab" tabindex="0">
 
-                            <form>
+                            <h5 class="tab-title">Chi tiết tài khoản</h5>
+                                    @if (session('success'))
+                                        <div class="alert alert-success">
+                                            {{ session('success') }}
+                                        </div>
+                                    @endif
+                            <form action="{{ route('account.update', $user->id) }}" method="POST">
                                 <!-- account-details -->
-                                <div class="account-details">
-                                    <h5 class="tab-title">Chi tiết tài khoản</h5>
+                                @csrf
+                                @method('PUT')
+                                <div class="account-details">    
                                     <div class="mb-3">
                                         <label for="userName" class="form-label">Tên</label>
-                                        <input type="text" class="form-control" id="userName">
+                                        <input type="text" name="name" class="form-control" id="userName" value="{{ old('name', $user->name) }}">
+                                        @error('name') <span class="text-danger">{{$message}}</span> @enderror
                                     </div>
                                     <div class="mb-3">
                                         <label for="userPhone" class="form-label">Số điện thoại</label>
-                                        <input type="text" class="form-control" id="userPhone">
+                                        <input type="text" name="phone" class="form-control" id="userPhone" value="{{ old('phone', $user->phone) }}">
+                                        @error('phone') <span class="text-danger">{{$message}}</span> @enderror
                                     </div>
                                     <div class="mb-3">
                                         <label for="email" class="form-label">Email</label>
-                                        <input type="text" class="form-control" id="email">
+                                        <input type="email" name="email" class="form-control" id="email" value="{{ old('email', $user->email) }}">
+                                        @error('email') <span class="text-danger">{{$message}}</span> @enderror
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">Địa chỉ</label>
+                                        <input type="text" name="address" class="form-control" id="address" value="{{ old('address', $user->address) }}">
+                                        @error('address') <span class="text-danger">{{$message}}</span> @enderror
                                     </div>
                                 </div>
                                 <!-- password-change -->
@@ -304,20 +257,22 @@
                                     <h5 class="tab-title">Thay đổi mật khẩu</h5>
                                     <div class="mb-3">
                                         <label for="currentPass" class="form-label">Mật khẩu cũ</label>
-                                        <input type="password" class="form-control" id="currentPass">
+                                        <input type="password" name="current_password" class="form-control" id="currentPass">
+                                        @error('current_password') <span class="text-danger">{{$message}}</span> @enderror
                                     </div>
                                     <div class="mb-3">
                                         <label for="newPass" class="form-label">Mật khẩu mới</label>
-                                        <input type="password" class="form-control" id="newPass">
+                                        <input type="password" name="new_password" class="form-control" id="newPass">
+                                        @error('new_password') <span class="text-danger">{{$message}}</span> @enderror
                                     </div>
                                     <div class="mb-3">
-                                        <label for="conPass" class="form-label">Nhập mật khẩu mới</label>
-                                        <input type="password" class="form-control" id="conPass">
+                                        <label for="conPass" class="form-label">Xác nhận mật khẩu mới</label>
+                                        <input type="password" name="new_password_confirmation" class="form-control" id="conPass">
+                                        @error('new_password_confirmation') <span class="text-danger">{{$message}}</span> @enderror
                                     </div>
                                 </div>
-                                <button class="btn btn-primary">Lưu thay đổi</button>
+                                <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
                             </form>
-
                         </div>
                     </div>
                 </div>
@@ -325,3 +280,15 @@
         </div>
     </section>
 @endsection
+<script>
+    function copyToClipboard(elementId) {
+        const copyText = document.getElementById(elementId).innerText;
+        const textarea = document.createElement('textarea');
+        textarea.value = copyText;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        alert('Copied: ' + copyText);
+    }
+    </script>
