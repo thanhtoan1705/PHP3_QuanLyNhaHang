@@ -104,14 +104,13 @@ Route::post('thanh-toan/tien-hanh', [CheckoutController::class, 'processPayment'
 Route::post('momo/return', [CheckoutController::class, 'momoReturn'])->name('momo.return');
 
 //account
-// Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth'])->group(function () {
     Route::name('account.')->middleware('auth')->group(function () {
         Route::get('account', [AccountController::class, 'index'])->name('index');
         Route::put('account/update/{id}', [AccountController::class, 'update'])->name('update');
         Route::get('account/show/{id}', [AccountController::class, 'show'])->name('show');
     });
-
-// });
+});
 
 Route::get('dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'role:admin']);
 Route::get('statistical', [StatisticalController::class, 'index'])->name('statistical.index');
@@ -235,7 +234,3 @@ Route::name('promotion.')->group(function () {
 
 //comment
 Route::get('comment', [CommentController::class, 'index'])->name('comment.list')->middleware(['auth', 'role:admin']);
-
-
-
-

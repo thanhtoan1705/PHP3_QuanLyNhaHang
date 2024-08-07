@@ -21,49 +21,24 @@ class CheckoutController extends Controller
         $lastReservationId = session('last_reservation_id', null);
         // Lấy các Reservation của người dùng đã đăng nhập và nạp trước thông tin về bảng tương ứng
         $reservations = Reservation::where('user_id', auth()->id())->with('table')->get();
-        $lastReservation = null;
-        $lastReservationTable = null;
+        $lastReservation = $reservations->firstWhere('id', $lastReservationId);
+        $lastReservationTable = $lastReservation ? $lastReservation->table : null;
+        session()->put('lastReservation', $lastReservation);
 
-        if ($lastReservationId) {
-            $lastReservation = $reservations->firstWhere('id', $lastReservationId);
-
-            // Nếu tìm thấy lastReservation, lấy thông tin của Table tương ứng
-            if ($lastReservation) {
-                $lastReservationTable = $lastReservation->table;
-                session()->put('lastReservation', $lastReservation);
-            }
-        }
-
-
-        // Lấy tất cả các bản ghi từ bảng carts của người dùng hiện tại và nạp trước thông tin dish
-        $carts = Cart::where('user_id', auth()->id())->with('dish')->get();
-        // Lấy danh sách tất cả các dish_id từ carts
-        $dishIds = $carts->pluck('dish_id');
-        // Lấy tất cả các món ăn tương ứng với dish_id
-        $dishes = Dish::whereIn('id', $dishIds)->get();
-
-        $promotionIds = $carts->pluck('promotion_id')->unique();
-        $promotions = Promotion::whereIn('id', $promotionIds)->get();
-
-        // dd($promotions->first()->discount);
+        // Lấy tất cả các bản ghi từ bảng carts của người dùng hiện tại và nạp trước thông tin dish và promotion
+        $carts = Cart::where('user_id', auth()->id())->with(['dish', 'promotion'])->get();
 
         // Tính tổng giá trị của giỏ hàng
-        $totalPrice = 0;
-        foreach ($carts as $cart) {
-            $totalPrice += $cart->quantity * $cart->dish->price;
-        }
-
+        $totalPrice = $carts->sum(function ($cart) {
+            return $cart->quantity * $cart->dish->price;
+        });
         // Kiểm tra nếu có ít nhất một promotion
-        $discount = 0;
-        if ($promotions->isNotEmpty()) {
-            // Lấy mức giảm giá từ promotion đầu tiên
-            $discount = $promotions->first()->discount;
-        }
-
-        // Tính tổng giá trị sau khi áp dụng giảm giá
+        $discount = $carts->whereNotNull('promotion')->sum(function ($cart) {
+            return $cart->promotion->discount ?? 0;
+        });
         $totalPriceAfterDiscount = $totalPrice - $discount;
 
-        return view('clients.checkout.index', compact('lastReservationTable', 'lastReservation', 'carts', 'totalPrice', 'totalPriceAfterDiscount', 'promotions'));
+        return view('clients.checkout.index', compact('lastReservationTable', 'lastReservation', 'carts', 'totalPrice', 'totalPriceAfterDiscount'));
     }
 
     public function checkout(Request $request)
@@ -122,6 +97,11 @@ class CheckoutController extends Controller
 
                 foreach ($cartItems as $cartItem) {
                     $order->dishes()->attach($cartItem->dish_id, ['quantity' => $cartItem->quantity]);
+                    $dish = Dish::find($cartItem->dish_id);
+                    if ($dish) {
+                        $dish->quantity -= $cartItem->quantity;
+                        $dish->save();
+                    }
                 }
 
                 // Tạo bản ghi thanh toán
