@@ -63,6 +63,8 @@
                                             <option value="user" {{ old('role') == 'user' ? 'selected' : '' }}>
                                                 Người Dùng
                                             </option>
+                                            <option value="staff" {{ old('role') == 'staff' ? 'selected' : '' }}>Nhân viên
+                                            </option>
                                         </select>
                                         @error('role')
                                             <span class="text-danger"> {{ $message }} </span>

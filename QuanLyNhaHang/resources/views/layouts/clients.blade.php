@@ -28,9 +28,9 @@
     @stack('css')
 </head>
 
-<body>
+<body style="font-family: 'Arial', sans-serif; ">
     <!-- Preloader Starts -->
-    <div class="preloader" id="preloader">
+    {{-- <div class="preloader" id="preloader">
         <div class="preloader-inner">
             <div class="spinner">
                 <div class="bounce1"></div>
@@ -38,7 +38,7 @@
                 <div class="bounce3"></div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
 
     <!-- header -->

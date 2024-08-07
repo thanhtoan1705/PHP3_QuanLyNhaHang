@@ -43,6 +43,7 @@ public function update(UpdateAccountRequest $request, $id)
     return redirect()->route('account.index')->with('success', 'Người dùng đã được cập nhật thành công!');
 }
 
+
     public function someControllerMethod()
     {
         $user = Auth::user();
@@ -50,6 +51,7 @@ public function update(UpdateAccountRequest $request, $id)
         if (!$user) {
             return redirect()->route('login')->withErrors(['login' => 'Bạn cần đăng nhập để truy cập trang này.']);
         }
+
         $username = Auth::check() ? Auth::user()->name : null;
         return view('components.client.header', compact('username','user'));
     }

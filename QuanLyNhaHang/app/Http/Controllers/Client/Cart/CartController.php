@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\Dish;
 use App\Models\User;
 use App\Models\Promotion;
+use App\Models\Table;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
 
@@ -16,6 +17,8 @@ class CartController extends Controller
     public function index()
     {
         $cartItems = Cart::where('user_id', auth()->id())->with('dish')->get();
+        $users = auth()->user();
+        $tables = Table::all();
         $total = $cartItems->sum('total_price');
 
 
@@ -31,7 +34,7 @@ class CartController extends Controller
             $discount = 0;
         }
 
-        return view('clients.cart.index', compact('cartItems', 'total', 'discount'));
+        return view('clients.cart.index', compact('cartItems', 'total', 'discount', 'users', 'tables'));
     }
 
     public function applyDiscountCode(Request $request)
@@ -41,8 +44,19 @@ class CartController extends Controller
         if ($promotion) {
             $cartItems = Cart::where('user_id', auth()->id())->get();
 
+            if ($cartItems->isEmpty()) {
+                flash()->error('Giỏ hàng của bạn đang trống. Hãy chọn món trước khi áp dụng mã giảm giá.');
+                return redirect()->route('menu');
+            }
+
+            $total = $cartItems->sum(function ($cartItem) {
+                return $cartItem->dish->price * $cartItem->quantity;
+            });
+
+            $total = max(0, $total - $promotion->discount);
+
             foreach ($cartItems as $cartItem) {
-                $total = $cartItems->sum('total_price') -  $promotion->discount;
+                $cartItem->promotion_id = $promotion->id;
                 $cartItem->save();
             }
 
@@ -120,6 +134,10 @@ class CartController extends Controller
         // Lấy dữ liệu số lượng sản phẩm từ request
         $cartData = $request->input('cart', []);
 
+        $total = 0;
+        $promotionDiscount = 0;
+
+        // Duyệt qua các sản phẩm trong giỏ hàng để cập nhật số lượng và tính tổng giá
         foreach ($cartData as $dishId => $quantity) {
             // Tìm Cart item theo dish_id và user_id
             $cartItem = Cart::where('user_id', auth()->id())
@@ -129,10 +147,34 @@ class CartController extends Controller
             if ($cartItem) {
                 // Cập nhật số lượng trong Cart
                 $cartItem->quantity = $quantity;
-                $cartItem->total_price = $quantity * $cartItem->dish->price; // Cập nhật tổng giá
+                $cartItem->total_price = $quantity * $cartItem->dish->price; // Cập nhật tổng giá trước khi áp dụng giảm giá
+
+                // Cộng tổng giá của từng sản phẩm để tính tổng giá trị giỏ hàng
+                $total += $cartItem->total_price;
+
+                // Lưu thông tin sản phẩm đã cập nhật
                 $cartItem->save();
             }
         }
+
+        // Kiểm tra nếu giỏ hàng có promotion_id để áp dụng giảm giá cho tổng giá trị giỏ hàng
+        $cartItemWithPromotion = Cart::where('user_id', auth()->id())
+            ->whereNotNull('promotion_id')
+            ->first();
+
+        if ($cartItemWithPromotion) {
+            $promotion = Promotion::find($cartItemWithPromotion->promotion_id);
+
+            if ($promotion) {
+                // Trừ giá trị giảm giá vào tổng giỏ hàng
+                $promotionDiscount = $promotion->discount;
+                $total = max(0, $total - $promotionDiscount); // Đảm bảo tổng giá trị không âm
+            }
+        }
+
+        // Lưu tổng giá trị sau khi đã áp dụng mã giảm giá vào session (nếu cần thiết)
+        session(['discounted_total' => $total]);
+        session(['discount_value' => $promotionDiscount]);
 
         // Chuyển hướng lại trang giỏ hàng với thông báo thành công
         return redirect()->route('cart')->with('success', 'Giỏ hàng đã được cập nhật!');

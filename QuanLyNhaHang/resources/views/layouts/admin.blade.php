@@ -27,6 +27,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
 
     <link href="{{ asset('assets/admin/css/style.css') }}" rel="stylesheet">
+    <!-- Thêm vào phần head của file HTML -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
+
     @stack('css')
 </head>
 
@@ -87,6 +92,7 @@
 
 
     <!-- Required vendors -->
+    {{-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> --}}
     <script src="{{ asset('assets/admin/vendor/global/global.min.js') }}"></script>
     <script src="{{ asset('assets/admin/vendor/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
     <script src="{{ asset('assets/admin/js/custom.js') }}"></script>

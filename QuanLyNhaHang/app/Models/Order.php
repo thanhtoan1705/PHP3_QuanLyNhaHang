@@ -13,7 +13,14 @@ class Order extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id', 'table_id', 'name', 'note', 'status', 'order_date', 'order_time'
+        'user_id',
+        'table_id',
+        'name',
+        'note',
+        'code_order',
+        'status',
+        'order_date',
+        'order_time'
     ];
 
     public function user(): BelongsTo
@@ -45,89 +52,8 @@ class Order extends Model
         return $total;
     }
 
-    public static function createNewBookTable($validatedData)
+    public function reservation(): BelongsTo
     {
-        $order = self::create([
-            'name' => $validatedData['name'],
-            'table_id' => $validatedData['table_id'],
-            'note' => $validatedData['note'],
-            'status' => $validatedData['status'],
-            'order_date' => $validatedData['order_date'],
-            'order_time' => $validatedData['order_time'],
-            'seats' => $validatedData['seats'],
-        ]);
-
-        if (isset($validatedData['dish_id'])) {
-            $dishIds = $validatedData['dish_id'];
-            $quantities = $validatedData['quantities'] ?? [];
-
-            foreach ($dishIds as $dishId) {
-                if (isset($quantities[$dishId]) && $quantities[$dishId] > 0) {
-                    $order->dishes()->attach($dishId, ['quantity' => $quantities[$dishId]]);
-                }
-            }
-        }
-
-        return $order;
-    }
-
-    public function updateNewBookTable($validatedData)
-    {
-        $this->update([
-            'name' => $validatedData['name'],
-            'table_id' => $validatedData['table_id'],
-            'note' => $validatedData['note'],
-            'status' => $validatedData['status'],
-            'order_date' => $validatedData['order_date'],
-            'order_time' => $validatedData['order_time'],
-            'seats' => $validatedData['seats'],
-        ]);
-
-        if (isset($validatedData['dish_id'])) {
-            $dishIds = $validatedData['dish_id'];
-            $quantities = $validatedData['quantities'] ?? [];
-
-            $this->dishes()->detach();
-
-            foreach ($dishIds as $dishId) {
-                if (isset($quantities[$dishId]) && $quantities[$dishId] > 0) {
-                    $this->dishes()->attach($dishId, ['quantity' => $quantities[$dishId]]);
-                }
-            }
-        }
-
-        return $this;
-    }
-
-    protected static function boot()
-    {
-        parent::boot();
-
-        static::deleting(function ($order) {
-            $order->dishes()->detach();
-        });
-    }
-
-    public static function createNewBookTableClient($validatedData)
-    {
-        $order = self::create([
-            'name' => $validatedData['name'],
-            'table_id' => $validatedData['table_id'],
-            // 'note' => $validatedData['note'],
-            'order_date' => $validatedData['order_date'],
-            'order_time' => $validatedData['order_time'],
-        ]);
-
-        if (isset($validatedData['dish_id'])) {
-            $dishIds = $validatedData['dish_id'];
-            $quantities = $validatedData['quantities'] ?? [];
-            foreach ($dishIds as $dishId) {
-                if (isset($quantities[$dishId]) && $quantities[$dishId] > 0) {
-                    $order->dishes()->attach($dishId, ['quantity' => $quantities[$dishId]]);
-                }
-            }
-        }
-
-        return $order;
+        return $this->belongsTo(Reservation::class);
     }
 }

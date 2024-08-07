@@ -1,7 +1,12 @@
 <?php
 
+use App\Exports\PromotionsExport;
+use App\Exports\CategoriesExport;
+use Maatwebsite\Excel\Facades\Excel;
+
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\Promotion\PromotionController;
+use App\Http\Controllers\Admin\Statistical\StatisticalController;
 use App\Http\Controllers\Admin\DishController as AdminDishController;
 use App\Http\Controllers\Admin\TableController;
 use App\Http\Controllers\Admin\StaffController;
@@ -23,13 +28,18 @@ use App\Http\Controllers\Client\About\AboutController;
 use App\Http\Controllers\Client\Auth\AccountController;
 use App\Http\Controllers\Client\Auth\LoginController;
 use App\Http\Controllers\Client\Dish\DishController;
+use App\Http\Controllers\Client\Review\ReviewController;
 use App\Http\Controllers\Client\Blog\BlogController;
 use App\Http\Controllers\Client\Blog\BlogDetailController;
 use App\Http\Controllers\Client\Contact\ContactController;
 use App\Http\Controllers\Client\Gallery\GalleryController;
 use App\Http\Controllers\Client\Table\TableController as ClientTableController;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 
 // Route::middleware([
@@ -57,8 +67,18 @@ use Illuminate\Http\Request;
 //     return back()->with('message', 'Verification link sent!');
 // })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
+Route::get('/promotions/export', function () {
+    return Excel::download(new PromotionsExport, 'promotions.xlsx');
+})->name('promotions.export');
+Route::get('/categories/export', function () {
+    return Excel::download(new CategoriesExport, 'categories.xlsx');
+})->name('categories.export');
+
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('chi-tiet-mon-an/{id}', [DishController::class, 'dishDetail'])->name('dishDetail');
+Route::post('/dish/{id}/review', [ReviewController::class, 'store'])->name('reviews.store');
+Route::delete('/review/{id}', [ReviewController::class, 'destroy'])->name('reviews.destroy');
+Route::put('/reviews/{id}', [ReviewController::class, 'update'])->name('reviews.update');
 Route::get('menu', [DishController::class, 'menu'])->name('menu');
 Route::get('gioi-thieu', [AboutController::class, 'index'])->name('about');
 Route::get('404', [ErrorController::class, 'index']);
@@ -76,27 +96,37 @@ Route::get('gio-hang', [CartController::class, 'index'])->name('cart')->middlewa
 Route::post('them-gio-hang', [CartController::class, 'addToCart'])->name('cartAdd')->middleware('auth');
 Route::delete('gio-hang/{id}', [CartController::class, 'remove'])->name('cartRemove')->middleware('auth');
 Route::delete('cart/clear', [CartController::class, 'clear'])->name('cart.clear')->middleware('auth');
-
 Route::post('/cart/update', [CartController::class, 'update'])->name('cart.update')->middleware('auth');
-
 Route::post('nhap-ma-uu-dai', [CartController::class, 'applyDiscountCode'])->name('applyDiscountCode')->middleware('auth');
+Route::get('thanh-toan', [CheckoutController::class, 'index'])->name('checkout');
+Route::post('thanh-toan', [CheckoutController::class, 'checkout'])->name('checkout.store');
+Route::post('thanh-toan/tien-hanh', [CheckoutController::class, 'processPayment'])->name('payment.process');
+Route::post('momo/return', [CheckoutController::class, 'momoReturn'])->name('momo.return');
 
 //account
-Route::middleware(['auth'])->group(function () {
-    Route::name('account.')->group(function () {
+// Route::middleware(['auth'])->group(function () {
+    Route::name('account.')->middleware('auth')->group(function () {
         Route::get('account', [AccountController::class, 'index'])->name('index');
-        Route::get('account/{id}', [AccountController::class, 'show'])->name('show');
         Route::put('account/update/{id}', [AccountController::class, 'update'])->name('update');
+        Route::get('account/show/{id}', [AccountController::class, 'show'])->name('show');
     });
-});
 
+// });
 
 Route::get('dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'role:admin']);
+Route::get('statistical', [StatisticalController::class, 'index'])->name('statistical.index');
+Route::get('statistical/revenue-chart', [StatisticalController::class, 'revenueChart'])->name('statistical.revenue.chart');
+Route::get('admin/statistical/export', [StatisticalController::class, 'export'])->name('statistical.export');
+Route::get('admin/statistical/export-dates', [StatisticalController::class, 'exportStatisticalDates'])->name('statistical.export.dates');
+Route::get('admin/statistical/export-monthly', [StatisticalController::class, 'exportStatisticalMonths'])->name('statistical.export.monthly');
+
 // login
 Route::get('admin/login', [AuthUserController::class, 'login'])->name('admin.login');
 Route::get('auth/google', [LoginController::class, 'redirectToGoogle'])->name('auth.google');
 Route::get('auth/google/callback', [LoginController::class, 'handleGoogleCallback'])->name('auth.google.callback');
 
+Route::get('login/facebook', [LoginController::class, 'redirectToFacebook'])->name('login.facebook');
+Route::get('login/facebook/callback', [LoginController::class, 'handleFacebookCallback']);
 
 
 Route::name('dish.')->group(function () {
@@ -106,31 +136,33 @@ Route::name('dish.')->group(function () {
     Route::get('dish/edit/{slug}', [AdminDishController::class, 'edit'])->name('edit')->middleware(['auth', 'role:admin']);
     Route::put('dish/update/{slug}', [AdminDishController::class, 'update'])->name('update')->middleware(['auth', 'role:admin']);
     Route::delete('dish/delete/{slug}', [AdminDishController::class, 'delete'])->name('delete')->middleware(['auth', 'role:admin']);
-})->middleware(['auth', 'role:admin']);
+})->middleware(['auth', 'role:admin,staff']);
 
 
 
 Route::name('table-book.')->group(function () {
-    Route::get('table-book', [TableBookController::class, 'index'])->name('list');
-    Route::get('table-book/add', [TableBookController::class, 'add'])->name('add');
-    Route::post('table-book/store', [TableBookController::class, 'store'])->name('store');
-    Route::get('table-book/edit/{id}', [TableBookController::class, 'edit'])->name('edit');
-    Route::put('table-book/update/{id}', [TableBookController::class, 'update'])->name('update');
-    Route::delete('table-book/destroy/{id}', [TableBookController::class, 'destroy'])->name('destroy');
-    Route::get('table-book/table-details/{id}', [TableBookController::class, 'getTableDetails'])->name('table-details');
-})->middleware('auth');
+    Route::get('table-book', [TableBookController::class, 'index'])->name('list')->middleware(['auth', 'role:admin,staff']);;
+    Route::get('table-book/add', [TableBookController::class, 'add'])->name('add')->middleware(['auth', 'role:admin,staff']);;
+    Route::post('table-book/store', [TableBookController::class, 'store'])->name('store')->middleware(['auth', 'role:admin,staff']);;
+    Route::get('table-book/edit/{id}', [TableBookController::class, 'edit'])->name('edit')->middleware(['auth', 'role:admin,staff']);;
+    Route::put('table-book/update/{id}', [TableBookController::class, 'update'])->name('update')->middleware(['auth', 'role:admin,staff']);;
+    Route::delete('table-book/destroy/{id}', [TableBookController::class, 'destroy'])->name('destroy')->middleware(['auth', 'role:admin,staff']);;
+    Route::get('table-book/table-details/{id}', [TableBookController::class, 'getTableDetails'])->name('table-details')->middleware(['auth', 'role:admin,staff']);
+    Route::post('table-book/payment/{id}', [TableBookController::class, 'processPayment'])->name('payment')->middleware(['auth', 'role:admin,staff']);
+})->middleware(['auth', 'role:admin,staff']);
 
 
 
 Route::name('table.')->group(function () {
-    Route::get('table', [TableTableController::class, 'index'])->name('list')->middleware(['auth', 'role:admin']);
-    Route::get('table/add', [TableTableController::class, 'add'])->name('add')->middleware(['auth', 'role:admin']);
-    Route::post('table/store', [TableTableController::class, 'store'])->name('store')->middleware(['auth', 'role:admin']);
-    Route::get('table/edit/{id}', [TableTableController::class, 'edit'])->name('edit')->middleware(['auth', 'role:admin']);
-    Route::put('table/update/{id}', [TableTableController::class, 'update'])->name('update')->middleware(['auth', 'role:admin']);
-    Route::delete('table/delete/{id}', [TableTableController::class, 'destroy'])->name('delete')->middleware(['auth', 'role:admin']);
-})->middleware(['auth', 'role:admin']);
+    Route::get('table', [TableTableController::class, 'index'])->name('list')->middleware(['auth', 'role:admin,staff']);
+    Route::get('table/add', [TableTableController::class, 'add'])->name('add')->middleware(['auth', 'role:admin,staff']);
+    Route::post('table/store', [TableTableController::class, 'store'])->name('store')->middleware(['auth', 'role:admin,staff']);
+    Route::get('table/edit/{id}', [TableTableController::class, 'edit'])->name('edit')->middleware(['auth', 'role:admin,staff']);
+    Route::put('table/update/{id}', [TableTableController::class, 'update'])->name('update')->middleware(['auth', 'role:admin,staff']);
+    Route::delete('table/delete/{id}', [TableTableController::class, 'destroy'])->name('delete')->middleware(['auth', 'role:admin,staff']);
+})->middleware(['auth', 'role:admin,staff']);
 
+Route::post('payment/store', [PaymentController::class, 'store'])->name('payment.store');
 
 
 // Staff
@@ -145,20 +177,23 @@ Route::get('staff/delete/{id}', [StaffController::class, 'delete'])->name('staff
 
 // Order
 Route::get('order', [OrderController::class, 'index'])->name('order.list')->middleware(['auth', 'role:admin']);
-Route::get('order/detail/{id}', [OrderController::class, 'detail'])->name('order.detail')->middleware(['auth', 'role:admin']);
+Route::get('/orders/{id}', [OrderController::class, 'show'])->name('order.detail');
+Route::delete('/orders/{id}', [OrderController::class, 'destroy'])->name('order.delete');
+Route::get('/orders/{id}/pdf', [OrderController::class, 'generatePdf'])->name('order.pdf');
+
 Route::get('payment', [PaymentController::class, 'index'])->name('payment.list')->middleware(['auth', 'role:admin']);
 
 
 
 //user
 Route::name('user.')->group(function () {
-    Route::get('user/list', [UserController::class, 'index'])->name('list')->middleware(['auth', 'role:admin']);
-    Route::get('user/create', [UserController::class, 'create'])->name('create')->middleware(['auth', 'role:admin']);
-    Route::post('user/store', [UserController::class, 'store'])->name('store')->middleware(['auth', 'role:admin']);
-    Route::get('user/edit/{id}', [UserController::class, 'edit'])->name('edit')->middleware(['auth', 'role:admin']);
-    Route::put('user/update/{id}', [UserController::class, 'update'])->name('update')->middleware(['auth', 'role:admin']);
-    Route::delete('user/delete/{id}', [UserController::class, 'destroy'])->name('destroy')->middleware(['auth', 'role:admin']);
-})->middleware(['auth', 'role:admin']);
+    Route::get('user/list', [UserController::class, 'index'])->name('list')->middleware(['auth', 'role:admin,staff']);
+    Route::get('user/create', [UserController::class, 'create'])->name('create')->middleware(['auth', 'role:admin,staff']);
+    Route::post('user/store', [UserController::class, 'store'])->name('store')->middleware(['auth', 'role:admin,staff']);
+    Route::get('user/edit/{id}', [UserController::class, 'edit'])->name('edit')->middleware(['auth', 'role:admin,staff']);
+    Route::put('user/update/{id}', [UserController::class, 'update'])->name('update')->middleware(['auth', 'role:admin,staff']);
+    Route::delete('user/delete/{id}', [UserController::class, 'destroy'])->name('destroy')->middleware(['auth', 'role:admin,staff']);
+})->middleware(['auth', 'role:admin,staff']);
 
 
 
@@ -170,7 +205,7 @@ Route::name('post.')->group(function () {
     Route::get('post/edit/{id}', [PostController::class, 'edit'])->name('edit')->middleware(['auth', 'role:admin']);
     Route::put('post/update/{id}', [PostController::class, 'update'])->name('update')->middleware(['auth', 'role:admin']);
     Route::delete('post/delete/{id}', [PostController::class, 'destroy'])->name('destroy')->middleware(['auth', 'role:admin']);
-})->middleware(['auth', 'role:admin']);
+})->middleware(['auth', 'role:admin,staff']);
 
 
 
@@ -182,7 +217,7 @@ Route::name('category.')->group(function () {
     Route::get('/categories/edit/{id}', [CategoryController::class, 'update'])->name('update')->middleware(['auth', 'role:admin']);
     Route::post('/categories/update/{id}', [CategoryController::class, 'processUpdate'])->name('processUpdate')->middleware(['auth', 'role:admin']);
     Route::delete('category/{id}', [CategoryController::class, 'delete'])->name('delete')->middleware(['auth', 'role:admin']);
-})->middleware(['auth', 'role:admin']);
+})->middleware(['auth', 'role:admin,staff']);
 
 
 
@@ -200,3 +235,7 @@ Route::name('promotion.')->group(function () {
 
 //comment
 Route::get('comment', [CommentController::class, 'index'])->name('comment.list')->middleware(['auth', 'role:admin']);
+
+
+
+

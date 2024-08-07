@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests\TableBook;
 
+use App\Models\Dish;
 use App\Models\Order;
+use App\Models\Reservation;
 use Carbon\Carbon;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
@@ -26,20 +28,46 @@ class UpdateTableBookRequest extends FormRequest
     {
         $orderId = $this->route('id');
         return [
-            'name' => 'required|string|max:255|unique:orders,name,' . $orderId,
+            'name' => 'required|string|max:255',
             'table_id' => [
                 'required',
                 'exists:tables,id',
                 function ($attribute, $value, $fail) {
-                    if ($this->order_date == Carbon::today()->toDateString() && Order::where('table_id', $value)->where('order_date', $this->order_date)->where('order_time', '>', Carbon::now()->addHours(2)->format('H:i'))->exists()) {
-                        $fail('Bàn này đã được đặt vào ngày hôm nay và trong vòng 2 giờ tới.');
+                    // Lấy ngày và giờ đặt bàn từ yêu cầu
+                    $reservationDate = Carbon::parse($this->reservation_date);
+                    $reservationTime = Carbon::parse($this->reservation_time);
+
+                    // Tìm kiếm các đơn hàng đã tồn tại với bàn và ngày tương ứng
+                    $existingOrders = Reservation::where('table_id', $value)
+                        ->where('reservation_date', $reservationDate->toDateString())
+                        ->get();
+
+                    foreach ($existingOrders as $order) {
+                        $existingOrderTime = Carbon::parse($order->reservation_time);
+
+                        // So sánh thời gian đặt trong vòng 3 giờ
+                        if ($reservationTime->between($existingOrderTime->copy()->subHours(3), $existingOrderTime->copy()->addHours(3))) {
+                            $fail('Bàn này đã được đặt và các đơn hàng phải cách nhau ít nhất 3 giờ.');
+                            break;
+                        }
                     }
-                },
+                }
             ],
-            'dish_id' => 'required|array',
-            'dish_id.*' => 'exists:dishes,id',
-            'quantities' => 'required|array',
-            'quantities.*' => 'integer|min:1',
+            'user_id' => 'required',
+            'dish_id' => 'nullable',
+
+            'quantities.*' => [
+                'integer',
+                'min:1',
+                function ($attribute, $value, $fail) {
+                    $dishId = explode('.', $attribute)[1];
+                    $dish = Dish::find($dishId);
+
+                    if ($dish && $value > $dish->quantity) {
+                        $fail("Số lượng món \"{$dish->name}\" đã vượt quá số lượng có sẵn.");
+                    }
+                }
+            ],
             'note' => 'nullable|string',
             'seats' => 'nullable|required',
             'status' => 'required|string',
@@ -90,6 +118,7 @@ class UpdateTableBookRequest extends FormRequest
             'order_date.after_or_equal' => 'Ngày đặt phải là hôm nay hoặc trong tương lai.',
             'order_time.required' => 'Giờ đặt không được để trống.',
             'order_time.date_format' => 'Giờ đặt phải theo định dạng HH:mm.',
+            'seats.required' => 'Ghế ngồi không được để trống',
         ];
     }
 }

@@ -1,4 +1,5 @@
 @extends('layouts.admin')
+
 @section('title', 'Edit User')
 
 @section('content')
@@ -20,7 +21,7 @@
                                         <input type="text" name="name" id="name" class="form-control"
                                             value="{{ old('name', $user->name) }}" placeholder="Tên">
                                         @error('name')
-                                            <span class="text-danger"> {{ $message }} </span>
+                                            <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="mb-3 col-md-6">
@@ -28,7 +29,7 @@
                                         <input type="email" name="email" id="email" class="form-control"
                                             value="{{ old('email', $user->email) }}" placeholder="Email">
                                         @error('email')
-                                            <span class="text-danger"> {{ $message }} </span>
+                                            <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="mb-3 col-md-6">
@@ -36,7 +37,7 @@
                                         <input type="number" name="phone" id="phone" class="form-control"
                                             value="{{ old('phone', $user->phone) }}" placeholder="Số điện thoại">
                                         @error('phone')
-                                            <span class="text-danger"> {{ $message }} </span>
+                                            <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="mb-3 col-md-6">
@@ -44,7 +45,7 @@
                                         <input type="text" name="address" id="address" class="form-control"
                                             value="{{ old('address', $user->address) }}" placeholder="Địa chỉ">
                                         @error('address')
-                                            <span class="text-danger"> {{ $message }} </span>
+                                            <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="mb-3 col-md-12">
@@ -52,32 +53,28 @@
                                         <input type="password" name="password" id="password" class="form-control"
                                             value="{{ old('password') }}" placeholder="Mật khẩu">
                                         @error('password')
-                                            <span class="text-danger"> {{ $message }} </span>
+                                            <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="mb-3 col-md-6">
                                         <label class="form-label">Quyền: <span class="text-danger">*</span></label>
                                         <select class="default-select form-control wide" name="role" id="role">
-                                            <option value="admin" {{ $user->role == 'admin' ? 'selected' : '' }}>Admin
-                                            </option>
-                                            <option value="user" {{ $user->role == 'user' ? 'selected' : '' }}>Người Dùng
-                                            </option>
+                                            <option value="admin" {{ old('role', $user->role) == 'admin' ? 'selected' : '' }}>Admin</option>
+                                            <option value="user" {{ old('role', $user->role) == 'user' ? 'selected' : '' }}>Người Dùng</option>
                                         </select>
                                         @error('role')
-                                            <span class="text-danger"> {{ $message }} </span>
+                                            <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
 
                                     <div class="mb-3 col-md-6">
                                         <label class="form-label">Hoạt động: <span class="text-danger">*</span></label>
                                         <select class="default-select form-control wide" name="active" id="active">
-                                            <option value="active" {{ $user->active == 'active' ? 'selected' : '' }}>Hoạt
-                                                động</option>
-                                            <option value="inactive" {{ $user->active == 'inactive' ? 'selected' : '' }}>
-                                                Không hoạt động</option>
+                                            <option value="active" {{ old('active', $user->active) == 'active' ? 'selected' : '' }}>Hoạt động</option>
+                                            <option value="inactive" {{ old('active', $user->active) == 'inactive' ? 'selected' : '' }}>Không hoạt động</option>
                                         </select>
                                         @error('active')
-                                            <span class="text-danger"> {{ $message }} </span>
+                                            <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
 

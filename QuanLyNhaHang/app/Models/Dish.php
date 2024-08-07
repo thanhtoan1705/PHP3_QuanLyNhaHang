@@ -43,6 +43,11 @@ class Dish extends Model
         return $this->hasMany(Cart::class);
     }
 
+    public function orderDishes()
+    {
+        return $this->hasMany(OrderDish::class);
+    }
+
     public static function createNewDish($validatedData)
     {
         $imagePath = $validatedData['image']->store('images', 'public');
@@ -54,6 +59,7 @@ class Dish extends Model
             'slug' => Str::slug($validatedData['name']),
             'description' => $validatedData['description'],
             'price' => $validatedData['price'],
+            'quantity' => $validatedData['quantity'],
             'image' => $imageName,
             'status' => $validatedData['status'],
         ]);
@@ -67,5 +73,15 @@ class Dish extends Model
         }
         $validatedData['slug'] = Str::slug($validatedData['name']);
         return $this->update($validatedData);
+    }
+
+    public function decrementQuantity($amount)
+    {
+        if ($this->quantity >= $amount) {
+            $this->quantity -= $amount;
+            $this->save();
+            return true;
+        }
+        return false;
     }
 }

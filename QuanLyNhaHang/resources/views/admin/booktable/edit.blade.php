@@ -12,81 +12,156 @@
                     </div>
                     <div class="card-body">
                         <div class="basic-form">
-                            <form action="{{ route('table-book.update', $order->id) }}" method="POST">
+                            <form action="{{ route('table-book.update', $reservation->id) }}" method="POST">
                                 @csrf
                                 @method('PUT')
                                 <div class="row">
                                     <div class="mb-3 col-md-6">
                                         <label class="form-label">Người đặt</label>
                                         <input type="text" name="name" class="form-control"
-                                            value="{{ old('name', $order->name) }}" required>
+                                            value="{{ old('name', $reservation->name) }}">
+                                        @error('name')
+                                            <div class="text-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
-                                    <div class="mb-3 col-md-6">
+                                    <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+                                    <div class="mb-3 col-md-3">
                                         <label class="form-label">Vị trí bàn</label>
-                                        <select name="table_id" class="default-select form-control wide">
+                                        <select id="table-select" name="table_id" class="default-select form-control wide">
                                             @foreach ($tables as $table)
-                                                <option value="{{ $table->id }}"
-                                                    {{ old('table_id', $order->table_id) == $table->id ? 'selected' : '' }}>
+                                                <option value="{{ $table->id }}" data-seats="{{ $table->seats }}"
+                                                    {{ old('table_id', $reservation->table_id) == $table->id ? 'selected' : '' }}>
                                                     Bàn số {{ $table->number }}</option>
                                             @endforeach
                                         </select>
+                                        @error('table_id')
+                                            <div class="text-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
-                                    <div class="mb-3 col-md-6">
+                                    <div class="mb-3 col-md-3">
                                         <label class="form-label">Số ghế</label>
-                                        <input type="number" name="seats" class="form-control"
-                                            value="{{ old('seats', $order->table->seats) }}" required>
+                                        <input type="number" id="seats-input" name="seats" class="form-control"
+                                            value="{{ old('seats', $reservation->table->seats) }}">
+                                        @error('seats')
+                                            <div class="text-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
 
                                     <div class="mb-3">
                                         <label class="form-label">Chọn món</label>
-                                        <select id="dish-select" name="dish_id[]" class="default-select form-control wide"
-                                            multiple required>
-                                            @foreach ($dishes as $dish)
-                                                <option value="{{ $dish->id }}"
-                                                    {{ in_array($dish->id, old('dish_id', $order->dishes->pluck('id')->toArray())) ? 'selected' : '' }}>
-                                                    {{ $dish->name }}
-                                                </option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    <div class="mb-3" id="dish-quantity-container">
-                                        @foreach ($dishes as $dish)
-                                            @if (in_array($dish->id, old('dish_id', $order->dishes->pluck('id')->toArray())))
-                                                <div class="mb-3 col-md-6">
-                                                    <label class="form-label">{{ $dish->name }} - Số lượng</label>
-                                                    <input type="number" name="quantities[{{ $dish->id }}]"
-                                                        class="form-control" min="1"
-                                                        value="{{ old('quantities.' . $dish->id, $order->dishes->find($dish->id)->pivot->quantity ?? 1) }}"
-                                                        required>
+                                        <button type="button" class="btn form-control" data-bs-toggle="modal"
+                                            data-bs-target="#dishModal">
+                                            Chọn món ăn
+                                        </button>
+                                        <div id="selected-dishes">
+                                            @foreach (old('dish_id', $reservation->dishes->pluck('id')) as $index => $dishId)
+                                                @php
+                                                    $dish = $dishes->find($dishId);
+                                                    $reservationDish = $reservation->dishes
+                                                        ->where('id', $dishId)
+                                                        ->first();
+                                                    $quantity = old(
+                                                        "quantities.$dishId",
+                                                        $reservationDish ? $reservationDish->pivot->quantity : 1,
+                                                    );
+                                                @endphp
+                                                <div class="dish-item mb-5 mt-5 position-relative"
+                                                    data-dish-id="{{ $dishId }}">
+                                                    <button type="button"
+                                                        class="btn-close position-absolute top-0 end-0 remove-dish"
+                                                        aria-label="Close" data-dish-id="{{ $dishId }}"></button>
+                                                    <label class="form-label">
+                                                        <img src="{{ asset('storage/images/' . $dish->image) }}"
+                                                            alt="{{ $dish->name }}" width="150px" height="100px">
+                                                        {{ $dish->name }} - Số lượng
+                                                    </label>
+                                                    <input type="hidden" name="dish_id[]" value="{{ $dishId }}">
+                                                    <input type="number" name="quantities[{{ $dishId }}]"
+                                                        class="form-control" min="1" placeholder="Số lượng"
+                                                        value="{{ $quantity }}">
                                                 </div>
-                                            @endif
-                                        @endforeach
+                                            @endforeach
+                                        </div>
                                     </div>
+
+                                    <div class="modal fade" id="dishModal" tabindex="-1" aria-labelledby="dishModalLabel"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="dishModalLabel">Chọn món ăn</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+
+                                                </div>
+                                                <div class="modal-body">
+                                                    @foreach ($categories as $category)
+                                                        <h5>{{ $category->name }}</h5>
+                                                        <div class="row">
+                                                            @foreach ($category->dishes as $dish)
+                                                                <div class="col-md-4">
+                                                                    <div class="card mb-4">
+                                                                        <img src="{{ asset('storage/images/' . $dish->image) }}"
+                                                                            width="232px" height="174px"
+                                                                            class="card-img-top" alt="{{ $dish->name }}">
+                                                                        <div class="">
+                                                                            <h5 class="card-title mb-0">{{ $dish->name }}
+                                                                            </h5>
+                                                                            <span
+                                                                                class="mb-0">{{ number_format($dish->price, 0, ',', '.') }}
+                                                                                VNĐ</span>
+                                                                            <p>Còn lại: {{ $dish->quantity }} món</p>
+                                                                        </div>
+                                                                        <button type="button"
+                                                                            class="btn btn-primary select-dish"
+                                                                            data-id="{{ $dish->id }}"
+                                                                            data-name="{{ $dish->name }}"
+                                                                            data-image="{{ asset('storage/images/' . $dish->image) }}">
+                                                                            Chọn
+                                                                        </button>
+
+                                                                    </div>
+                                                                </div>
+                                                            @endforeach
+                                                        </div>
+                                                    @endforeach
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <div class="mb-3 col-md-6">
                                         <label class="form-label">Ngày đặt</label>
                                         <input type="date" name="order_date" class="form-control"
-                                            value="{{ old('order_date', $order->order_date) }}" required>
+                                            value="{{ old('order_date', $reservation->reservation_date) }}">
+                                        @error('order_date')
+                                            <div class="text-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                     <div class="mb-3 col-md-6">
                                         <label class="form-label">Giờ đặt</label>
                                         <input type="time" name="order_time" class="form-control"
-                                            value="{{ old('order_time', \Carbon\Carbon::parse($order->order_time)->format('H:i')) }}"
-                                            required>
+                                            value="{{ old('order_time', \Carbon\Carbon::parse($reservation->reservation_time)->format('H:i')) }}">
+                                        @error('order_time')
+                                            <div class="text-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
 
                                     <div class="mb-3 col-md-12">
                                         <label class="form-label">Ghi chú</label>
-                                        <textarea name="note" class="form-control" placeholder="Ghi chú">{{ old('note', $order->note) }}</textarea>
+                                        <textarea name="note" class="form-control" placeholder="Ghi chú">{{ old('note', $reservation->note) }}</textarea>
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label">Trạng thái</label>
                                         <select name="status" class="default-select form-control wide">
                                             <option value="Đã thanh toán"
-                                                {{ old('status', $order->status) == 'Đã thanh toán' ? 'selected' : '' }}>Đã
-                                                thanh toán</option>
+                                                {{ old('status', $reservation->status) == 'Đã thanh toán' ? 'selected' : '' }}>
+                                                Đã thanh toán
+                                            </option>
                                             <option value="Chưa thanh toán"
-                                                {{ old('status', $order->status) == 'Chưa thanh toán' ? 'selected' : '' }}>
-                                                Chưa thanh toán</option>
+                                                {{ old('status', $reservation->status) == 'Chưa thanh toán' ? 'selected' : '' }}>
+                                                Chưa thanh toán
+                                            </option>
                                         </select>
                                     </div>
                                     <div>
@@ -98,8 +173,16 @@
                             @if ($errors->any())
                                 <div class="alert alert-danger mt-3">
                                     <ul>
-                                        @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
+                                        @foreach ($errors->get('dish_id.*') as $key => $messages)
+                                            @foreach ($messages as $message)
+                                                <div class="text-danger">{{ $message }}</div>
+                                            @endforeach
+                                        @endforeach
+
+                                        @foreach ($errors->get('quantities.*') as $key => $messages)
+                                            @foreach ($messages as $message)
+                                                <div class="text-danger">{{ $message }}</div>
+                                            @endforeach
                                         @endforeach
                                     </ul>
                                 </div>
@@ -113,36 +196,82 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const dishSelect = document.getElementById('dish-select');
-            const dishQuantityContainer = document.getElementById('dish-quantity-container');
+            const tableSelect = document.getElementById('table-select');
+            const seatsInput = document.getElementById('seats-input');
+            const selectedDishesContainer = document.getElementById('selected-dishes');
 
-            dishSelect.addEventListener('change', function() {
-                dishQuantityContainer.innerHTML = '';
-                Array.from(this.selectedOptions).forEach(option => {
-                    const dishId = option.value;
-                    const dishName = option.text;
-                    dishQuantityContainer.innerHTML += `
-                        <div class="mb-3 col-md-6">
-                            <label class="form-label">${dishName} - Số lượng</label>
-                            <input type="number" name="quantities[${dishId}]" class="form-control" min="1" placeholder="Số lượng" required>
-                        </div>
-                    `;
+            tableSelect.addEventListener('change', function() {
+                const selectedOption = this.options[this.selectedIndex];
+                const seats = selectedOption.getAttribute('data-seats');
+                seatsInput.value = seats;
+            });
+
+            document.querySelectorAll('.select-dish').forEach(button => {
+                button.addEventListener('click', function() {
+                    const dishId = this.getAttribute('data-id');
+                    const dishName = this.getAttribute('data-name');
+                    const dishImage = this.getAttribute('data-image');
+
+                    const existingDish = selectedDishesContainer.querySelector(
+                        `[data-dish-id="${dishId}"]`);
+                    if (!existingDish) {
+                        const dishElement = document.createElement('div');
+                        dishElement.setAttribute('data-dish-id', dishId);
+                        dishElement.classList.add('dish-item');
+                        dishElement.innerHTML = `
+                            <div class="position-relative mb-5 mt-5">
+                                <button type="button" class="btn-close position-absolute top-0 end-0 remove-dish" aria-label="Close" data-dish-id="${dishId}"></button>
+                                <label class="form-label">
+                                    <img src="${dishImage}" alt="${dishName}" width="150px" height="100px"> ${dishName} - Số lượng
+                                </label>
+                                <input type="hidden" name="dish_id[]" value="${dishId}">
+                            <input type="number" name="quantities[${dishId}]" class="form-control" min="1" placeholder="Số lượng">
+                        `;
+                        selectedDishesContainer.appendChild(dishElement);
+                    }
                 });
             });
 
-            // Trigger change event to handle pre-selected options
-            const selectedDishIds = @json(old('dish_id', $order->dishes->pluck('id')->toArray()));
-            const selectedQuantities = @json(old('quantities', $order->dishes->pluck('pivot.quantity', 'id')->toArray()));
-            selectedDishIds.forEach(dishId => {
-                const dishName = dishSelect.querySelector(`option[value="${dishId}"]`).text;
-                const quantity = selectedQuantities[dishId] || 1;
-                dishQuantityContainer.innerHTML += `
-                    <div class="mb-3 col-md-6">
-                        <label class="form-label">${dishName} - Số lượng</label>
-                        <input type="number" name="quantities[${dishId}]" class="form-control" min="1" value="${quantity}" required>
-                    </div>
-                `;
+            document.addEventListener('click', function(event) {
+                if (event.target.classList.contains('remove-dish')) {
+                    const dishId = event.target.getAttribute('data-dish-id');
+                    const dishElement = selectedDishesContainer.querySelector(`[data-dish-id="${dishId}"]`);
+                    if (dishElement) {
+                        dishElement.remove();
+                    }
+                }
             });
+
+            // Function to add a dish to the selected list
+            function addDishToSelected(dishId, dishName, dishImage, quantity = 1) {
+                const existingDish = selectedDishesContainer.querySelector(`[data-dish-id="${dishId}"]`);
+                if (!existingDish) {
+                    const dishElement = document.createElement('div');
+                    dishElement.setAttribute('data-dish-id', dishId);
+                    dishElement.classList.add('dish-item', 'mb-5', 'mt-5', 'position-relative');
+                    dishElement.innerHTML = `
+                        <button type="button" class="btn-close position-absolute top-0 end-0 remove-dish" aria-label="Close" data-dish-id="${dishId}"></button>
+                        <label class="form-label">
+                            <img src="${dishImage}" alt="${dishName}" width="150px" height="100px"> ${dishName} - Số lượng
+                        </label>
+                        <input type="hidden" name="dish_id[]" value="${dishId}">
+                        <input type="number" name="quantities[${dishId}]" class="form-control" min="1" placeholder="Số lượng" value="${quantity}">
+                    `;
+                    selectedDishesContainer.appendChild(dishElement);
+                }
+            }
+
+            // Handle existing dishes on page load
+            const reservationDishes = @json($reservation->dishes->pluck('pivot.quantity', 'id')->toArray());
+            for (const [dishId, quantity] of Object.entries(reservationDishes)) {
+                const dishName = document.querySelector(`.select-dish[data-id="${dishId}"]`).getAttribute(
+                    'data-name');
+                const dishImage = document.querySelector(`.select-dish[data-id="${dishId}"]`).getAttribute(
+                    'data-image');
+                addDishToSelected(dishId, dishName, dishImage, quantity);
+            }
+
+            tableSelect.dispatchEvent(new Event('change'));
         });
     </script>
 @endsection

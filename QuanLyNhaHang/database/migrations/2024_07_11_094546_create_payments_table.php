@@ -14,7 +14,6 @@ class CreatePaymentsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->dateTime('payment_date');
             $table->string('payment_method');
-            $table->boolean('payment_status');
             $table->bigInteger('total_amount');
             $table->timestamps();
 

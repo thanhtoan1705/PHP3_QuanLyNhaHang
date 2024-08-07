@@ -35,7 +35,7 @@
                                         <div class="mb-3">
                                             <label for="" class="form-label">Hình ảnh</label>
                                             <input type="file" class="form-control" name="image" id="image"
-                                                />
+                                            accept="image/*" />
                                                 @error('image')
                                                 <span class="text-danger"> {{ $message }} </span>
                                             @enderror
@@ -53,3 +53,24 @@
         </div>
     </div>
 @endsection
+@push('script')
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor'), {
+                toolbar: [
+                    'heading', '|',
+                    'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', '|',
+                    'insertTable', 'tableColumn', 'tableRow', 'mergeTableCells', '|',
+                    'undo', 'redo'
+                ],
+                table: {
+                    contentToolbar: [
+                        'tableColumn', 'tableRow', 'mergeTableCells'
+                    ]
+                }
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+@endpush

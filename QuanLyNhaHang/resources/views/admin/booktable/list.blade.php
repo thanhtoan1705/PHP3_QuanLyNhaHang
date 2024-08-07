@@ -13,7 +13,8 @@
                                             <h3 class="card-title">Danh sách bàn ăn</h3>
                                         </div>
                                         <div>
-                                            <a href="{{ route('table-book.add') }}" class="btn btn-primary me-1">Thêm đặt bàn</a>
+                                            <a href="{{ route('table-book.add') }}" class="btn btn-primary me-1">Thêm đặt
+                                                bàn</a>
                                         </div>
                                     </div>
                                     <table class="table table-responsive-md">
@@ -31,18 +32,18 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($orders as $order)
+                                            @foreach ($reservation as $order)
                                                 <tr>
                                                     <td><strong>{{ $loop->iteration }}</strong></td>
                                                     <td>{{ $order->name }}</td>
                                                     <td>Bàn {{ $order->table->number }}</td>
-                                                    <td>{{ $order->table->seats }} người</td>
+                                                    <td>{{ $order->seats }} người</td>
                                                     <td>
                                                         @foreach ($order->dishes as $dish)
                                                             {{ $dish->name }} ({{ $dish->pivot->quantity }}),
                                                         @endforeach
                                                     </td>
-                                                    <td>{{ $order->order_time }} | {{ $order->order_date }}</td>
+                                                    <td>{{ $order->reservation_time }} | {{ $order->reservation_date }}</td>
                                                     <td>{{ number_format($order->calculateTotalPrice(), 0, ',', '.') }} VND
                                                     </td>
                                                     <td>
@@ -74,48 +75,99 @@
                                                                     href="{{ route('table-book.edit', $order->id) }}">Chỉnh
                                                                     sửa</a>
                                                                 <a class="dropdown-item" data-bs-toggle="modal"
-                                                                    data-bs-target="#deleteModal{{ $order->id }}">Xóa</a>
+                                                                    data-bs-target="#paymentModal{{ $order->id }}">Thanh
+                                                                    toán</a>
+
+                                                                    <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#deleteModal{{ $order->id }}">Xóa</a>
+
                                                             </div>
                                                         </div>
                                                     </td>
-                                                    <!-- Form ẩn để gửi DELETE request -->
-                                                    <form id="delete-form-{{ $order->id }}"
-                                                        action="{{ route('table-book.destroy', $order->id) }}"
-                                                        method="POST" style="display: none;">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                    </form>
-                                                </tr>
-                                            @endforeach
-                                            <div class="modal fade" id="deleteModal{{ $order->id }}" tabindex="-1"
-                                                aria-labelledby="deleteModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="deleteModalLabel">Xóa danh mục
-                                                            </h5>
-                                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                                aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            Bạn có chắc chắn muốn xóa danh mục này không?
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary"
-                                                                data-bs-dismiss="modal">Hủy</button>
-                                                            <form action="{{ route('table-book.destroy', $order->id) }}"
-                                                                method="POST">
-                                                                @csrf
-                                                                @method('DELETE')
-                                                                <button type="submit" class="btn btn-danger">Xóa</button>
-                                                            </form>
+                                                    <!-- Payment Modal -->
+                                                    <div class="modal fade" id="paymentModal{{ $order->id }}"
+                                                        tabindex="-1"
+                                                        aria-labelledby="paymentModalLabel{{ $order->id }}"
+                                                        aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title"
+                                                                        id="paymentModalLabel{{ $order->id }}">Thanh
+                                                                        toán đơn hàng</h5>
+                                                                    <button type="button" class="btn-close"
+                                                                        data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <form id="paymentForm{{ $order->id }}"
+                                                                        method="POST"
+                                                                        action="{{ route('payment.store') }}">
+                                                                        @csrf
+                                                                        <input type="hidden" name="reservation_id"
+                                                                            value="{{ $order->id }}">
+                                                                        <div class="mb-3">
+                                                                            <label for="amountDue" class="form-label">Số
+                                                                                tiền cần trả</label>
+                                                                            <input type="text" class="form-control"
+                                                                                name="total_amount"
+                                                                                id="amountDue{{ $order->id }}" readonly
+                                                                                value="{{ $order->calculateTotalPrice() }}">
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                            <label for="amountGiven" class="form-label">Số
+                                                                                tiền khách đưa</label>
+                                                                            <input type="number" class="form-control"
+                                                                                name="amount_given"
+                                                                                id="amountGiven{{ $order->id }}"
+                                                                                required>
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                            <label for="amountChange" class="form-label">Số
+                                                                                tiền trả lại</label>
+                                                                            <input type="text" class="form-control"
+                                                                                id="amountChange{{ $order->id }}"
+                                                                                readonly>
+                                                                        </div>
+                                                                        <button type="submit" class="btn btn-primary">Thanh
+                                                                            toán</button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
+
+                                                    <div class="modal fade" id="deleteModal{{ $order->id }}" tabindex="-1" aria-labelledby="deleteModalLabel{{ $order->id }}" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="deleteModalLabel{{ $order->id }}">Xác nhận xóa</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    Bạn có chắc chắn muốn xóa đơn hàng này không?
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                                                    <form action="{{ route('table-book.destroy', $order->id) }}" method="POST">
+                                                                        @csrf
+                                                                        @method('DELETE')
+                                                                        <button type="submit" class="btn btn-danger">Xóa</button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+                                                </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>
+                            </div>
+                            <!-- Phân trang -->
+                            <div class="d-flex justify-content-center">
+                                {{ $reservation->links() }}
                             </div>
                         </div>
                     </div>
@@ -123,4 +175,17 @@
             </div>
         </div>
     </div>
+    <script>
+        document.querySelectorAll('[id^=amountGiven]').forEach(input => {
+            input.addEventListener('input', function() {
+                let orderId = this.id.replace('amountGiven', '');
+                let amountGiven = parseFloat(this.value) || 0;
+                let amountDue = parseFloat(document.getElementById('amountDue' + orderId).value.replace(
+                    /[^0-9.-]+/g, '')) || 0;
+                let amountChange = amountGiven - amountDue;
+                document.getElementById('amountChange' + orderId).value = amountChange >= 0 ? amountChange
+                    .toFixed(2) + ' VND' : 'Số tiền không đủ';
+            });
+        });
+    </script>
 @endsection

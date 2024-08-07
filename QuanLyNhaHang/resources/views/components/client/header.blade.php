@@ -5,20 +5,14 @@
         <div class="header-top">
             <div class="container">
                 <div class="row">
-                    <div
-                        class="
-                col-lg-12 col-md-12 col-12
-                d-flex
-                flex-wrap
-                justify-content-between
-              ">
+                    <div class="col-lg-12 col-md-12 col-12 d-flex flex-wrap justify-content-between">
                         <div class="contact-box">
                             <span>
                                 <a href="#"><i class="fas fa-phone-square-alt"></i> 123-58794069</a>
                             </span>
                             <span>
-                                <a href="#"><i class="fas fa-envelope-open-text"></i>
-                                    supportfoodkhan@.com</a></span>
+                                <a href="#"><i class="fas fa-envelope-open-text"></i> supportfoodkhan@.com</a>
+                            </span>
                         </div>
                         <div class="social-box">
                             <span><a href="#"><i class="fab fa-twitter"></i></a></span>
@@ -37,33 +31,31 @@
                     <div class="col-lg-2 col-md-2 col-sm-2 col-3">
                         <div class="logo">
                             <a href="/">
-                                <img src="{{ asset('assets/client/images/logo/logo.png') }}" alt="logo" /></a>
+                                <img src="{{ asset('assets/client/images/logo/logo.png') }}" alt="logo" />
+                            </a>
                         </div>
                     </div>
                     <div class="col-lg-6 d-none d-lg-block">
                         <nav id="mobile-menu">
                             <ul class="main-menu">
-                                <li>
-                                    <a href="{{ route('home') }}">Trang chủ <span></span></a>
-                                </li>
+                                <li><a href="{{ route('home') }}">Trang chủ <span></span></a></li>
                                 <li><a href="{{ route('about') }}">Giới thiệu</a></li>
                                 <li><a href="{{ route('menu') }}">Menu</a></li>
-                                <li>
-                                    <a href="{{ route('blog') }}">Bài Viết <span></span></a>
-                                </li>
+                                <li><a href="{{ route('blog') }}">Bài Viết <span></span></a></li>
                                 <li><a href="{{ route('contact') }}">Liên hệ</a></li>
                             </ul>
                         </nav>
                     </div>
+                    
                     <div class="col-lg-4 col-md-9 col-8">
                         <div class="customer-area">
-                            <a href="{{ route('account') }}" class="text-white">{{ $username }}</a>
+                            <a href="{{ route('account.index') }}" class="text-white">{{ $username }}</a>
                             <span>
-                                @if (Auth::check())
-                                <a href="{{ route('account.show', Auth::user()->id) }}"><i class="fas fa-user"></i></a>
-                            @else
-                                <a href="{{ route('login') }}"><i class="fas fa-user"></i></a>
-                            @endif
+                                @if (\Illuminate\Support\Facades\Auth::check())
+                                    <a href="{{ route('account.show', \Illuminate\Support\Facades\Auth::user()->id) }}"><i class="fas fa-user"></i></a>
+                                @else
+                                    <a href="{{ route('login') }}"><i class="fas fa-user"></i></a>
+                                @endif
                             </span>
                             <span>
                                 <a href="{{ route('cart') }}"><i class="fas fa-shopping-basket"></i></a>
@@ -73,14 +65,12 @@
                                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                     Đăng Xuất
                                 </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                    style="display: none;">
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
                                 </form>
                             @else
                                 <a href="{{ route('login') }}" class="btn">Đăng Nhập</a>
                             @endauth
-                            {{-- <a href="{{ route('login') }}" class="btn">Đăng Nhập</a> --}}
                         </div>
                     </div>
                 </div>

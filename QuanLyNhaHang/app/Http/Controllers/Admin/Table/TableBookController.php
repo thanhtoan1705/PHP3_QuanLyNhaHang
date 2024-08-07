@@ -5,8 +5,11 @@ namespace App\Http\Controllers\Admin\Table;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\TableBook\CreateTableBookRequest;
 use App\Http\Requests\TableBook\UpdateTableBookRequest;
+use App\Models\Category;
 use App\Models\Dish;
 use App\Models\Order;
+use App\Models\Payment;
+use App\Models\Reservation;
 use App\Models\Table;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -18,8 +21,8 @@ class TableBookController extends Controller
      */
     public function index()
     {
-        $orders = Order::paginate(5);
-        return view('admin.booktable.list', compact('orders'));
+        $reservation = Reservation::paginate(5);
+        return view('admin.booktable.list', compact('reservation'));
     }
 
     /**
@@ -30,7 +33,8 @@ class TableBookController extends Controller
         $users = User::all();
         $tables = Table::all();
         $dishes = Dish::all();
-        return view('admin.booktable.add', compact('users', 'tables', 'dishes'));
+        $categories = Category::with('dishes')->get();
+        return view('admin.booktable.add', compact('users', 'tables', 'dishes', 'categories'));
     }
 
     /**
@@ -38,15 +42,22 @@ class TableBookController extends Controller
      */
     public function store(CreateTableBookRequest $request)
     {
-        $validated = $request->validated();
-        Order::createNewBookTable($validated);
+        try {
+            $validated = $request->validated();
+            $reservation = Reservation::createNewBookTable($validated);
 
-        $table = Table::findOrFail($validated['table_id']);
-        $table->update(['seats' => $validated['seats']]);
+            $table = Table::findOrFail($validated['table_id']);
+            // $table->update(['seats' => $validated['seats']]);
 
-        flash()->success('Thêm thành công.');
+            flash()->success('Thêm thành công.');
+        } catch (\Exception $e) {
+            flash()->error('Error: ' . $e->getMessage());
+        }
+
         return redirect()->route('table-book.list');
     }
+
+
 
 
     /**
@@ -54,11 +65,12 @@ class TableBookController extends Controller
      */
     public function edit($id)
     {
-        $order = Order::findOrFail($id);
+        $reservation = Reservation::findOrFail($id);
         $users = User::all();
         $tables = Table::all();
         $dishes = Dish::all();
-        return view('admin.booktable.edit', compact('order', 'users', 'tables', 'dishes'));
+        $categories = Category::with('dishes')->get();
+        return view('admin.booktable.edit', compact('reservation', 'users', 'tables', 'dishes', 'categories'));
     }
 
     /**
@@ -66,11 +78,10 @@ class TableBookController extends Controller
      */
     public function update(UpdateTableBookRequest $request, $id)
     {
-        $order = Order::findOrFail($id);
-        $order->updateNewBookTable($request->validated());
+        $reservation = Reservation::findOrFail($id);
+        $reservation->updateNewBookTable($request->validated());
 
         $table = Table::findOrFail($request->validated('table_id'));
-        $table->update(['seats' =>$request->validated('seats')]);
 
         flash()->success('Cập nhật thành công.');
         return redirect()->route('table-book.list');
@@ -84,8 +95,8 @@ class TableBookController extends Controller
      */
     public function destroy($id)
     {
-        $order = Order::findOrFail($id);
-        $order->delete();
+        $reservation = Reservation::findOrFail($id);
+        $reservation->delete();
         flash()->success('Xóa thành công.');
         return redirect()->route('table-book.list');
     }
@@ -99,4 +110,6 @@ class TableBookController extends Controller
         $table = Table::findOrFail($id);
         return response()->json($table);
     }
+
+
 }

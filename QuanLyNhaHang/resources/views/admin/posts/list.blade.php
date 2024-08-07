@@ -26,7 +26,7 @@
                                                 <th>STT</th>
                                                 <th>Tiêu đề</th>
                                                 <th>Ảnh</th>
-                                                <th>Nội dung</th>
+                                                {{-- <th>Nội dung</th> --}}
                                                 <th>Hoạt động</th>
                                             </tr>
                                         </thead>
@@ -37,9 +37,9 @@
                                                     <td>{{ $post->title }}</td>
                                                     <td><img src="{{ asset('storage/images/' . $post->image) }}"
                                                             alt="" width="150px" height="100px"></td>
-                                                    <td>
+                                                    {{-- <td>
                                                         {!! $post->content !!}
-                                                    </td>
+                                                    </td> --}}
                                                     <td>
                                                         <div class="dropdown">
                                                             <div class="btn-link" data-bs-toggle="dropdown">

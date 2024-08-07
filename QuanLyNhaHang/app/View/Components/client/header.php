@@ -23,6 +23,6 @@ class header extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.client.header', ['username' => $this->username]);
+        return view('components.client.header', ['username' => $this->username,]);
     }
 }

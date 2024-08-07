@@ -2,10 +2,12 @@
 
 namespace App\Http\Requests\TableBook;
 
+use App\Models\Dish;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 use Carbon\Carbon;
 use App\Models\Order;
+use App\Models\Reservation;
 
 class CreateTableBookRequest extends FormRequest
 {
@@ -29,29 +31,49 @@ class CreateTableBookRequest extends FormRequest
                 'required',
                 'string',
                 'max:255',
-                Rule::unique('orders'),
             ],
             'table_id' => [
                 'required',
                 'exists:tables,id',
                 function ($attribute, $value, $fail) {
-                    if (Order::where('table_id', $value)
-                        ->where('order_date', $this->order_date)
-                        ->where('order_time', '>', Carbon::now()->addHours(2)->format('H:i'))
-                        ->exists()) {
-                        $fail('Bàn này đã được đặt vào ngày hôm nay và trong vòng 2 giờ tới.');
+                    // Lấy ngày và giờ đặt bàn từ yêu cầu
+                    $reservationDate = Carbon::parse($this->reservation_date);
+                    $reservationTime = Carbon::parse($this->reservation_time);
+
+                    // Tìm kiếm các đơn hàng đã tồn tại với bàn và ngày tương ứng
+                    $existingOrders = Reservation::where('table_id', $value)
+                        ->where('reservation_date', $reservationDate->toDateString())
+                        ->get();
+
+                    foreach ($existingOrders as $order) {
+                        $existingOrderTime = Carbon::parse($order->reservation_time);
+
+                        // So sánh thời gian đặt trong vòng 3 giờ
+                        if ($reservationTime->between($existingOrderTime->copy()->subHours(3), $existingOrderTime->copy()->addHours(3))) {
+                            $fail('Bàn này đã được đặt và các đơn hàng phải cách nhau ít nhất 3 giờ.');
+                            break;
+                        }
                     }
-                },
-                'unique:orders,table_id'
+                }
             ],
-            'dish_id' => 'required|array',
-            'dish_id.*' => 'exists:dishes,id',
-            'quantities' => 'required|array',
-            'quantities.*' => 'integer|min:1',
+            'dish_id' => 'nullable',
+            'user_id' => 'required',
+            'quantities.*' => [
+                'integer',
+                'min:1',
+                function ($attribute, $value, $fail) {
+                    $dishId = explode('.', $attribute)[1];
+                    $dish = Dish::find($dishId);
+
+                    if ($dish && $value > $dish->quantity) {
+                        $fail("Số lượng món \"{$dish->name}\" đã vượt quá số lượng có sẵn.");
+                    }
+                }
+            ],
             'note' => 'nullable|string',
             'seats' => 'nullable|required',
             'status' => 'required|string',
-            'order_date' => [
+            'reservation_date' => [
                 'required',
                 'date',
                 function ($attribute, $value, $fail) {
@@ -60,11 +82,11 @@ class CreateTableBookRequest extends FormRequest
                     }
                 },
             ],
-            'order_time' => [
+            'reservation_time' => [
                 'required',
                 'date_format:H:i',
                 function ($attribute, $value, $fail) {
-                    $orderDate = Carbon::parse($this->order_date);
+                    $orderDate = Carbon::parse($this->reservation_date);
                     $orderTime = Carbon::createFromFormat('H:i', $value);
                     if ($orderDate->isToday() && $orderTime->lessThan(Carbon::now()->addHours(2))) {
                         $fail('Giờ đặt phải trước ít nhất 2 giờ so với thời gian hiện tại.');
@@ -74,13 +96,13 @@ class CreateTableBookRequest extends FormRequest
         ];
     }
 
+
     public function messages(): array
     {
         return [
             'name.required' => 'Người đặt bàn là bắt buộc.',
             'name.string' => 'Tên người đặt phải là một chuỗi ký tự.',
             'name.max' => 'Tên người đặt không được vượt quá 255 ký tự.',
-            'name.unique' => 'Tên người đặt đã tồn tại.',
             'table_id.required' => 'Chọn bàn là bắt buộc.',
             'table_id.unique' => 'Bàn đã được đặt.',
             'table_id.exists' => 'Bàn không tồn tại.',
@@ -93,11 +115,12 @@ class CreateTableBookRequest extends FormRequest
             'quantities.*.min' => 'Số lượng món ăn phải ít nhất là 1.',
             'note.string' => 'Ghi chú phải là một chuỗi ký tự.',
             'status.required' => 'Trạng thái là bắt buộc.',
-            'order_date.required' => 'Ngày đặt không được để trống.',
-            'order_date.date' => 'Ngày đặt không hợp lệ.',
-            'order_date.after_or_equal' => 'Ngày đặt phải là hôm nay hoặc trong tương lai.',
-            'order_time.required' => 'Giờ đặt không được để trống.',
-            'order_time.date_format' => 'Giờ đặt phải theo định dạng HH:mm.',
+            'reservation_date.required' => 'Ngày đặt không được để trống.',
+            'reservation_date.date' => 'Ngày đặt không hợp lệ.',
+            'reservation_date.after_or_equal' => 'Ngày đặt phải là hôm nay hoặc trong tương lai.',
+            'reservation_time.required' => 'Giờ đặt không được để trống.',
+            'reservation_time.date_format' => 'Giờ đặt phải theo định dạng HH:mm.',
+            'seats.required' => 'Ghế ngồi không được để trống',
         ];
     }
 }

@@ -44,7 +44,6 @@ class DishController extends Controller
     return view('admin.dish.list', compact('dishes','categories'));
 }
 
-
     public function add()
     {
         $categories = Category::getAllCategories();

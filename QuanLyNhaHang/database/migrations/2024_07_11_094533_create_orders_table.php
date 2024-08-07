@@ -13,7 +13,9 @@ class CreateOrdersTable extends Migration
             $table->foreignId('user_id')->nullable()->constrained()->onDelete('cascade');
             $table->foreignId('table_id')->constrained()->onDelete('cascade');
             $table->string('name');
+            $table->string('code_order')->nullable();
             $table->text('note')->nullable();
+            $table->text('code_order')->nullable();
             $table->string('status', 20)->default('Chưa thanh toán');
             $table->date('order_date')->nullable();
             $table->time('order_time')->nullable();

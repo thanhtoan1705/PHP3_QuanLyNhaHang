@@ -1,0 +1,28 @@
+$nxb = dish::find($id);
+$nxb->name = 'cuong';
+$nxt->save();
+
+$nxb = dish::where('id', 1)->first();
+$dataUpdate = [
+'name' => 'cuong',
+'price' => 10000,
+'description' => 'mo ta cuon'
+];
+$nxb->update($dataUpdate);x
+
+Route::get('/home', [Homecontroller::class, 'index'])->name('home');
+
+Route::post('home.store', function(){ Dish::create(['name'=>'cuong', 'price'=>1000]); });
+
+Route::post('home.edit', function(){ Dish::where('id', 1)->update(['name'=>'cuong', 'price'=>1000]); });
+
+Route::get('/home', [HomeController::Class, 'index'])->name('home')->middleware(['auth','role:admin,user']);
+
+Route::name('post.')->group(function(){
+Route::get('edit', [HomeController::class, 'edit'])->name('post.edit')->middleware(['auth','role:admin,user']);
+Route::get('store', [HomeController::class, 'store'])->name('post.store')->middleware('auth');
+});
+
+Route::prefix('cart')->group(function(){
+    Route:get('/cart.store', [CartController::class, 'store'])->name('cart.store');
+})
