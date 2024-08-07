@@ -110,11 +110,9 @@ class CartController extends Controller
         return redirect()->route('cart');
     }
 
-    public function remove(Request $request, $dish_id)
+    public function remove($id)
     {
-        Cart::where('user_id', auth()->id())
-            ->where('dish_id', $dish_id)
-            ->delete();
+        Cart::findOrFail($id)->delete();
 
         flash()->success('Sản phẩm đã được xóa khỏi giỏ hàng!');
         return redirect()->route('cart');
@@ -144,16 +142,27 @@ class CartController extends Controller
                 ->where('dish_id', $dishId)
                 ->first();
 
+            if ($quantity <= 0) {
+                flash()->error('Số lượng món ăn phải lớn hơn 0.');
+                return redirect()->route('cart');
+            }
+            
             if ($cartItem) {
+                // Lấy thông tin món ăn từ quan hệ
+                $dish = $cartItem->dish;
+                if ($quantity > $dish->quantity) {
+                    // Nếu số lượng yêu cầu vượt quá số lượng có sẵn, báo lỗi
+                    flash()->error('Số lượng món ăn vượt quá số lượng có sẵn.');
+                    return redirect()->route('cart');
+                }
+
                 // Cập nhật số lượng trong Cart
                 $cartItem->quantity = $quantity;
-                $cartItem->total_price = $quantity * $cartItem->dish->price; // Cập nhật tổng giá trước khi áp dụng giảm giá
+                $cartItem->total_price = $quantity * $dish->price;
+                $cartItem->save();
 
                 // Cộng tổng giá của từng sản phẩm để tính tổng giá trị giỏ hàng
                 $total += $cartItem->total_price;
-
-                // Lưu thông tin sản phẩm đã cập nhật
-                $cartItem->save();
             }
         }
 
@@ -163,7 +172,7 @@ class CartController extends Controller
             ->first();
 
         if ($cartItemWithPromotion) {
-            $promotion = Promotion::find($cartItemWithPromotion->promotion_id);
+            $promotion = $cartItemWithPromotion->promotion;
 
             if ($promotion) {
                 // Trừ giá trị giảm giá vào tổng giỏ hàng
@@ -177,6 +186,7 @@ class CartController extends Controller
         session(['discount_value' => $promotionDiscount]);
 
         // Chuyển hướng lại trang giỏ hàng với thông báo thành công
-        return redirect()->route('cart')->with('success', 'Giỏ hàng đã được cập nhật!');
+        flash()->success('Giỏ hàng đã được cập nhật!');
+        return redirect()->route('cart');
     }
 }
