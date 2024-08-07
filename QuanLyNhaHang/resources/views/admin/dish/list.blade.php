@@ -154,4 +154,12 @@
             </div>
         </div>
     </div>
+
+    {{ $baiviet->comment->review }}
+    Auth::user()->id;
+    $user = [
+        'name' => '',
+        'password' =>
+    ]
+    Auth::login($user)
 @endsection

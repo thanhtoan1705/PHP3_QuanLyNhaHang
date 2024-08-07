@@ -75,7 +75,7 @@ class CheckoutController extends Controller
             'table_id' => $request->table_id,
             'name' => $request->name,
             'phone' => $request->phone,
-            'guests' => $request->guests,
+            'seats' => $request->seats,
             'reservation_date' => $request->reservation_date,
             'reservation_time' => $request->reservation_time,
             'note' => $request->note,

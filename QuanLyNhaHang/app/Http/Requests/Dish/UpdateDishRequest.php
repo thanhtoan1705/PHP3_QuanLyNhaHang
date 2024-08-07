@@ -26,6 +26,7 @@ class UpdateDishRequest extends FormRequest
             'name' => 'required|string|max:255',
             'description' => 'nullable|string',
             'price' => 'required|numeric|min:0',
+            'quantity' => 'required|numeric|min:0',
             'status' => 'required|string',
             'image' => 'nullable|image',
         ];
@@ -48,6 +49,9 @@ class UpdateDishRequest extends FormRequest
             'price.required' => 'Trường giá món ăn là bắt buộc.',
             'price.numeric' => 'Trường giá món ăn phải là số.',
             'price.min' => 'Trường giá món ăn không được là số âm.',
+            'quantity.required' => 'Trường số lượng món ăn là bắt buộc.',
+            'quantity.numeric' => 'Trường số lượng món ăn phải là số.',
+            'quantity.min' => 'Trường số lượng món ăn không được là số âm.',
             'status.required' => 'Trường trạng thái món ăn là bắt buộc.',
             'status.string' => 'Trường trạng thái món ăn phải là chuỗi ký tự.',
             'image.image' => 'Trường hình ảnh món ăn phải là một hình ảnh.',

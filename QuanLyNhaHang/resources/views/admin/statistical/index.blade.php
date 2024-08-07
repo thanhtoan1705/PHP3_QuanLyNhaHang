@@ -125,7 +125,7 @@
                                         <h4 class="card-title">Tổng doanh thu ngày {{ \Carbon\Carbon::createFromDate($day)->format('d') }}</h4>
                                     </div>
                                     <div>
-                                        <a href="{{ route('statistical.export.dates', ['date' => $date]) }}" class="btn btn-secondary">Xuất Excel</a>
+                                        <a style="margin-right:80px" href="{{ route('statistical.export.dates', ['date' => $date]) }}" class="btn btn-secondary">Xuất Excel</a>
                                     </div>
                                     <div>
                                         <h4 class="card-title">Doanh thu ngày: {{number_format($totalRevenueday)}} VNĐ</h4>
@@ -175,7 +175,7 @@
                                         <h4 class="card-title">Tổng doanh thu tháng {{ \Carbon\Carbon::createFromDate($month)->format('m') }} Năm {{ \Carbon\Carbon::createFromDate($year)->format('Y') }}</h4>
                                     </div>
                                     <div>
-                                        <a href="{{ route('statistical.export.monthly', ['month' => $month, 'year' => $year]) }}" class="btn btn-secondary">
+                                        <a style="margin-right:120px" href="{{ route('statistical.export.monthly', ['month' => $month, 'year' => $year]) }}" class="btn btn-secondary">
                                             Xuất Excel
                                         </a>
                                     </div>

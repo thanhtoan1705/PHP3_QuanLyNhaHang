@@ -41,7 +41,7 @@
                                                     <th>Món ăn</th>
                                                     <th>Số bàn</th>
                                                     <th>Tổng tiền</th>
-                                                    <th>Trạng thái</th>
+                                                    {{-- <th>Trạng thái</th> --}}
                                                     <th>Hành động</th>
                                                 </tr>
                                             </thead>
@@ -71,9 +71,8 @@
                                                             @endphp
                                                             <span>{{ number_format($totalAmount, 0, ',', '.') }} vnđ</span>
                                                         </td>
-                                                        <td><span
-                                                                class="badge badge-rounded badge-outline-primary badge-lg">Đã
-                                                                thanh toán</span></td>
+                                                        {{-- <td><span
+                                                                class="badge badge-rounded badge-outline-primary badge-lg">{{ $order->status }}</span></td> --}}
                                                         <td>
                                                             <div class="dropdown">
                                                                 <div class="btn-link" data-bs-toggle="dropdown">

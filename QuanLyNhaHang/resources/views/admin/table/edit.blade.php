@@ -22,7 +22,7 @@
                                         <!-- Tên danh mục -->
                                         <div class="col-lg-6">
                                             <div class="mb-3">
-                                                <label for="number" class="form-label">Tên danh mục</label>
+                                                <label for="number" class="form-label">Tên bàn</label>
                                                 <input type="number" class="form-control" name="number" id="number"
                                                     placeholder="Nhập tên danh mục"
                                                     value="{{ old('number', $table->number) }}" />

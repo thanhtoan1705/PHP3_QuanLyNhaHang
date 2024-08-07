@@ -103,6 +103,18 @@ class StatisticalMonthsExport implements FromCollection, WithHeadings, WithStyle
         ]);
         // Format the 'Tổng tiền' column as currency
         $sheet->getStyle('F')->getNumberFormat()->setFormatCode('#,##0 "VNĐ"');
+
+        $sheet->getColumnDimension('A')->setWidth(15);
+        $sheet->getColumnDimension('B')->setWidth(20);
+        $sheet->getColumnDimension('C')->setWidth(20);
+        $sheet->getColumnDimension('D')->setWidth(20);
+        $sheet->getColumnDimension('E')->setWidth(25);
+        $sheet->getColumnDimension('F')->setWidth(20);
+
+        // Optionally adjust row height
+        for ($row = 1; $row <= $sheet->getHighestRow(); $row++) {
+            $sheet->getRowDimension($row)->setRowHeight(20);
+        }
     }
 }
 

@@ -28,7 +28,7 @@
     @stack('css')
 </head>
 
-<body>
+<body style="font-family: 'Arial', sans-serif; ">
     <!-- Preloader Starts -->
     {{-- <div class="preloader" id="preloader">
         <div class="preloader-inner">

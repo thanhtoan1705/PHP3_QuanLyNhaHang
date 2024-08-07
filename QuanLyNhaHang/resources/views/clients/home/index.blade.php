@@ -220,7 +220,7 @@
                                         aria-selected="{{ $key == 0 ? 'true' : 'false' }}">
                                         <div class="single-menu-nav text-center">
                                             <div class="menu-img margin-bottom-10">
-                                                <img src="{{ asset('path/to/category/image/' . $category->image) }}"
+                                                <img src="{{ asset('storage/images/' . $category->image) }}"
                                                     alt="{{ $category->name }}" />
                                             </div>
                                             <h6>{{ $category->name }}</h6>
@@ -263,7 +263,7 @@
                                         <div
                                             class="single-menu-item d-flex justify-content-between align-items-center h-100">
                                             <div class="menu-img">
-                                                <img src="{{ asset('path/to/dish/image/' . $dish->image) }}"
+                                                <img src="{{ asset('storage/images/' . $dish->image) }}"
                                                     alt="{{ $dish->name }}" />
                                             </div>
                                             <div class="menu-content">
@@ -850,7 +850,7 @@
             </div>
         </div>
     </section>
-    
+
     <x-client.blog :blogs="$blogs"></x-client.blog>
     {{ $blogs->links() }}
 @endsection

@@ -136,8 +136,8 @@
                                     value="{{ $users->phone }}">
                             </div>
                             <div class="mb-3 col-lg-4">
-                                <label for="guests" class="form-label">Số khách</label>
-                                <input type="number" name="guests" class="form-control" id="guests"
+                                <label for="seats" class="form-label">Số khách</label>
+                                <input type="number" name="seats" class="form-control" id="seats"
                                     min="1">
                             </div>
                             <div class="mb-3 col-lg-4">

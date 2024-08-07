@@ -46,6 +46,7 @@
                             </ul>
                         </nav>
                     </div>
+                    
                     <div class="col-lg-4 col-md-9 col-8">
                         <div class="customer-area">
                             <a href="{{ route('account.index') }}" class="text-white">{{ $username }}</a>

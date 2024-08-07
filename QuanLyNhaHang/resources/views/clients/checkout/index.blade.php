@@ -67,7 +67,7 @@
                                 </div>
                                 <div class="mb-2">
                                     <strong>Số khách:</strong>
-                                    <span>{{ $lastReservation->guests }}</span>
+                                    <span>{{ $lastReservation->seats }}</span>
                                 </div>
                                 <div class="mb-2">
                                     <strong>ghi chú về món ăn:</strong>
@@ -88,7 +88,6 @@
                                             <th>Món ăn</th>
                                             <th>Giá bán</th>
                                             <th>Số lượng</th>
-                                            <th>Thành tiền</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -116,10 +115,10 @@
                     </div>
 
                     <!-- Payment Information -->
-                    <div class="col-md-4">
+                    <div class="col-md-4 mt-3">
                         <div class="card">
                             <div class="card-header bg-light">
-                                <h5 class="card-title mb-0">THANH TOÁN</h5>
+                                <h5 class="card-title mb-0 ">THANH TOÁN</h5>
                             </div>
                             <div class="card-body">
                                 <div class="mb-2">

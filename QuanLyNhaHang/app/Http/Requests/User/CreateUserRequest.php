@@ -26,7 +26,7 @@ class CreateUserRequest extends FormRequest
             'email' => 'required|string|email|max:255|unique:users',
             'phone' => ['nullable', 'regex:/^0[0-9]{9,}$/', 'unique:users,phone'],
             'address' => 'nullable|string|max:255',
-            'role' => 'required|string|in:admin,user',
+            'role' => 'required|string|in:admin,user,staff',
             'password' => 'required|min:6',
         ];
     }

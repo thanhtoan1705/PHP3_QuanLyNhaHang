@@ -29,7 +29,7 @@ class UpdateUserRequest extends FormRequest
             'email' => 'required|email|unique:users,email,' . $userId,
             'phone' => ['nullable', 'regex:/^0[0-9]{9,}$/', 'unique:users,phone,' . $userId],
             'address' => 'nullable|string|max:255',
-            'role' => 'required|string|in:admin,user',
+            'role' => 'required|string|in:admin,user,staff',
             'active' => 'required|string|in:active,inactive',
             'password' => 'nullable|min:6',
         ];

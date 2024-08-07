@@ -268,6 +268,7 @@
                     </div>
                 </div>
             </div>
+            @push('style')
             <style>
                 .review-item {
     transition: all 0.3s ease;
@@ -277,7 +278,34 @@
     background-color: #f8f9fa; /* Màu nền khi hover */
 }
 
+    .dropdown-menu {
+        border-radius: 0.375rem; /* Bo góc menu */
+        padding: 0.25rem; /* Padding nhỏ hơn */
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175); /* Đổ bóng menu */
+    }
+
+    .dropdown-item {
+        font-size: 0.875rem; /* Kích thước chữ nhỏ hơn */
+        padding: 0.375rem 1rem; /* Padding nhỏ hơn cho các item */
+    }
+
+    .dropdown-item:hover {
+        background-color: #f8f9fa; /* Màu nền khi hover */
+    }
+
+    .btn-outline-secondary {
+        border-color: #6c757d; /* Màu viền của nút */
+        color: #6c757d; /* Màu chữ của nút */
+    }
+
+    .btn-outline-secondary:hover {
+        background-color: #6c757d; /* Màu nền của nút khi hover */
+        color: #fff; /* Màu chữ của nút khi hover */
+    }
+
             </style>
+            @endpush
+
             <div class="container py-4">
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
@@ -288,24 +316,28 @@
                                 @foreach($reviews as $review)
                                 <div class="review-item border-bottom pb-3 mb-3 row">
                                     <div class="col-lg-8">
-                                    <p class="mb-1">{{ $review->review }}</p>
-                                    <p class="text-muted mb-1">
-                                        <!-- Hiển thị sao dựa trên rating -->
-                                        @for($i = 1; $i <= 5; $i++)
-                                            <i class="fa-solid fa-star {{ $i <= $review->rating ? 'text-warning' : 'text-muted' }}"></i>
-                                        @endfor
-                                    </p>
-                                    <p class="text-muted mb-0">Đăng bởi: {{ $review->user->name }}</p>
-                                </div>
-                                <div class="col-lg-4">
-                                    @if(Auth::id() == $review->user_id)
-                                    <form action="{{ route('reviews.destroy', $review->id) }}" method="POST" class="d-inline">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-sm btn-outline-danger"><i class="fa-solid fa-trash-can"></i></button>
-                                    </form>
-                                </div>
-                                    @endif
+                                        <p class="mb-1">{{ $review->review }}</p>
+                                        <p class="text-muted mb-1">
+                                            <!-- Hiển thị sao dựa trên rating -->
+                                            @for($i = 1; $i <= 5; $i++)
+                                                <i class="fa-solid fa-star {{ $i <= $review->rating ? 'text-warning' : 'text-muted' }}"></i>
+                                            @endfor
+                                        </p>
+                                        <p class="text-muted mb-0">Đăng bởi: {{ $review->user->name }}</p>
+                                    </div>
+                                    <div class="col-lg-4 text-end">
+                                        @if(\Illuminate\Support\Facades\Auth::user()->id == $review->user_id)
+                                        <div class="dropdown">
+                                            <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="fa-solid fa-ellipsis"></i>
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                                <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#editModal{{ $review->id }}">Chỉnh sửa</a></li>
+                                                <li><a class="dropdown-item text-danger" data-bs-toggle="modal" data-bs-target="#deleteModal{{ $review->id }}">Xóa</a></li>
+                                            </ul>
+                                        </div>
+                                        @endif
+                                    </div>
                                 </div>
                                 @endforeach
                             </div>
@@ -313,6 +345,65 @@
                     </div>
                 </div>
             </div>
+
+
+            <!-- Modal chỉnh sửa bình luận -->
+            @foreach($reviews as $review)
+            <div class="modal fade" id="editModal{{ $review->id }}" tabindex="-1" aria-labelledby="editModalLabel{{ $review->id }}" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="editModalLabel{{ $review->id }}">Chỉnh sửa bình luận</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <form action="{{ route('reviews.update', $review->id) }}" method="POST">
+                            @csrf
+                            @method('PUT')
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label for="review" class="form-label">Bình luận</label>
+                                    <textarea id="review" name="review" class="form-control" rows="3" required>{{ old('review', $review->review) }}</textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="rating" class="form-label">Đánh giá</label>
+                                    <input id="rating" name="rating" type="number" class="form-control" min="1" max="5" value="{{ old('rating', $review->rating) }}" required>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                <button type="submit" class="btn btn-primary">Cập nhật</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+
+            <!-- Modal xóa bình luận -->
+            @foreach($reviews as $review)
+            <div class="modal fade" id="deleteModal{{ $review->id }}" tabindex="-1" aria-labelledby="deleteModalLabel{{ $review->id }}" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="deleteModalLabel{{ $review->id }}">Xóa bình luận</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Bạn có chắc chắn muốn xóa bình luận này không?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                            <form action="{{ route('reviews.destroy', $review->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Xóa</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+
 
 
         </div>

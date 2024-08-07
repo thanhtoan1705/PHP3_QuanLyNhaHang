@@ -59,6 +59,7 @@ class Dish extends Model
             'slug' => Str::slug($validatedData['name']),
             'description' => $validatedData['description'],
             'price' => $validatedData['price'],
+            'quantity' => $validatedData['quantity'],
             'image' => $imageName,
             'status' => $validatedData['status'],
         ]);

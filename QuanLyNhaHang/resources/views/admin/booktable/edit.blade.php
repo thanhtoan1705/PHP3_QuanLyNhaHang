@@ -57,10 +57,12 @@
                                             @foreach (old('dish_id', $reservation->dishes->pluck('id')) as $index => $dishId)
                                                 @php
                                                     $dish = $dishes->find($dishId);
+                                                    $reservationDish = $reservation->dishes
+                                                        ->where('id', $dishId)
+                                                        ->first();
                                                     $quantity = old(
                                                         "quantities.$dishId",
-                                                        $reservation->dishes->where('id', $dishId)->first()->pivot
-                                                            ->quantity,
+                                                        $reservationDish ? $reservationDish->pivot->quantity : 1,
                                                     );
                                                 @endphp
                                                 <div class="dish-item mb-5 mt-5 position-relative"

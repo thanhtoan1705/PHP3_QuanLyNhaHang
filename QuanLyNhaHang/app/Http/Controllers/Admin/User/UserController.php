@@ -25,7 +25,8 @@ class UserController extends Controller
     {
         $users = User::where('role', 'user')->paginate(5);
         $staff = User::where('role', 'staff')->paginate(5);
-        return view('admin.users.list', compact('users', 'staff'));
+        $admin = User::where('role', 'admin')->paginate(5);
+        return view('admin.users.list', compact('users', 'staff', 'admin'));
     }
 
     /**

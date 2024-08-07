@@ -26,6 +26,7 @@ class CreateDishRequest extends FormRequest
             'name' => 'required|string|max:255',
             'description' => 'required|string',
             'price' => 'required|numeric|min:0',
+            'quantity' => 'required|numeric|min:0',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'status' => 'required|integer',
         ];
@@ -43,6 +44,9 @@ class CreateDishRequest extends FormRequest
             'price.required' => 'Trường giá món ăn là bắt buộc.',
             'price.numeric' => 'Trường giá món ăn phải là số.',
             'price.min' => 'Trường giá món ăn không được là số âm.',
+            'quantity.required' => 'Trường số lượng món ăn là bắt buộc.',
+            'quantity.numeric' => 'Trường số lượng món ăn phải là số.',
+            'quantity.min' => 'Trường số lượng món ăn không được là số âm.',
             'image.required' => 'Trường hình ảnh món ăn là bắt buộc.',
             'image.image' => 'Trường hình ảnh món ăn phải là một hình ảnh.',
             'image.mimes' => 'Trường hình ảnh món ăn phải có định dạng: jpeg, png, jpg, gif.',

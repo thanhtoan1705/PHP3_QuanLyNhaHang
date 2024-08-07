@@ -28,7 +28,7 @@ class UpdateTableBookRequest extends FormRequest
     {
         $orderId = $this->route('id');
         return [
-            'name' => 'required|string|max:255|unique:orders,name,' . $orderId,
+            'name' => 'required|string|max:255',
             'table_id' => [
                 'required',
                 'exists:tables,id',

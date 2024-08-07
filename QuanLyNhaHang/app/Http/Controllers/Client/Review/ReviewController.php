@@ -39,4 +39,30 @@ class ReviewController extends Controller
 
         return back()->with('success', 'Bình luận đã được xóa!');
     }
+
+    public function update(Request $request, $id)
+{
+    // Xác thực dữ liệu
+    $request->validate([
+        'review' => 'required|string|max:1000',
+        'rating' => 'required|integer|between:1,5',
+    ]);
+
+    // Tìm bình luận cần cập nhật
+    $review = Review::findOrFail($id);
+
+    // Kiểm tra quyền sửa bình luận
+    if ($review->user_id != Auth::id()) {
+        return back()->with('error', 'Bạn không có quyền cập nhật bình luận này.');
+    }
+
+    // Cập nhật bình luận
+    $review->update([
+        'review' => $request->review,
+        'rating' => $request->rating,
+    ]);
+
+    return back()->with('success', 'Bình luận đã được cập nhật!');
+}
+
 }

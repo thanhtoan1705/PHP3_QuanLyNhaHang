@@ -34,6 +34,8 @@ use App\Http\Controllers\Client\Blog\BlogDetailController;
 use App\Http\Controllers\Client\Contact\ContactController;
 use App\Http\Controllers\Client\Gallery\GalleryController;
 use App\Http\Controllers\Client\Table\TableController as ClientTableController;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -76,6 +78,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('chi-tiet-mon-an/{id}', [DishController::class, 'dishDetail'])->name('dishDetail');
 Route::post('/dish/{id}/review', [ReviewController::class, 'store'])->name('reviews.store');
 Route::delete('/review/{id}', [ReviewController::class, 'destroy'])->name('reviews.destroy');
+Route::put('/reviews/{id}', [ReviewController::class, 'update'])->name('reviews.update');
 Route::get('menu', [DishController::class, 'menu'])->name('menu');
 Route::get('gioi-thieu', [AboutController::class, 'index'])->name('about');
 Route::get('404', [ErrorController::class, 'index']);
@@ -233,3 +236,7 @@ Route::name('promotion.')->group(function () {
 
 //comment
 Route::get('comment', [CommentController::class, 'index'])->name('comment.list')->middleware(['auth', 'role:admin']);
+
+
+
+

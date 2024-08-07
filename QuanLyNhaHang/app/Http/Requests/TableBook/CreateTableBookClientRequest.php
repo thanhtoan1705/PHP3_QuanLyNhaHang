@@ -38,11 +38,11 @@ class CreateTableBookClientRequest extends FormRequest
                 'exists:tables,id',
                 function ($attribute, $value, $fail) {
                     if (Reservation::where('table_id', $value)
-                        ->where('order_date', $this->order_date)
-                        ->where('order_time', '>', Carbon::now()->addHours(2)->format('H:i'))
+                        ->where('reservation_date', $this->reservation_date)
+                        ->where('reservation_time', '>', Carbon::now()->addHours(2)->format('H:i'))
                         ->exists()
                     ) {
-                        $fail('Bàn này đã được đặt vào ngày hôm nay và trong vòng 2 giờ tới.');
+                        $fail('Bàn này đã được đặt vào ngày hôm nay và vui lòng đặt trong vòng 2 giờ tới.');
                         // Lấy ngày và giờ đặt bàn từ yêu cầu
                         $reservationDate = Carbon::parse($this->reservation_date);
                         $reservationTime = Carbon::parse($this->reservation_time);
