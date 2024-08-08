@@ -73,53 +73,6 @@
                                 khẩu và
                                 Chi tiết tài khoản.
                             </p>
-                            <div class="recent-orders margin-top-40">
-                                <h5 class="margin-bottom-30">Những đơn đặt hàng gần đây</h5>
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>Sản phẩm</th>
-                                                <th>Ngày</th>
-                                                <th>Trạng thái</th>
-                                                <th>Bàn</th>
-                                                <th>Tổng cộng</th>
-                                                <th>Hành động</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Sữa lắc hoàng gia Kesar</td>
-                                                <td>Ngày 45 tháng 3 năm 2020</td>
-                                                <td>Đang xử lý</td>
-                                                <td>Bàn 2</td>
-                                                <td>$125,00</td>
-                                                <td><a href="#" class="btn-small d-block">Hủy đơn hàng</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Pizza phô mai đôi</td>
-                                                <td>Ngày 29 tháng 6 năm 2020</td>
-                                                <td>Đã hoàn thành</td>
-                                                <td>Bàn 3</td>
-                                                <td>$364,00</td>
-                                                <td><a href="#" class="btn-small d-block">Hủy đơn hàng</a></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-
-                                </div>
-                                <div class="pagination order-pagination">
-                                    <ul>
-                                        <li class="prev"><a href="#">Prev</a></li>
-                                        <li><a href="#">1</a></li>
-                                        <li><a href="#">2</a></li>
-                                        <li><a href="#">3</a></li>
-                                        <li class="pagination-dot">...</li>
-                                        <li><a href="#">10</a></li>
-                                        <li class="next"><a href="#">Next</a></li>
-                                    </ul>
-                                </div>
-                            </div>
                         </div>
                         <!-- order-tab -->
                         <div class="tab-pane fade" id="order" role="tabpanel" aria-labelledby="order-tab"
@@ -129,7 +82,7 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th>Sản phẩm</th>
+                                            <th>Món ăn</th>
                                             <th>Ngày</th>
                                             <th>Trạng thái</th>
                                             <th>Bàn</th>
@@ -138,36 +91,34 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach($orders as $order)
                                         <tr>
-                                            <td>Sữa lắc hoàng gia Kesar</td>
-                                            <td>Ngày 45 tháng 3 năm 2020</td>
-                                            <td>Đang xử lý</td>
-                                            <td>Bàn 2</td>
-                                            <td>$125,00</td>
-                                            <td><a href="#" class="btn-small d-block">Hủy đơn hàng</a></td>
+                                            <td>
+                                                @foreach ($order->dishes as $dish)
+                                                    <div>{{ $dish->name }} ({{ $dish->pivot->quantity }})<br>
+                                                    </div>
+                                                @endforeach
+                                            </td>
+                                            <td>{{ $order->created_at->format('d/m/Y') }}</td>
+                                            <td>{{ $order->status }}</td>
+                                            <td>{{ $order->table->number }}</td>
+                                            <td>
+                                                @php
+                                                    $totalAmount = $order->payments->sum('total_amount');
+                                                @endphp
+                                                    <span>{{ number_format($totalAmount, 0, ',', '.') }} vnđ</span>
+                                            </td>
+                                            <td>
+                                                <form action="{{ route('account.orders.cancel', $order->id) }}" method="POST">
+                                                    @csrf
+                                                    <button type="submit" id="cancel-order-btn" class="btn-custom">Hủy đơn hàng</button>
+                                                </form>
+                                            </td>
+                                            
                                         </tr>
-                                        <tr>
-                                            <td>Pizza phô mai đôi</td>
-                                            <td>Ngày 29 tháng 6 năm 2020</td>
-                                            <td>Đã hoàn thành</td>
-                                            <td>Bàn 3</td>
-                                            <td>$364,00</td>
-                                            <td><a href="#" class="btn-small d-block">Hủy đơn hàng</a></td>
-                                        </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
-
-                            </div>
-                            <div class="pagination order-pagination">
-                                <ul>
-                                    <li class="prev"><a href="#">Trở lại</a></li>
-                                    <li><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li class="pagination-dot">...</li>
-                                    <li><a href="#">10</a></li>
-                                    <li class="next"><a href="#">Tiếp</a></li>
-                                </ul>
                             </div>
                         </div>
                         <!-- track-order-tab -->
@@ -280,7 +231,70 @@
         </div>
     </section>
 @endsection
+<style>
+    .btn-custom {
+    background-color: #dc3545; /* Màu nền đỏ của Bootstrap */
+    color: #fff; /* Màu văn bản trắng */
+    border: none; /* Không có viền */
+    padding: 5px 10px; /* Padding nhỏ hơn để nút nhỏ hơn */
+    font-size: 12px; /* Kích thước chữ nhỏ hơn */
+    border-radius: 4px; /* Bo tròn các góc */
+    cursor: pointer; /* Con trỏ khi di chuột vào */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Hiệu ứng chuyển tiếp */
+    display: inline-flex; /* Căn chỉnh nội dung của nút */
+    align-items: center; /* Căn giữa nội dung */
+}
+
+.btn-custom i {
+    margin-right: 5px; /* Khoảng cách giữa biểu tượng và văn bản */
+}
+
+.btn-custom:hover {
+    background-color: #c82333; /* Màu nền khi hover */
+    transform: scale(1.05); /* Phóng to nút khi hover */
+}
+
+.btn-custom:focus {
+    outline: none; /* Xóa đường viền khi focus */
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5); /* Hiệu ứng bóng */
+}
+
+</style>
 <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('#cancel-order-btn').forEach(function(button) {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const form = button.closest('form');
+
+            if (confirm('Bạn có chắc chắn muốn hủy đơn hàng này không?')) {
+                fetch(form.action, {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        _token: form.querySelector('input[name="_token"]').value,
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        button.closest('tr').style.display = 'none';
+                    } else {
+                        alert('Đã xảy ra lỗi: ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Đã xảy ra lỗi. Vui lòng thử lại.');
+                });
+            }
+        });
+    });
+});
+
     function copyToClipboard(elementId) {
         const copyText = document.getElementById(elementId).innerText;
         const textarea = document.createElement('textarea');

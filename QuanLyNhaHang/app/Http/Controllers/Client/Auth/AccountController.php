@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\User\UpdateAccountRequest;
 use App\Models\User;
 use App\Models\Promotion;
+use App\Models\Order;
 class AccountController extends Controller
 {
     public function index()
@@ -17,11 +18,25 @@ class AccountController extends Controller
     }
 
     public function show($id)
-{
-    $user = Auth::user();
-    $promotions = Promotion::paginate(9);
-    return view('clients.account.index', compact('user', 'promotions'));
-}
+    {
+        $user = Auth::user();
+
+        // Fetch orders for the authenticated user
+        $orders = Order::with(['dishes', 'table', 'payments'])
+        ->where('user_id', $user->id)
+        ->where('status', '!=', 'đã hủy')
+        ->get();
+
+
+        $promotions = Promotion::paginate(9);
+        $totalAmount = $orders->sum(function ($order) {
+            return $order->dishes->sum(function ($dish) {
+                return $dish->price * $dish->pivot->quantity;
+            });
+        });
+        
+        return view('clients.account.index', compact('user', 'promotions', 'orders', 'totalAmount'));
+    }
 
 public function update(UpdateAccountRequest $request, $id)
 {    
@@ -40,7 +55,7 @@ public function update(UpdateAccountRequest $request, $id)
     }
     
     $user->update($data);
-    return redirect()->route('account.index')->with('success', 'Người dùng đã được cập nhật thành công!');
+    return redirect()->route('account.show', $id)->with('success', 'Người dùng đã được cập nhật thành công!');
 }
 
 
@@ -55,4 +70,21 @@ public function update(UpdateAccountRequest $request, $id)
         $username = Auth::check() ? Auth::user()->name : null;
         return view('components.client.header', compact('username','user'));
     }
+
+    public function cancelOrder($id)
+{
+    $order = Order::findOrFail($id);
+
+    // Kiểm tra xem đơn hàng có thuộc về người dùng hiện tại không
+    if ($order->user_id !== Auth::id()) {
+        return response()->json(['success' => false, 'message' => 'Bạn không có quyền hủy đơn hàng này.']);
+    }
+
+    // Cập nhật trạng thái đơn hàng thành "đã hủy"
+    $order->status = 'đã hủy';
+    $order->save();
+
+    return response()->json(['success' => true, 'message' => 'Đơn hàng đã được hủy.']);
+}
+
 }

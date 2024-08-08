@@ -109,6 +109,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('account', [AccountController::class, 'index'])->name('index');
         Route::put('account/update/{id}', [AccountController::class, 'update'])->name('update');
         Route::get('account/show/{id}', [AccountController::class, 'show'])->name('show');
+        Route::post('account/orders/cancel/{id}', [AccountController::class, 'cancelOrder'])->name('orders.cancel');
     });
 });
 
