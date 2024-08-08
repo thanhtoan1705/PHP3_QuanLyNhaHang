@@ -29,6 +29,9 @@ class OrderController extends Controller
             });
         }
 
+        // Sắp xếp các đơn hàng đã thanh toán lên trên và theo thứ tự mới nhất xuống dưới
+        $query->orderByRaw('CASE WHEN status = "đã thanh toán" THEN 1 ELSE 2 END, created_at DESC');
+
         // Lấy các đơn hàng phù hợp với tiêu chí tìm kiếm
         $orders = $query->get();
 

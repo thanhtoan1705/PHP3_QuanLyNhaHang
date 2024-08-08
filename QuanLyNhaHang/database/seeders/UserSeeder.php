@@ -69,13 +69,12 @@ class UserSeeder extends Seeder
                 'role' => 'user',
                 'active' => 'inactive',
             ],
-            // Thêm 6 người dùng mới với giá trị 'active' => 'active'
             [
-                'name' => 'New User 1',
-                'email' => 'newuser1@example.com',
-                'password' => bcrypt('newpassword1'),
-                'phone' => '0912345678',
-                'address' => 'New Address 1',
+                'name' => 'Nguyen Cuong',
+                'email' => 'ngoccuong147258@gmail.com',
+                'password' => bcrypt('123456789'),
+                'phone' => '0354233641',
+                'address' => 'Cần Thơ',
                 'role' => 'admin',
                 'active' => 'active',
             ],
@@ -85,7 +84,7 @@ class UserSeeder extends Seeder
                 'password' => bcrypt('newpassword2'),
                 'phone' => '0923456789',
                 'address' => 'New Address 2',
-                'role' => 'user',
+                'role' => 'staff',
                 'active' => 'active',
             ],
             [
@@ -94,7 +93,7 @@ class UserSeeder extends Seeder
                 'password' => bcrypt('newpassword3'),
                 'phone' => '0934567890',
                 'address' => 'New Address 3',
-                'role' => 'user',
+                'role' => 'staff',
                 'active' => 'active',
             ],
             [
@@ -103,7 +102,7 @@ class UserSeeder extends Seeder
                 'password' => bcrypt('newpassword4'),
                 'phone' => '0945678901',
                 'address' => 'New Address 4',
-                'role' => 'user',
+                'role' => 'staff',
                 'active' => 'active',
             ],
             [
@@ -112,7 +111,7 @@ class UserSeeder extends Seeder
                 'password' => bcrypt('newpassword5'),
                 'phone' => '0956789012',
                 'address' => 'New Address 5',
-                'role' => 'user',
+                'role' => 'staff',
                 'active' => 'active',
             ],
             [
@@ -121,7 +120,7 @@ class UserSeeder extends Seeder
                 'password' => bcrypt('newpassword6'),
                 'phone' => '0967890123',
                 'address' => 'New Address 6',
-                'role' => 'user',
+                'role' => 'staff',
                 'active' => 'active',
             ],
         ];
