@@ -21,11 +21,39 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $users = User::where('role', 'user')->paginate(5);
-        $staff = User::where('role', 'staff')->paginate(5);
-        $admin = User::where('role', 'admin')->paginate(5);
+        $search = $request->input('search');
+
+        // Lọc người dùng với vai trò 'user'
+        $usersQuery = User::where('role', 'user');
+        if ($search) {
+            $usersQuery->where(function ($query) use ($search) {
+                $query->where('name', 'like', "%{$search}%")
+                    ->orWhere('phone', 'like', "%{$search}%");
+            });
+        }
+        $users = $usersQuery->paginate(5);
+
+        // Lọc nhân viên với vai trò 'staff'
+        $staffQuery = User::where('role', 'staff');
+        if ($search) {
+            $staffQuery->where(function ($query) use ($search) {
+                $query->where('name', 'like', "%{$search}%")
+                    ->orWhere('phone', 'like', "%{$search}%");
+            });
+        }
+        $staff = $staffQuery->paginate(5);
+
+        // Lọc quản trị viên với vai trò 'admin'
+        $adminQuery = User::where('role', 'admin');
+        if ($search) {
+            $adminQuery->where(function ($query) use ($search) {
+                $query->where('name', 'like', "%{$search}%")
+                    ->orWhere('phone', 'like', "%{$search}%");
+            });
+        }
+        $admin = $adminQuery->paginate(5);
         return view('admin.users.list', compact('users', 'staff', 'admin'));
     }
 
@@ -61,8 +89,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = $this->user->findOrFail($id);
-        return view('admin.users.edit', compact('user'));
+        $user1 = $this->user->findOrFail($id);
+        // dd($user);
+        return view('admin.users.edit', compact('user1'));
     }
 
     /**

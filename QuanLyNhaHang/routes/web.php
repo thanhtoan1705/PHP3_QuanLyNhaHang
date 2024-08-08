@@ -102,7 +102,7 @@ Route::get('thanh-toan', [CheckoutController::class, 'index'])->name('checkout')
 Route::post('thanh-toan', [CheckoutController::class, 'checkout'])->name('checkout.store');
 Route::post('thanh-toan/tien-hanh', [CheckoutController::class, 'processPayment'])->name('payment.process');
 Route::post('momo/return', [CheckoutController::class, 'momoReturn'])->name('momo.return');
-
+Route::get('/vnpay/return', [PaymentController::class, 'vnpayReturn'])->name('vnpay.return');
 //account
 Route::middleware(['auth'])->group(function () {
     Route::name('account.')->middleware('auth')->group(function () {
@@ -178,7 +178,6 @@ Route::get('staff/delete/{id}', [StaffController::class, 'delete'])->name('staff
 // Order
 Route::get('order', [OrderController::class, 'index'])->name('order.list')->middleware(['auth', 'role:admin']);
 Route::get('/orders/{id}', [OrderController::class, 'show'])->name('order.detail');
-Route::delete('/orders/{id}', [OrderController::class, 'destroy'])->name('order.delete');
 Route::get('/orders/{id}/pdf', [OrderController::class, 'generatePdf'])->name('order.pdf');
 
 Route::get('payment', [PaymentController::class, 'index'])->name('payment.list')->middleware(['auth', 'role:admin']);

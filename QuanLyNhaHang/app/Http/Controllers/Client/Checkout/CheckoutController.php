@@ -8,44 +8,42 @@ use App\Models\Cart;
 use App\Models\Dish;
 use App\Models\Order;
 use App\Models\Payment;
-use App\Models\Promotion;
 use App\Models\Reservation;
-use App\Models\Table;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class CheckoutController extends Controller
 {
     public function index()
     {
-        $users = auth()->user();
+        $userId = auth()->id();
         $lastReservationId = session('last_reservation_id', null);
-        // Lấy các Reservation của người dùng đã đăng nhập và nạp trước thông tin về bảng tương ứng
-        $reservations = Reservation::where('user_id', auth()->id())->with('table')->get();
+
+        // Get reservations and last reservation
+        $reservations = Reservation::where('user_id', $userId)->with('table')->get();
         $lastReservation = $reservations->firstWhere('id', $lastReservationId);
         $lastReservationTable = $lastReservation ? $lastReservation->table : null;
         session()->put('lastReservation', $lastReservation);
 
-        // Lấy tất cả các bản ghi từ bảng carts của người dùng hiện tại và nạp trước thông tin dish và promotion
-        $carts = Cart::where('user_id', auth()->id())->with(['dish', 'promotion'])->get();
+        // Get carts and calculate totals
+        $carts = Cart::where('user_id', $userId)->with(['dish', 'promotion'])->get();
+        $totalPrices = Cart::getTotalPrice($userId);
 
-        // Tính tổng giá trị của giỏ hàng
-        $totalPrice = $carts->sum(function ($cart) {
-            return $cart->quantity * $cart->dish->price;
-        });
-        // Kiểm tra nếu có ít nhất một promotion
-        $discount = $carts->whereNotNull('promotion')->sum(function ($cart) {
-            return $cart->promotion->discount ?? 0;
-        });
-        $totalPriceAfterDiscount = $totalPrice - $discount;
-
-        return view('clients.checkout.index', compact('lastReservationTable', 'lastReservation', 'carts', 'totalPrice', 'totalPriceAfterDiscount'));
+        return view('clients.checkout.index', [
+            'lastReservationTable' => $lastReservationTable,
+            'lastReservation' => $lastReservation,
+            'carts' => $carts,
+            'totalPrice' => $totalPrices['totalPrice'],
+            'totalPriceAfterDiscount' => $totalPrices['totalPriceAfterDiscount']
+        ]);
     }
 
     public function checkout(Request $request)
     {
         $users = auth()->user();
 
-        $reservation = Reservation::create([
+        $reservationData = [
             'user_id' => $users->id,
             'table_id' => $request->table_id,
             'name' => $request->name,
@@ -54,7 +52,9 @@ class CheckoutController extends Controller
             'reservation_date' => $request->reservation_date,
             'reservation_time' => $request->reservation_time,
             'note' => $request->note,
-        ]);
+        ];
+
+        $reservation = Reservation::createReservation($reservationData);
 
         session(['last_reservation_id' => $reservation->id]);
 
@@ -73,8 +73,17 @@ class CheckoutController extends Controller
         $totalPrice = $cartItems->sum('total_price');
         // Nếu có khuyến mãi, áp dụng mã giảm giá
         $promotion = $cartItems->first()->promotion;
+
+
         if ($promotion) {
-            $totalPrice -= $promotion->discount;
+            // Trừ số lần sử dụng của mã giảm giá
+            if ($promotion->number_use > 0) {
+                $totalPrice -= $promotion->discount;
+
+                // Cập nhật số lần sử dụng của mã giảm giá
+                $promotion->number_use -= 1;
+                $promotion->save();
+            }
         }
 
         // Lấy thông tin lastReservation từ session
@@ -121,8 +130,8 @@ class CheckoutController extends Controller
                 return redirect()->route('home');
                 break;
             case 'vnpay':
-                $vnp_TmnCode = "YKF272RR"; // Mã website tại VNPay
-                $vnp_HashSecret = "PYMAQEXTAZNBRTPPTHSPRZLJVDJRJOKA"; // Chuỗi bí mật
+                $vnp_TmnCode = "K352G5ON"; // Mã website tại VNPay
+                $vnp_HashSecret = "F1GCU0VW1JEOZZNDZ80D3C6MHW8N7M8Y"; // Chuỗi bí mật
                 $vnp_Url = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html"; // URL thanh toán của VNPay
                 $vnp_Returnurl = route('home'); // URL trả về khi thanh toán thành công
                 $vnp_TxnRef = $orderCode; // Mã đơn hàng
@@ -131,6 +140,40 @@ class CheckoutController extends Controller
                 $vnp_Locale = 'vn'; // Ngôn ngữ
                 $vnp_BankCode = ''; // Mã ngân hàng
                 $vnp_IpAddr = request()->ip(); // Địa chỉ IP của người dùng
+                $vnp_CreateDate = now()->format('YmdHis'); // Đảm bảo định dạng đúng
+
+                // Tạo đơn hàng mới và lưu vào database
+                $order = Order::create([
+                    'user_id' => $user_id,
+                    'table_id' => $lastReservation ? $lastReservation->table_id : null,
+                    'name' => $lastReservation ? $lastReservation->name : auth()->user()->name,
+                    'note' => $lastReservation ? $lastReservation->note : null,
+                    'code_order' => $orderCode,
+                    'status' => 'đã thanh toán',
+                    'order_date' => $lastReservation ? $lastReservation->reservation_date : null,
+                    'order_time' => $lastReservation ? $lastReservation->reservation_time : null,
+                ]);
+
+                foreach ($cartItems as $cartItem) {
+                    $order->dishes()->attach($cartItem->dish_id, ['quantity' => $cartItem->quantity]);
+                    $dish = Dish::find($cartItem->dish_id);
+                    if ($dish) {
+                        $dish->quantity -= $cartItem->quantity;
+                        $dish->save();
+                    }
+                }
+
+                // Tạo bản ghi thanh toán (chưa hoàn thành)
+                $payment = Payment::create([
+                    'order_id' => $order->id,
+                    'user_id' => $user_id,
+                    'payment_date' => now(),
+                    'payment_method' => $paymentMethod,
+                    'total_amount' => $totalPrice,
+                ]);
+
+                // Xóa giỏ hàng sau khi thanh toán thành công
+                Cart::where('user_id', $user_id)->delete();
 
                 // Xây dựng URL thanh toán
                 $vnp_Params = [
@@ -148,30 +191,13 @@ class CheckoutController extends Controller
                     "vnp_CreateDate" => now()->format('YmdHis'),
                 ];
 
-                if (!empty($vnp_BankCode)) {
-                    $vnp_Params['vnp_BankCode'] = $vnp_BankCode;
-                }
-
                 ksort($vnp_Params);
-                $query = '';
-                $i = 0;
-                $hashdata = '';
-                foreach ($vnp_Params as $key => $value) {
-                    if ($i == 1) {
-                        $hashdata .= '&' . $key . "=" . $value;
-                    } else {
-                        $hashdata .= $key . "=" . $value;
-                        $i = 1;
-                    }
-                    $query .= urlencode($key) . "=" . urlencode($value) . '&';
-                }
+                $hashdata = http_build_query($vnp_Params, '', '&');
+                $vnpSecureHash = hash_hmac('sha512', $hashdata, $vnp_HashSecret);
 
-                $vnp_Url = $vnp_Url . "?" . $query;
-                if (isset($vnp_HashSecret)) {
-                    $vnpSecureHash = hash_hmac('sha512', $hashdata, $vnp_HashSecret);
-                    $vnp_Url .= 'vnp_SecureHash=' . $vnpSecureHash;
-                }
+                $vnp_Url .= "?" . $hashdata . '&vnp_SecureHash=' . $vnpSecureHash;
 
+                flash()->success('Thanh toán thành công!');
                 return redirect($vnp_Url);
                 break;
             case 'momo':
@@ -194,7 +220,7 @@ class CheckoutController extends Controller
                     'orderId' => $orderId,
                     'orderInfo' => $orderInfo,
                     'returnUrl' => $returnUrl,
-                    'notifyUrl' => route('momo.notify'), // URL nhận thông báo từ MoMo
+                    'notifyUrl' => route('home'), // URL nhận thông báo từ MoMo
                     'requestType' => 'captureMoMoWallet',
                     'extraData' => ''
                 ];
@@ -205,6 +231,33 @@ class CheckoutController extends Controller
 
                 // Gửi yêu cầu thanh toán
                 $response = Http::post($endpoint, $requestData);
+                $order = Order::create([
+                    'user_id' => $user_id,
+                    'table_id' => $lastReservation ? $lastReservation->table_id : null,
+                    'name' => $lastReservation ? $lastReservation->name : auth()->user()->name,
+                    'note' => $lastReservation ? $lastReservation->note : null,
+                    'code_order' => $orderCode,
+                    'status' => 'đang sử lý',
+                    'order_date' => $lastReservation ? $lastReservation->reservation_date : null,
+                    'order_time' => $lastReservation ? $lastReservation->reservation_time : null,
+                ]);
+
+                foreach ($cartItems as $cartItem) {
+                    $order->dishes()->attach($cartItem->dish_id, ['quantity' => $cartItem->quantity]);
+                    $dish = Dish::find($cartItem->dish_id);
+                    if ($dish) {
+                        $dish->quantity -= $cartItem->quantity;
+                        $dish->save();
+                    }
+                }
+
+                $payment = Payment::create([
+                    'order_id' => $order->id,
+                    'user_id' => $user_id,
+                    'payment_date' => $lastReservation ? $lastReservation->reservation_date : now(),
+                    'payment_method' => 'momo',
+                    'total_amount' => $totalPrice,
+                ]);
 
                 $responseData = $response->json();
                 if ($responseData['resultCode'] == '00') {
@@ -215,16 +268,10 @@ class CheckoutController extends Controller
                     return redirect()->back();
                 }
                 break;
-            case 'bank_transfer':
-                // Xử lý logic chuyển khoản ngân hàng
-                break;
             default:
                 flash()->error('Vui lòng chọn phương thức thanh toán.');
                 return redirect()->back();
         }
-
-        // Lưu thông tin thanh toán vào cơ sở dữ liệu (nếu cần)
-        // Ví dụ: Tạo đơn hàng, cập nhật trạng thái thanh toán,...
 
         // Xóa giỏ hàng sau khi thanh toán thành công
         Cart::where('user_id', auth()->id())->delete();
@@ -253,14 +300,12 @@ class CheckoutController extends Controller
                         'status' => 'Đã thanh toán'
                     ]);
 
-                    Payment::create([
-                        'order_id' => $order->id,
-                        'user_id' => $order->user_id,
-                        'payment_date' => now(),
-                        'payment_method' => 'momo',
-                        'payment_status' => 'completed',
-                        'total_amount' => $amount / 100,
-                    ]);
+                    $payment = Payment::where('order_id', $order->id)->first();
+                    if ($payment) {
+                        $payment->update([
+                            'payment_status' => 'completed'
+                        ]);
+                    }
 
                     // Xóa giỏ hàng
                     Cart::where('user_id', $order->user_id)->delete();
@@ -274,6 +319,49 @@ class CheckoutController extends Controller
             }
         } else {
             flash()->error('Chữ ký không hợp lệ.');
+            return redirect()->route('home');
+        }
+    }
+
+    public function vnpayReturn(Request $request)
+    {
+        $vnp_HashSecret = "F1GCU0VW1JEOZZNDZ80D3C6MHW8N7M8Y";
+        $inputData = $request->all();
+
+        $vnp_SecureHash = $inputData['vnp_SecureHash'];
+        unset($inputData['vnp_SecureHash']);
+        ksort($inputData);
+        $hashData = http_build_query($inputData, '', '&');
+
+        $secureHash = hash_hmac('sha512', $hashData, $vnp_HashSecret);
+
+        if ($secureHash === $vnp_SecureHash) {
+            // Xử lý trạng thái thanh toán
+            if ($inputData['vnp_ResponseCode'] == '00') {
+                // Cập nhật trạng thái thanh toán thành công
+                $order = Order::where('code_order', $inputData['vnp_TxnRef'])->first();
+                if ($order) {
+                    $order->status = 'đã thanh toán';
+                    $order->save();
+
+                    $payment = $order->payments()->where('payment_method', 'vnpay')->first();
+                    if ($payment) {
+                        $payment->payment_status = 'success';
+                        $payment->save();
+                    }
+
+                    // Xóa giỏ hàng sau khi thanh toán thành công
+                    Cart::where('user_id', $order->user_id)->delete();
+
+                    flash()->success('Thanh toán thành công!');
+                    return redirect()->route('home');
+                }
+            } else {
+                flash()->error('Thanh toán không thành công.');
+                return redirect()->route('home');
+            }
+        } else {
+            flash()->error('Sai chữ ký!');
             return redirect()->route('home');
         }
     }

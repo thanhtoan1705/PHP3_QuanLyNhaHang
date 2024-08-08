@@ -1,9 +1,6 @@
 @extends('layouts.admin')
 @section('title', 'detail order')
 @section('content')
-    <!--**********************************
-                                                                                Content body start
-                                                                            ***********************************-->
     <div class="content-body">
         <div class="container">
             <div class="row">
@@ -37,9 +34,8 @@
                                             </div>
                                             <div class="d-flex align-items-end">
                                                 <div class="food-items-info">
-                                                    <span class="text-primary">ĐỒ ĂN</span>
                                                     <h6>{{ $dish->name }}</h6>
-                                                    <span>{{ $dish->pivot->quantity }}</span>
+                                                    <span>{{ $dish->pivot->quantity }}x</span>
                                                 </div>
                                                 <div class="d-inline-flex text-nowrap">
                                                     <span
@@ -53,6 +49,25 @@
                                     @endforeach
                                     <hr>
                                     <div class="food-totle">
+                                        <ul class="d-flex align-items-center justify-content-between">
+                                            <li><span>
+                                                    Số bàn</span></li>
+                                            <li>
+                                                <h6>{{ $order->table->number }}</h6>
+                                        </ul>
+                                        <ul class="d-flex align-items-center justify-content-between">
+                                            <li><span>
+                                                    Ngày và giờ thanh toán</span></li>
+                                            <li>
+                                                <h6>{{ $order->order_date }} ({{ $order->order_time }})</h6>
+                                        </ul>
+                                        <ul class="d-flex align-items-center justify-content-between">
+                                            <li><span>
+                                                    Khuyễn mãi</span></li>
+                                            <li>
+                                                <h6>-{{ number_format($order->promotion->discount ?? 0, 0, ',', '.') }}đ
+                                                </h6>
+                                        </ul>
                                         @php
                                             $totalAmount = $order->dishes->sum(function ($dish) {
                                                 return $dish->price * $dish->pivot->quantity;
@@ -60,15 +75,9 @@
                                         @endphp
                                         <ul class="d-flex align-items-center justify-content-between">
                                             <li><span>
-                                                    Tổng phụ</span></li>
+                                                    Tổng cộng</span></li>
                                             <li>
                                                 <h6>{{ number_format($totalAmount, 0, ',', '.') }}đ</h6>
-                                        </ul>
-                                        <ul class="d-flex align-items-center justify-content-between">
-                                            <li><span>
-                                                    Số bàn</span></li>
-                                            <li>
-                                                <h6>{{ $order->table->number }}</h6>
                                         </ul>
                                     </div>
                                 </div>

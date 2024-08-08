@@ -15,6 +15,11 @@ class Promotion extends Model
     ];
     protected $dates = ['start_time', 'end_time'];
 
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+
     public function getStartTimeAttribute($value)
     {
         return Carbon::parse($value)->format('d-m-Y');
@@ -25,7 +30,7 @@ class Promotion extends Model
         return Carbon::parse($value)->format('d-m-Y');
     }
 
-     public function setNumberUseAttribute($value)
+    public function setNumberUseAttribute($value)
     {
         $this->attributes['number_use'] = $value;
 

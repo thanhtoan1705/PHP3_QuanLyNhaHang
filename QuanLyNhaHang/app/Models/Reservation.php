@@ -32,6 +32,11 @@ class Reservation extends Model
         return $this->belongsTo(Table::class);
     }
 
+    public static function createReservation($data)
+    {
+        return self::create($data);
+    }
+
     public function dishes()
     {
         return $this->belongsToMany(Dish::class, 'reservation_dish')->withPivot('quantity');
@@ -183,5 +188,4 @@ class Reservation extends Model
 
         return $order;
     }
-
 }

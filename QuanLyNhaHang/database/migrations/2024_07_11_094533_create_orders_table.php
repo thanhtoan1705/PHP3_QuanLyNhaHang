@@ -12,6 +12,7 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->foreignId('user_id')->nullable()->constrained()->onDelete('cascade');
             $table->foreignId('table_id')->constrained()->onDelete('cascade');
+            $table->foreignId('promotion_id')->nullable()->constrained()->onDelete('set null');
             $table->string('name');
             $table->string('code_order')->nullable();
             $table->text('note')->nullable();

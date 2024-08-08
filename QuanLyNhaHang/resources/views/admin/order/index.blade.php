@@ -13,10 +13,36 @@
                 <ul class="revnue-tab nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
                         <button class="nav-link active" id="status-tab" data-bs-toggle="tab" data-bs-target="#status-tab-pane"
-                            type="button" role="tab" aria-controls="status-tab-pane" aria-selected="true">Tất
-                            cả</button>
+                            type="button" role="tab" aria-controls="status-tab-pane" aria-selected="true">Danh sách đơn
+                            hàng</button>
                     </li>
                 </ul>
+                <div class="d-flex align-items-center mb-4">
+                    <div class="input-group search-area me-2">
+                        <form action="{{ route('order.list') }}" method="GET" class="d-flex">
+                            <input type="text" name="search" class="form-control" placeholder="Tìm kiếm..."
+                                value="{{ request('search') }}">
+                            <button type="submit" class="input-group-text">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_1_450)">
+                                        <path opacity="0.3"
+                                            d="M14.2929 16.7071C13.9024 16.3166 13.9024 15.6834 14.2929 15.2929C14.6834 14.9024 15.3166 14.9024 15.7071 15.2929L19.7071 19.2929C20.0976 19.6834 20.0976 20.3166 19.7071 20.7071C19.3166 21.0976 18.6834 21.0976 18.2929 20.7071L14.2929 16.7071Z"
+                                            fill="#452B90" />
+                                        <path
+                                            d="M11 16C13.7614 16 16 13.7614 16 11C16 8.23859 13.7614 6.00002 11 6.00002C8.23858 6.00002 6 8.23859 6 11C6 13.7614 8.23858 16 11 16ZM11 18C7.13401 18 4 14.866 4 11C4 7.13402 7.13401 4.00002 11 4.00002C14.866 4.00002 18 7.13402 18 11C18 14.866 14.866 18 11 18Z"
+                                            fill="#452B90" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_1_450">
+                                            <rect width="24" height="24" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
             </div>
             <div class="row">
                 <div class="col-xl-12">
@@ -41,7 +67,7 @@
                                                     <th>Món ăn</th>
                                                     <th>Số bàn</th>
                                                     <th>Tổng tiền</th>
-                                                    {{-- <th>Trạng thái</th> --}}
+                                                    <th>Trạng thái</th>
                                                     <th>Hành động</th>
                                                 </tr>
                                             </thead>
@@ -71,8 +97,9 @@
                                                             @endphp
                                                             <span>{{ number_format($totalAmount, 0, ',', '.') }} vnđ</span>
                                                         </td>
-                                                        {{-- <td><span
-                                                                class="badge badge-rounded badge-outline-primary badge-lg">{{ $order->status }}</span></td> --}}
+                                                        <td><span
+                                                                class="badge badge-rounded badge-outline-primary badge-lg">{{ $order->status }}</span>
+                                                        </td>
                                                         <td>
                                                             <div class="dropdown">
                                                                 <div class="btn-link" data-bs-toggle="dropdown">
@@ -100,14 +127,6 @@
                                                                     <a class="dropdown-item"
                                                                         href="{{ route('order.detail', $order->id) }}">Xem
                                                                         chi tiết</a>
-                                                                    <form action="{{ route('order.delete', $order->id) }}"
-                                                                        method="POST"
-                                                                        onsubmit="return confirm('Bạn có chắc chắn muốn xóa đơn hàng này?');">
-                                                                        @csrf
-                                                                        @method('DELETE')
-                                                                        <button type="submit"
-                                                                            class="dropdown-item">Xóa</button>
-                                                                    </form>
                                                                 </div>
                                                             </div>
                                                         </td>
