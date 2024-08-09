@@ -103,6 +103,8 @@ Route::post('thanh-toan', [CheckoutController::class, 'checkout'])->name('checko
 Route::post('thanh-toan/tien-hanh', [CheckoutController::class, 'processPayment'])->name('payment.process');
 Route::post('momo/return', [CheckoutController::class, 'momoReturn'])->name('momo.return');
 Route::get('/vnpay/return', [PaymentController::class, 'vnpayReturn'])->name('vnpay.return');
+Route::post('/check-table-availability', [CartController::class, 'checkTableAvailability'])->name('check.table.availability');
+
 //account
 Route::middleware(['auth'])->group(function () {
     Route::name('account.')->middleware('auth')->group(function () {

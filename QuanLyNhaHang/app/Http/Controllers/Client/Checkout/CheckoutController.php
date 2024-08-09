@@ -39,7 +39,7 @@ class CheckoutController extends Controller
         ]);
     }
 
-    public function checkout(Request $request)
+    public function checkout(CreateCheckoutRequest $request)
     {
         $users = auth()->user();
 

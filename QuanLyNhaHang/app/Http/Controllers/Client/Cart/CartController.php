@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Client\Cart;
 
 use App\Http\Controllers\Controller;
 use App\Models\Cart;
+use App\Models\Reservation;
 use Illuminate\Http\Request;
 use App\Models\Table;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
 
@@ -80,5 +82,32 @@ class CartController extends Controller
         }
 
         return redirect()->route('cart');
+    }
+
+    public function checkTableAvailability(Request $request)
+    {
+        $date = $request->input('reservation_date');
+        $time = $request->input('reservation_time');
+
+        // Tính toán khoảng thời gian bắt đầu và kết thúc
+        $startTime = date('H:i:s', strtotime($time . ' -3 hours'));
+        $endTime = date('H:i:s', strtotime($time . ' +3 hours'));
+
+        $unavailableTables = Reservation::where('reservation_date', $date)
+            ->where(function ($query) use ($startTime, $endTime) {
+                $query->where(function ($q) use ($startTime, $endTime) {
+                    // Kiểm tra thời gian đặt bàn nằm trong khoảng thời gian từ startTime đến endTime
+                    $q->whereBetween('reservation_time', [$startTime, $endTime]);
+                })
+                    ->orWhere(function ($q) use ($startTime, $endTime) {
+                        // Kiểm tra thời gian kết thúc của đặt bàn nằm trong khoảng thời gian từ startTime đến endTime
+                        $q->where(DB::raw("DATE_ADD(reservation_time, INTERVAL 3 HOUR)"), '>=', $startTime)
+                            ->where('reservation_time', '<=', $endTime);
+                    });
+            })
+            ->pluck('table_id')
+            ->toArray();
+
+        return response()->json(['unavailableTables' => $unavailableTables]);
     }
 }
