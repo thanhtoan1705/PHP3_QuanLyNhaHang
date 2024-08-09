@@ -26,7 +26,7 @@ class UpdateAccountRequest extends FormRequest
             'phone' => 'nullable|string|max:20',
             'email' => 'required|email|max:255',
             'address' => 'nullable|string|max:255',
-            'current_password' => 'required_with:new_password|current_password',
+            'current_password' => 'nullable|required_with:new_password,new_password_confirmation|current_password',
             'new_password' => 'nullable|string|min:8|confirmed',
             'new_password_confirmation' => 'nullable|string|min:8',
         ];
@@ -51,9 +51,11 @@ class UpdateAccountRequest extends FormRequest
             'address.string' => 'Địa chỉ phải là một chuỗi ký tự.',
             'address.max' => 'Địa chỉ không được vượt quá 255 ký tự.',
             'current_password.required_with' => 'Mật khẩu cũ là bắt buộc khi mật khẩu mới được cung cấp.',
+            'current_password.current_password' => 'Mật khẩu hiện tại không chính xác.',
             'new_password.min' => 'Mật khẩu mới không được ít hơn 8 ký tự.',
             'new_password.confirmed' => 'Mật khẩu mới không khớp với xác nhận mật khẩu.',
             'new_password_confirmation.min' => 'Xác nhận mật khẩu mới không được ít hơn 8 ký tự.',
         ];
     }
 }
+

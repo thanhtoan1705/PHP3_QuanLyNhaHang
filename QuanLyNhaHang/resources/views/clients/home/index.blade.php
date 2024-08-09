@@ -284,7 +284,7 @@
             </div>
 
             <div class="menu-btn text-center">
-                <a href="{{ route('dishDetail', ['id' => $dish->id]) }}" class="btn">Đặt hàng ngay bây giờ</a>
+                <a href="{{ route('menu') }}" class="btn">Đặt hàng ngay bây giờ</a>
             </div>
         </div>
     </section>
