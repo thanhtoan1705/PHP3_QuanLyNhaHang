@@ -12,6 +12,8 @@ use App\Models\Reservation;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use App\Mail\PaymentSuccessMail;
+use Illuminate\Support\Facades\Mail;
 
 class CheckoutController extends Controller
 {
@@ -64,6 +66,7 @@ class CheckoutController extends Controller
     public function processPayment(Request $request)
     {
         $user_id = auth()->id();
+        $user = \App\Models\User::find($user_id);
         // Xác định phương thức thanh toán mà người dùng chọn
         $paymentMethod = $request->input('paymentMethod');
 
@@ -124,7 +127,8 @@ class CheckoutController extends Controller
 
                 // Xóa giỏ hàng sau khi thanh toán thành công
                 Cart::where('user_id', $user_id)->delete();
-
+                // Gửi email thông báo thanh toán thành công
+                Mail::to($user->email)->send(new PaymentSuccessMail($user, $order));
                 // Chuyển hướng người dùng tới trang thành công hoặc trang đơn hàng
                 flash()->success('Thanh toán thành công!');
                 return redirect()->route('home');
@@ -174,7 +178,7 @@ class CheckoutController extends Controller
 
                 // Xóa giỏ hàng sau khi thanh toán thành công
                 Cart::where('user_id', $user_id)->delete();
-
+                Mail::to($user->email)->send(new PaymentSuccessMail($user, $order));
                 // Xây dựng URL thanh toán
                 $vnp_Params = [
                     "vnp_Version" => "2.1.0",
@@ -275,7 +279,7 @@ class CheckoutController extends Controller
 
         // Xóa giỏ hàng sau khi thanh toán thành công
         Cart::where('user_id', auth()->id())->delete();
-
+        Mail::to($user->email)->send(new PaymentSuccessMail($user, $order));
         // Chuyển hướng người dùng tới trang thành công hoặc trang đơn hàng
         flash()->success('Thanh toán thành công!');
         return redirect()->route('home');

@@ -16,18 +16,6 @@
                             <div>
                                 <h4 class="card-title">Hàng đợi thanh toán gần đây</h4>
                             </div>
-                            <ul class="nav nav-tabs dzm-tabs" id="myTab" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link active " id="home-tab" data-bs-toggle="tab"
-                                        data-bs-target="#Preview" type="button" role="tab"
-                                        aria-selected="true">Preview</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link " id="profile-tab" data-bs-toggle="tab" data-bs-target="#html"
-                                        type="button" role="tab" aria-controls="html"
-                                        aria-selected="false">HTML</button>
-                                </li>
-                            </ul>
                         </div>
                         <!--tab-content-->
                         <div class="tab-content" id="myTabContent">
@@ -49,107 +37,30 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @foreach($payments as $index => $payment)
                                                 <tr>
-                                                    <td><strong>01</strong></td>
-                                                    <td>#0110</td>
-                                                    <td>Dr. Jackson</td>
-                                                    <td>01 August 2020</td>
-                                                    <td>Paypal</td>
-                                                    <td><span class="badge light badge-success">Hoàn thành</span></td>
-                                                    <td>$21.56</td>
+                                                    <td><strong>{{ $payments->firstItem() + $index}}</strong></td>
+                                                    <td>{{ $payment->order->code_order }}</td>
+                                                    <td>{{ $payment->user->name }}</td>
+                                                    <td>{{ $payment->payment_date }}</td>
+                                                    <td>{{ $payment->payment_method }}</td>
                                                     <td>
-                                                        <div class="dropdown">
-                                                            <button type="button" class="btn btn-success light sharp"
-                                                                data-bs-toggle="dropdown">
-                                                                <svg width="20px" height="20px" viewBox="0 0 24 24"
-                                                                    version="1.1">
-                                                                    <g stroke="none" stroke-width="1" fill="none"
-                                                                        fill-rule="evenodd">
-                                                                        <rect x="0" y="0" width="24" height="24" />
-                                                                        <circle fill="#000000" cx="5" cy="12"
-                                                                            r="2" />
-                                                                        <circle fill="#000000" cx="12" cy="12"
-                                                                            r="2" />
-                                                                        <circle fill="#000000" cx="19" cy="12"
-                                                                            r="2" />
-                                                                    </g>
-                                                                </svg>
-                                                            </button>
-                                                            <div class="dropdown-menu">
-                                                                <a class="dropdown-item" href="#">Sửa</a>
-                                                                <a class="dropdown-item" href="#">Xóa</a>
-                                                            </div>
-                                                        </div>
+                                                        @if($payment->order->status == 'completed')
+                                                            <span class="badge light badge-success">{{ $payment->order->status }}</span>
+                                                        @elseif($payment->order->status == 'đã hủy')
+                                                            <span class="badge light badge-danger">{{ $payment->order->status }}</span>
+                                                        @else
+                                                            <span class="badge light badge-secondary">{{ $payment->order->status }}</span> <!-- Màu sắc mặc định cho các trạng thái khác -->
+                                                        @endif
+                                                    </td>
+                                                    <td>{{ number_format($payment->total_amount, 0, ',', '.') }} VND</td>
+                                                    <td>            
                                                     </td>
                                                 </tr>
-                                                <tr>
-                                                    <td><strong>02</strong></td>
-                                                    <td>#0110</td>
-                                                    <td>Dr. Jackson</td>
-                                                    <td>01 August 2020</td>
-                                                    <td>Paypal</td>
-                                                    <td><span class="badge light badge-danger">Đã hủy</span></td>
-                                                    <td>$21.56</td>
-                                                    <td>
-                                                        <div class="dropdown">
-                                                            <button type="button" class="btn btn-success light sharp"
-                                                                data-bs-toggle="dropdown">
-                                                                <svg width="20px" height="20px" viewBox="0 0 24 24"
-                                                                    version="1.1">
-                                                                    <g stroke="none" stroke-width="1" fill="none"
-                                                                        fill-rule="evenodd">
-                                                                        <rect x="0" y="0" width="24" height="24" />
-                                                                        <circle fill="#000000" cx="5" cy="12"
-                                                                            r="2" />
-                                                                        <circle fill="#000000" cx="12" cy="12"
-                                                                            r="2" />
-                                                                        <circle fill="#000000" cx="19" cy="12"
-                                                                            r="2" />
-                                                                    </g>
-                                                                </svg>
-                                                            </button>
-                                                            <div class="dropdown-menu">
-                                                                <a class="dropdown-item" href="#">Sửa</a>
-                                                                <a class="dropdown-item" href="#">Xóa</a>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><strong>03</strong></td>
-                                                    <td>#0110</td>
-                                                    <td>Dr. Jackson</td>
-                                                    <td>01 August 2020</td>
-                                                    <td>Paypal</td>
-                                                    <td><span class="badge light badge-warning">Chưa giải quyết</span></td>
-                                                    <td>$21.56</td>
-                                                    <td>
-                                                        <div class="dropdown">
-                                                            <button type="button" class="btn btn-success light sharp"
-                                                                data-bs-toggle="dropdown">
-                                                                <svg width="20px" height="20px" viewBox="0 0 24 24"
-                                                                    version="1.1">
-                                                                    <g stroke="none" stroke-width="1" fill="none"
-                                                                        fill-rule="evenodd">
-                                                                        <rect x="0" y="0" width="24" height="24" />
-                                                                        <circle fill="#000000" cx="5"
-                                                                            cy="12" r="2" />
-                                                                        <circle fill="#000000" cx="12"
-                                                                            cy="12" r="2" />
-                                                                        <circle fill="#000000" cx="19"
-                                                                            cy="12" r="2" />
-                                                                    </g>
-                                                                </svg>
-                                                            </button>
-                                                            <div class="dropdown-menu">
-                                                                <a class="dropdown-item" href="#">Sửa</a>
-                                                                <a class="dropdown-item" href="#">Xóa</a>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
+                                                @endforeach
                                             </tbody>
                                         </table>
+                                        {{ $payments->links() }}
                                     </div>
                                 </div>
                                 <!-- /Recent Payments Queue -->

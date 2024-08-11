@@ -15,7 +15,8 @@ class PaymentController extends Controller
 {
     public function index()
     {
-        return view('admin.payment.index');
+        $payments = Payment::paginate(5);
+        return view('admin.payment.index',compact('payments'));
     }
 
     public function store(Request $request)
