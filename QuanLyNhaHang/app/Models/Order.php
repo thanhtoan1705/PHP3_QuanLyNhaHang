@@ -44,6 +44,12 @@ class Order extends Model
         return $this->hasMany(Payment::class);
     }
 
+    public function payment()
+    {
+        return $this->hasOne(Payment::class);
+    }
+
+
     public function promotion()
     {
         return $this->belongsTo(Promotion::class);
@@ -61,5 +67,10 @@ class Order extends Model
     public function reservation(): BelongsTo
     {
         return $this->belongsTo(Reservation::class);
+    }
+
+    public function order_dish()
+    {
+        return $this->hasMany(OrderDish::class);
     }
 }

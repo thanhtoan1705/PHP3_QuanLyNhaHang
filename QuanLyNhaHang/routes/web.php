@@ -150,6 +150,10 @@ Route::name('table-book.')->group(function () {
     Route::get('table-book/table-details/{id}', [TableBookController::class, 'getTableDetails'])->name('table-details')->middleware(['auth', 'role:admin,staff']);
     Route::post('table-book/payment/{id}', [TableBookController::class, 'processPayment'])->name('payment')->middleware(['auth', 'role:admin,staff']);
 })->middleware(['auth', 'role:admin,staff']);
+// Route::get('/api/check-table-availability', [TableBookController::class, 'checkTableAvailability']);
+Route::post('/check-table-availability', [TableBookController::class, 'checkTableAvailability'])->name('check.table.availability');
+
+
 
 
 

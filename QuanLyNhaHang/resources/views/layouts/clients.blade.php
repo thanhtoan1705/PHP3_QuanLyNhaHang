@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="{{ asset('assets/client/css/slick.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/client/css/jquery-ui.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/client/css/style.css') }}" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Add Toastr CSS in the <head> section -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
     @stack('css')

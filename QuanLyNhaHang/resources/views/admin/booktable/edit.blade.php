@@ -17,6 +17,22 @@
                                 @method('PUT')
                                 <div class="row">
                                     <div class="mb-3 col-md-6">
+                                        <label class="form-label">Ngày đặt</label>
+                                        <input type="date" name="order_date" class="form-control" id="reservation_date"
+                                            value="{{ old('order_date', $reservation->reservation_date) }}">
+                                        @error('order_date')
+                                            <div class="text-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                    <div class="mb-3 col-md-6">
+                                        <label class="form-label">Giờ đặt</label>
+                                        <input type="time" name="order_time" class="form-control" id="reservation_time"
+                                            value="{{ old('order_time', \Carbon\Carbon::parse($reservation->reservation_time)->format('H:i')) }}">
+                                        @error('order_time')
+                                            <div class="text-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                    <div class="mb-3 col-md-6">
                                         <label class="form-label">Người đặt</label>
                                         <input type="text" name="name" class="form-control"
                                             value="{{ old('name', $reservation->name) }}">
@@ -27,7 +43,8 @@
                                     <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
                                     <div class="mb-3 col-md-3">
                                         <label class="form-label">Vị trí bàn</label>
-                                        <select id="table-select" name="table_id" class="default-select form-control wide">
+                                        <select id="table-select" name="table_id" class="form-control wide">
+                                            <option value="" disabled selected>Chọn bàn</option>
                                             @foreach ($tables as $table)
                                                 <option value="{{ $table->id }}" data-seats="{{ $table->seats }}"
                                                     {{ old('table_id', $reservation->table_id) == $table->id ? 'selected' : '' }}>
@@ -92,61 +109,76 @@
                                                     <h5 class="modal-title" id="dishModalLabel">Chọn món ăn</h5>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                         aria-label="Close"></button>
-
                                                 </div>
                                                 <div class="modal-body">
-                                                    @foreach ($categories as $category)
-                                                        <h5>{{ $category->name }}</h5>
-                                                        <div class="row">
-                                                            @foreach ($category->dishes as $dish)
-                                                                <div class="col-md-4">
-                                                                    <div class="card mb-4">
-                                                                        <img src="{{ asset('storage/images/' . $dish->image) }}"
-                                                                            width="232px" height="174px"
-                                                                            class="card-img-top" alt="{{ $dish->name }}">
-                                                                        <div class="">
-                                                                            <h5 class="card-title mb-0">{{ $dish->name }}
-                                                                            </h5>
-                                                                            <span
-                                                                                class="mb-0">{{ number_format($dish->price, 0, ',', '.') }}
-                                                                                VNĐ</span>
-                                                                            <p>Còn lại: {{ $dish->quantity }} món</p>
-                                                                        </div>
-                                                                        <button type="button"
-                                                                            class="btn btn-primary select-dish"
-                                                                            data-id="{{ $dish->id }}"
-                                                                            data-name="{{ $dish->name }}"
-                                                                            data-image="{{ asset('storage/images/' . $dish->image) }}">
-                                                                            Chọn
-                                                                        </button>
-
-                                                                    </div>
-                                                                </div>
-                                                            @endforeach
+                                                    <!-- Tìm kiếm món ăn -->
+                                                    <div class="row mb-4">
+                                                        <div class="col-md-4">
+                                                            <input type="text" id="search-dish-name"
+                                                                class="form-control" placeholder="Tìm kiếm theo tên">
                                                         </div>
-                                                    @endforeach
+                                                        <div class="col-md-4">
+                                                            <select id="filter-category" class="form-control">
+                                                                <option value="">Chọn danh mục</option>
+                                                                @foreach ($categories as $category)
+                                                                    <option value="{{ $category->id }}">
+                                                                        {{ $category->name }}</option>
+                                                                @endforeach
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <input type="number" id="min-price" class="form-control"
+                                                                placeholder="Giá thấp nhất">
+                                                            <input type="number" id="max-price"
+                                                                class="form-control mt-2" placeholder="Giá cao nhất">
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Danh sách món ăn -->
+                                                    <div id="dish-list">
+                                                        @foreach ($categories as $category)
+                                                            <div class="category-container"
+                                                                data-category="{{ $category->id }}">
+                                                                <h5 class="category-title">{{ $category->name }}</h5>
+                                                                <div class="row">
+                                                                    @foreach ($category->dishes as $dish)
+                                                                        <div class="col-md-4 dish-item"
+                                                                            data-name="{{ $dish->name }}"
+                                                                            data-category="{{ $category->id }}"
+                                                                            data-price="{{ $dish->price }}">
+                                                                            <div class="card mb-5">
+                                                                                <img src="{{ asset('storage/images/' . $dish->image) }}"
+                                                                                    width="232px" height="174px"
+                                                                                    class="card-img-top"
+                                                                                    alt="{{ $dish->name }}">
+                                                                                <div class="">
+                                                                                    <h5 class="card-title mb-0">
+                                                                                        {{ $dish->name }}</h5>
+                                                                                    <span
+                                                                                        class="mb-0">{{ number_format($dish->price, 0, ',', '.') }}
+                                                                                        VNĐ</span>
+                                                                                    <p>Còn lại: {{ $dish->quantity }} món
+                                                                                    </p>
+                                                                                </div>
+                                                                                <button type="button"
+                                                                                    class="btn btn-primary select-dish"
+                                                                                    data-id="{{ $dish->id }}"
+                                                                                    data-name="{{ $dish->name }}"
+                                                                                    data-image="{{ asset('storage/images/' . $dish->image) }}">
+                                                                                    Chọn
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    @endforeach
+                                                                </div>
+                                                            </div>
+                                                        @endforeach
+                                                    </div>
+
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="mb-3 col-md-6">
-                                        <label class="form-label">Ngày đặt</label>
-                                        <input type="date" name="order_date" class="form-control"
-                                            value="{{ old('order_date', $reservation->reservation_date) }}">
-                                        @error('order_date')
-                                            <div class="text-danger">{{ $message }}</div>
-                                        @enderror
-                                    </div>
-                                    <div class="mb-3 col-md-6">
-                                        <label class="form-label">Giờ đặt</label>
-                                        <input type="time" name="order_time" class="form-control"
-                                            value="{{ old('order_time', \Carbon\Carbon::parse($reservation->reservation_time)->format('H:i')) }}">
-                                        @error('order_time')
-                                            <div class="text-danger">{{ $message }}</div>
-                                        @enderror
-                                    </div>
-
                                     <div class="mb-3 col-md-12">
                                         <label class="form-label">Ghi chú</label>
                                         <textarea name="note" class="form-control" placeholder="Ghi chú">{{ old('note', $reservation->note) }}</textarea>
@@ -195,6 +227,84 @@
     </div>
 
     <script>
+        $(document).ready(function() {
+            function filterDishes() {
+                var searchName = $('#search-dish-name').val().toLowerCase();
+                var category = $('#filter-category').val();
+                var minPrice = parseInt($('#min-price').val()) || 0;
+                var maxPrice = parseInt($('#max-price').val()) || Infinity;
+
+                $('.category-container').each(function() {
+                    var hasVisibleDish = false;
+                    var categoryId = $(this).data('category');
+
+                    $(this).find('.dish-item').each(function() {
+                        var dishName = $(this).data('name').toLowerCase();
+                        var dishCategory = $(this).data('category');
+                        var dishPrice = parseInt($(this).data('price'));
+
+                        if (
+                            (searchName === "" || dishName.includes(searchName)) &&
+                            (category === "" || dishCategory == category) &&
+                            dishPrice >= minPrice &&
+                            dishPrice <= maxPrice
+                        ) {
+                            $(this).show();
+                            hasVisibleDish = true;
+                        } else {
+                            $(this).hide();
+                        }
+                    });
+
+                    if (hasVisibleDish) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            }
+
+            $('#search-dish-name, #filter-category, #min-price, #max-price').on('input change', filterDishes);
+        });
+
+        $(document).ready(function() {
+            $('#reservation_date, #reservation_time').on('change', function() {
+                var date = $('#reservation_date').val();
+                var time = $('#reservation_time').val();
+
+                if (date && time) {
+                    $.ajax({
+                        url: '{{ route('check.table.availability') }}',
+                        type: 'POST',
+                        data: {
+                            _token: '{{ csrf_token() }}',
+                            reservation_date: date,
+                            reservation_time: time
+                        },
+                        success: function(response) {
+                            console.log('Response từ server:', response);
+
+                            $('#table-select option').each(function() {
+                                var tableId = parseInt($(this).val());
+
+                                if ($.inArray(tableId, response.unavailableTables) !== -
+                                    1) {
+                                    console.log('Bàn này đã được đặt, ID:', tableId);
+                                    $(this).hide();
+                                } else {
+                                    console.log('Bàn này khả dụng, ID:', tableId);
+                                    $(this)
+                                        .show(); // Đảm bảo rằng các bàn khả dụng sẽ hiển thị
+                                }
+                            });
+                        }
+                    });
+                }
+            });
+        });
+
+
+
         document.addEventListener('DOMContentLoaded', function() {
             const tableSelect = document.getElementById('table-select');
             const seatsInput = document.getElementById('seats-input');

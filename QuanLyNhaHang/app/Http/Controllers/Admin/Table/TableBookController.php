@@ -12,7 +12,9 @@ use App\Models\Payment;
 use App\Models\Reservation;
 use App\Models\Table;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TableBookController extends Controller
 {
@@ -21,7 +23,7 @@ class TableBookController extends Controller
      */
     public function index()
     {
-        $reservation = Reservation::paginate(5);
+        $reservation = Reservation::orderBy('created_at', 'desc')->paginate(5);
         return view('admin.booktable.list', compact('reservation'));
     }
 
@@ -112,4 +114,47 @@ class TableBookController extends Controller
     }
 
 
+    public function checkTableAvailability(Request $request)
+    {
+        $date = $request->input('reservation_date');
+        $time = $request->input('reservation_time');
+        $endTime = date('H:i:s', strtotime($time . ' +3 hours'));
+
+        $unavailableTables = Reservation::where('reservation_date', $date)
+            ->where(function ($query) use ($time, $endTime) {
+                $query->whereBetween('reservation_time', [$time, $endTime])
+                    ->orWhereBetween(DB::raw("DATE_ADD(reservation_time, INTERVAL 3 HOUR)"), [$time, $endTime]);
+            })
+            ->pluck('table_id')
+            ->toArray();
+
+        $allTables = Table::pluck('id')->toArray();
+
+        return response()->json([
+            'unavailableTables' => $unavailableTables,
+            'allTables' => $allTables
+        ]);
+    }
+
+
+    public function filterDishes(Request $request)
+    {
+        $query = Dish::query();
+
+        if ($request->has('name')) {
+            $query->where('name', 'like', '%' . $request->name . '%');
+        }
+
+        if ($request->has('min_price')) {
+            $query->where('price', '>=', $request->min_price);
+        }
+
+        if ($request->has('max_price')) {
+            $query->where('price', '<=', $request->max_price);
+        }
+
+        $dishes = $query->get();
+
+        return response()->json($dishes);
+    }
 }

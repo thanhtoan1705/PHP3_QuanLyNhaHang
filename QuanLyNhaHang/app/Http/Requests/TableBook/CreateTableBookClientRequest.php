@@ -31,7 +31,6 @@ class CreateTableBookClientRequest extends FormRequest
                 'required',
                 'string',
                 'max:255',
-                Rule::unique('orders'),
             ],
             'table_id' => [
                 'required',
