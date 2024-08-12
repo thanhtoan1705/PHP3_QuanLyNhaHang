@@ -83,7 +83,7 @@
                                                             </div>
                                                         </td>
                                                         <td><span>{{ $order->code_order }}</span></td>
-                                                        <td><span>{{ $order->user->name }}</span></td>
+                                                        <td><span>{{ $order->name }}</span></td>
                                                         <td>
                                                             @foreach ($order->dishes as $dish)
                                                                 <div>{{ $dish->name }} ({{ $dish->pivot->quantity }})<br>

@@ -41,7 +41,7 @@
                                                 <tr>
                                                     <td><strong>{{ $payments->firstItem() + $index}}</strong></td>
                                                     <td>{{ $payment->order->code_order }}</td>
-                                                    <td>{{ $payment->user->name }}</td>
+                                                    <td>{{ $payment->order->name }}</td>
                                                     <td>{{ $payment->payment_date }}</td>
                                                     <td>{{ $payment->payment_method }}</td>
                                                     <td>
@@ -54,7 +54,7 @@
                                                         @endif
                                                     </td>
                                                     <td>{{ number_format($payment->total_amount, 0, ',', '.') }} VND</td>
-                                                    <td>            
+                                                    <td>
                                                     </td>
                                                 </tr>
                                                 @endforeach
