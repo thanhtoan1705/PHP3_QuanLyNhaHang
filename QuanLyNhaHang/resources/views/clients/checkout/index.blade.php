@@ -107,9 +107,17 @@
                                         <strong>Số khách:</strong>
                                         <span>{{ $lastReservation->seats }}</span>
                                     </div>
-                                    <div class="mb-2">
+                                    {{-- <div class="mb-2">
                                         <strong>ghi chú về món ăn:</strong>
                                         <span>{{ $lastReservation->note }}</span>
+                                    </div> --}}
+                                    <div class="mb-2">
+                                        <strong>Ghi chú về món ăn:</strong>
+                                        <span>{{ \Illuminate\Support\Str::limit($lastReservation->note, 50) }}</span>
+                                        @if (strlen($lastReservation->note) > 50)
+                                            <a href="#"
+                                                onclick="alert('{{ $lastReservation->note }}'); return false;">Xem thêm</a>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -154,12 +162,12 @@
                                                 id="paymentmomo" value="momo">
                                             <label class="form-check-label" for="paymentmomo">Thanh toán qua Momo</label>
                                         </div>
-                                        <div class="form-check">
+                                        {{-- <div class="form-check">
                                             <input class="form-check-input" type="radio" name="paymentMethod"
                                                 id="paymentBankTransfer" value="bank_transfer">
                                             <label class="form-check-label" for="paymentBankTransfer">Chuyển khoản ngân
                                                 hàng</label>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                     <button class="btn btn-success w-100">THANH TOÁN</button>
                                 </div>

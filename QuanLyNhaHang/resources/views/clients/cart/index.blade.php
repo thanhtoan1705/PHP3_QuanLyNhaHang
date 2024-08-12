@@ -104,7 +104,6 @@
                                         <td class="text-center">
                                             {{ number_format($item->total_price) }}đ
                                         </td>
-                                        {{-- @dd($item->id); --}}
                                         <td>
                                             <form action="{{ route('cartRemove', $item->id) }}" method="POST">
                                                 @csrf
@@ -131,40 +130,62 @@
                                     <label for="name" class="form-label">Họ tên</label>
                                     <input type="text" name="name" class="form-control" id="name"
                                         value="{{ $users->name }}">
+                                    @error('name')
+                                        <span class="text-danger"> {{ $message }} </span>
+                                    @enderror
                                 </div>
                                 <div class="mb-3 col-lg-4">
                                     <label for="phone" class="form-label">Số điện thoại</label>
                                     <input type="number" name="phone" class="form-control" id="phone"
                                         value="{{ $users->phone }}">
+                                    @error('phone')
+                                        <span class="text-danger"> {{ $message }} </span>
+                                    @enderror
                                 </div>
                                 <div class="mb-3 col-lg-4">
                                     <label for="seats" class="form-label">Số khách</label>
                                     <input type="number" name="seats" class="form-control" id="seats"
-                                        min="1">
-                                </div>
-                                <div class="mb-3 col-lg-4">
-                                    <label class="form-label">Chọn bàn</label>
-                                    <div class="row g-2">
-                                        <select class="form-select" name="table_id" id="table_id">
-                                            @foreach ($tables as $table)
-                                                <option value="{{ $table->id }}">{{ $table->number }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
+                                        min="1" value="{{ old('seats') }}">
+                                    @error('seats')
+                                        <span class="text-danger"> {{ $message }} </span>
+                                    @enderror
                                 </div>
                                 <div class="mb-3 col-lg-4">
                                     <label for="date" class="form-label">Ngày</label>
                                     <input type="date" name="reservation_date" class="form-control" id="date"
                                         value="{{ old('reservation_date') }}">
+                                    @error('reservation_date')
+                                        <span class="text-danger"> {{ $message }} </span>
+                                    @enderror
                                 </div>
                                 <div class="mb-3 col-lg-4">
                                     <label for="timeSlot" class="form-label">Chọn giờ</label>
                                     <input type="time" name="reservation_time" class="form-control" id="timeSlot"
                                         value="{{ old('reservation_time') }}">
+                                    @error('reservation_time')
+                                        <span class="text-danger"> {{ $message }} </span>
+                                    @enderror
+                                </div>
+                                <div class="mb-3 col-lg-4">
+                                    <label class="form-label">Chọn bàn</label>
+                                    <div class="row g-2">
+                                        <select class="form-select" name="table_id" id="table_id">
+                                            <option value="" disabled selected>Chọn bàn</option>
+                                            @foreach ($tables as $table)
+                                                <option value="{{ $table->id }}">{{ $table->number }}</option>
+                                            @endforeach
+                                        </select>
+                                        @error('table_id')
+                                            <span class="text-danger"> {{ $message }} </span>
+                                        @enderror
+                                    </div>
                                 </div>
                                 <div class="mb-3">
                                     <label for="note" class="form-label">Lời nhắn với nhà hàng</label>
-                                    <textarea class="form-control" name="note" id="note" rows="3"></textarea>
+                                    <textarea class="form-control" name="note" id="note" rows="3">{{ old('note') }}</textarea>
+                                    @error('note')
+                                        <span class="text-danger"> {{ $message }} </span>
+                                    @enderror
                                 </div>
                             </div>
                         </div>
@@ -232,6 +253,35 @@
 
             // Submit form update cart
             updateCartForm.submit();
+        });
+
+        $(document).ready(function() {
+            $('#date, #timeSlot').on('change', function() {
+                var date = $('#date').val();
+                var time = $('#timeSlot').val();
+
+                if (date && time) {
+                    $.ajax({
+                        url: '{{ route('check.table.availability') }}',
+                        type: 'POST',
+                        data: {
+                            _token: '{{ csrf_token() }}',
+                            reservation_date: date,
+                            reservation_time: time
+                        },
+                        success: function(response) {
+                            $('#table_id option').each(function() {
+                                if ($.inArray(parseInt($(this).val()), response
+                                        .unavailableTables) !== -1) {
+                                    $(this).hide();
+                                } else {
+                                    $(this).show();
+                                }
+                            });
+                        }
+                    });
+                }
+            });
         });
     </script>
 @endpush
