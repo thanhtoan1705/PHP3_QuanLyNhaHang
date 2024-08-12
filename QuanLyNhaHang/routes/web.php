@@ -101,7 +101,7 @@ Route::post('nhap-ma-uu-dai', [CartController::class, 'applyDiscountCode'])->nam
 Route::get('thanh-toan', [CheckoutController::class, 'index'])->name('checkout');
 Route::post('thanh-toan', [CheckoutController::class, 'checkout'])->name('checkout.store');
 Route::post('thanh-toan/tien-hanh', [CheckoutController::class, 'processPayment'])->name('payment.process');
-Route::post('momo/return', [CheckoutController::class, 'momoReturn'])->name('momo.return');
+// Route::post('momo/return', [CheckoutController::class, 'momoReturn'])->name('momo.return');
 Route::get('/vnpay/return', [PaymentController::class, 'vnpayReturn'])->name('vnpay.return');
 Route::post('/check-table-availability', [CartController::class, 'checkTableAvailability'])->name('check.table.availability');
 
@@ -127,17 +127,17 @@ Route::get('admin/login', [AuthUserController::class, 'login'])->name('admin.log
 Route::get('auth/google', [LoginController::class, 'redirectToGoogle'])->name('auth.google');
 Route::get('auth/google/callback', [LoginController::class, 'handleGoogleCallback'])->name('auth.google.callback');
 
-Route::get('login/facebook', [LoginController::class, 'redirectToFacebook'])->name('login.facebook');
-Route::get('login/facebook/callback', [LoginController::class, 'handleFacebookCallback']);
+// Route::get('login/facebook', [LoginController::class, 'redirectToFacebook'])->name('login.facebook');
+// Route::get('login/facebook/callback', [LoginController::class, 'handleFacebookCallback']);
 
 
 Route::name('dish.')->group(function () {
-    Route::get('dish', [AdminDishController::class, 'list'])->name('list')->middleware(['auth', 'role:admin']);
-    Route::get('dish/add', [AdminDishController::class, 'add'])->name('add')->middleware(['auth', 'role:admin']);
-    Route::post('dish/store', [AdminDishController::class, 'store'])->name('store')->middleware(['auth', 'role:admin']);
-    Route::get('dish/edit/{slug}', [AdminDishController::class, 'edit'])->name('edit')->middleware(['auth', 'role:admin']);
-    Route::put('dish/update/{slug}', [AdminDishController::class, 'update'])->name('update')->middleware(['auth', 'role:admin']);
-    Route::delete('dish/delete/{slug}', [AdminDishController::class, 'delete'])->name('delete')->middleware(['auth', 'role:admin']);
+    Route::get('dish', [AdminDishController::class, 'list'])->name('list')->middleware(['auth', 'role:admin,staff']);
+    Route::get('dish/add', [AdminDishController::class, 'add'])->name('add')->middleware(['auth', 'role:admin,staff']);
+    Route::post('dish/store', [AdminDishController::class, 'store'])->name('store')->middleware(['auth', 'role:admin,staff']);
+    Route::get('dish/edit/{slug}', [AdminDishController::class, 'edit'])->name('edit')->middleware(['auth', 'role:admin,staff']);
+    Route::put('dish/update/{slug}', [AdminDishController::class, 'update'])->name('update')->middleware(['auth', 'role:admin,staff']);
+    Route::delete('dish/delete/{slug}', [AdminDishController::class, 'delete'])->name('delete')->middleware(['auth', 'role:admin,staff']);
 })->middleware(['auth', 'role:admin,staff']);
 
 
@@ -171,57 +171,48 @@ Route::name('table.')->group(function () {
 Route::post('payment/store', [PaymentController::class, 'store'])->name('payment.store');
 
 
-// Staff
-Route::get('staff/list', [StaffController::class, 'list'])->name('staff.list')->middleware(['auth', 'role:admin']);
-Route::get('staff/add', [StaffController::class, 'add'])->name('staff.add')->middleware(['auth', 'role:admin']);
-Route::post('staff/store', [StaffController::class, 'store'])->name('staff.store')->middleware(['auth', 'role:admin']);
-Route::get('staff/edit/{id}', [StaffController::class, 'edit'])->name('staff.edit')->middleware(['auth', 'role:admin']);
-Route::put('staff/update/{id}', [StaffController::class, 'update'])->name('staff.update')->middleware(['auth', 'role:admin']);
-Route::get('staff/delete/{id}', [StaffController::class, 'delete'])->name('staff.delete')->middleware(['auth', 'role:admin']);
-
-
 
 // Order
-Route::get('order', [OrderController::class, 'index'])->name('order.list')->middleware(['auth', 'role:admin']);
-Route::get('/orders/{id}', [OrderController::class, 'show'])->name('order.detail');
-Route::get('/orders/{id}/pdf', [OrderController::class, 'generatePdf'])->name('order.pdf');
+Route::get('order', [OrderController::class, 'index'])->name('order.list')->middleware(['auth', 'role:admin,staff']);
+Route::get('/orders/{id}', [OrderController::class, 'show'])->name('order.detail')->middleware(['auth', 'role:admin,staff']);
+Route::get('/orders/{id}/pdf', [OrderController::class, 'generatePdf'])->name('order.pdf')->middleware(['auth', 'role:admin,staff']);
 
-Route::get('payment', [PaymentController::class, 'index'])->name('payment.list')->middleware(['auth', 'role:admin']);
+Route::get('payment', [PaymentController::class, 'index'])->name('payment.list')->middleware(['auth', 'role:admin,staff']);
 
 
 
 //user
 Route::name('user.')->group(function () {
-    Route::get('user/list', [UserController::class, 'index'])->name('list')->middleware(['auth', 'role:admin,staff']);
-    Route::get('user/create', [UserController::class, 'create'])->name('create')->middleware(['auth', 'role:admin,staff']);
-    Route::post('user/store', [UserController::class, 'store'])->name('store')->middleware(['auth', 'role:admin,staff']);
-    Route::get('user/edit/{id}', [UserController::class, 'edit'])->name('edit')->middleware(['auth', 'role:admin,staff']);
-    Route::put('user/update/{id}', [UserController::class, 'update'])->name('update')->middleware(['auth', 'role:admin,staff']);
-    Route::delete('user/delete/{id}', [UserController::class, 'destroy'])->name('destroy')->middleware(['auth', 'role:admin,staff']);
-})->middleware(['auth', 'role:admin,staff']);
+    Route::get('user/list', [UserController::class, 'index'])->name('list')->middleware(['auth', 'role:admin']);
+    Route::get('user/create', [UserController::class, 'create'])->name('create')->middleware(['auth', 'role:admin']);
+    Route::post('user/store', [UserController::class, 'store'])->name('store')->middleware(['auth', 'role:admin']);
+    Route::get('user/edit/{id}', [UserController::class, 'edit'])->name('edit')->middleware(['auth', 'role:admin']);
+    Route::put('user/update/{id}', [UserController::class, 'update'])->name('update')->middleware(['auth', 'role:admin']);
+    Route::delete('user/delete/{id}', [UserController::class, 'destroy'])->name('destroy')->middleware(['auth', 'role:admin']);
+})->middleware(['auth', 'role:admin']);
 
 
 
 // post
 Route::name('post.')->group(function () {
-    Route::get('post/list', [PostController::class, 'index'])->name('list')->middleware(['auth', 'role:admin']);
-    Route::get('post/create', [PostController::class, 'create'])->name('create')->middleware(['auth', 'role:admin']);
-    Route::post('post/store', [PostController::class, 'store'])->name('store')->middleware(['auth', 'role:admin']);
-    Route::get('post/edit/{id}', [PostController::class, 'edit'])->name('edit')->middleware(['auth', 'role:admin']);
-    Route::put('post/update/{id}', [PostController::class, 'update'])->name('update')->middleware(['auth', 'role:admin']);
-    Route::delete('post/delete/{id}', [PostController::class, 'destroy'])->name('destroy')->middleware(['auth', 'role:admin']);
+    Route::get('post/list', [PostController::class, 'index'])->name('list')->middleware(['auth', 'role:admin,staff']);
+    Route::get('post/create', [PostController::class, 'create'])->name('create')->middleware(['auth', 'role:admin,staff']);
+    Route::post('post/store', [PostController::class, 'store'])->name('store')->middleware(['auth', 'role:admin,staff']);
+    Route::get('post/edit/{id}', [PostController::class, 'edit'])->name('edit')->middleware(['auth', 'role:admin,staff']);
+    Route::put('post/update/{id}', [PostController::class, 'update'])->name('update')->middleware(['auth', 'role:admin,staff']);
+    Route::delete('post/delete/{id}', [PostController::class, 'destroy'])->name('destroy')->middleware(['auth', 'role:admin,staff']);
 })->middleware(['auth', 'role:admin,staff']);
 
 
 
 //Category
 Route::name('category.')->group(function () {
-    Route::get('category', [CategoryController::class, 'list'])->name('list')->middleware(['auth', 'role:admin']);
-    Route::get('category/add', [CategoryController::class, 'add'])->name('add')->middleware(['auth', 'role:admin']);
-    Route::post('category/store', [CategoryController::class, 'store'])->name('store')->middleware(['auth', 'role:admin']);
-    Route::get('/categories/edit/{id}', [CategoryController::class, 'update'])->name('update')->middleware(['auth', 'role:admin']);
-    Route::post('/categories/update/{id}', [CategoryController::class, 'processUpdate'])->name('processUpdate')->middleware(['auth', 'role:admin']);
-    Route::delete('category/{id}', [CategoryController::class, 'delete'])->name('delete')->middleware(['auth', 'role:admin']);
+    Route::get('category', [CategoryController::class, 'list'])->name('list')->middleware(['auth', 'role:admin,staff']);
+    Route::get('category/add', [CategoryController::class, 'add'])->name('add')->middleware(['auth', 'role:admin,staff']);
+    Route::post('category/store', [CategoryController::class, 'store'])->name('store')->middleware(['auth', 'role:admin,staff']);
+    Route::get('/categories/edit/{id}', [CategoryController::class, 'update'])->name('update')->middleware(['auth', 'role:admin,staff']);
+    Route::post('/categories/update/{id}', [CategoryController::class, 'processUpdate'])->name('processUpdate')->middleware(['auth', 'role:admin,staff']);
+    Route::delete('category/{id}', [CategoryController::class, 'delete'])->name('delete')->middleware(['auth', 'role:admin,staff']);
 })->middleware(['auth', 'role:admin,staff']);
 
 
@@ -229,13 +220,13 @@ Route::name('category.')->group(function () {
 
 //Promotion
 Route::name('promotion.')->group(function () {
-    Route::get('promotion/list', [PromotionController::class, 'list'])->name('list');
-    Route::get('promotion/add', [PromotionController::class, 'add'])->name('add');
-    Route::post('promotion/store', [PromotionController::class, 'store'])->name('store');
-    Route::get('/promotion/edit/{id}', [PromotionController::class, 'update'])->name('update');
-    Route::post('/promotion/update/{id}', [PromotionController::class, 'processUpdate'])->name('processUpdate');
-    Route::delete('promotion/{id}', [PromotionController::class, 'delete'])->name('delete');
-});
+    Route::get('promotion/list', [PromotionController::class, 'list'])->name('list')->middleware(['auth', 'role:admin']);
+    Route::get('promotion/add', [PromotionController::class, 'add'])->name('add')->middleware(['auth', 'role:admin']);
+    Route::post('promotion/store', [PromotionController::class, 'store'])->name('store')->middleware(['auth', 'role:admin']);
+    Route::get('/promotion/edit/{id}', [PromotionController::class, 'update'])->name('update')->middleware(['auth', 'role:admin']);
+    Route::post('/promotion/update/{id}', [PromotionController::class, 'processUpdate'])->name('processUpdate')->middleware(['auth', 'role:admin']);
+    Route::delete('promotion/{id}', [PromotionController::class, 'delete'])->name('delete')->middleware(['auth', 'role:admin']);
+})->middleware(['auth', 'role:admin']);
 
 
 //comment

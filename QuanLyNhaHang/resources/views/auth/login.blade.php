@@ -97,12 +97,12 @@
                                         <a href="{{ route('auth.google') }}" class="btn google-btn"><span><i
                                                     class="fab fa-google"></i></span> Google</a>
                                     </div>
-                                    <div class="col">
+                                    {{-- <div class="col">
                                         <a href="{{ route('login.facebook') }}" style="background-color: blue;"
                                             class="btn d-flex align-items-center justify-content-center">
                                             <i class="fab fa-facebook-f me-2"></i> Facebook
                                         </a>
-                                    </div>
+                                    </div> --}}
                                 </div>
 
                                 <div class="mt-4">
@@ -120,8 +120,8 @@
                                 <div class="flex content-center items-center mt-3">
                                     @if (route('password.request'))
                                         <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                                           href="{{ route('password.request') }}">
-                                           {{ __('Quên mật khẩu?') }}
+                                            href="{{ route('password.request') }}">
+                                            {{ __('Quên mật khẩu?') }}
                                         </a>
                                     @endif
 
