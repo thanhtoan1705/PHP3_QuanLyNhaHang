@@ -20,16 +20,6 @@ class Promotion extends Model
         return $this->hasMany(Order::class);
     }
 
-    public function getStartTimeAttribute($value)
-    {
-        return Carbon::parse($value)->format('d-m-Y');
-    }
-
-    public function getEndTimeAttribute($value)
-    {
-        return Carbon::parse($value)->format('d-m-Y');
-    }
-
     public function setNumberUseAttribute($value)
     {
         $this->attributes['number_use'] = $value;

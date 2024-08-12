@@ -75,7 +75,7 @@
                                             <div class="mb-3">
                                                 <label for="start_time" class="form-label">Ngày bắt đầu</label>
                                                 <input type="date" class="form-control" name="start_time" id="start_time"
-                                                    value="{{  $promotion->start_time }}" />
+                                                    value="{{ $promotion->start_time }}" />
                                                 <!-- Hiển thị lỗi cho trường start_time -->
                                                 @error('start_time')
                                                     <span class="text-danger">{{ $message }}</span>
