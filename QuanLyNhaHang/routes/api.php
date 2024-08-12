@@ -13,3 +13,5 @@ Route::get('/user', function (Request $request) {
 Route::get('/table-book/table-details/{id}', [TableBookController::class, 'getTableDetails']);
 Route::get('/dishes/filter', [TableBookController::class, 'filterDishes'])->name('dishes.filter');
 Route::post('/admin/statistical/filter', [StatisticalController::class, 'filter'])->name('statistical.filter');
+
+Route::post('/admin/statistical/filterSoDoanhThuThang', [StatisticalController::class, 'filterSoDoanhThuThang'])->name('statistical.filterSoDoanhThuThang');

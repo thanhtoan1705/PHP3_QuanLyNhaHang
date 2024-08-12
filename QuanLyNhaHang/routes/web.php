@@ -116,12 +116,13 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::get('dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'role:admin']);
-Route::get('statistical', [StatisticalController::class, 'index'])->name('statistical.index');
+Route::middleware(['auth'])->group(function () {
+Route::get('statistical', [StatisticalController::class, 'index'])->name('statistical.index')->middleware(['auth', 'role:admin']);
 Route::get('statistical/revenue-chart', [StatisticalController::class, 'revenueChart'])->name('statistical.revenue.chart');
 Route::get('admin/statistical/export', [StatisticalController::class, 'export'])->name('statistical.export');
 Route::get('admin/statistical/export-dates', [StatisticalController::class, 'exportStatisticalDates'])->name('statistical.export.dates');
 Route::get('admin/statistical/export-monthly', [StatisticalController::class, 'exportStatisticalMonths'])->name('statistical.export.monthly');
-
+})->middleware(['auth', 'role:admin']);
 // login
 Route::get('admin/login', [AuthUserController::class, 'login'])->name('admin.login');
 Route::get('auth/google', [LoginController::class, 'redirectToGoogle'])->name('auth.google');

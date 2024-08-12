@@ -32,7 +32,7 @@ class StatisticalMonthsExport implements FromCollection, WithHeadings, WithStyle
             return [
                 'ID' => $payment->id,
                 'Mã hóa đơn' => $payment->order->code_order,
-                'Khách hàng' => $payment->user->name,
+                'Khách hàng' => $payment->order->name,
                 'Ngày thanh toán' => $payment->payment_date,
                 'Phương thức thanh toán' => $payment->payment_method,
                 'Tổng tiền' => $payment->total_amount,
@@ -74,7 +74,7 @@ class StatisticalMonthsExport implements FromCollection, WithHeadings, WithStyle
             ],
         ]);
 
-        $sheet->getStyle('A1:G1')->applyFromArray([
+        $sheet->getStyle('A1:F1')->applyFromArray([
             'fill' => [
                 'fillType' => \PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID,
                 'startColor' => [

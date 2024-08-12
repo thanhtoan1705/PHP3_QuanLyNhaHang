@@ -27,7 +27,7 @@ class StatisticalDatesExport implements FromCollection, WithHeadings, WithTitle,
             return [
                 'ID' => $payment->id,
                 'Mã hóa đơn' => $payment->order->code_order,
-                'Khách hàng' => $payment->user->name,
+                'Khách hàng' => $payment->order->name,
                 'Ngày thanh toán' => $payment->payment_date,
                 'Phương thức thanh toán' => $payment->payment_method,
                 'Tổng tiền' => $payment->total_amount,

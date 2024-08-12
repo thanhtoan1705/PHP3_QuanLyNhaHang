@@ -28,7 +28,7 @@
                     <div class="card">
                         <div class="card-body d-flex justify-content-between">
                             <div class="card-menu">
-                                <span>Tổng doanh thu ngày {{ \Carbon\Carbon::createFromDate($day)->format('d') }}</span>
+                                <span>Tổng doanh thu hôm nay</span>
                                 <h3 class="mb-0">{{ number_format($totalRevenueday) }} VNĐ</h3>
                             </div>
                             <div class="icon-box icon-box-lg bg-primary-light">
@@ -103,7 +103,7 @@
                                                                 <td><strong>{{ $statisticals->firstItem() + $index }}</strong>
                                                                 </td>
                                                                 <td>{{ $statistical->order->code_order }}</td>
-                                                                <td>{{ $statistical->user->name }}</td>
+                                                                <td>{{ $statistical->order->name }}</td>
                                                                 <td>{{ \Carbon\Carbon::parse($statistical->payment_date)->format('d-m-Y') }}
                                                                 </td>
                                                                 <td>{{ $statistical->payment_method }}</td>
@@ -161,7 +161,7 @@
                                                                 <td><strong>{{ $statisticalsdates->firstItem() + $index }}</strong>
                                                                 </td>
                                                                 <td>{{ $statisticalsdate->order->code_order }}</td>
-                                                                <td>{{ $statisticalsdate->user->name }}</td>
+                                                                <td>{{ $statisticalsdate->order->name }}</td>
                                                                 <td>{{ \Carbon\Carbon::parse($statisticalsdate->payment_date)->format('d-m-Y') }}
                                                                 </td>
                                                                 <td>{{ $statisticalsdate->payment_method }}</td>
@@ -261,40 +261,107 @@
                         </div>
 
 
+                        <div class="col-xl-12 col-lg-12">
+                            <div class="card dz-card" id="bootstrap-table1">
+                                <h4 id="month-year-title" class="p-4 pb-0 text-lg card-title">So sánh doanh thu giữa hai
+                                    tháng</h4>
+                                <!-- Form lọc -->
+                                <div class="card-body row">
+                                    <div class="col-lg-6">
+                                        <h4 class="card-title" id="revenue-month1">Doanh thu tháng </h4>
+                                        <div class="">
+                                            <label for="month1">Tháng:</label>
+                                            <select name="month1" id="month1" class="form-control">
+                                                @for ($i = 1; $i <= 12; $i++)
+                                                    <option value="{{ str_pad($i, 2, '0', STR_PAD_LEFT) }}"
+                                                        {{ $month1 == str_pad($i, 2, '0', STR_PAD_LEFT) ? 'selected' : '' }}>
+                                                        {{ $i }}
+                                                    </option>
+                                                @endfor
+                                            </select>
+                                        </div>
+                                        <div class="">
+                                            <label for="year1">Năm:</label>
+                                            <select name="year1" id="year1" class="form-control">
+                                                @for ($i = now()->year; $i >= 2022; $i--)
+                                                    <option value="{{ $i }}"
+                                                        {{ $year1 == $i ? 'selected' : '' }}>
+                                                        {{ $i }}
+                                                    </option>
+                                                @endfor
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <h4 class="card-title" id="revenue-month2">Doanh thu tháng </h4>
+                                        <div class="">
+                                            <label for="month2">Tháng:</label>
+                                            <select name="month2" id="month2" class="form-control">
+                                                @for ($i = 1; $i <= 12; $i++)
+                                                    <option value="{{ str_pad($i, 2, '0', STR_PAD_LEFT) }}"
+                                                        {{ $month2 == str_pad($i, 2, '0', STR_PAD_LEFT) ? 'selected' : '' }}>
+                                                        {{ $i }}
+                                                    </option>
+                                                @endfor
+                                            </select>
+                                        </div>
+                                        <div class="">
+                                            <label for="year2">Năm:</label>
+                                            <select name="year2" id="year2" class="form-control">
+                                                @for ($i = now()->year; $i >= 2022; $i--)
+                                                    <option value="{{ $i }}"
+                                                        {{ $year2 == $i ? 'selected' : '' }}>
+                                                        {{ $i }}
+                                                    </option>
+                                                @endfor
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="p-4 mb-3">
+                                    <h4 class="card-title" id="percentage-differenceMonth">Chênh lệch: <span
+                                            id="percentage-differenceMonth-value"></span>%</h4>
+                                </div>
 
+                            </div>
+                        </div>
 
                     </div>
+
+
                 </div>
+            </div>
+        </div>
+    </div>
+@endsection
+@push('script')
+    {{-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> --}}
+    <script>
+        $(document).ready(function() {
+            function updateTable(month, year) {
+                $.ajax({
+                    url: '{{ route('statistical.filter') }}',
+                    method: 'POST',
+                    data: {
+                        month: month,
+                        year: year,
+                        _token: '{{ csrf_token() }}'
+                    },
+                    success: function(response) {
+                        let tableBody = $('#table-body');
+                        let paginationLinks = $('#pagination-links');
+                        let totalRevenue = $('#total-revenue');
+                        let comparisonRevenue = $('#comparison-revenue');
+                        let percentageDifference = $('#percentage-difference-value');
+                        let monthYearTitle = $('#month-year-title');
 
-            @endsection
-            @push('script')
-                {{-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> --}}
-                <script>
-                    $(document).ready(function() {
-                        function updateTable(month, year) {
-                            $.ajax({
-                                url: '{{ route('statistical.filter') }}',
-                                method: 'POST',
-                                data: {
-                                    month: month,
-                                    year: year,
-                                    _token: '{{ csrf_token() }}'
-                                },
-                                success: function(response) {
-                                    let tableBody = $('#table-body');
-                                    let paginationLinks = $('#pagination-links');
-                                    let totalRevenue = $('#total-revenue');
-                                    let comparisonRevenue = $('#comparison-revenue');
-                                    let percentageDifference = $('#percentage-difference-value');
-                                    let monthYearTitle = $('#month-year-title');
+                        tableBody.empty();
+                        paginationLinks.empty();
 
-                                    tableBody.empty();
-                                    paginationLinks.empty();
-
-                                    // Cập nhật dữ liệu bảng
-                                    response.data.forEach(row => {
-                                        tableBody.append(
-                                            `<tr>
+                        // Cập nhật dữ liệu bảng
+                        response.data.forEach(row => {
+                            tableBody.append(
+                                `<tr>
                             <td><strong>${row.index}</strong></td>
                             <td>${row.order_code}</td>
                             <td>${row.customer_name}</td>
@@ -302,43 +369,92 @@
                             <td>${row.payment_method}</td>
                             <td>${row.total_amount}</td>
                         </tr>`
-                                        );
-                                    });
-
-                                    // Cập nhật liên kết phân trang
-                                    paginationLinks.html(response.pagination);
-
-                                    // Cập nhật tổng doanh thu tháng
-                                    totalRevenue.text(`Doanh thu tháng ${month}: ${response.total_revenue}`);
-                                    comparisonRevenue.text(
-                                        `Doanh thu tháng hiện tại: ${response.current_month_revenue}`);
-                                    percentageDifference.text(response.percentage_difference + '%');
-
-                                    // Cập nhật tiêu đề với tháng và năm
-                                    monthYearTitle.html(`Tổng doanh thu tháng ${month} năm ${year}`);
-                                },
-                                error: function(xhr, status, error) {
-                                    console.error('AJAX Error:', status, error);
-                                }
-                            });
-                        }
-
-                        // Gọi hàm khi trang được tải
-                        updateTable($('#month').val(), $('#year').val());
-
-                        // Gọi hàm khi chọn tháng hoặc năm
-                        $('#month, #year').on('change', function() {
-                            var month = $('#month').val();
-                            var year = $('#year').val();
-                            updateTable(month, year);
+                            );
                         });
 
-                        $('#export-btn').on('click', function() {
-                            var month = $('#month').val();
-                            var year = $('#year').val();
-                            window.location.href =
-                                `{{ route('statistical.export.monthly') }}?month=${month}&year=${year}`;
-                        });
-                    });
-                </script>
-            @endpush
+                        // Cập nhật liên kết phân trang
+                        paginationLinks.html(response.pagination);
+
+                        // Cập nhật tổng doanh thu tháng
+                        totalRevenue.text(`Doanh thu tháng ${month}: ${response.total_revenue}`);
+                        comparisonRevenue.text(
+                            `Doanh thu tháng hiện tại: ${response.current_month_revenue}`);
+
+                        percentageDifference.text(response.percentage_difference + '%');
+
+                        // Cập nhật tiêu đề với tháng và năm
+                        monthYearTitle.html(`Tổng doanh thu tháng ${month} năm ${year}`);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('AJAX Error:', status, error);
+                    }
+                });
+            }
+
+            // Gọi hàm khi trang được tải
+            updateTable($('#month').val(), $('#year').val());
+
+            // Gọi hàm khi chọn tháng hoặc năm
+            $('#month, #year').on('change', function() {
+                var month = $('#month').val();
+                var year = $('#year').val();
+                updateTable(month, year);
+            });
+
+            $('#export-btn').on('click', function() {
+                var month = $('#month').val();
+                var year = $('#year').val();
+                window.location.href =
+                    `{{ route('statistical.export.monthly') }}?month=${month}&year=${year}`;
+            });
+        });
+
+        $(document).ready(function() {
+    function updateComparison(month1, year1, month2, year2) {
+        $.ajax({
+            url: '{{ route('statistical.filterSoDoanhThuThang') }}',
+            method: 'POST',
+            data: {
+                month1: month1,
+                year1: year1,
+                month2: month2,
+                year2: year2,
+                _token: '{{ csrf_token() }}'
+            },
+            success: function(response) {
+                let revenueMonth1 = $('#revenue-month1');
+                let revenueMonth2 = $('#revenue-month2');
+                let percentageDifferenceMonth = $('#percentage-differenceMonth-value');
+
+                // Cập nhật dữ liệu so sánh
+                revenueMonth1.text(`Doanh thu tháng ${month1}/${year1}: ${response.revenue_month1}`);
+                revenueMonth2.text(`Doanh thu tháng ${month2}/${year2}: ${response.revenue_month2}`);
+                
+                // Đảm bảo rằng giá trị phần trăm không bị undefined hoặc lỗi
+                if(response.percentage_differenceMonth !== undefined) {
+                    percentageDifferenceMonth.text(response.percentage_differenceMonth);
+                } else {
+                    percentageDifferenceMonth.text('Không có dữ liệu');
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('Lỗi AJAX:', status, error);
+            }
+        });
+    }
+
+    // Gọi hàm khi trang được tải
+    updateComparison($('#month1').val(), $('#year1').val(), $('#month2').val(), $('#year2').val());
+
+    // Gọi hàm khi chọn tháng hoặc năm
+    $('#month1, #year1, #month2, #year2').on('change', function() {
+        var month1 = $('#month1').val();
+        var year1 = $('#year1').val();
+        var month2 = $('#month2').val();
+        var year2 = $('#year2').val();
+        updateComparison(month1, year1, month2, year2);
+    });
+});
+
+    </script>
+@endpush
