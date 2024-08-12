@@ -29,6 +29,7 @@
     <link href="{{ asset('assets/admin/css/style.css') }}" rel="stylesheet">
     <!-- Thêm vào phần head của file HTML -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
 
 
@@ -98,6 +99,7 @@
     <script src="{{ asset('assets/admin/js/custom.js') }}"></script>
     <!-- Add Toastr JS before the closing </body> tag -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    
 </body>
 
 

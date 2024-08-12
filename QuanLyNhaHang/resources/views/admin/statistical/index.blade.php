@@ -11,7 +11,7 @@
                         <div class="card-body d-flex justify-content-between">
                             <div class="card-menu">
                                 <span>Tổng doanh thu</span>
-                                <h3 class="mb-0">{{number_format($totalRevenue)}} VNĐ</h3>
+                                <h3 class="mb-0">{{ number_format($totalRevenue) }} VNĐ</h3>
                             </div>
                             <div class="icon-box icon-box-lg bg-primary-light">
                                 <svg width="26" height="30" viewBox="0 0 26 30" fill="none"
@@ -29,7 +29,7 @@
                         <div class="card-body d-flex justify-content-between">
                             <div class="card-menu">
                                 <span>Tổng doanh thu ngày {{ \Carbon\Carbon::createFromDate($day)->format('d') }}</span>
-                                <h3 class="mb-0">{{number_format($totalRevenueday)}} VNĐ</h3>
+                                <h3 class="mb-0">{{ number_format($totalRevenueday) }} VNĐ</h3>
                             </div>
                             <div class="icon-box icon-box-lg bg-primary-light">
                                 <svg width="26" height="30" viewBox="0 0 26 30" fill="none"
@@ -47,8 +47,9 @@
                     <div class="card">
                         <div class="card-body d-flex justify-content-between">
                             <div class="card-menu">
-                                <span>Tổng doanh thu tháng {{ \Carbon\Carbon::createFromDate($month)->format('m') }} năm {{ \Carbon\Carbon::createFromDate($year)->format('Y') }}</span>
-                                <h3 class="mb-0">{{number_format($totalRevenuemonth)}} VNĐ</h3>
+                                <span>Tổng doanh thu tháng {{ \Carbon\Carbon::createFromDate($month)->format('m') }} năm
+                                    {{ \Carbon\Carbon::createFromDate($year)->format('Y') }}</span>
+                                <h3 class="mb-0">{{ number_format($totalRevenuemonth) }} VNĐ</h3>
                             </div>
                             <div class="icon-box icon-box-lg bg-primary-light">
                                 <svg width="26" height="30" viewBox="0 0 26 30" fill="none"
@@ -75,13 +76,14 @@
                                         <a href="{{ route('statistical.export') }}" class="btn btn-secondary">Xuất Excel</a>
                                     </div>
                                     <div>
-
-                                        <h4 class="card-title">Doanh thu tất cả: {{number_format($totalRevenue)}} VNĐ</h4>
+                                        <h4 class="card-title">Doanh thu tất cả: {{ number_format($totalRevenue) }} VNĐ</h4>
                                     </div>
                                 </div>
-                                <!--tab-content-->
+
+                                <!-- Nội dung bảng -->
                                 <div class="tab-content" id="myTabContent">
-                                    <div class="tab-pane fade show active" id="Preview" role="tabpanel" aria-labelledby="home-tab">
+                                    <div class="tab-pane fade show active" id="Preview" role="tabpanel"
+                                        aria-labelledby="home-tab">
                                         <div class="card-body pt-0">
                                             <div class="table-responsive">
                                                 <table class="table table-responsive-md">
@@ -97,20 +99,21 @@
                                                     </thead>
                                                     <tbody>
                                                         @foreach ($statisticals as $index => $statistical)
-                                                        <tr>
-                                                            <td><strong>{{ $statisticals->firstItem() + $index }}</strong></td>
-                                                            <td>{{ $statistical->order_id }}</td>
-                                                            <td>{{ $statistical->user_id }}</td>
-                                                            <td>{{ \Carbon\Carbon::parse($statistical->payment_date)->format('d-m-Y') }}</td>
-                                                            <td>{{ $statistical->payment_method }}</td>
-                                                            <td>{{ number_format($statistical->total_amount) }} VNĐ</td>
-
-                                                        </tr>
+                                                            <tr>
+                                                                <td><strong>{{ $statisticals->firstItem() + $index }}</strong>
+                                                                </td>
+                                                                <td>{{ $statistical->order->code_order }}</td>
+                                                                <td>{{ $statistical->user->name }}</td>
+                                                                <td>{{ \Carbon\Carbon::parse($statistical->payment_date)->format('d-m-Y') }}
+                                                                </td>
+                                                                <td>{{ $statistical->payment_method }}</td>
+                                                                <td>{{ number_format($statistical->total_amount) }} VNĐ
+                                                                </td>
+                                                            </tr>
                                                         @endforeach
                                                     </tbody>
                                                 </table>
                                                 {{ $statisticals->links() }}
-
                                             </div>
                                         </div>
                                     </div>
@@ -118,22 +121,27 @@
                             </div>
                         </div>
 
+
                         <div class="col-xl-12 col-lg-12">
                             <div class="card dz-card" id="bootstrap-table1">
                                 <div class="card-header flex-wrap border-0">
                                     <div>
-                                        <h4 class="card-title">Tổng doanh thu ngày {{ \Carbon\Carbon::createFromDate($day)->format('d') }}</h4>
+                                        <h4 class="card-title">Tổng doanh thu hôm nay</h4>
                                     </div>
                                     <div>
-                                        <a style="margin-right:80px" href="{{ route('statistical.export.dates', ['date' => $date]) }}" class="btn btn-secondary">Xuất Excel</a>
+                                        <a style="margin-right:120px"
+                                            href="{{ route('statistical.export.dates', ['date' => $date]) }}"
+                                            class="btn btn-secondary">Xuất Excel</a>
                                     </div>
                                     <div>
-                                        <h4 class="card-title">Doanh thu ngày: {{number_format($totalRevenueday)}} VNĐ</h4>
+                                        <h4 class="card-title">Doanh thu ngày: {{ number_format($totalRevenueday) }} VNĐ
+                                        </h4>
                                     </div>
                                 </div>
                                 <!--tab-content-->
                                 <div class="tab-content" id="myTabContent">
-                                    <div class="tab-pane fade show active" id="Preview" role="tabpanel" aria-labelledby="home-tab">
+                                    <div class="tab-pane fade show active" id="Preview" role="tabpanel"
+                                        aria-labelledby="home-tab">
                                         <div class="card-body pt-0">
                                             <div class="table-responsive">
                                                 <table class="table table-responsive-md">
@@ -149,14 +157,17 @@
                                                     </thead>
                                                     <tbody>
                                                         @foreach ($statisticalsdates as $index => $statisticalsdate)
-                                                        <tr>
-                                                            <td><strong>{{ $statisticalsdates->firstItem() + $index }}</strong></td>
-                                                            <td>{{ $statisticalsdate->order_id }}</td>
-                                                            <td>{{ $statisticalsdate->user_id }}</td>
-                                                            <td>{{ \Carbon\Carbon::parse($statisticalsdate->payment_date)->format('d-m-Y') }}</td>
-                                                            <td>{{ $statisticalsdate->payment_method }}</td>
-                                                            <td>{{ number_format($statisticalsdate->total_amount) }} VNĐ</td>
-                                                        </tr>
+                                                            <tr>
+                                                                <td><strong>{{ $statisticalsdates->firstItem() + $index }}</strong>
+                                                                </td>
+                                                                <td>{{ $statisticalsdate->order->code_order }}</td>
+                                                                <td>{{ $statisticalsdate->user->name }}</td>
+                                                                <td>{{ \Carbon\Carbon::parse($statisticalsdate->payment_date)->format('d-m-Y') }}
+                                                                </td>
+                                                                <td>{{ $statisticalsdate->payment_method }}</td>
+                                                                <td>{{ number_format($statisticalsdate->total_amount) }}
+                                                                    VNĐ</td>
+                                                            </tr>
                                                         @endforeach
                                                     </tbody>
                                                 </table>
@@ -172,22 +183,56 @@
                             <div class="card dz-card" id="bootstrap-table1">
                                 <div class="card-header flex-wrap border-0">
                                     <div>
-                                        <h4 class="card-title">Tổng doanh thu tháng {{ \Carbon\Carbon::createFromDate($month)->format('m') }} Năm {{ \Carbon\Carbon::createFromDate($year)->format('Y') }}</h4>
+                                        <h4 id="month-year-title" class="card-title">Tổng doanh thu tháng
+                                            {{ \Carbon\Carbon::createFromDate($month)->format('m') }} Năm
+                                            {{ \Carbon\Carbon::createFromDate($year)->format('Y') }}</h4>
                                     </div>
                                     <div>
-                                        <a style="margin-right:120px" href="{{ route('statistical.export.monthly', ['month' => $month, 'year' => $year]) }}" class="btn btn-secondary">
+                                        <a id="export-btn" style="margin-right:95px" class="btn btn-secondary">
                                             Xuất Excel
                                         </a>
                                     </div>
                                     <div>
-                                        <h4 class="card-title">Doanh thu tháng: {{number_format($totalRevenuemonth)}} VNĐ</h4>
-
-
+                                        <h4 class="card-title" id="total-revenue">Doanh thu tháng:
+                                            {{ number_format($totalRevenuemonth) }} VNĐ
+                                        </h4>
+                                        <h4 class="card-title" id="comparison-revenue">Doanh thu tháng hiện tại:
+                                            {{ number_format($currentMonthRevenue) }} VNĐ</h4>
+                                        <h4 class="card-title" id="percentage-difference">Chênh lệch: <span
+                                                id="percentage-difference-value"></span></h4>
+                                    </div>
+                                </div>
+                                <!-- Form lọc -->
+                                <div class="card-body pt-0">
+                                    <div class="row mb-3">
+                                        <div class="col-md-4">
+                                            <label for="month">Tháng:</label>
+                                            <select name="month" id="month" class="form-control">
+                                                @for ($i = 1; $i <= 12; $i++)
+                                                    <option value="{{ str_pad($i, 2, '0', STR_PAD_LEFT) }}"
+                                                        {{ $month == str_pad($i, 2, '0', STR_PAD_LEFT) ? 'selected' : '' }}>
+                                                        {{ $i }}
+                                                    </option>
+                                                @endfor
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="year">Năm:</label>
+                                            <select name="year" id="year" class="form-control">
+                                                @for ($i = now()->year; $i >= 2022; $i--)
+                                                    <option value="{{ $i }}"
+                                                        {{ $year == $i ? 'selected' : '' }}>
+                                                        {{ $i }}
+                                                    </option>
+                                                @endfor
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                                 <!--tab-content-->
                                 <div class="tab-content" id="myTabContent">
-                                    <div class="tab-pane fade show active" id="Preview" role="tabpanel" aria-labelledby="home-tab">
+                                    <div class="tab-pane fade show active" id="Preview" role="tabpanel"
+                                        aria-labelledby="home-tab">
                                         <div class="card-body pt-0">
                                             <div class="table-responsive">
                                                 <table class="table table-responsive-md">
@@ -201,20 +246,13 @@
                                                             <th>Tổng tiền</th>
                                                         </tr>
                                                     </thead>
-                                                    <tbody>
-                                                        @foreach ($statisticalmonths as $index => $statisticalmonth)
-                                                        <tr>
-                                                            <td><strong>{{ $statisticalmonths->firstItem() + $index }}</strong></td>
-                                                            <td>{{ $statisticalmonth->order_id }}</td>
-                                                            <td>{{ $statisticalmonth->user_id }}</td>
-                                                            <td>{{ \Carbon\Carbon::parse($statisticalmonth->payment_date)->format('d-m-Y') }}</td>
-                                                            <td>{{ $statisticalmonth->payment_method }}</td>
-                                                            <td>{{ number_format($statisticalmonth->total_amount) }} VNĐ</td>
-                                                        </tr>
-                                                        @endforeach
+                                                    <tbody id="table-body">
+                                                        <!-- Dữ liệu bảng sẽ được cập nhật bởi AJAX -->
                                                     </tbody>
                                                 </table>
-                                                {{ $statisticalmonths->links() }}
+                                                <div id="pagination-links">
+                                                    <!-- Các liên kết phân trang sẽ được cập nhật bởi AJAX -->
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -222,43 +260,85 @@
                             </div>
                         </div>
 
+
+
+
                     </div>
                 </div>
 
             @endsection
             @push('script')
-            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-            <script>
-               document.addEventListener('DOMContentLoaded', function () {
-            fetch('/admin/statistical/revenue-chart')
-                .then(response => response.json())
-                .then(data => {
-                    const ctx = document.getElementById('revenueChart').getContext('2d');
-                    new Chart(ctx, {
-                        type: 'line',
-                        data: {
-                            labels: data.labels,
-                            datasets: [{
-                                label: 'Doanh thu',
-                                data: data.data,
-                                borderColor: 'rgba(75, 192, 192, 1)',
-                                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                                fill: true
-                            }]
-                        },
-                        options: {
-                            responsive: true,
-                            scales: {
-                                x: {
-                                    beginAtZero: true
+                {{-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> --}}
+                <script>
+                    $(document).ready(function() {
+                        function updateTable(month, year) {
+                            $.ajax({
+                                url: '{{ route('statistical.filter') }}',
+                                method: 'POST',
+                                data: {
+                                    month: month,
+                                    year: year,
+                                    _token: '{{ csrf_token() }}'
                                 },
-                                y: {
-                                    beginAtZero: true
+                                success: function(response) {
+                                    let tableBody = $('#table-body');
+                                    let paginationLinks = $('#pagination-links');
+                                    let totalRevenue = $('#total-revenue');
+                                    let comparisonRevenue = $('#comparison-revenue');
+                                    let percentageDifference = $('#percentage-difference-value');
+                                    let monthYearTitle = $('#month-year-title');
+
+                                    tableBody.empty();
+                                    paginationLinks.empty();
+
+                                    // Cập nhật dữ liệu bảng
+                                    response.data.forEach(row => {
+                                        tableBody.append(
+                                            `<tr>
+                            <td><strong>${row.index}</strong></td>
+                            <td>${row.order_code}</td>
+                            <td>${row.customer_name}</td>
+                            <td>${row.payment_date}</td>
+                            <td>${row.payment_method}</td>
+                            <td>${row.total_amount}</td>
+                        </tr>`
+                                        );
+                                    });
+
+                                    // Cập nhật liên kết phân trang
+                                    paginationLinks.html(response.pagination);
+
+                                    // Cập nhật tổng doanh thu tháng
+                                    totalRevenue.text(`Doanh thu tháng ${month}: ${response.total_revenue}`);
+                                    comparisonRevenue.text(
+                                        `Doanh thu tháng hiện tại: ${response.current_month_revenue}`);
+                                    percentageDifference.text(response.percentage_difference + '%');
+
+                                    // Cập nhật tiêu đề với tháng và năm
+                                    monthYearTitle.html(`Tổng doanh thu tháng ${month} năm ${year}`);
+                                },
+                                error: function(xhr, status, error) {
+                                    console.error('AJAX Error:', status, error);
                                 }
-                            }
+                            });
                         }
+
+                        // Gọi hàm khi trang được tải
+                        updateTable($('#month').val(), $('#year').val());
+
+                        // Gọi hàm khi chọn tháng hoặc năm
+                        $('#month, #year').on('change', function() {
+                            var month = $('#month').val();
+                            var year = $('#year').val();
+                            updateTable(month, year);
+                        });
+
+                        $('#export-btn').on('click', function() {
+                            var month = $('#month').val();
+                            var year = $('#year').val();
+                            window.location.href =
+                                `{{ route('statistical.export.monthly') }}?month=${month}&year=${year}`;
+                        });
                     });
-                });
-        });
-            </script>
-        @endpush
+                </script>
+            @endpush

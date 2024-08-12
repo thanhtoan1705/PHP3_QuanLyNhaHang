@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\Table\TableBookController;
+use App\Http\Controllers\Admin\Statistical\StatisticalController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -9,3 +10,5 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::get('/table-book/table-details/{id}', [TableBookController::class, 'getTableDetails']);
+
+Route::post('/admin/statistical/filter', [StatisticalController::class, 'filter'])->name('statistical.filter');

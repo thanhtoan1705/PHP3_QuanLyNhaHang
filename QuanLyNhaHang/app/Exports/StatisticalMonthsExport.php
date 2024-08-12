@@ -12,31 +12,33 @@ class StatisticalMonthsExport implements FromCollection, WithHeadings, WithStyle
 {
     protected $statisticalmonths;
     protected $totalRevenuemonth;
+    protected $month;
+    protected $year;
 
-    public function __construct($statisticalmonths, $totalRevenuemonth)
+    public function __construct($statisticalmonths, $totalRevenuemonth, $month, $year)
     {
         $this->statisticalmonths = $statisticalmonths;
         $this->totalRevenuemonth = $totalRevenuemonth;
+        $this->month = $month;
+        $this->year = $year;
     }
 
     public function collection()
-{
-    return $this->statisticalmonths->map(function ($payment) {
-        // Đảm bảo payment_date là đối tượng Carbon
-        $paymentDate = \Carbon\Carbon::parse($payment->payment_date);
+    {
+        return $this->statisticalmonths->map(function ($payment) {
+            // Đảm bảo payment_date là đối tượng Carbon
+            $paymentDate = \Carbon\Carbon::parse($payment->payment_date);
 
-        return [
-            'ID' => $payment->id,
-            'Mã hóa đơn' => $payment->order_id,
-            'Khách hàng' => $payment->user_id,
-            'Ngày thanh toán' => $paymentDate->format('Y-m-d'), // Đảm bảo payment_date là đối tượng Carbon
-            'Phương thức thanh toán' => $payment->payment_method,
-            'Tổng tiền' => $payment->total_amount,
-        ];
-    });
-}
-
-
+            return [
+                'ID' => $payment->id,
+                'Mã hóa đơn' => $payment->order->code_order,
+                'Khách hàng' => $payment->user->name,
+                'Ngày thanh toán' => $payment->payment_date,
+                'Phương thức thanh toán' => $payment->payment_method,
+                'Tổng tiền' => $payment->total_amount,
+            ];
+        });
+    }
 
     public function headings(): array
     {
@@ -58,10 +60,11 @@ class StatisticalMonthsExport implements FromCollection, WithHeadings, WithStyle
     public function styles(Worksheet $sheet)
     {
         // Add the total revenue to the sheet
-        $sheet->setCellValue('I1', 'Tổng doanh thu tháng: ' . number_format($this->totalRevenuemonth, 0, ',', '.') . ' VNĐ');
+        $sheet->setCellValue('I2', 'Tổng doanh thu tháng: ' . number_format($this->totalRevenuemonth, 0, ',', '.') . ' VNĐ');
+        $sheet->setCellValue('I1', 'Tổng doanh thu tháng ' . $this->month . ' năm ' . $this->year);
 
         // Style the total revenue cell
-        $sheet->getStyle('A1')->applyFromArray([
+        $sheet->getStyle('A1:F1')->applyFromArray([
             'font' => [
                 'bold' => true,
                 'size' => 14,
@@ -71,12 +74,6 @@ class StatisticalMonthsExport implements FromCollection, WithHeadings, WithStyle
             ],
         ]);
 
-        // Style the header row
-        $sheet->getStyle('A1:F1')->applyFromArray([
-            'font' => [
-                'bold' => true,
-            ]
-        ]);
         $sheet->getStyle('A1:G1')->applyFromArray([
             'fill' => [
                 'fillType' => \PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID,
@@ -87,7 +84,7 @@ class StatisticalMonthsExport implements FromCollection, WithHeadings, WithStyle
             'font' => [
                 'bold' => true,
                 'color' => ['argb' => 'FFFFFF'], // Màu chữ trắng
-            ]
+            ],
         ]);
         $sheet->getStyle('I1:L1')->applyFromArray([
             'fill' => [
@@ -99,7 +96,19 @@ class StatisticalMonthsExport implements FromCollection, WithHeadings, WithStyle
             'font' => [
                 'bold' => true,
                 'color' => ['argb' => 'FFFFFF'], // Màu chữ trắng
-            ]
+            ],
+        ]);
+        $sheet->getStyle('I2:L2')->applyFromArray([
+            'fill' => [
+                'fillType' => \PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID,
+                'startColor' => [
+                    'argb' => '0000FF', // Mã màu xanh dương
+                ],
+            ],
+            'font' => [
+                'bold' => true,
+                'color' => ['argb' => 'FFFFFF'], // Màu chữ trắng
+            ],
         ]);
         // Format the 'Tổng tiền' column as currency
         $sheet->getStyle('F')->getNumberFormat()->setFormatCode('#,##0 "VNĐ"');
@@ -117,4 +126,3 @@ class StatisticalMonthsExport implements FromCollection, WithHeadings, WithStyle
         }
     }
 }
-
